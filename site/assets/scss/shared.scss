@@ -1,0 +1,161 @@
+// Center a column's content vertically.
+.columns .column.is-centered-vertically {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+// Used to smoothly change background colors when transitioning on the homepage.
+.navbar {
+    transition: background-color 0.2s ease;
+    box-shadow: unset; // TODO: Find Bulma variable for this.
+}
+.navbar-logo { height: 32px; }
+.hero .navbar.is-freestanding {
+    background: $navbar-background-color;
+}
+
+// For call to action heros, we want to style them on hover.
+.hero .column:hover .is-actionable {
+    color: #969696;
+}
+
+/* Typography */
+.has-text-shadow {
+    text-shadow: 2px 2px #fff;
+}
+
+/* Blog Entry */
+.blog-entry-header {
+    position: relative;
+    background-image: url('/images/banner.png');
+    background-color: $dark;
+    background-size: cover;
+}
+
+// Summary
+$blog-entry-summary-height: 16em;
+.blog-entry-header.summary.entry {
+    height: $blog-entry-summary-height;
+}
+.blog-entry-header.summary.twitter {
+    height: $blog-entry-summary-height / 1.5;
+}
+.blog-entry-header.summary > div:first-child {
+    padding-top: $blog-entry-summary-height - 15em;
+}
+.blog-entry-header.summary:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: .9;
+}
+
+// Single
+$blog-entry-single-height: 26em;
+.blog-entry-header.single {
+    height: $blog-entry-single-height;
+}
+.blog-entry-header.single > div:first-child {
+    padding-top: $blog-entry-single-height - 8em;
+}
+
+// CompatDB
+.is-square {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+// Used for the carousel
+.carousel-caption {
+    text-align: left;
+    padding: 0 5px;
+    font-size: 0.70rem;
+
+    bottom: 0;
+    right: 0;
+
+    position: absolute;
+    z-index: 2;
+    display: inline-block;
+
+    border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+
+    // Overrride on regular has-background-dark with transparency
+    background: rgba(54, 54, 54, 0.85) !important;
+}
+
+// Add overrides for padding/margin on specific sides of an element
+.is-bottom-paddingless {
+    padding-bottom: 0 !important;
+}
+
+.is-bottom-marginless {
+    margin-bottom: 0 !important;
+}
+
+.clear-search {
+  cursor: pointer;
+  display: inline-block;
+}
+ 
+.pagination {
+ border-radius:4px;
+ margin:20px 0;
+ padding-left:0
+}
+
+.pagination-search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination-container {
+  margin-left: 50px;
+  display: inline-block;
+  
+}
+.search-container {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.pagination li {
+ display: inline-block;
+ background-color:#363636;
+ border-radius: 20px;
+ color:#ffffff;
+ line-height:1.428571429;
+ margin-left:-1px;
+ margin-right: 10px;
+ padding:6px 12px;
+ position:relative;
+ text-decoration:none
+}
+
+.pagination li.active a,
+.pagination li.active a:link,
+.pagination li.active a:focus,
+.pagination li.active a:hover {
+  color: #ffffff;
+  cursor: not-allowed;
+}
+
+.search {
+  color: #363636;
+}
+
+.search::placeholder {
+    color: #363636;
+}
+
+// Hide the summary text on small screen
+@media only screen and (max-width: 810px) {
+    .summary-text {
+        display: none !important;
+    }
+}

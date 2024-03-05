@@ -1,0 +1,93 @@
+baseurl = "https://yuzu-emu.org/"
+languageCode = "en-us"
+
+DefaultContentLanguage = "en"
+theme = "shared-bulma-theme"
+
+# Define how many objects appear per pagination.
+paginate = 20
+# Define build timeout for each page (incl. image processing).
+timeout = 300000
+
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  identifier = "blog"
+  url = "/entry"
+
+[[menu.main]]
+  name = "Download"
+  weight = 2
+  identifier = "download"
+  url = "/downloads"
+
+[[menu.main]]
+  name = "FAQs"
+  weight = 3
+  identifier = "faq"
+  url = "/wiki/faq"
+
+[[menu.main]]
+  name = "Compatibility"
+  weight = 4
+  identifier = "compatibility"
+  url = "/game"
+
+[[menu.main]]
+  name = "Screenshots"
+  weight = 5
+  identifier = "screenshots"
+  url = "/screenshots"
+
+[[menu.main]]
+  name = "Patreon"
+  weight = 6
+  identifier = "patreon"
+  url = "https://www.patreon.com/yuzuteam"
+
+[[menu.main]]
+  name = "Profile"
+  weight = 7
+  identifier = "profile"
+  url = "https://profile.yuzu-emu.org"
+
+[Params]
+  Tenant = "yuzu"
+  BulmaPrimaryShade = "is-dark"
+  DiscordURL = "https://discord.gg/u77vRWY"
+  TwitterURL = "https://twitter.com/yuzuemu"
+  GithubURL = "https://github.com/yuzu-emu/yuzu"
+  GithubGamesWikiURL = "https://github.com/yuzu-emu/yuzu-games-wiki"
+  GoogleAnalyticsTrackingId = "UA-112443698-1"
+
+[Params.fmt]
+  ISO8601 = "2006-01-02T15:04:05-07:00"
+  Date = "January 02 2006"
+
+[Languages]
+  [Languages.en]
+    title = "yuzu"
+    tagline = "Nintendo Switch Emulator"
+    description = "yuzu is a highly experimental open-source emulator for the Nintendo Switch."
+    weight = 1
+
+[module]
+  [[module.mounts]]
+  source = "static/images"
+  target = "assets/images"
+  [[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+
+[outputs]
+home = [ "HTML", "RSS" ]
+section = [ "HTML" ]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[security]
+  [security.funcs]
+    getenv = ['^HUGO_', 'TENANT']

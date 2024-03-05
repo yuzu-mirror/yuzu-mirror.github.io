@@ -1,0 +1,24 @@
+/* Yuzu uses a dark theme by default */
+$background: darken($dark, 8);
+
+$navbar-background-color: $dark;
+$navbar-item-color: $white;
+$navbar-item-hover-background-color: $black;
+$navbar-item-hover-color: $white;
+
+$box-background-color: $info;
+$card-background-color: $info;
+$table-background-color: $info;
+
+$text: $white;
+$text-light: $white;
+$text-strong: $white;
+$table-color: $white;
+
+$link: #03a9f4;
+
+$pagination-color: $white;
+$pagination-hover-color: $grey;
+
+$title-color: $white;
+$subtitle-color: $white;

@@ -1,0 +1,21 @@
+/* 1. Import the initial variables */
+@import "./node_modules/bulma/sass/utilities/functions.sass";
+@import "./node_modules/bulma/sass/utilities/initial-variables.sass";
+
+/* 2. Set the derived variables */
+@import "./yuzu/yuzu_before_derived.scss";
+@import "./node_modules/bulma/sass/utilities/derived-variables.sass";
+@import "./yuzu/yuzu_after_derived.scss";
+
+/* 3. Misc customization of Bulma */
+@import "./shared_customization.scss";
+
+/* 4. Import the rest of Bulma */
+@import "./node_modules/bulma/bulma.sass";
+@import "./helpers/spacing.scss";
+@import "./shared.scss";
+@import "./yuzu/yuzu.scss";
+
+/* 5. Bring in other external vendor SCSS to bake in */
+@import "./vendor/glide.scss";
+@import "./vendor/baguetteBox.min";

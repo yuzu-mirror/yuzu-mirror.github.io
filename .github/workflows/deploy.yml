@@ -1,0 +1,41 @@
+name: Deploy Site
+
+on:
+  push:
+    branches: [ hugo ]
+  pull_request:
+    branches: [ hugo ]
+  schedule:
+    - cron: '25 0 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+    - name: Cache Rendered Data
+      uses: actions/cache@v3
+      with:
+        path: ./site/resources
+        key: ${{ runner.os }}-rendered-${{ github.sha }}
+        restore-keys: ${{ runner.os }}-rendered-
+    - name: Install dependencies
+      run: sudo apt-get update
+    - name: Build
+      env:
+        GITHUB_WIKI_URL: 'https://github.com/yuzu-mirror/yuzu.wiki.git'
+        TENANT: 'yuzu'
+      run: ./.ci/build.sh
+    - name: Deploy
+      if: ${{ ! github.base_ref }}
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: master
+        folder: build
+        clean: true
+        single-commit: true

@@ -1,0 +1,195 @@
+$switch-orangered: #ff3c28;
+$switch-deepskyblue: #0ab9e6;
+$switch-yellow: #e6ff00;
+$switch-deeppink: #ff3278;
+$switch-lime: #1edc00;
+$switch-gray: #828282;
+$code-bg: #101010;  // code tag background color
+
+@each $name, $color in ("orangered", $switch-orangered), ("deepskyblue", $switch-deepskyblue),
+        ("yellow", $switch-yellow), ("deeppink", $switch-deeppink), ("lime", $switch-lime), ("gray", $switch-gray) {
+  .switch-left-#{$name} {
+    #jumbotron-leftjoy path {
+      // The normal coloring for the .svg is inline, so we cannot override it normally.
+      stroke: $color !important;
+    }
+
+    #logo-leftjoy path, #logo-u1 path {
+      fill: $color !important;
+    }
+  }
+
+  .switch-right-#{$name} {
+    #jumbotron-rightjoy path {
+      // The normal coloring for the .svg is inline, so we cannot override it normally.
+      stroke: $color !important;
+    }
+
+    #logo-rightjoy path, #logo-u2 path {
+      fill: $color !important;
+    }
+  }
+}
+
+#about-section {
+  position: relative;
+  top: -100px;
+}
+
+// TODO: Hack for links appearing as the wrong color
+a:hover {
+  color: lighten($blue, 5);
+}
+
+// Correctly positions the switch screen images in the overlay.
+.offset-switch-overlay {
+  top: 13.5%;
+  left: 22.5%;
+  // 100% - (22.5% * 2)
+  width: 55%;
+}
+
+// Fix switch svg scaling and image overlay alignment.
+// (for bulma 0.9.0)
+.container {
+  flex-grow: 0;
+}
+
+.container.is-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Ensure that arrows consume the entire overlay's height.
+.glide__arrow {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+// Fixes the backgrounds + colors of messages with headers
+.message {
+  background: $dark !important;
+}
+
+.message-header {
+  color: $dark;
+}
+
+// Fixes multiple <p> elements in messages in content blocks
+.message-header p:not(:last-child) {
+  margin-bottom: 0;
+}
+
+// Adds dropdown support for messsages
+.message-header.is-dropdown {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.message-body.is-dropdown-target {
+  display: none;
+}
+
+.message-body.is-dropdown-target.is-active {
+  display: block !important;
+}
+
+.show-with-js {
+  display: none;
+}
+
+// Make text nicer to read in articles
+.section.content.pt-sm > p {
+  text-align: justify;
+  line-height: 1.8;
+  font-size: 1.09em;
+}
+
+// Fix background color for single line monospaced text
+.content :not(pre) > code {
+  background: $code-bg;
+}
+
+// Multiline code block container
+.content pre {
+    padding: 16px;
+    overflow: auto;
+    line-height: 1.45;
+    background-color: $code-bg;
+    border-radius: 6px;
+}
+
+// Text color of multilne code block
+pre > code {
+  color: #FFFFFF;
+}
+
+// Style of single line code block
+:not(pre) > code {
+  color: #FFFFFF;
+  font-size: 0.875em;
+  font-weight: 400;
+  padding: 0.15em 0.25em 0.15em 0.25em;
+  border: 1px solid #585d66;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.125);
+}
+
+#download-header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#download-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#download-buttons > a {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 780px) {
+  #download-header {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+  }
+
+  #download-buttons > a {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+#unsupported-platform-view {
+  display: none;
+}
+
+// Workaround for browsers without JavaScript for the downloads page
+#install-view, #manual-package-view {
+  display: none;
+}
+
+// Fix manual download button text
+#view-package-listing-button {
+  color: #363636;
+}
+
+// Fix anchor jumps (https://stackoverflow.com/a/28824157)
+:target::before {
+  content: "";
+  display: block;
+  height: 64px; /* fixed header height*/
+  margin: -64px 0 0; /* negative fixed header height */
+}
+
+body {
+  line-height:1.7;
+}
