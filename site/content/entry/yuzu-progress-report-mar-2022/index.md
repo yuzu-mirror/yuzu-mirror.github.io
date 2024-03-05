@@ -199,7 +199,7 @@ There’s more work to do, but this lets us get closer to offering Vulkan as the
 epicboy found out that {{< gh-hovercard "8106" "avoiding a doubly locked mutex" >}} fixes a crash when using Extreme GPU accuracy on the OpenGL backend, making it a safe option for those aiming for the most possible accurate rendering.
 This option is only accessible from `Emulation > Configure... > Graphics > Advanced`.
 
-He also includes an {{< gh-hovercard "8068" "optimization focused on eliminating `if(false) {…}` branches in the shader code" >}}. 
+He also includes an {{< gh-hovercard "8068" "optimization focused on eliminating `if(false) {...}` branches in the shader code" >}}. 
 This has the added benefit of reducing shader build times ever so slightly. Hey, less shader stuttering is less shader stuttering!
 
 ## Not all changes benefit everybody
