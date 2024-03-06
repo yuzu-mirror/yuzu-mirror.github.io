@@ -56,8 +56,8 @@ timeout = 300000
   BulmaPrimaryShade = "is-dark"
   DiscordURL = "https://discord.gg/u77vRWY"
   TwitterURL = "https://twitter.com/yuzuemu"
-  GithubURL = "https://github.com/yuzu-emu/yuzu"
-  GithubGamesWikiURL = "https://github.com/yuzu-emu/yuzu-games-wiki"
+  GithubURL = "https://github.com/yuzu-mirror/yuzu"
+  GithubGamesWikiURL = "https://github.com/yuzu-mirror/yuzu-games-wiki"
   GoogleAnalyticsTrackingId = "UA-112443698-1"
 
 [Params.fmt]
