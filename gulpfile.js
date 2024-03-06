@@ -58,7 +58,7 @@ gulp.task('final:publish', (done) => {
     done();
 });
 
-const cname = 'yuzu-emu.org';
+const cname = 'yuzu-mirror.github.io';
 let finalCommand = null;
 let ephemeralURL = null;
 
