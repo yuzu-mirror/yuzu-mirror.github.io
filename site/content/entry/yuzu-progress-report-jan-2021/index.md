@@ -11,7 +11,7 @@ Welcome yuz-ers, to the first progress report of 2021! We have quite a bit in st
 
 ## The Buffer Cache Rewrite
 
-While we have a [dedicated article detailing the improvements from the Buffer Cache Rewrite](https://yuzu-emu.org/entry/yuzu-bcr/) [(BCR)](https://github.com/yuzu-emu/yuzu/pull/5741), [Rodrigo](https://github.com/ReinUsesLisp) didn't sit idle and continued to improve the buffer cache. These new changes and improvements deserve some time in the spotlight. For the full context, we advise reading the dedicated article before continuing.
+While we have a [dedicated article detailing the improvements from the Buffer Cache Rewrite](https://yuzu-mirror.github.io/entry/yuzu-bcr/) [(BCR)](https://github.com/yuzu-emu/yuzu/pull/5741), [Rodrigo](https://github.com/ReinUsesLisp) didn't sit idle and continued to improve the buffer cache. These new changes and improvements deserve some time in the spotlight. For the full context, we advise reading the dedicated article before continuing.
 
 {{< single-title-imgs
     "The BCR offers performance and rendering improvements (Xenoblade Chronicles Definitive Edition)"
@@ -46,7 +46,7 @@ We recommend users to play with this setting to find the optimal performance, bu
 	"./bcr.png| While there are big improvements across the board, this graph shows the limitations of integrated GPUs constantly fighting the CPU for RAM resources. Having your own fast dedicated on-board VRAM is very important for performance."
   >}}
 
-Analysis time. If you compare this graph to the one of the RX550 in the [BCR artricle,](https://yuzu-emu.org/entry/yuzu-bcr/) you will notice that a small integrated Vega manages to beat a dedicated Polaris card in `Fire Emblem: Three Houses` by a few frames. 
+Analysis time. If you compare this graph to the one of the RX550 in the [BCR artricle,](https://yuzu-mirror.github.io/entry/yuzu-bcr/) you will notice that a small integrated Vega manages to beat a dedicated Polaris card in `Fire Emblem: Three Houses` by a few frames. 
 This is because newer GPU architectures offer features that are useful for Switch emulation. Ray tracing is not the only cool kid in town!
 
 The Tegra X1 SoC in the Nintendo Switch offers native support for FP16 with a 2:1 performance ratio, allowing games to double their performance over regular FP32 when doing floating point calculations. A simple way to achieve a higher frame rate on limited hardware.
@@ -54,7 +54,7 @@ Vega (GCN 5.0), Turing, Gen 9 Intel Graphics and newer offer native support for 
 Series like Polaris (GCN 4.0), Pascal and older may offer support in their drivers but don’t provide a performance advantage, and in the case of Pascal, it reduces performance considerably (64 times slower than FP32). 
 In those cases FP32 is used to emulate FP16, obviously resulting in no performance gains.
 
-This is the main reason our [Hardware Requirements](https://yuzu-emu.org/help/quickstart/#hardware-requirements) lists Gen 9.5, Vega, and Turing cards, as the recommended GPUs. Maxwell v2, Vega, Gen9 and later series also offer `conservative rasterization`, a very useful feature that yuzu can take advantage of in the future.
+This is the main reason our [Hardware Requirements](https://yuzu-mirror.github.io/help/quickstart/#hardware-requirements) lists Gen 9.5, Vega, and Turing cards, as the recommended GPUs. Maxwell v2, Vega, Gen9 and later series also offer `conservative rasterization`, a very useful feature that yuzu can take advantage of in the future.
 
 ## General bug fixes and improvements
 

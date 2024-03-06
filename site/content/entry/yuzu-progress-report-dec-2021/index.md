@@ -15,12 +15,12 @@ We keep trying with the time machine, but we’re running out of bananas to micr
 
 ## PSA for NVIDIA users: Part 2
 
-As mentioned [two months ago](https://yuzu-emu.org/entry/yuzu-progress-report-oct-2021/#psa-for-nvidia-users), NVIDIA users have been experiencing issues when using GLSL due 
+As mentioned [two months ago](https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/#psa-for-nvidia-users), NVIDIA users have been experiencing issues when using GLSL due 
 to the changes introduced by NVIDIA dropping support for Kepler cards in the 49X series of drivers.
 
 We’re happy to announce that we have a [set of workarounds](https://github.com/yuzu-emu/yuzu/pull/7629) implemented by [epicboy](https://github.com/ameerj) that solve all 
 known issues.
-These are already available for both Mainline and [Early Access](https://yuzu-emu.org/help/early-access/).
+These are already available for both Mainline and [Early Access](https://yuzu-mirror.github.io/help/early-access/).
 
 The root of the problem in NVIDIA’s drivers seems to be in negation of integer and floating point values, and bitwise conversions of input values.
 
@@ -34,7 +34,7 @@ In our example, `y` would get the value of `0 - x`.
 
 The bitwise conversion issue is more complex, but we talked about it in the past.
 Back in August, 
-[we mentioned how Intel had issues in Vulkan](https://yuzu-emu.org/entry/yuzu-progress-report-aug-2021/#another-terrible-implementation-and-other-graphical-fixes) 
+[we mentioned how Intel had issues in Vulkan](https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2021/#another-terrible-implementation-and-other-graphical-fixes) 
 affecting Mario’s legendary moustache.
 
 `GetAttribute` returns a float value, so a conversion is needed when working with integer values.
@@ -191,7 +191,7 @@ german77 also added support for the `SetNpadJoyAssignmentMode` series of service
 This change [also adds support for](https://github.com/yuzu-emu/yuzu/pull/7521) dual Joy-Con pairs with a single Joy-Con connected, which is something that some 
 games seem to do.
 
-After the release of `Project Kraken`, [the input rewrite](https://yuzu-emu.org/entry/yuzu-progress-report-nov-2021#projekt-kraken), analog triggers were accidentally broken. 
+After the release of `Project Kraken`, [the input rewrite](https://yuzu-mirror.github.io/entry/yuzu-progress-report-nov-2021#projekt-kraken), analog triggers were accidentally broken. 
 A simple bug slipped by, causing them to only work when the joysticks were moved. 
 [Two lines of code were changed](https://github.com/yuzu-emu/yuzu/pull/7583), and the issue was made no more.
 
@@ -210,7 +210,7 @@ Well, [not any more](https://github.com/yuzu-emu/yuzu/pull/7647)! Again thanks t
 
 ## Flatpak fixes
 
-Following up from our previous mention [last month](https://yuzu-emu.org/entry/yuzu-progress-report-nov-2021/#graphical-fixes), [liushuyu](https://github.com/liushuyu) 
+Following up from our previous mention [last month](https://yuzu-mirror.github.io/entry/yuzu-progress-report-nov-2021/#graphical-fixes), [liushuyu](https://github.com/liushuyu) 
 continues to fight against the weirdness of [Flatpak](https://flatpak.org/).
 
 [NVDEC requirements are now more flexible](https://github.com/yuzu-emu/yuzu/pull/7565), the CUDA libraries are no longer mandatory, without actually affecting CUDA 

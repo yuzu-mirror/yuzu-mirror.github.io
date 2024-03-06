@@ -12,7 +12,7 @@ A major milestone in yuzu has been reached, as it can now boot a handful of the 
   {{< youtube 1VzyIHMTA2Q >}}
 </div>
 
-These changes are now available in the latest [yuzu canary builds](https://yuzu-emu.org/downloads/)!
+These changes are now available in the latest [yuzu canary builds](https://yuzu-mirror.github.io/downloads/)!
 
 Currently, only a few games are confirmed to boot, including:
 

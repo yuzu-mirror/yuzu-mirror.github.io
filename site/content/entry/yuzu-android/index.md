@@ -278,7 +278,7 @@ The Button and Stick placements can be adjusted here as well.
 
 # Setup guide
 
-If you need help setting up yuzu, our [Quickstart Guide](https://yuzu-emu.org/help/quickstart/) will provide all the steps required to get up and running.
+If you need help setting up yuzu, our [Quickstart Guide](https://yuzu-mirror.github.io/help/quickstart/) will provide all the steps required to get up and running.
 All the same requirements apply, including having a PC and the mandatory hacked Nintendo Switch.
 The yuzu on Android onboarding process will have you select the location of your `prod.keys` file.
 

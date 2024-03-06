@@ -13,7 +13,7 @@ tons of kernel changes, UI improvements, and more!
 
 ## Project Texture Reaper
 
-An old debt we owed since the release of the [Texture Cache Rewrite](https://yuzu-emu.org/entry/yuzu-tcr/) was `Project Texture Reaper`, a `GPU Cache Garbage Collector`,
+An old debt we owed since the release of the [Texture Cache Rewrite](https://yuzu-mirror.github.io/entry/yuzu-tcr/) was `Project Texture Reaper`, a `GPU Cache Garbage Collector`,
 originally started by [Rodrigo](https://github.com/ReinUsesLisp) and finished by [Blinkhawk](https://github.com/FernandoS27) with new and very important optimizations.
 
 [This garbage collector](https://github.com/yuzu-emu/yuzu/pull/6465) has the task of freeing VRAM space by removing the least used resources (textures and buffers), 
@@ -60,7 +60,7 @@ Originally, implementing `fastmem` in yuzu wasn't considered an option as there 
 However, due to a lack of documentation of this feature (thanks Microsoft), our devs didn't know they could use it.
 We'd like to thank [BreadFish64](https://github.com/BreadFish64/) for informing our devs about this change, and [bylaws](https://github.com/bylaws) for [updating Microsoft's documentation regarding this behaviour](https://github.com/MicrosoftDocs/sdk-api/pull/799). 
 As previously mentioned, this feature is incompatible with Windows versions older than 1803. Using an older Windows version will cause yuzu to fallback to the old `MMU` implementation — although this requirement could change in the future.
-If you are interested in a more detailed explanation of how it works and the limitations that prevented its implementation, feel free to read the [dedicated article for fastmem](https://yuzu-emu.org/entry/yuzu-fastmem/).
+If you are interested in a more detailed explanation of how it works and the limitations that prevented its implementation, feel free to read the [dedicated article for fastmem](https://yuzu-mirror.github.io/entry/yuzu-fastmem/).
 
 {{< single-title-imgs
     "Some of the measured performance gains, in FPS"
@@ -159,7 +159,7 @@ Some examples of games that have full dynamic FPS support are:
 ASTC texture decoding is a complex topic when it comes to emulation, as no desktop graphics card has the required hardware support needed to process these heavily compressed textures. 
 The only exception is Intel with their integrated HD Graphics and UHD Graphics series.
 
-[In the past,](https://yuzu-emu.org/entry/yuzu-progress-report-feb-2021/) epicboy implemented a way to accelerate ASTC texture decoding via the use of `Compute Shaders`,
+[In the past,](https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2021/) epicboy implemented a way to accelerate ASTC texture decoding via the use of `Compute Shaders`,
 improving decoding performance considerably thanks to taking advantage of the great computing power of modern GPUs.
 
 The issue is that in some games, `Astral Chain` for example, a synchronization issue caused yuzu to try to access a texture before its decoding was finished, resulting in 
@@ -167,7 +167,7 @@ driver panics and application crashes.
 [Implementing various optimizations and enhancements to the GPU accelerated decoder](https://github.com/yuzu-emu/yuzu/pull/6496) solved those crashes, even on a simple GT 
 730, a card 41.5x times weaker than an RTX 2080 SUPER in compute performance.
 
-Now that [Project Hades](https://yuzu-emu.org/entry/yuzu-hades/) is finished, there are plans to implement performance optimizations on the ASTC GPU accelerated decoder.
+Now that [Project Hades](https://yuzu-mirror.github.io/entry/yuzu-hades/) is finished, there are plans to implement performance optimizations on the ASTC GPU accelerated decoder.
 
 Prior to this work, [a toggle to disable the GPU accelerated decoder](https://github.com/yuzu-emu/yuzu/pull/6464) was added for debugging purposes.
 It’s no longer needed, but if anyone is curious about how much of a difference decoding with the CPU makes, the option is in `Emulation > Configure… > Graphics > 
@@ -295,7 +295,7 @@ Maide [put a stop to this](https://github.com/yuzu-emu/yuzu/pull/6402), improvin
 
 ## Future projects
 
-With Project Hades [(our new shader decompiler)](https://yuzu-emu.org/entry/yuzu-hades/), Rodrigo continues with his crazy experiments, bunnei has yet more kernel changes in the oven, and german77 and Morph continue
+With Project Hades [(our new shader decompiler)](https://yuzu-mirror.github.io/entry/yuzu-hades/), Rodrigo continues with his crazy experiments, bunnei has yet more kernel changes in the oven, and german77 and Morph continue
 to work on their top secret projects.
 
 More GPU related optimizations are underway, and users should keep a keen eye on the horizon.

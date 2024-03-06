@@ -175,7 +175,7 @@ With these changes, AMD users suffering from the Pentelas/DLC vertex explosion b
 
 But you know what would help even more? If epicboy also added more optimizations for the AMD proprietary OpenGL driver. {{< gh-hovercard "12437" "Which is exactly what he did." >}}
 
-With the release of the new OpenGL driver back in [July of 2022](https://yuzu-emu.org/entry/yuzu-progress-report-jul-2022/#amd-opengl-25-years-in-the-making), several unsavoury workarounds that yuzu code had for the red vendor could be removed (and now have been), improving performance.
+With the release of the new OpenGL driver back in [July of 2022](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jul-2022/#amd-opengl-25-years-in-the-making), several unsavoury workarounds that yuzu code had for the red vendor could be removed (and now have been), improving performance.
 
 ## Android adventures, and kernels with benefits
 

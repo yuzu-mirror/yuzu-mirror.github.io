@@ -71,7 +71,7 @@ byte[] additionally identified a case of the opposite, where a format was suppor
 
 A few GPU changes not related to Xenoblade also made it in this month.
 
-After years, since the beginning of our [Vulkan backend](https://yuzu-emu.org/entry/yuzu-vulkan/), yuzu finally added {{< gh-hovercard "8735" "support for VSync in Vulkan" >}} by new contributor [djrobx](https://github.com/djrobx). 
+After years, since the beginning of our [Vulkan backend](https://yuzu-mirror.github.io/entry/yuzu-vulkan/), yuzu finally added {{< gh-hovercard "8735" "support for VSync in Vulkan" >}} by new contributor [djrobx](https://github.com/djrobx). 
 As described by the pull request adding it, if the emulation and display are very close to precise sync, there can be fits of juddering when the newly generated frames don't decisively fall as next to be displayed. 
 This change allows yuzu to completely synchronize frames with the monitor refresh rate, preventing any juddering. 
 Thank you very much!
@@ -267,7 +267,7 @@ If any user suffered from this and can’t remove the files, open the Command Pr
 #### Intel ARC joins the fun
 
 We received information that early adopters of A380 Intel GPUs had issues running their games using Vulkan.
-Since this hardware is not globally available yet, it’s not easy for our developers and testers to get their hands on it, so please [post issues in our GitHub](https://github.com/yuzu-emu/yuzu/issues) including [log files](https://yuzu-emu.org/help/reference/log-files/), or contact us on our [forums](https://community.citra-emu.org/c/yuzu-support/14) or our [Discord server](https://discord.gg/u77vRWY).
+Since this hardware is not globally available yet, it’s not easy for our developers and testers to get their hands on it, so please [post issues in our GitHub](https://github.com/yuzu-emu/yuzu/issues) including [log files](https://yuzu-mirror.github.io/help/reference/log-files/), or contact us on our [forums](https://community.citra-emu.org/c/yuzu-support/14) or our [Discord server](https://discord.gg/u77vRWY).
 We’ll ask for more information, if needed, to find the reason for this.
 Hurray for the early adopter woes.
 
@@ -319,7 +319,7 @@ Working on the finishing touches for `Project London`, Tobi has not been passive
 	"./ldn.png| The most fun ever doing internal testing"
   >}}
 
-Oh! How could we almost forget? `Project London`, LDN support, is _finally_ out now! More information in [the dedicated article](https://yuzu-emu.org/entry/ldn-is-here/) and [Multiplayer Guide](https://yuzu-emu.org/help/feature/multiplayer/).
+Oh! How could we almost forget? `Project London`, LDN support, is _finally_ out now! More information in [the dedicated article](https://yuzu-mirror.github.io/entry/ldn-is-here/) and [Multiplayer Guide](https://yuzu-mirror.github.io/help/feature/multiplayer/).
 We’ll recap the release in the next Progress Report.
 
 That’s all folks! Thank you so much for sticking with us, and I hope to see you all next time!

@@ -161,7 +161,7 @@ While rewriting the kernel for Prometheus, [Blinkhawk](https://github.com/Fernan
     "./toad.png| Good performance even on low-end hardware!"
   >}}
 
-Additionally, the merge of this work into the Master branch also means that Multicore support is now working in Mainline! Thanks [Blinkhawk](https://github.com/FernandoS27) for all your hard work on this! Please refer to our previous [May progress report](https://yuzu-emu.org/entry/yuzu-progress-report-may-2020/) and the dedicated [Project Prometheus article](https://yuzu-emu.org/entry/yuzu-prometheus/) to read more about this crucial new feature.
+Additionally, the merge of this work into the Master branch also means that Multicore support is now working in Mainline! Thanks [Blinkhawk](https://github.com/FernandoS27) for all your hard work on this! Please refer to our previous [May progress report](https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2020/) and the dedicated [Project Prometheus article](https://yuzu-mirror.github.io/entry/yuzu-prometheus/) to read more about this crucial new feature.
 
 ## Future projects
 

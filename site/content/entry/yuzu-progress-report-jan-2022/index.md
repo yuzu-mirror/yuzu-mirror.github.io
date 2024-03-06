@@ -14,7 +14,7 @@ What a month we've had, yuz-ers. This time, we offer you a plethora of kernel ch
 
 [It’s not over yet](https://www.youtube.com/watch?v=g02QU-xPV1I).
 
-[As you know](https://yuzu-emu.org/entry/yuzu-progress-report-feb-2021/#paint-me-like-one-of-your-french-bits), regular NVIDIA desktop and laptop GPUs don't support decoding ASTC textures, so yuzu makes use of the compute capabilities of the GPU to parallelize the process. However, the recent release of the 511.XX drivers introduced an issue that affected our compute shader based accelerated ASTC texture decoding.
+[As you know](https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2021/#paint-me-like-one-of-your-french-bits), regular NVIDIA desktop and laptop GPUs don't support decoding ASTC textures, so yuzu makes use of the compute capabilities of the GPU to parallelize the process. However, the recent release of the 511.XX drivers introduced an issue that affected our compute shader based accelerated ASTC texture decoding.
 
 {{< single-title-imgs-compare
 	"Crispy (Super Mario Odyssey)"
