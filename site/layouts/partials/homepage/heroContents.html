@@ -1,0 +1,74 @@
+<div class="columns">
+    <!-- Left panel -->
+    <div class="column is-centered-vertically is-5">
+        <h2 class="title">{{ .Site.Params.Tagline }}</h2>
+        <div class="content">
+            <p>yuzu is an experimental open-source emulator for the Nintendo Switch from the creators of Citra.</p>
+            <p>It is written in C++ with portability in mind, with builds actively maintained for Windows, Linux and Android.</p>
+        </div>
+        <div>
+            <a class="button mr-sm is-medium is-light is-hidden-touch" href="/downloads">
+                <span class="icon">
+                    <i class="fas fa-arrow-down"></i>
+                </span>
+                <span>Download</span>
+            </a>
+
+            <a class="button mr-sm is-medium is-primary is-inverted is-outlined" href="{{ .Site.Params.GithubURL }}" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Source Code</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Right panel -->
+    <div class="column is-centered-vertically is-7 is-hidden-mobile">
+        <div class="container is-fluid is-marginless">
+            <figure class="image">
+                {{ partial "inline/heroSvg" }}
+            </figure>
+
+            <figure class="is-overlay offset-switch-overlay">
+                <div class="glide">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            {{ $jumbotronImages := resources.Match "/images/jumbotron/*" }}
+                            {{ range $index, $element := $jumbotronImages }}
+                            {{ $jumbotronThumb := $element.Fill "426x240 jpg q95" }}
+                            {{ $fileTitle := (index (split .Name "-") 1) }}
+                            {{ $fileTitle := (index (split $fileTitle ".") 0) }}
+                            <li class="glide__slide">
+                                <div class="image is-16by9">
+                                    <div class="carousel-caption">{{ $fileTitle }}</div>
+                                    <img {{if eq $index 0}}
+                                         src="{{ $jumbotronThumb.Permalink }}"
+                                         {{else}}
+                                         class="lazy-load"
+                                         data-src="{{ $jumbotronThumb.Permalink }}"
+                                         {{end}}
+                                         alt="{{ $fileTitle }}">
+                                </div>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+
+                    <div class="glide__arrows is-overlay" data-glide-el="controls">
+                        <a class="glide__arrow glide__arrow--left is-pulled-left" data-glide-dir="<">
+                            <span class="icon is-large">
+                                <i class="fas fa-arrow-left"></i>
+                            </span>
+                        </a>
+                        <a class="glide__arrow glide__arrow--right is-pulled-right" data-glide-dir=">">
+                            <span class="icon is-large">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </figure>
+        </div>
+    </div>
+</div>
