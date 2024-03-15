@@ -49,7 +49,7 @@ timeout = 300000
   name = "Profile"
   weight = 7
   identifier = "profile"
-  url = "https://profile.yuzu-emu.org"
+  url = "https://profile.yuzu-mirror.github.io"
 
 [Params]
   Tenant = "yuzu"

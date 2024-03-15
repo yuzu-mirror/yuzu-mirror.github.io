@@ -16,7 +16,7 @@ Your generous donation will go directly toward providing these to our team. Prev
 
 We will more than gladly accept a donation! __In particular, donations of Nintendo Switch Hardware that are firmware 3.0.0 or lower are of particular use to the team.__
 
-If you’d like to donate, please contact: [donations@yuzu-emu.org](mailto:donations@yuzu-emu.org)
+If you’d like to donate, please contact: [donations@yuzu-mirror.github.io](mailto:donations@yuzu-mirror.github.io)
 
 Alternatively, you can become a Patreon supporter at our [Patreon page](https://www.patreon.com/yuzuteam).
 

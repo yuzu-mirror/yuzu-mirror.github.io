@@ -1,0 +1,66 @@
+{{ define "header" }} {{ partial "homepage/hero" . }}
+
+<!-- Wiki Hero -->
+<section class="hero is-info">
+    <div class="hero-body py-lg">
+        <div class="container">
+            <nav class="columns">
+
+                <a class="column has-text-centered" href="{{ .Site.BaseURL }}/help/quickstart/">
+                    <span class="icon is-actionable is-large">
+                        <i class="fas fa-3x fa-code"></i>
+                    </span>
+                    <p class="title is-4">
+                        <strong>Getting Started</strong>
+                    </p>
+                    <p class="subtitle is-6">How to get up and running with games</p>
+                </a>
+
+                <a class="column has-text-centered" href="{{ .Site.BaseURL }}/wiki/switch-hardware-and-software/">
+                    <span class="icon is-actionable is-large">
+                        <i class="fas fa-3x fa-terminal"></i>
+                    </span>
+                    <p class="title is-4">
+                        <strong>Reverse Engineering</strong>
+                    </p>
+                    <p class="subtitle is-6">Learn the Switch hardware and software stack</p>
+                </a>
+
+                <a class="column has-text-centered" href="{{ .Site.BaseURL }}/wiki/switch-homebrew/">
+                    <span class="icon is-actionable is-large">
+                        <i class="fas fa-3x fa-gamepad"></i>
+                    </span>
+                    <p class="title is-4">
+                        <strong>Homebrew Apps</strong>
+                    </p>
+                    <p class="subtitle is-6">Resources to get started with Switch homebrew</p>
+                </a>
+            </nav>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ define "main" }}
+<section class="section">
+    <div class="columns">
+        {{ range first 2 (where (where .Site.RegularPages ".Params.twitter" "==" nil) "Type" "entry") }}
+        <div class="column is-half">
+                {{ partial "entry/summary" . }}
+            </div>
+        {{ end }}
+    </div>
+
+    <div class="columns is-multiline">
+        {{ range first 4 (where (where .Site.RegularPages ".Params.twitter" "!=" nil) "Type" "entry") }}
+        <div class="column is-half">
+            {{ partial "entry/summary" . }}
+        </div>
+        {{ end }}
+    </div>
+    
+    <div class="has-text-centered">
+        <a class="pagination-next" href="{{ .Site.BaseURL }}/entry/">View more posts</a>
+    </div>
+</section>
+{{ end }}
