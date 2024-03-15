@@ -17,7 +17,7 @@ Let's jump right in!
 As we mentioned, the yuzu installer is available for Linux.
 The installer will distribute `AppImages` of Mainline and Early Access builds for our Linux users.
 
-You can now download the new installer from our [Downloads page](https://yuzu-mirror.github.io/downloads/).
+You can now download the new installer from our [Downloads page](https://yuzu-emu.org/downloads/).
 
 (Note: Early Access builds require a subscription to our [Patreon](https://www.patreon.com/yuzuteam). We appreciate any and all support!)
 

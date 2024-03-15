@@ -47,7 +47,7 @@ We will be working to polish this feature and make this available to the Mainlin
 
 <article class="message has-text-weight-semibold"><div class="message-body"><p>
 If you're using the yuzu installer, you'll automatically be updated to the latest build.<br>    
-If you're <b>not</b> using the yuzu installer, please download it from our <a href= https://yuzu-mirror.github.io/downloads/>Download</a> page. <br>
+If you're <b>not</b> using the yuzu installer, please download it from our <a href= https://yuzu-emu.org/downloads/>Download</a> page. <br>
 <br>
 We highly recommend using our installer to always stay up to date on both Mainline and Early Access builds.
 </p></div></article>
@@ -97,7 +97,7 @@ Please respect the `Preferred Game` listed in publicly hosted rooms, as even unr
 You can use these rooms for LAN mode games as well — instead of ZeroTier or Hamachi.</b>
 </p></div></article>
 
-Please visit [our multiplayer guide](https://yuzu-mirror.github.io/help/feature/multiplayer/) for further help with Hosting, Port Forwarding, Authentication, and Moderation of your publicly hosted rooms.
+Please visit [our multiplayer guide](https://yuzu-emu.org/help/feature/multiplayer/) for further help with Hosting, Port Forwarding, Authentication, and Moderation of your publicly hosted rooms.
 
 ## Development
 

@@ -6,7 +6,7 @@ coauthor = "GoldenX86"
 forum = 348059
 +++
 
-Hey there, yuz-ers! The follow-up to our [previous big code rewrite](https://yuzu-mirror.github.io/entry/yuzu-tcr/) is finally here: the Buffer Cache Rewrite!
+Hey there, yuz-ers! The follow-up to our [previous big code rewrite](https://yuzu-emu.org/entry/yuzu-tcr/) is finally here: the Buffer Cache Rewrite!
 This massive undertaking not only improves performance significantly, but also simplifies the code for our developers.
 Now let's get this article started!
 
@@ -112,7 +112,7 @@ As a special mention, AMD Vega based integrated GPUs show an up to 223% increase
 ## Fin
 
 With that, we conclude our coverage of the new Buffer Cache Rewrite.
-As always, we would like to remind users that the features released in [Early Access](https://yuzu-mirror.github.io/help/early-access/) are still being worked on.
+As always, we would like to remind users that the features released in [Early Access](https://yuzu-emu.org/help/early-access/) are still being worked on.
 If you come across any bugs, issues, performance loss, crashes, or regressions with this new feature, please
 reach out to us on our [Discord server](https://discord.com/invite/u77vRWY) and share your findings.
 

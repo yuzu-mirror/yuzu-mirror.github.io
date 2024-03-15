@@ -39,7 +39,7 @@ You’ll still get the same daily yuzu updates, which will include new features 
 ## How do I install yuzu Early Access?
 
 Follow this detailed step-by-step guide, to install yuzu `Early Access` via the Installer. <br>
-[**Click here for the guide**](https://yuzu-mirror.github.io/help/early-access/)
+[**Click here for the guide**](https://yuzu-emu.org/help/early-access/)
 
 ## Why did we make this change?
 

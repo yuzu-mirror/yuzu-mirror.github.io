@@ -14,7 +14,7 @@ Let's get started!
 <!--more-->
 &nbsp;
 
-Project Hades is now available in the latest [yuzu Early Access build](https://yuzu-mirror.github.io/help/early-access/).
+Project Hades is now available in the latest [yuzu Early Access build](https://yuzu-emu.org/help/early-access/).
 As always, we ask that you test various games with these builds and if you encounter any issues, bugs, or crashes, please reach out to us via the [Discord](https://discord.gg/u77vRWY) Patreon channels.
 <article class="message is-warning"><div class="message-header"><p>Notice</p></div><div class="message-body"><p style="color:white">The entire shader generation process has been redesigned from the ground up, thus existing shader caches have been invalidated. Users will need to build their shader caches again, from scratch, with Project Hades.</p></div></article>
 
