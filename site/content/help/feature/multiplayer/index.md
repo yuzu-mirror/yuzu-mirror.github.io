@@ -8,7 +8,7 @@ description = "yuzu's multiplayer feature has the ability to emulate local wirel
 
 Unlike single console netplay used in most emulators, users won’t have to worry about desyncs, synchronizing saves, or any other issues typical of netplay. Each user is using their instance of *yuzu* as a unique emulated Switch that is communicating with everyone else through a *multiplayer room*, a server that can be hosted by anyone for connected clients to exchange data with each other.
 
-You can learn more about *yuzu*'s multiplayer features in [this article](https://yuzu-emu.org/entry/ldn-is-here/).
+You can learn more about *yuzu*'s multiplayer features in [this article](https://yuzu-mirror.github.io/entry/ldn-is-here/).
 
 ## Hosting Rooms
 If you just want to play with your friends, **you do not need to create your own room**. You can just pick a room from our Public Room Browser, where plenty of public rooms hosted by us and the community are already available for use.
@@ -48,7 +48,7 @@ sudo docker run -d \
   --max_members 4 \
   --token "<INSERT YUZU ACCOUNT TOKEN HERE>" \
   --enable-yuzu-mods \
-  --web-api-url https://api.yuzu-emu.org
+  --web-api-url https://api.yuzu-mirror.github.io
 ```
 Make sure the ports specified in `--publish` matches the port specified in `--port`, so that *Docker* can correctly forward your server's ports to the container.
 
@@ -59,7 +59,7 @@ If you are on Windows, it is also possible to host rooms using a standalone exec
 
 Steps:
 
-1. If you do not have a *yuzu* installation yet, install it with the installer from our [official website](https://yuzu-emu.org).
+1. If you do not have a *yuzu* installation yet, install it with the installer from our [official website](https://yuzu-mirror.github.io).
 1. Navigate to the folder you installed *yuzu* to, and go into `yuzu-windows-msvc` or `yuzu-windows-msvc-early-access`.
     * If you cannot recall the installation folder, right clicking on a shortcut and clicking `Open File Location` will directly bring you into the `yuzu-windows-msvc` or `yuzu-windows-msvc-early-access` folder.
     * Make sure the folder you are in contains the `yuzu-room` executable.
@@ -76,7 +76,7 @@ yuzu-room ^
   --max_members 4 ^
   --token "<INSERT YUZU ACCOUNT TOKEN HERE>" ^
   --enable-yuzu-mods ^
-  --web-api-url https://api.yuzu-emu.org ^
+  --web-api-url https://api.yuzu-mirror.github.io ^
   --ban-list-file "<INSERT BAN LIST FILE PATH HERE>"
 pause
 ```
@@ -98,7 +98,7 @@ By default, rooms will be hosted Public. If you'd like to host a private one ins
 |`--port`|Yes|Port number to host your room on (0-65535). You should use a port that is not already used by other applications (typically a high enough port will work). Though unrecommended due to bandwidth reasons, it is possible to host multiple rooms on a single server provided the ports are distinct. **Remember to configure `Port Forwarding` for the ports!**
 |`--max-members`|Yes|Maximum number of members for your room (2-16). *Note that rooms that are too large may result in slowdowns or even disconnections in certain games.*
 |`--password`|No|An optional password to limit access to your room.
-|`--token`|Public Rooms|Your *yuzu* Community user token. Do not know your token yet? Get it [here](https://yuzu-emu.org/wiki/yuzu-web-service/).
+|`--token`|Public Rooms|Your *yuzu* Community user token. Do not know your token yet? Get it [here](https://yuzu-mirror.github.io/wiki/yuzu-web-service/).
 |`--web-api-url`|Public Rooms|URL to the *yuzu* Web API. You should not change this.
 |`--ban-list-file`|No|This is a file which yuzu will store ban records in. Banning would still work even if you do not specify this, but the bans will be lost once you shut down the room.
 |`--log-file`|No|File path to store the logs.

@@ -233,7 +233,7 @@ seen so far were getting stuck, either hanging or deadlocking because they were 
 Apart from the work mentioned above, we have also had minor fixes which helped us boot further in
 games like Super Mario Odyssey, 1-2-Switch, and The Binding of Issac.
 
-***Check out the next part of this report [here](https://yuzu-emu.org/entry/yuzu-progress-report-2018-p2)***
+***Check out the next part of this report [here](https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2)***
 
 <h3 align="center">
 <b><a href="https://github.com/yuzu-emu/yuzu/">Contributions are always welcome !</a></b>

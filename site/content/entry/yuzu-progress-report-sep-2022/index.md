@@ -12,8 +12,8 @@ Hello yuz-ers! We have so much to talk about this month. From game fixes, input 
 
 ## Project London: open-source, online Local Wireless emulation
 
-As promised in the [previous progress report](https://yuzu-emu.org/entry/yuzu-progress-report-aug-2022/#future-projects), 
-and explained in its [dedicated article](https://yuzu-emu.org/entry/ldn-is-here/), {{< gh-hovercard "8876" "LDN support is here and available to all users!" >}}
+As promised in the [previous progress report](https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2022/#future-projects), 
+and explained in its [dedicated article](https://yuzu-mirror.github.io/entry/ldn-is-here/), {{< gh-hovercard "8876" "LDN support is here and available to all users!" >}}
 Enjoy pwning some noobs in your favourite games.
 But before we explain the how, let's cover some theory.
 
@@ -24,7 +24,7 @@ But before we explain the how, let's cover some theory.
 The Nintendo Switch offers 4 methods for multiplayer gameplay:
 
 - Good, old, couch *local multiplayer*. While this normally only refers to people in the same physical room, the community has been enjoying the benefits of remote access streaming, with services like [Parsec](https://parsec.app/), to play online with the lowest possible latency.
-- Local Area Network (LAN) multiplayer. This is when multiple Switches connect to the same local network. This option has been emulated and available in yuzu [for quite a while now](https://yuzu-emu.org/entry/yuzu-progress-report-aug-2021/#lan-party-time). It’s limited to very few games, and it doesn’t have good tolerance for lag.
+- Local Area Network (LAN) multiplayer. This is when multiple Switches connect to the same local network. This option has been emulated and available in yuzu [for quite a while now](https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2021/#lan-party-time). It’s limited to very few games, and it doesn’t have good tolerance for lag.
 - LDN multiplayer, more commonly known as Local Wireless, the star of this section. This is when one Switch hosts a session over the built-in Switch WiFi hardware while others connect to it as guests. The trick here is that nothing stops emulators from using a server infrastructure to host rooms so users from anywhere in the world, including locally, can join and smash each other. This method is far more supported by games than LAN.
 - Nintendo Online. This is the paid Nintendo service to play online, which also includes other bonuses such as official emulators to play older titles. We have no plans to offer support for Nintendo Online in the near or far future.
 
@@ -45,7 +45,7 @@ From there, double-clicking a room will allow the user to join it. Keep in mind,
   >}}
 
 Speaking of user-hosted rooms, the `Create Room` option in the `Multiplayer` menu allows users to host their own rooms, with custom player limits and optional password security.
-Some ports need to be forwarded in the host’s router/modem configuration, so please [follow our guide here](https://yuzu-emu.org/help/feature/multiplayer/).
+Some ports need to be forwarded in the host’s router/modem configuration, so please [follow our guide here](https://yuzu-mirror.github.io/help/feature/multiplayer/).
 
 {{< imgs
 	"./create.png| Feel free to host any game you want!"
@@ -124,7 +124,7 @@ Some systems, like Steam, don't like yuzu's behaviour of spawning a new process 
 
 After three months of regression solving and the usual nasty delays, `Project Y.F.C.` Part 1 is finally merged to Mainline!
 You can find more information about it, as well as what’s expected in the near future for Part 2 
-[here](https://yuzu-emu.org/entry/yuzu-progress-report-jul-2022/#part-1-of-project-yfc).
+[here](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jul-2022/#part-1-of-project-yfc).
 
 One regression remains, for now. 
 It affects certain puzzles in the single player mode of `Splatoon 2`.

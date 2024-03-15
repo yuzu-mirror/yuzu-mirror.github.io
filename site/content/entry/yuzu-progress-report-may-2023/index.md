@@ -37,7 +37,7 @@ Let’s begin with the most complex problem the Princess introduced the project 
 As there isn't a single dedicated desktop or laptop graphics card that supports the native decoding of [ASTC textures](https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression) (with the exception of Intel iGPUs), yuzu is forced to transcode them on the fly into a safe and lossless format that all GPUs support; in this case, the `RGBA8` format.
 
 This was perfectly fine until now (even on 2GB GPUs), since `ASTRAL CHAIN` was the only game that made "extensive" use of ASTC textures, shipping with 4K textures on a mobile device intended for 1080p and 720p screen resolutions. 
-Our garbage collector, introduced two years ago with [Project Hades](https://yuzu-emu.org/entry/yuzu-hades/), which our veteran users know as “the memory Reaper”, was tuned for this worst case scenario at the time.
+Our garbage collector, introduced two years ago with [Project Hades](https://yuzu-mirror.github.io/entry/yuzu-hades/), which our veteran users know as “the memory Reaper”, was tuned for this worst case scenario at the time.
 
 But what happens if a game with many more textures and a teletransportation system that allows the player to reach different regions in-game (and, in turn, load a truckload of new, different textures) releases?
 What if this hypothetical game made use of dozens and dozens of huge ASTC textures?
@@ -140,7 +140,7 @@ And for integrated GPU users with 16GB of system RAM or less, such as the Steam 
     "./astcfix.mp4"
     >}}
 
-That wraps up the list of changes made to memory management to allow `Tears of the Kingdom` to be playable in at least the components listed in our [hardware requirements](https://yuzu-emu.org/help/quickstart/#hardware-requirements).
+That wraps up the list of changes made to memory management to allow `Tears of the Kingdom` to be playable in at least the components listed in our [hardware requirements](https://yuzu-mirror.github.io/help/quickstart/#hardware-requirements).
 
 These changes would not be necessary if GPUs just supported ASTC textures.
 Wouldn't you like your games to be no bigger than 100GB instead of having software features that ruin image quality, such as frame generation?
@@ -255,7 +255,7 @@ We’re following one of the most important rules of coding, “Make it work. Ma
 
 As this is a particularly popular game (and for good reason), here are some recommendations that user reports and fixes have taught us.
 
-- This game is very demanding on hardware. What we list in yuzu’s `recommended` [hardware requirements](https://yuzu-emu.org/help/quickstart/#hardware-requirements) is the minimum needed to sustain 30 FPS in most areas. A 6-core desktop Zen 2/11th gen Core, 16GB of RAM, and a GPU with at least 6GB of VRAM are the baseline for now.
+- This game is very demanding on hardware. What we list in yuzu’s `recommended` [hardware requirements](https://yuzu-mirror.github.io/help/quickstart/#hardware-requirements) is the minimum needed to sustain 30 FPS in most areas. A 6-core desktop Zen 2/11th gen Core, 16GB of RAM, and a GPU with at least 6GB of VRAM are the baseline for now.
 - The latest CPUs (Zen 4/13th gen Core, always speaking of desktop products) provide massive improvements in IPC, RAM bandwidth, and cache sizes. Where a Ryzen 7 5800X3D barely manages 55 FPS, a Ryzen 5 7600 reaches 90 FPS.
 - Normal GPU accuracy can be used to improve performance safely.
 - Unsafe CPU accuracy can improve performance at the cost of small inaccuracies.
@@ -274,9 +274,9 @@ As this is a particularly popular game (and for good reason), here are some reco
 
 {{< gh-hovercard "10508" "Bet you didn’t expect this." >}}
 
-That’s right, with the blessing from Skyline’s [bylaws](https://github.com/bylaws), help from Dolphin’s [t895](https://github.com/t895) and Citra’s [GPUCode](https://github.com/GPUCode), work from yuzu’s and Citra’s [flTobi](https://github.com/FearlessTobi), [bunnei](https://github.com/bunnei), [Merry](https://github.com/merryhime), [Flamboyant Ham](https://github.com/Schplee), [german77](https://github.com/german77), and more, yuzu is now [available for Android devices](https://yuzu-emu.org/downloads/#android)!
+That’s right, with the blessing from Skyline’s [bylaws](https://github.com/bylaws), help from Dolphin’s [t895](https://github.com/t895) and Citra’s [GPUCode](https://github.com/GPUCode), work from yuzu’s and Citra’s [flTobi](https://github.com/FearlessTobi), [bunnei](https://github.com/bunnei), [Merry](https://github.com/merryhime), [Flamboyant Ham](https://github.com/Schplee), [german77](https://github.com/german77), and more, yuzu is now [available for Android devices](https://yuzu-mirror.github.io/downloads/#android)!
 
-We recommend that you read the dedicated yuzu on Android article [here](https://yuzu-emu.org/entry/yuzu-android/).
+We recommend that you read the dedicated yuzu on Android article [here](https://yuzu-mirror.github.io/entry/yuzu-android/).
 In this section, we will give you an overview of our future plans, some tips on settings and hardware requirements, and a realistic outlook on what you can expect from yuzu on Android right now.
 
 The Android version of yuzu was not an easy feat. It took us almost eight months of hard work to make it happen. 
@@ -422,7 +422,7 @@ It is also compatible with Adreno 600 series hardware, so it’s a simple global
 
 There have been reports of users not being able to load custom drivers — we are still investigating this, but there's still a lot of work to do.
 
-For those interested in playing with the source, we have a work-in-progress build guide [here](https://yuzu-emu.org/wiki/building-for-android/).
+For those interested in playing with the source, we have a work-in-progress build guide [here](https://yuzu-mirror.github.io/wiki/building-for-android/).
 
 That’s all fo… What do you mean there’s still a whole article to write?
 Oh right, we have more to talk about!
@@ -771,7 +771,7 @@ We hope the 16GB version at least comes equipped with GDDR6X VRAM, which would i
 
 ### AMD
 
-AMD has shown steady progress with each new driver release and, thanks to this, the experience on yuzu is in very good shape for Radeon owners, besides some documented hardware limitations causing graphical issues we've mentioned [in the past](https://yuzu-emu.org/entry/yuzu-progress-report-apr-2023/#amd-delivering-on-their-promises).
+AMD has shown steady progress with each new driver release and, thanks to this, the experience on yuzu is in very good shape for Radeon owners, besides some documented hardware limitations causing graphical issues we've mentioned [in the past](https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2023/#amd-delivering-on-their-promises).
 
 The main exception is a rendering issue affecting `Tears of the Kingdom`, which only happens with RDNA3 hardware, the RX 7000 series.
 

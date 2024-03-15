@@ -12,7 +12,7 @@ Hi yuz-ers! We’re very excited to offer you one of the biggest code rewrites i
 
 ## But what is the TCR?
 
-yuzu started as a fork of [Citra](https://github.com/citra-emu/citra), so Citra's texture cache (or rasterizer cache, as it was called at the time) was used in the early days of yuzu. However, this cache only supported OpenGL, so one of the first efforts when adding support for [Vulkan](https://yuzu-emu.org/entry/yuzu-vulkan/) was to make the code more generic, helping in GPU emulation.
+yuzu started as a fork of [Citra](https://github.com/citra-emu/citra), so Citra's texture cache (or rasterizer cache, as it was called at the time) was used in the early days of yuzu. However, this cache only supported OpenGL, so one of the first efforts when adding support for [Vulkan](https://yuzu-mirror.github.io/entry/yuzu-vulkan/) was to make the code more generic, helping in GPU emulation.
 
 When this was being worked on, we were still learning how the Nintendo Switch's GPU worked (we still are, but even more so then). Some design decisions taken at the time stuck with the codebase making things harder to change in the future. It was also easier to break with unrelated changes.
 

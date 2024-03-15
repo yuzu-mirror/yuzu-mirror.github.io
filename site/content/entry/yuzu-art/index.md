@@ -49,7 +49,7 @@ This approach was necessary, because of how yuzu was initially designed.
 Originally, yuzu's memory reads were `reactive` — meaning textures were downloaded only when games tried to read them and hence it wasn't possible to know which textures were going to be downloaded.
 
 Although these memory reads were fixed a few months later, the Scaler still needed changes to be made to the management of uniform buffers, so that it would be supported on drivers other than Nvidia.
-However, the planned rewrites of the [**Texture Cache**](https://yuzu-emu.org/entry/yuzu-tcr/), [**Buffer Cache**](https://yuzu-emu.org/entry/yuzu-bcr/), and the massive GPU emulation overhaul with [**Project Hades**](https://yuzu-emu.org/entry/yuzu-hades/) further delayed developers from working on the Scaler, resulting in it never getting merged.
+However, the planned rewrites of the [**Texture Cache**](https://yuzu-mirror.github.io/entry/yuzu-tcr/), [**Buffer Cache**](https://yuzu-mirror.github.io/entry/yuzu-bcr/), and the massive GPU emulation overhaul with [**Project Hades**](https://yuzu-mirror.github.io/entry/yuzu-hades/) further delayed developers from working on the Scaler, resulting in it never getting merged.
 
 &nbsp;
 {{< single-title-imgs

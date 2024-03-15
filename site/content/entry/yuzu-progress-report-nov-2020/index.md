@@ -46,7 +46,7 @@ bunnei is still working on more cleanups and looking for things that can be furt
 
 ## The Texture Cache Rewrite
 
-We’ve already spoken in detail about [the Texture Cache Rewrite](https://github.com/yuzu-emu/yuzu/pull/4967) in its [dedicated article](https://yuzu-emu.org/entry/yuzu-tcr/), so in short, the `Texture Cache Rewrite` (which is not a shader cache change) is work done by [Rodrigo](https://github.com/ReinUsesLisp) to reimplement the old texture cache yuzu used, which was forked from [Citra.](https://github.com/citra-emu/citra) This effort took over 10000 lines of code, fixing graphical bugs in numerous games and improving performance along the way.
+We’ve already spoken in detail about [the Texture Cache Rewrite](https://github.com/yuzu-emu/yuzu/pull/4967) in its [dedicated article](https://yuzu-mirror.github.io/entry/yuzu-tcr/), so in short, the `Texture Cache Rewrite` (which is not a shader cache change) is work done by [Rodrigo](https://github.com/ReinUsesLisp) to reimplement the old texture cache yuzu used, which was forked from [Citra.](https://github.com/citra-emu/citra) This effort took over 10000 lines of code, fixing graphical bugs in numerous games and improving performance along the way.
 
 This paves the way for future important changes, like the `Buffer Cache Rewrite`, which is expected to not only continue to improve render accuracy, but to raise performance by optimizing the “hottest” code in the GPU section of our source, according to profiling. Afterwards, development of `Project Hades` is planned. This is a rewrite of the `Shader Cache`, with its main focus being improved precision and stability, and increased performance in Intel GPUs that are bottlenecked by the current implementation.
 

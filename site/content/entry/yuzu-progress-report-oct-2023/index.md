@@ -50,7 +50,7 @@ By {{< gh-hovercard "11852" "making vibration calls asynchronous," >}} vibration
 Undefined behaviour: the formal way to say “here be dragons”.
 It’s a good practice to avoid dragons ― I mean, undefined behaviour ― in your code, especially when dealing with a complex graphics API like Vulkan.
 
-Remember our explanation of `depth stencils` [back in August](https://yuzu-emu.org/entry/yuzu-progress-report-aug-2023/#more-gpu-changes)? You may wish to reread that, as it provides useful context to what we will talk about next.
+Remember our explanation of `depth stencils` [back in August](https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2023/#more-gpu-changes)? You may wish to reread that, as it provides useful context to what we will talk about next.
 
 When a game is using a depth buffer, it is usually drawing into a busy 3D scene while taking advantage of a hardware-accelerated process called depth testing.
 
@@ -224,7 +224,7 @@ Here’s the full list!
 - t895 moved the {{< gh-hovercard "11915" "game list loading process to a separate thread" >}} to reduce stuttering when opening yuzu. The process still takes a similar amount of time, but the perceived smoothness is very welcome.
 - t895 solved an issue that caused the {{< gh-hovercard "11916" "touch buttons overlay to get stuck" >}} while drawing the in-game menu from the left side.
 - While waiting for a controller settings menu, t895 fixed a bug that caused {{< gh-hovercard "11925" "all controller input to move to player 2" >}} on some devices, blocking users from playing most games. Devices with integrated controllers should have a much better experience now.
-- And finally, following the [recent changes](https://yuzu-emu.org/entry/yuzu-progress-report-sep-2023/#of-miis-and-applets) in the desktop version, t895 added a {{< gh-hovercard "11931" "menu to access the currently supported applets," >}} Album and Mii editor, along with the Cabinet applet to manage amiibo data. Wii think you will have fun!
+- And finally, following the [recent changes](https://yuzu-mirror.github.io/entry/yuzu-progress-report-sep-2023/#of-miis-and-applets) in the desktop version, t895 added a {{< gh-hovercard "11931" "menu to access the currently supported applets," >}} Album and Mii editor, along with the Cabinet applet to manage amiibo data. Wii think you will have fun!
 
 {{< single-title-imgs
     "We hope to expand this selection in the future"

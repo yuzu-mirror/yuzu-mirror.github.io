@@ -84,7 +84,7 @@ We measured an 8% performance increase in some games with a 5800X3D.
 Lower end systems could see bigger gains.
 
 GPUCode also fought against the rendering issues affecting `Mortal Kombat 1` and `Sonic Forces` when using Vulkan.
-For those deep into the yuzu lore, this is a compute shader implementation of {{< gh-hovercard "11556" "MSAA image copies," >}} similar to what epicboy [did back in February](https://yuzu-emu.org/entry/yuzu-progress-report-feb-2023/#other-gpu-and-video-changes).
+For those deep into the yuzu lore, this is a compute shader implementation of {{< gh-hovercard "11556" "MSAA image copies," >}} similar to what epicboy [did back in February](https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2023/#other-gpu-and-video-changes).
 As said back then, compared to OpenGL, Vulkan requires a lot more work.
 
 {{< single-title-imgs-compare

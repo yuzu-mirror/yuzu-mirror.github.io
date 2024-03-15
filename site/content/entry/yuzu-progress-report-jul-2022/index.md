@@ -213,7 +213,7 @@ In order to improve the ridiculous memory usage, byte[] {{< gh-hovercard "8684" 
 While this doesn’t solve the issue entirely, testing shows a 5GB reduction in RAM usage from just a single code line addition.
 
 Let’s stay on the subject of GPU emulation for a bit longer.
-In a past Progress Report, we explained how [toastUnlimited](https://github.com/lat9nq) [implemented a status check system](https://yuzu-emu.org/entry/yuzu-progress-report-may-2022/#vulkan-by-default) to ensure good Vulkan compatibility when opening yuzu for the first time.
+In a past Progress Report, we explained how [toastUnlimited](https://github.com/lat9nq) [implemented a status check system](https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2022/#vulkan-by-default) to ensure good Vulkan compatibility when opening yuzu for the first time.
 
 The original implementation worked by running a small Vulkan instance at boot, detecting if it crashed, and saving the result in the configuration file.
 On the next boot after the crash, yuzu informs the user and locks itself to only offer OpenGL.
@@ -321,11 +321,11 @@ Have fun ruining Bowser’s wedding!
 
 ## UI changes
 
-A small regression from the [input rewrite](https://yuzu-emu.org/entry/yuzu-progress-report-nov-2021/#project-kraken) revealed itself just now. 
+A small regression from the [input rewrite](https://yuzu-mirror.github.io/entry/yuzu-progress-report-nov-2021/#project-kraken) revealed itself just now. 
 The WebApplet’s input bit was assumed incorrectly, causing user input to be completely ignored.
 Thankfully, Morph {{< gh-hovercard "8536" "found the reason" >}} and implemented the fix.
 
-Last month, Docteh [renamed](https://yuzu-emu.org/entry/yuzu-progress-report-jun-2022/#ui-changes) the status bar’s DOCKED status (redundancy, yeah!).
+Last month, Docteh [renamed](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/#ui-changes) the status bar’s DOCKED status (redundancy, yeah!).
 For consistency, [this dumb writer](https://github.com/goldenx86) decided to {{< gh-hovercard "8610" "do the same for the Controls configuration window," >}} for consistency.
 
 {{< imgs
@@ -360,7 +360,7 @@ This is a new section to communicate and discuss new relevant bugs, fixes, and f
 
 #### NVIDIA, missing the perfection that 472.12 was
 
-[We mentioned last month](https://yuzu-emu.org/entry/yuzu-progress-report-jun-2022/#psa-for-amd-radeon-users-and-nvidia-tags-along) how the 516 series of drivers is detrimental to Maxwell and Pascal users, making Vulkan unstable.
+[We mentioned last month](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/#psa-for-amd-radeon-users-and-nvidia-tags-along) how the 516 series of drivers is detrimental to Maxwell and Pascal users, making Vulkan unstable.
 We’re still debugging the issue, as it isn’t easy to catch, but a possible cause is suspected: GPU accelerated `ASTC` texture decoding.
 If you own a Maxwell or Pascal GPU, must remain on the latest driver update, and want to test if you can make Vulkan stable again, try disabling `Accelerate ASTC Texture Decoding` in `Emulation > Configure… > Graphics`.
 Please report your results on our [forums](https://community.citra-emu.org/c/yuzu-support/14) or [Discord server](https://discord.gg/u77vRWY).
@@ -424,7 +424,7 @@ As a bonus, while not being very stable, the SPIR-V shader back-end can be used 
 Another lesson learned from this is that some games, like `Legend of Zelda: Breath of the Wild`, just outright prefer NVIDIA's mature OpenGL driver. Ara ara.
 
 Lastly, to end this Red Team section.
-[In the past](https://yuzu-emu.org/entry/yuzu-progress-report-feb-2022/#vulkan-is-the-future), we reported a way to defeat RDNA2’s overcorrecting power manager in order to get decent framerates.
+[In the past](https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2022/#vulkan-is-the-future), we reported a way to defeat RDNA2’s overcorrecting power manager in order to get decent framerates.
 This method, while simple, has a downside: It’s an overclock.
 Or at least counts as one.
 

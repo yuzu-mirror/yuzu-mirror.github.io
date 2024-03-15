@@ -171,7 +171,7 @@ Free performance is free performance.
 ### AMD
 
 It's July and we have another new AMD GPU driver with yet another extension causing issues.
-If you recall from our [June progress report](https://yuzu-emu.org/entry/yuzu-progress-report-jun-2023/#amd), we reported that the latest AMD drivers had broken a Vulkan feature - `extendedDynamicState3ColorBlendEquation`, and we had to temporarily disable usage of it on AMD driver version `23.5.2` and above.
+If you recall from our [June progress report](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2023/#amd), we reported that the latest AMD drivers had broken a Vulkan feature - `extendedDynamicState3ColorBlendEquation`, and we had to temporarily disable usage of it on AMD driver version `23.5.2` and above.
 
 Fast-forward to July, and it's still broken for some.
 Giving credit where due, AMD ***did*** fix this issue with driver version `23.7.2`, but only for `RDNA2` GPUs (RX 6000 series). `GCN4`, also known as `Polaris` (RX 400 and 500 series), are confirmed to still be broken.

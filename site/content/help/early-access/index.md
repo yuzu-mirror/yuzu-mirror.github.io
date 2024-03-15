@@ -28,7 +28,7 @@ Otherwise, you need to become a Patron at the `Early Access tier.` [**Click here
 #### Step 2
 Next, you need to login to your yuzu profile page.
 Click on the link given below to proceed.<br>
-<a href="https://profile.yuzu-emu.org/" target="_blank"><b>yuzu profile page</b></a><br>
+<a href="https://profile.yuzu-mirror.github.io/" target="_blank"><b>yuzu profile page</b></a><br>
 
 ><p style="color:lawngreen;"><b><i>By clicking on the link, a new tab will open, redirecting you to the Citra Community forum.
 As both Citra and yuzu share a common Discourse forum, you'll have to either log in with those credentials or create a new account there.
@@ -60,7 +60,7 @@ Now that your account is linked, copy your login token by highlighting the text 
 >}}
 
 #### Step 6
-Next, download and run the latest version of the Installer: [**Click here to download.**](https://yuzu-emu.org/downloads/)
+Next, download and run the latest version of the Installer: [**Click here to download.**](https://yuzu-mirror.github.io/downloads/)
 You should see an option to select the `Early Access` release channel. 
 
 **Note:** `Early Access` includes all the same features and updates as the regular yuzu, so you don’t need to install both!

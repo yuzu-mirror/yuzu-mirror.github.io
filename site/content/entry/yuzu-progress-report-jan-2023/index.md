@@ -101,7 +101,7 @@ Your writer has a stupid idea, and byte[] is the one that ends up listening to m
 This routine worked successfully with SMAA for Vulkan, unsuccessfully with increasing the staging buffer size to take advantage of ReBAR, sadly, and this time, it _almost worked_ with `Turbo mode`, or its official/boring name, {{< gh-hovercard "9552" "Force maximum clocks." >}}
 
 You might be able to see where this is going.
-[A year ago,](https://yuzu-emu.org/entry/yuzu-progress-report-feb-2022/#vulkan-is-the-future) Patreon funding got your writer access to an RX 6500 to help with testing and debugging.
+[A year ago,](https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2022/#vulkan-is-the-future) Patreon funding got your writer access to an RX 6500 to help with testing and debugging.
 That card died a horrible, premature death (and no one misses it), but before kicking the bucket, it allowed us to learn that RDNA and RDNA2 hardware from AMD suffer from serious downclocking issues if you’re not constantly shoving work to the GPU.
 Thankfully, due to the cryptomining crash, an RX 6600 took its place for no extra cost.
 In your face, miners.
@@ -245,14 +245,14 @@ Baby steps!
 
 ## General changes
 
-byte[] {{< gh-hovercard "9561" " triggered the scheduled mandatory Dynarmic update," >}} blessing us with [fastmem and page table support](https://yuzu-emu.org/entry/yuzu-fastmem/) for ARM64 devices, boosting performance considerably.
+byte[] {{< gh-hovercard "9561" " triggered the scheduled mandatory Dynarmic update," >}} blessing us with [fastmem and page table support](https://yuzu-mirror.github.io/entry/yuzu-fastmem/) for ARM64 devices, boosting performance considerably.
 Anyone with an ARM64 device running a “normal” GPU (not mobile-tier hardware) interested in testing yuzu, feel free to install our official [Flatpak](https://flathub.org/apps/details/org.yuzu_emu.yuzu).
 
 [german77](https://github.com/german77) stumbled upon an issue which was causing input threads to randomly crash yuzu for seemingly no reason, but only on shutdown.
 byte[] found that `CoreTiming` had the same logic issue that he fixed last month in the kernel code when adding `KHardwareTimer`: callbacks could be removed while in-progress, which could cause the input threads to continue using memory after it had been freed. 
 With this code changed to {{< gh-hovercard "9619" "wait until any in-progress callbacks are finished before removal," >}} this issue should be solved for good.
 
-After the merge of german77's impressive Joy-Con driver release [last month](https://yuzu-emu.org/entry/yuzu-progress-report-dec-2022/#new-joy-con-driver-and-other-input-improvements), [Morph](https://github.com/Morph1984) noticed that yuzu was often taking a significantly longer amount of time to shutdown, sometimes more than 5 seconds longer than it should have been allowed to.
+After the merge of german77's impressive Joy-Con driver release [last month](https://yuzu-mirror.github.io/entry/yuzu-progress-report-dec-2022/#new-joy-con-driver-and-other-input-improvements), [Morph](https://github.com/Morph1984) noticed that yuzu was often taking a significantly longer amount of time to shutdown, sometimes more than 5 seconds longer than it should have been allowed to.
 He discovered that this was due to sleep calls in the Joy-Con driver to poll for new devices that weren't being cancelled on shutdown, and with help from byte[], he {{< gh-hovercard "9677" "implemented a proper fix" >}} so that they would immediately stop waiting when shutdown was signalled.
 
 More battles won for the Shutdown Wars, with seemingly no end in sight! 

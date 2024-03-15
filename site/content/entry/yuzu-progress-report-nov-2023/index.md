@@ -25,7 +25,7 @@ Two things needed to be fixed to get this colourful cast into good shape: an aud
     >}}
 
 Users immediately noticed how the game’s background audio was completely muted, detracting a lot from the experience.
-After performing a cross-examination, [with music and all](https://youtu.be/5I443rHIYVk), [byte[]](https://github.com/liamwhite) found out the cause was {{< gh-hovercard "12058" "a leftover" >}} from the Opus rewrite [Maide](https://github.com/Kelebek1) did [back in September](https://yuzu-emu.org/entry/yuzu-progress-report-sep-2023/#audio-changes).
+After performing a cross-examination, [with music and all](https://youtu.be/5I443rHIYVk), [byte[]](https://github.com/liamwhite) found out the cause was {{< gh-hovercard "12058" "a leftover" >}} from the Opus rewrite [Maide](https://github.com/Kelebek1) did [back in September](https://yuzu-mirror.github.io/entry/yuzu-progress-report-sep-2023/#audio-changes).
 With this specific case fixed, the game started playing audio as it should.
 
 Meanwhile, [epicboy](https://github.com/ameerj) performed a separate investigation in the shader recompiler for NVIDIA’s broken rendering.
@@ -235,7 +235,7 @@ The Switch wants exactly 256x256 images, so included as part of the package is a
 	"./profiles.png| They’re multiplying!"
   >}}
 
-Continuing his [previous work](https://yuzu-emu.org/entry/yuzu-progress-report-jul-2022/#input-improvements) on infrared shenanigans (which thankfully don’t involve explosives or self-guidance), german77 finished {{< gh-hovercard "11980" "implementing the" >}} `moment image processor`.
+Continuing his [previous work](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jul-2022/#input-improvements) on infrared shenanigans (which thankfully don’t involve explosives or self-guidance), german77 finished {{< gh-hovercard "11980" "implementing the" >}} `moment image processor`.
 This means games like `Trombone Champ`and `WarioWare: Put a lid on it` are now playable with Joy-Cons.
 Feel free to crack that volume dial and torture your neighbours to your heart’s content.
 Here’s an example by german77 himself, enjoy:
@@ -328,7 +328,7 @@ On shutdown, the system calls to clear pending events, even while the timing thr
 
 ### AMD, mixing drivers
 
-[Last month](https://yuzu-emu.org/entry/yuzu-progress-report-oct-2023/#amd-giving-a-last-hurrah-to-polaris-and-vega), we reported that AMD is discontinuing driver support for Polaris and Vega products, and speculated how it would affect yuzu.
+[Last month](https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2023/#amd-giving-a-last-hurrah-to-polaris-and-vega), we reported that AMD is discontinuing driver support for Polaris and Vega products, and speculated how it would affect yuzu.
 
 What we didn’t consider is what happens to mixed configurations, for example running a Vega iGPU and an RDNA2 dGPU.
 This kind of configuration is quite common, as AMD is still selling new devices with integrated Vega GPUs, and laptop vendors can sell configurations with dedicated RDNA2 or RDNA3 products.

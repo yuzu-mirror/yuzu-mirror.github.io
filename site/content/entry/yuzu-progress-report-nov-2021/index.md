@@ -111,7 +111,7 @@ There are at least 3 known games using `VP8` at the moment: `TY the Tasmanian Ti
   >}}
 
 
-Textures can be divided on colour or depth formats, but everything changed when the [TCR](https://yuzu-emu.org/entry/yuzu-tcr/) attacked.
+Textures can be divided on colour or depth formats, but everything changed when the [TCR](https://yuzu-mirror.github.io/entry/yuzu-tcr/) attacked.
 
 In OpenGL, a conversion method was missing for copying “incompatible” texture formats, like colour <-> depth format copies. epicboy 
 [worked around this limitation](https://github.com/yuzu-emu/yuzu/pull/7349) by using the same method implemented in BGR <-> RGB conversions that we've mentioned in the past.
@@ -136,8 +136,8 @@ With the release of `Pokémon Brilliant Diamond/Shining Pearl`, a [Unity](https:
 [Unreal Engine 4](https://www.unrealengine.com/) game, we realized how much work needs to be done to solve stability and rendering issues affecting both engines.
 Since we don’t have that many GPU developers available (especially in finals months), we can only focus on one thing at a time, so first, Unity.
 
-[Blit detection](https://yuzu-emu.org/entry/yuzu-progress-report-may-2021/#graphical-fixes) suffered some regressions with the introduction of the resolution scaler, 
-[Project ART](https://yuzu-emu.org/entry/yuzu-art/). 
+[Blit detection](https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2021/#graphical-fixes) suffered some regressions with the introduction of the resolution scaler, 
+[Project ART](https://yuzu-mirror.github.io/entry/yuzu-art/). 
 [Blinkhawk](https://github.com/FernandoS27) [fixed them and added texture format](https://github.com/yuzu-emu/yuzu/pull/7368) `D24S8` to `RGBA8` conversions to Vulkan, 
 fixing several crashes affecting both APIs in this new Pokémon remake.
 
@@ -196,8 +196,8 @@ Just your average GNOME, who manages both Flatpak and FlatHub.
 liushuyu submitted [two](https://github.com/yuzu-emu/yuzu/pull/7431) [separate](https://github.com/yuzu-emu/yuzu/pull/7467) pull requests addressing this problem, but more 
 edge cases continue to appear, so the battle isn’t over yet.
 
-While we continue to work towards winning this war on Flatpak issues, please stick to using our [AppImages](https://yuzu-emu.org/downloads/#linux), or 
-[manually building yuzu](https://yuzu-emu.org/wiki/building-for-linux/).
+While we continue to work towards winning this war on Flatpak issues, please stick to using our [AppImages](https://yuzu-mirror.github.io/downloads/#linux), or 
+[manually building yuzu](https://yuzu-mirror.github.io/wiki/building-for-linux/).
 If you prefer to manually build yuzu, make sure that your ffmpeg library is capable of decoding `VP8`, `VP9`, and `H.264` on hardware.
 It seems like the only way to solve this problem will be to just ship our own ffmpeg instead of Flatpak’s default version.
 

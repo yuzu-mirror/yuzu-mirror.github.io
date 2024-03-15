@@ -104,7 +104,7 @@ sense to the devastated land of Hyrule.
 	"./botwfix.png| But not THAT dark! (Hyrule Warriors: Age of Calamity)"
   >}}
 
-Speaking of RGB, [as discussed back in February](https://yuzu-emu.org/entry/yuzu-progress-report-feb-2021/#paint-me-like-one-of-your-french-bits), yuzu has to use compute 
+Speaking of RGB, [as discussed back in February](https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2021/#paint-me-like-one-of-your-french-bits), yuzu has to use compute 
 shaders to convert most BGR texture formats in OpenGL to avoid mismatched colours.
 While this can work fine on most current GPUs, there’s a performance cost that can affect older and slower products.
 
@@ -166,7 +166,7 @@ Both these changes affect `DRAGON QUEST III: The Seeds of Salvation`, fixing the
 [MonsterDruide1](https://github.com/MonsterDruide1) has added [TAS support](https://github.com/yuzu-emu/yuzu/pull/6485) to yuzu!
 This means precise input commands can be recorded and replayed in-game.
 The format used to store them is the one [TAS-nx](https://github.com/hamhub7/TAS-nx/tree/master/scripts) implemented, and we have a guide on 
-[how to enable and use this feature here.](https://yuzu-emu.org/help/feature/tas/)
+[how to enable and use this feature here.](https://yuzu-mirror.github.io/help/feature/tas/)
 
 You can access TAS configuration by going to `Tools > Configure TAS…`
 
@@ -194,7 +194,7 @@ Linux kernel drivers for Joy-Cons use a different naming convention than the one
 
 ## UI changes
 
-With the release of [Project Hades](https://yuzu-emu.org/entry/yuzu-hades/), yuzu started using a full `Pipeline cache` instead of single stages of the graphics pipeline, both 
+With the release of [Project Hades](https://yuzu-mirror.github.io/entry/yuzu-hades/), yuzu started using a full `Pipeline cache` instead of single stages of the graphics pipeline, both 
 in Vulkan and OpenGL.
 This means parts of our UI were outdated, so [your degenerate writer](https://github.com/goldenx86) decided to simply 
 [update the context menu entries](https://github.com/yuzu-emu/yuzu/pull/6976) from Shader cache to Pipeline cache.
@@ -205,7 +205,7 @@ Following suit, [Moonlacer](https://github.com/Moonlacer) helped [replace `Use d
 Later on, Moonlacer [removed the toggle](https://github.com/yuzu-emu/yuzu/pull/7020) for `Enable audio stretching` from the audio settings, as it no longer had any purpose. 
 As a general rule, the fewer options available, the better.
 
-Morph decided to [eliminate a 2 year old feature,](https://github.com/yuzu-emu/yuzu/pull/7102) [boxcat](https://yuzu-emu.org/entry/yuzu-boxcat/). 
+Morph decided to [eliminate a 2 year old feature,](https://github.com/yuzu-emu/yuzu/pull/7102) [boxcat](https://yuzu-mirror.github.io/entry/yuzu-boxcat/). 
 
 BCAT is a network service used by the Nintendo Switch to add content to its games without needing constant updates.
 Our old BCAT implementation only added some “gifts” our developers placed into games that were playable at the time. It was unable to support real use cases, like the game
@@ -274,7 +274,7 @@ Instead of a separate folder in `%localappdata%`, information is now saved in yu
 
 [toastUnlimited](https://github.com/lat9nq) 
 [performed his first stubbing surgery with the audio input services `Start`, `RegisterBufferEvent`, and `AppendAudioInBufferAuto`](https://github.com/yuzu-emu/yuzu/pull/7018).
-This way, `Splatoon 2` can now be played via [LAN](https://yuzu-emu.org/entry/yuzu-progress-report-aug-2021/#lan-party-time) without requiring the use of auto-stub. Happy 
+This way, `Splatoon 2` can now be played via [LAN](https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2021/#lan-party-time) without requiring the use of auto-stub. Happy 
 splatting!
 
 german77 [stubbed `SetTouchScreenConfiguration` and implemented `GetNotificationStorageChannelEvent`](https://github.com/yuzu-emu/yuzu/pull/6992) to make `Dr Kawashima's Brain 

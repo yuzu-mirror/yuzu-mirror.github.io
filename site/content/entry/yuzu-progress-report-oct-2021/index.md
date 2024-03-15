@@ -35,7 +35,7 @@ With the PSA out of the way, let's get into the good stuff!
 Anyway, `Project A.R.T.` is out in the wild! [Blinkhawk](https://github.com/FernandoS27), [BreadFish](https://github.com/breadfish64), [epicboy](https://github.com/ameerj), and 
 [Rodrigo](https://github.com/reinuseslisp) are to thank for this incredible release.
 
-As explained in its dedicated article [here](https://yuzu-emu.org/entry/yuzu-art/), this is a complete rewrite of our old resolution scaling implementation from 2019.
+As explained in its dedicated article [here](https://yuzu-mirror.github.io/entry/yuzu-art/), this is a complete rewrite of our old resolution scaling implementation from 2019.
 Before we jump into the end-user benefits, let's first cover some terminology.
 The correct terms for the scaling process are `Upsampling` and `Supersampling`, which can also be more commonly called `Downsampling`.
 In layman's terms, downsampling means taking a big frame and reducing its size to fit a smaller display. Downsampling is rendering the game at a higher resolution than your 
@@ -213,7 +213,7 @@ It should now be safe to set at 16x and forget about it.
 One last note, AMD users should ensure that [Radeon Image Sharpening](https://www.youtube.com/watch?v=wTh_O9BZlGc) is disabled before using the scaler, as it can affect the 
 quality of some filters, especially FSR which includes its own sharpening already.
 
-At the time of writing this article, `Resolution Scaling` remains in [Early Access](https://yuzu-emu.org/help/early-access/) for testing and regression finding, but be sure that it won’t take long to be merged into [Mainline](https://yuzu-emu.org/downloads/).
+At the time of writing this article, `Resolution Scaling` remains in [Early Access](https://yuzu-mirror.github.io/help/early-access/) for testing and regression finding, but be sure that it won’t take long to be merged into [Mainline](https://yuzu-mirror.github.io/downloads/).
 Check the progress in the pull request previously listed, code review is usually the main reason for delays on merging.
 
 ## Graphical and general bugfixes
@@ -362,7 +362,7 @@ toastUnlimited [properly disabled the screensaver while running yuzu](https://gi
 Some users tend to think that NVDEC means that video decoding will only work on NVIDIA GPUs, this is not the case.
 NVDEC is the name of the module in the Nintendo Switch, which uses the Tegra X1, an NVIDIA SoC (System on a Chip).
 This SoC uses the NVDEC module to decode videos, and the work yuzu has to do is emulate it to work on any compatible system, including systems without NVIDIA GPUs on them. 
-We have a full explanation [here](https://yuzu-emu.org/entry/yuzu-nvdec-emulation/).
+We have a full explanation [here](https://yuzu-mirror.github.io/entry/yuzu-nvdec-emulation/).
 
 So, for the sake of clarity, the options were renamed to better convey the intended result:
 
@@ -401,7 +401,7 @@ window.
 ## Input changes
 
 When [german77](https://github.com/yuzu-emu/yuzu/pull/7142) added 
-[auto-centering support all the way back in July](https://yuzu-emu.org/entry/yuzu-progress-report-jul-2021/#input-changes), the range of the new center wasn’t considered, 
+[auto-centering support all the way back in July](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jul-2021/#input-changes), the range of the new center wasn’t considered, 
 making the analog sticks overpass 100% in a direction while failing to reach it in the opposite way.
 [Scaling the value of the range depending on the offset applied when centering](https://github.com/yuzu-emu/yuzu/pull/7142) solves this issue.
 

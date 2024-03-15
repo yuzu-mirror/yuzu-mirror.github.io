@@ -56,7 +56,7 @@ This Privacy Policy explains how we collect, use, and protect your anonymized te
 
 9. Contact Us
 
-    If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at yuzu@yuzu-emu.org.
+    If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at yuzu@yuzu-mirror.github.io.
 
 <br>
 

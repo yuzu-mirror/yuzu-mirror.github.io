@@ -25,7 +25,7 @@ To find out more about it, jump right in!
 
 For the past year, the most awaited and requested feature for yuzu has been the Vulkan Renderer.
 Many users, especially those with AMD GPUs, have been patiently waiting for this day. <br>
-Download the latest [Early Access](https://yuzu-emu.org/help/early-access/) build via the installer now to try it out!
+Download the latest [Early Access](https://yuzu-mirror.github.io/help/early-access/) build via the installer now to try it out!
 After you download the build, go to `Emulation -> Configure -> Graphics` and select `Vulkan` in the API dropdown.
 
 {{<imgs

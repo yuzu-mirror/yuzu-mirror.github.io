@@ -60,7 +60,7 @@ It's finally here! After such a long wait, and thanks to the work from [ogniK](h
   
 This is possible by using [FFmpeg.](https://ffmpeg.org/) For now, decoding happens in a single CPU thread, and support for multiple threads and GPU decoding is currently being worked on.
 
-We have an entire article dedicated to showing how this feature came to be, how it works, its challenges, and current limitations in more detail [here.](https://yuzu-emu.org/entry/yuzu-nvdec-emulation/) Please take your time to read it: it also includes a list of games confirmed working and not-so-working yet.
+We have an entire article dedicated to showing how this feature came to be, how it works, its challenges, and current limitations in more detail [here.](https://yuzu-mirror.github.io/entry/yuzu-nvdec-emulation/) Please take your time to read it: it also includes a list of games confirmed working and not-so-working yet.
 
 ## An emulator inside an emulator
 
@@ -116,9 +116,9 @@ Recent Nvidia Geforce drivers (past the 446.14 version) introduced a performance
     "./SSBU-fixed.mp4"
   >}}
 
-As mentioned in [July's progress report](https://yuzu-emu.org/entry/yuzu-progress-report-jul-2020/), [toastUnlimited](https://github.com/lat9nq) continued to work on solving crashes only experienced with recent Nvidia Vulkan drivers in Linux. Thanks to work done by DXVK, [toast's current implementation aims to be global](https://github.com/yuzu-emu/yuzu/pull/4724), and so far we haven't got any report on getting the issue or any sort of regression. Please feel free to contact us if you are still affected by this issue.
+As mentioned in [July's progress report](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jul-2020/), [toastUnlimited](https://github.com/lat9nq) continued to work on solving crashes only experienced with recent Nvidia Vulkan drivers in Linux. Thanks to work done by DXVK, [toast's current implementation aims to be global](https://github.com/yuzu-emu/yuzu/pull/4724), and so far we haven't got any report on getting the issue or any sort of regression. Please feel free to contact us if you are still affected by this issue.
 
-Not a fix in yuzu's code, but in fact a fix AMD implemented in their drivers. As mentioned in the previous [August progress report](https://yuzu-emu.org/entry/yuzu-progress-report-aug-2020/), `VK_EXT_extended_dynamic_state` was giving problems on the AMD Vulkan Windows driver. This has been fixed in the latest 20.9.2 driver version, allowing [yours truly](https://github.com/goldenx86) to [remove the previously needed blacklisting.](https://github.com/yuzu-emu/yuzu/pull/4735) No more nightmares when playing `Super Mario Odyssey`.
+Not a fix in yuzu's code, but in fact a fix AMD implemented in their drivers. As mentioned in the previous [August progress report](https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/), `VK_EXT_extended_dynamic_state` was giving problems on the AMD Vulkan Windows driver. This has been fixed in the latest 20.9.2 driver version, allowing [yours truly](https://github.com/goldenx86) to [remove the previously needed blacklisting.](https://github.com/yuzu-emu/yuzu/pull/4735) No more nightmares when playing `Super Mario Odyssey`.
 
 ## Future projects
 

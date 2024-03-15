@@ -36,7 +36,7 @@ By emulating the `BCAT` service at a high-level, yuzu is able to intercept the g
 This means that games running on yuzu, will now check for new content on yuzu's servers instead of Nintendo's.
 
 This allows us to add new in-game content for games that use this service. 
-For the inaugural run, our team members have added some cool content across different games which you can check out [here](https://yuzu-emu.org/help/feature/boxcat/).
+For the inaugural run, our team members have added some cool content across different games which you can check out [here](https://yuzu-mirror.github.io/help/feature/boxcat/).
 We will have new events occasionally, so users will have even more fun while playing games on yuzu.
 
 {{< imgs
@@ -54,7 +54,7 @@ For example - Using Patreon funds, several internal bounties have been setup, wh
 
 {{< message "Want more information on Boxcat?" >}}
 Refer to our help page for Boxcat.
-https://yuzu-emu.org/help/feature/boxcat/
+https://yuzu-mirror.github.io/help/feature/boxcat/
 {{< /message >}}
 
 ### Fin!
