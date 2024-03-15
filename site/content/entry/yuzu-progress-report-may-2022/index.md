@@ -14,7 +14,7 @@ Greetings yuz-ers. This time around, we're covering small and incremental improv
 
 Let’s first address the elephant in the room, shall we?
 
-While working on dynarmic and kernel emulation, including improving the compatibility of 4 thread CPU systems, we made changes to [dynarmic](https://github.com/merryhime/dynarmic) and [fastmem](https://yuzu-mirror.github.io/entry/yuzu-fastmem/) that broke support for Windows 10 revision 1803 and older, including Windows 7 and Windows 8/8.1.
+While working on dynarmic and kernel emulation, including improving the compatibility of 4 thread CPU systems, we made changes to [dynarmic](https://github.com/merryhime/dynarmic) and [fastmem](https://yuzu-emu.org/entry/yuzu-fastmem/) that broke support for Windows 10 revision 1803 and older, including Windows 7 and Windows 8/8.1.
 
 While fastmem was only ever designed to work with newer operating systems, the changes to dynarmic breaking support for older Windows versions was purely accidental. 
 That being said, it is yet another sign of the times, and that a pre-Windows 10 experience in yuzu will continue to become more subpar.
@@ -33,7 +33,7 @@ For those that still prefer to not upgrade, [Mainline 990](https://github.com/yu
 
 ## Vulkan by default
 
-[As previously discussed](https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2022/#vulkan-is-the-future), we have to circumvent issues like OEM-locked drivers (so common on Intel hardware, [it has its own official procedure](https://www.intel.com/content/www/us/en/support/articles/000056629/graphics.html)) and broken third party software limitations (outdated screen recorders are a common cause of broken rendering) in order to provide a smooth experience with Vulkan as the default API.
+[As previously discussed](https://yuzu-emu.org/entry/yuzu-progress-report-feb-2022/#vulkan-is-the-future), we have to circumvent issues like OEM-locked drivers (so common on Intel hardware, [it has its own official procedure](https://www.intel.com/content/www/us/en/support/articles/000056629/graphics.html)) and broken third party software limitations (outdated screen recorders are a common cause of broken rendering) in order to provide a smooth experience with Vulkan as the default API.
 
 The two main causes for Vulkan related crashes when trying to boot a game or opening yuzu’s configuration are:
 
@@ -83,7 +83,7 @@ This process works by writing the pitch image data into GPU memory accessible by
     "./dmafix.png"
 >}}
 
-byte[] also improved the way OpenGL interprets face flips depth, [replacing the previously reported fix](https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2022/#saving-princess-peach-yet-again).
+byte[] also improved the way OpenGL interprets face flips depth, [replacing the previously reported fix](https://yuzu-emu.org/entry/yuzu-progress-report-apr-2022/#saving-princess-peach-yet-again).
 The face flips used by Super Mario 3D All-Stars and the Nintendo 64 emulation are an uncommon configuration on the GPU.
 The previous implementation had bad rendering in OpenGL, a complete black screen.
 

@@ -49,7 +49,7 @@ By getting rid of this undesired behaviour, the `gpu_thread` is back to only con
 
 Even from the shadows, [epicboy](https://github.com/ameerj) still gifts us a handful of new toys. A true Eminence in Shadow.
 
-Avid readers may remember that [MSAA image uploads](https://yuzu-mirror.github.io/entry/yuzu-progress-report-dec-2021/) hold a weird spot in Switch emulation.
+Avid readers may remember that [MSAA image uploads](https://yuzu-emu.org/entry/yuzu-progress-report-dec-2021/) hold a weird spot in Switch emulation.
 There’s a conflict between what the Switch can do with its native NVN API, and what our available graphics APIs (OpenGL and Vulkan) allow.
 
 Both OpenGL and Vulkan are very restrictive regarding {{< gh-hovercard "9746" "MSAA texture" >}} uploads and copies, leaving epicboy with the only remaining tool available. Yep, you’re right! Time to use a compute shader!
@@ -163,7 +163,7 @@ Now instead of pushing the game’s requests to the services, the services wait 
 All this processing is done, for the most part, in what would be the emulated `core 3` of the Switch, instead of all over the place with one thread per service. 
 Games usually only have access to cores 0 to 2, so we're now dedicating the last core for system service processing, just as the actual Switch operating system does!
 
-This part of CPU emulation is one of the main reasons we recommend at least 6 cores in our [hardware requirements](https://yuzu-mirror.github.io/help/quickstart/#hardware-requirements), 4 for uninterrupted emulation of the Switch’s CPU, and extras for other processes and tasks. Just a 4 core CPU will be usually overburdened. HT/SMT may help, but that will always depend on the workload at any given moment.
+This part of CPU emulation is one of the main reasons we recommend at least 6 cores in our [hardware requirements](https://yuzu-emu.org/help/quickstart/#hardware-requirements), 4 for uninterrupted emulation of the Switch’s CPU, and extras for other processes and tasks. Just a 4 core CPU will be usually overburdened. HT/SMT may help, but that will always depend on the workload at any given moment.
 A SMT/HT thread can’t improve performance in a significant way if the core is already saturated.
 
 [bunnei](https://github.com/bunnei) chimed in too, fixing a mistake in {{< gh-hovercard "9773" "memory mapping." >}}
@@ -187,7 +187,7 @@ This time, the recently released update 1.2.0 wouldn’t boot on yuzu. After inv
 Some code changes later, and german77 fixed the issue! Now anyone can enjoy the reduced NPC count and lower draw distance.
 
 Even [your writer](https://github.com/goldenx86) tried to give a hand (emphasis on tried).
-[As reported in the past](https://yuzu-mirror.github.io/entry/yuzu-progress-report-dec-2022/#cpu-requirement-changes-with-free-performance), we applied `Link-time Optimization` to all of yuzu’s subprojects. This meant that every section like audio, input, UI, etc. used LTO at build time, trying to squeeze out every possible bit of performance.
+[As reported in the past](https://yuzu-emu.org/entry/yuzu-progress-report-dec-2022/#cpu-requirement-changes-with-free-performance), we applied `Link-time Optimization` to all of yuzu’s subprojects. This meant that every section like audio, input, UI, etc. used LTO at build time, trying to squeeze out every possible bit of performance.
 This caused an unexpected problem: RAM consumption while building increased enough to cause our buildbot to cry for help, causing builds on our Azure DevOps CI to randomly run out of memory.
 
 byte[] suggested that I instead profile which subprojects would provide the most performance boosts, and to only apply LTO to those.
@@ -229,7 +229,7 @@ The user can adjust the sensitivity of mouse motion with the same setting used f
   >}}
 
 But did german77 focus on nothing but `Metroid Prime Remastered`? No.
-Continuing the work started in [December of 2022](https://yuzu-mirror.github.io/entry/yuzu-progress-report-dec-2022/#new-joy-con-driver-and-other-input-improvements), {{< gh-hovercard "9759" "support for Pro Controllers" >}} within the new custom “Joy-Con” driver.
+Continuing the work started in [December of 2022](https://yuzu-emu.org/entry/yuzu-progress-report-dec-2022/#new-joy-con-driver-and-other-input-improvements), {{< gh-hovercard "9759" "support for Pro Controllers" >}} within the new custom “Joy-Con” driver.
 Since the option is experimental, it only works properly on official Switch Pro Controllers and not with third party controllers, so it’s disabled by default.
 Owners of *real* Pro Controllers are encouraged to enable this option, as it will provide much improved motion and HD Rumble support.
 
@@ -290,14 +290,14 @@ A small mistake caused the web applet to lose the ability to redraw and zoom its
 Per-game settings are very useful, but also very tricky to get right codewise.
 [m-HD](https://github.com/m-HD) greets us by adding a few missing graphical settings to the list, solving conflicting issues when setting the fullscreen mode, resolution scaling, filter, and antialiasing values in the {{< gh-hovercard "9784" "per-game" >}} configuration window.
 
-german77 then properly implemented per-game configuration support for the `Force maximum clocks` {{< gh-hovercard "9863" "setting" >}} AMD GPUs [benefit](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jan-2023/) so much from.
+german77 then properly implemented per-game configuration support for the `Force maximum clocks` {{< gh-hovercard "9863" "setting" >}} AMD GPUs [benefit](https://yuzu-emu.org/entry/yuzu-progress-report-jan-2023/) so much from.
 
 While we are constantly working to improve the user experience, yuzu sometimes does crash. That’s expected of any first generation emulator, but what shouldn’t happen is not saving changes made to the configuration settings after a crash or a force close.
 The problem was in our Qt UI, and german77 worked to properly tell Qt to save and sync the configuration to file, avoiding any {{< gh-hovercard "9817" "configuration change loss" >}} after a force close.
 
 ## General fixes
 
-[MonsterDruide1](https://github.com/MonsterDruide1) continues to do wonders with the [LDN](https://yuzu-mirror.github.io/entry/ldn-is-here/) code.
+[MonsterDruide1](https://github.com/MonsterDruide1) continues to do wonders with the [LDN](https://yuzu-emu.org/entry/ldn-is-here/) code.
 This time, proper error handling.
 One of the possible errors when handling TCP connections is `ECONNRESET`, which happens when the other end closes the connection abruptly.
 Old-school gamers call this “rage quitting”.
@@ -370,7 +370,7 @@ Frustratingly, this isn’t a problem with the Mesa Linux drivers, or the old Ge
 I’ve been kidnapped by our devs, so no leaks this time. I promise more for next month!
 
 There is one thing I’m allowed to mention, recent core timing changes have reduced CPU use by 5-20% across the board on Windows depending on the total thread count. This means better performance and reduced power consumption, especially benefiting mobile devices like laptops and handhelds.
-This change is already in both [Mainline](https://yuzu-mirror.github.io/downloads/) and [Early Access](https://yuzu-mirror.github.io/help/early-access/), but we’ll talk more about it and other nice things next month.
+This change is already in both [Mainline](https://yuzu-emu.org/downloads/) and [Early Access](https://yuzu-emu.org/help/early-access/), but we’ll talk more about it and other nice things next month.
 
 That’s all folks!
 

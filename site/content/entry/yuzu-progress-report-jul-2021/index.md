@@ -22,11 +22,11 @@ After being in development for six months, and spanning almost 50,000 lines of n
 Fixing an innumerable amount of rendering bugs, reducing shader build times, improving compatibility, and increasing performance by over 30% for all GPU vendors, Hades is easily 
 one of the biggest changes made to yuzu to date.
 
-[We have a dedicated article explaining the process in technical detail](https://yuzu-mirror.github.io/entry/yuzu-hades/), so we will be focusing only on the end user changes and some 
+[We have a dedicated article explaining the process in technical detail](https://yuzu-emu.org/entry/yuzu-hades/), so we will be focusing only on the end user changes and some 
 recommendations to help you get the best experience out of this new feature that both Early Access and Mainline users can enjoy.
 
 While we keep OpenGL as the default graphics API for compatibility reasons (outdated drivers won’t affect it as much, and it lets Nvidia Fermi GPU users run yuzu out of the box), we 
-strongly recommend testing your games with the Vulkan API first. Vulkan performance and compatibility have improved significantly (especially if paired with the [Texture Reaper](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2021/#project-texture-reaper), the GPU Cache Garbage Collector), additionally, rendering and shader build performance almost always beat OpenGL.
+strongly recommend testing your games with the Vulkan API first. Vulkan performance and compatibility have improved significantly (especially if paired with the [Texture Reaper](https://yuzu-emu.org/entry/yuzu-progress-report-jun-2021/#project-texture-reaper), the GPU Cache Garbage Collector), additionally, rendering and shader build performance almost always beat OpenGL.
 This applies not only for AMD and Intel GPU users, but also Nvidia users.
 
 There is an exception, however. The Intel Linux Vulkan driver is not stable at the moment, but we’re investigating the cause of the issue. For now, Intel Linux users should 
@@ -151,12 +151,12 @@ To avoid confusion with the FPS unlimiter, the old Frame limit was [renamed to S
 	"./fpscap.png| You can find the new options here"
   >}}
 
-From before the [release of the texture cache rewrite](https://yuzu-mirror.github.io/entry/yuzu-tcr/), a regression has existed that caused users' screenshots to save in the wrong directory.
+From before the [release of the texture cache rewrite](https://yuzu-emu.org/entry/yuzu-tcr/), a regression has existed that caused users' screenshots to save in the wrong directory.
 Turns out [a single directory separator was missing in the code](https://github.com/yuzu-emu/yuzu/pull/6709).
 Now, screenshots will work correctly by either pressing the `Ctrl + P` hotkey, or via selecting the `Tools > Capture Screenshot…` menu option, and save in the selected folder.
 
 epicboy also [added support for taking screenshots in the Vulkan API](https://github.com/yuzu-emu/yuzu/pull/6720), solving an old issue from way back when 
-[Vulkan was first implemented](https://yuzu-mirror.github.io/entry/yuzu-vulkan/) two years ago. How time flies...
+[Vulkan was first implemented](https://yuzu-emu.org/entry/yuzu-vulkan/) two years ago. How time flies...
 
 Finally, before being dragged against his will to work on Hades, epicboy was working on improving the performance of our compute shader accelerated ASTC decoder.
 By reducing the size of the workgroup, making some code simplifications, moving some look up tables, and other changes, 
@@ -172,7 +172,7 @@ One of the remaining issues with `Hyrule Warriors: Age of Calamity`, `Fire Emble
 GPU accuracy when loading specific levels.
 In Blink’s own words, [a simple fix](https://github.com/yuzu-emu/yuzu/pull/6627), and the problem was solved.
 
-Another old regression introduced by the [Buffer Cache Rewrite](https://yuzu-mirror.github.io/entry/yuzu-bcr/) affected particles in games like `The Legend of Zelda: Breath of the Wild`, the rendering of the BowWow in 
+Another old regression introduced by the [Buffer Cache Rewrite](https://yuzu-emu.org/entry/yuzu-bcr/) affected particles in games like `The Legend of Zelda: Breath of the Wild`, the rendering of the BowWow in 
 `The Legend of Zelda: Link’s Awakening` and caused vertex explosions in Unreal Engine 4 games like `Yoshi’s Crafted World`, `BRAVELY DEFAULT 2` and similar.
 [Tuning how to handle high downloads and not fully waiting for command buffers to finish](https://github.com/yuzu-emu/yuzu/pull/6557) solved these issues.
 To make the best out of this change, High GPU accuracy needs to be enabled.

@@ -15,7 +15,7 @@ We have dozens of changes to discuss: Kernel fixes, input and UI improvements, g
 
 `New Pokémon Snap`’s release resulted in tons of work needed to make the game playable. For starters, Snap experienced crashes during gameplay, 
 an issue [epicboy](https://github.com/ameerj) was not happy about. 
-The [buffer cache rewrite](https://yuzu-mirror.github.io/entry/yuzu-bcr/) introduced an optimized fast path for `uniform bindings`, but the conditions to take advantage of it are that buffers must be both small and *non-null*. Turns out, 
+The [buffer cache rewrite](https://yuzu-emu.org/entry/yuzu-bcr/) introduced an optimized fast path for `uniform bindings`, but the conditions to take advantage of it are that buffers must be both small and *non-null*. Turns out, 
 null buffers were not being explicitly checked for, causing instabilities along the way.
 [Properly checking for those zero sized buffers](https://github.com/yuzu-emu/yuzu/pull/6322) fixed the stability issues the new Snap was facing.
 
@@ -46,7 +46,7 @@ something epicboy had no problem properly implementing for us.
 	"./blits.png| Here’s a beautifully detailed example of the old out-of-bounds incorrect behaviour in red, and the correct result in blue, with the affected area moving to the next row, as it should"
   >}}
 
-The result is quite noticeable in games that use this blit technique, such as `Shantae` and `Pixel Game Maker Series Werewolf Princess Kaguya`, which we mentioned in the [previous progress report](https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/).
+The result is quite noticeable in games that use this blit technique, such as `Shantae` and `Pixel Game Maker Series Werewolf Princess Kaguya`, which we mentioned in the [previous progress report](https://yuzu-emu.org/entry/yuzu-progress-report-apr-2021/).
 
 {{< single-title-imgs
     "Textures and text rendering correctly, notice the stairstepping on the right side of the left image"
@@ -259,7 +259,7 @@ toastUnlimited reluctantly [added the CPU tab to per-game settings.](https://git
 While we’re on this subject, some things need to be clarified about the CPU settings tab. 
 Unsafe was originally only intended for CPUs that lacked the FMA instruction set, which causes games to run at very low framerates.
 Later on, a fix was discovered that could boost the performance of `Luigi’s Mansion 3` by reducing precision. This was described in 
-[January’s progress report.](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jan-2021/)
+[January’s progress report.](https://yuzu-emu.org/entry/yuzu-progress-report-jan-2021/)
 
 As a result, we recommend users of CPUs that do have FMA to stick to `Accurate` and only force `Unsafe` for `Luigi’s Mansion 3`. 
 Using `Unsafe` is known to cause precision issues, for example, exaggerating the hitboxes of characters in `Super Smash Bros. Ultimate`.

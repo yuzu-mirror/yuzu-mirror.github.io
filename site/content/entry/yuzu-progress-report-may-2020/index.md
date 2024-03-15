@@ -14,7 +14,7 @@ stability improvements, bug fixes and graphical corrections.
 
 ## The worst kept secret
 
-It has its own [article](https://yuzu-mirror.github.io/entry/yuzu-prometheus/), and it had been guessed to hell and back before the official announcement.
+It has its own [article](https://yuzu-emu.org/entry/yuzu-prometheus/), and it had been guessed to hell and back before the official announcement.
 `Project Prometheus` is a proper multithreaded emulation of the 4 CPU cores the Nintendo Switch offers.
 This brings a massive performance boost to users with CPUs with 4 physical cores or more, but for this to happen, a lot of groundwork was needed.
 Besides changes previously discussed in past reports, old external libraries (which yuzu needs to operate) needed to be updated,
@@ -30,7 +30,7 @@ compared to the previous 2 or 3. You should expect a performance boost in a lot 
 
 Now, some clarifications are needed for this change. Multicore support can’t be merged into our [Mainline](https://github.com/yuzu-emu/yuzu-mainline) release for now due to incompatibilities between Multicore and the [Master](https://github.com/yuzu-emu/yuzu) branch of yuzu. Work is being done to resolve the conflicts, but please have patience.
 Additionally, users with 2 cores, and either 2 or 4 threads, should not enable multicore as it will most likely result in a performance 
-loss for them due to the lack of physical cores on their CPUs. Our [hardware recommendations](https://yuzu-mirror.github.io/help/quickstart/#hardware) 
+loss for them due to the lack of physical cores on their CPUs. Our [hardware recommendations](https://yuzu-emu.org/help/quickstart/#hardware) 
 have been updated accordingly.
 
 ## Unreal Engine fixes

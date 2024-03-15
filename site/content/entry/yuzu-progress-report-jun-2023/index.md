@@ -432,7 +432,7 @@ If you want to download a previous version, test experimental features, or avoid
 
 ## Making CPUs go the opposite of BRRR, AMD edition
 
-[Back in March](https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/#making-cpus-go-the-opposite-of-brrrr), we explained why Windows is not accurate enough when very high precision timers are required, so in order to improve performance, power consumption, and temperatures on x86_64 CPUs, specific CPU instructions are needed to reduce the time the CPU spends improperly idling.
+[Back in March](https://yuzu-emu.org/entry/yuzu-progress-report-mar-2023/#making-cpus-go-the-opposite-of-brrrr), we explained why Windows is not accurate enough when very high precision timers are required, so in order to improve performance, power consumption, and temperatures on x86_64 CPUs, specific CPU instructions are needed to reduce the time the CPU spends improperly idling.
 We have a big mistake to correct here. We said only Intel offered such instructions starting with Alder Lake, and that AMD didn’t offer any.
 
 Fortunately, we were wrong! AMD does indeed have its own implementation, the `monitorx` and `mwaitx` instructions pair, which have been out since *2015*, predating Ryzen!
@@ -486,7 +486,7 @@ Thank you!
 ## Input improvements
 
 The work to make Amiibos and their Near-Field Communication (NFC) behave the same as on real Switch hardware continues.
-With the proper implementation finished [last month](https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/#input-and-amiibo-improvements), german77 has focused on the last items on the checklist.
+With the proper implementation finished [last month](https://yuzu-emu.org/entry/yuzu-progress-report-may-2023/#input-and-amiibo-improvements), german77 has focused on the last items on the checklist.
 
 First of all, backup support.
 On the Switch, Amiibo data is stored in the console every time data is loaded or saved. 
@@ -539,7 +539,7 @@ Thanks!
 
 Yes, there’s more progress by byte[] in fixing the current file system implementation while we wait for `Project Gaia`.
 
-The [previously reported](https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/#project-gaia-lite) “algorithmic complexity issue” when loading mods was working like a charm on Linux, but Windows always has to be difficult.
+The [previously reported](https://yuzu-emu.org/entry/yuzu-progress-report-may-2023/#project-gaia-lite) “algorithmic complexity issue” when loading mods was working like a charm on Linux, but Windows always has to be difficult.
 A {{< gh-hovercard "10588" "memory cache" >}} was added to fully realise the load time benefits on Microsoft’s OS too.
 
 In another single-line-of-code revelation, byte[] discovered that {{< gh-hovercard "10718" "increasing the size of the buffer" >}} when copying files can more than triple the installation speed of updates and DLCs. 

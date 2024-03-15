@@ -12,7 +12,7 @@ Hello yuz-ers, the month of April has been amazing! We'll discuss CPU and Kernel
 
 ## Saving Princess Peach yet again
 
-Continuing his work to better support the [official](https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2022/#the-vulkan-emulator) GameCube/Wii and Nintendo 64 emulators (codenamed `Hagi` and `Hovercraft` respectively), [byte[]](https://github.com/liamwhite) has introduced several new PRs to further improve the compatibility of the titles included within `Super Mario 3D All-Stars`.
+Continuing his work to better support the [official](https://yuzu-emu.org/entry/yuzu-progress-report-mar-2022/#the-vulkan-emulator) GameCube/Wii and Nintendo 64 emulators (codenamed `Hagi` and `Hovercraft` respectively), [byte[]](https://github.com/liamwhite) has introduced several new PRs to further improve the compatibility of the titles included within `Super Mario 3D All-Stars`.
 
 byte[] first implemented support for GLSL in `Super Mario Sunshine`, as not everyone can run Vulkan.
 This is achieved by adding {{< gh-hovercard "8133" "support for indirect addressing" >}} in OpenGL.
@@ -116,7 +116,7 @@ He fixed the reported issues and further cleaned up the code to improve code qua
 {{< gh-hovercard "8137" "See the code changes for the NVFlinger rewrite here" >}}.
 
 `Xenoblade Chronicles 2` and `Hyrule Warriors: Age of Calamity` would experience interesting issues which were caused by the new `GPU Garbage Collector` introduced as part of `Project Y.F.C.`. 
-We talked about those changes back in [January](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jan-2022/#other-graphical-fixes).
+We talked about those changes back in [January](https://yuzu-emu.org/entry/yuzu-progress-report-jan-2022/#other-graphical-fixes).
 
 As you can see on the top bar below, `Xenoblade Chronicles 2` would use exorbitant amounts of VRAM in OpenGL (top bar). 
 The bottom bar shows the result after the fixes were implemented.
@@ -142,7 +142,7 @@ Thankfully, Morph added the {{< gh-hovercard "8267" "magic line to the code" >}}
 ## Skyline framework: Part 3
 
 There has been important progress in getting the [Skyline](https://github.com/skyline-dev/skyline) modding framework working.
-[Here are](https://yuzu-mirror.github.io/entry/yuzu-progress-report-nov-2021/#skyline-framework-part-1) the [two links](https://yuzu-mirror.github.io/entry/yuzu-progress-report-dec-2021/#skyline-framework-part-2) if you missed our previous progress reports on the subject.
+[Here are](https://yuzu-emu.org/entry/yuzu-progress-report-nov-2021/#skyline-framework-part-1) the [two links](https://yuzu-emu.org/entry/yuzu-progress-report-dec-2021/#skyline-framework-part-2) if you missed our previous progress reports on the subject.
 
 [tech-ticks](https://github.com/tech-ticks) has been quite busy {{< gh-hovercard "8171" "working on the finishing touches" >}}.
 The latest changes include:

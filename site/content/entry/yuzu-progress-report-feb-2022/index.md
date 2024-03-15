@@ -159,7 +159,7 @@ As it turns out, for some reason the configuration file was not resetting the fr
 Previously, yuzu dumped the base `exeFS`, which only includes data from the base game, missing any new addition from updates or DLCs.
 Instead, by {{< gh-hovercard "7899" "dumping the patched `exeFS`" >}}, like [EliEron](https://github.com/EliEron) {{< gh-hovercard "4341" "suggested in the past" >}}, users will have access to update files!
 
-[toastUnlimited](https://github.com/lat9nq) found out that `Splatoon 2` crashes when accessing the inventory in the [LAN lobby](https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2021/#lan-party-time).
+[toastUnlimited](https://github.com/lat9nq) found out that `Splatoon 2` crashes when accessing the inventory in the [LAN lobby](https://yuzu-emu.org/entry/yuzu-progress-report-aug-2021/#lan-party-time).
 {{< gh-hovercard "7887" "Stubbing the `IsUsbFullKeyControllerEnabled` function" >}} is all that was needed.
 Splat your friends with impunity!
 

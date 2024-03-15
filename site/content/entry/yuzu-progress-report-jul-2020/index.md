@@ -83,7 +83,7 @@ Thanks to help from [gdkchan](https://github.com/gdkchan) and [Blinkhawk](https:
 
 [epicboy](https://github.com/ameerj) is working on [implementing support for GameCube adapters](https://github.com/yuzu-emu/yuzu/pull/4137), allowing players to use original GameCube controllers! Veteran Smash players will surely enjoy it.
 
-[`Project Prometheus`](https://yuzu-mirror.github.io/entry/yuzu-prometheus/) introduced so many changes that we are still working on reaching feature parity with the original single-core implementation. [ogniK](https://github.com/ogniK5377) [improved the audio timing](https://github.com/yuzu-emu/yuzu/pull/4219), fixing audio bugs that were introduced with the implementation of the new multicore and single-core emulation methods.
+[`Project Prometheus`](https://yuzu-emu.org/entry/yuzu-prometheus/) introduced so many changes that we are still working on reaching feature parity with the original single-core implementation. [ogniK](https://github.com/ogniK5377) [improved the audio timing](https://github.com/yuzu-emu/yuzu/pull/4219), fixing audio bugs that were introduced with the implementation of the new multicore and single-core emulation methods.
 
 Since its introduction, enabling multicore was the only way to reach stable gameplay on Linux systems, as the single-core option would lead to a crash in every game. Thanks to [comex's report](https://github.com/yuzu-emu/yuzu/issues/4424), [Lioncache](https://github.com/lioncash) fixed it by [using the return value of Lock() in the nvflinger surface compositor](https://github.com/yuzu-emu/yuzu/pull/4426). Thanks to this fix, games that are not yet stable with multicore, like `Luigi’s Mansion 3`, can now be safely played in the Tux OS (Linux).
 

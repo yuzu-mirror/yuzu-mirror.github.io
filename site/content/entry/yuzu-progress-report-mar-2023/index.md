@@ -14,7 +14,7 @@ Hi yuz-ers! We've been working hard as usual, and this March saw improvements in
 One of the biggest changes this month is the set of improvements in CPU accuracy.
 This requires some backtracking so let’s rewind a little bit.
 
-Back in [July,](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jul-2022/#core-timing-or-how-to-suffer-so-much-with-a-fix) we explained how `CoreTiming` operates in its current form, using a host timer. 
+Back in [July,](https://yuzu-emu.org/entry/yuzu-progress-report-jul-2022/#core-timing-or-how-to-suffer-so-much-with-a-fix) we explained how `CoreTiming` operates in its current form, using a host timer. 
 A thread called `HostTiming` is used to process HLE events such as input and audio.
 However, some of these events, like audio, require a high level of timer precision to behave the way games expect, more than Windows would usually allow.
 
@@ -106,7 +106,7 @@ With some trial and error, and some big help from the great [bylaws](https://git
 	"./sosfix.png"
 >}}
 
-[epicboy](https://github.com/ameerj) strikes again with his ninja updates. This time he gives some love to the *still thriving* OpenGL gang, bringing all the goodies of {{< gh-hovercard "9913" "AccelerateDMA," >}} which we discussed in the [last report](https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2023/#project-yfc-175).
+[epicboy](https://github.com/ameerj) strikes again with his ninja updates. This time he gives some love to the *still thriving* OpenGL gang, bringing all the goodies of {{< gh-hovercard "9913" "AccelerateDMA," >}} which we discussed in the [last report](https://yuzu-emu.org/entry/yuzu-progress-report-feb-2023/#project-yfc-175).
 
 This means that OpenGL users, especially those with Fermi and Kepler GPUs, can enjoy the speed boost of this pseudo-Y.F.C. 2 change, making games such as `Metroid Prime Remastered` run much faster.
 No more waiting for Samus to load her arm cannon.
@@ -120,14 +120,14 @@ Your writer observes a 3-5% performance increase in `The Legend of Zelda: Breath
 	"./botw.png| From 54 to 57 FPS in one of the heaviest spots in the game, OpenGL still has life in it! For now… (The Legend of Zelda: Breath of the Wild)"
   >}}
 
-bylaws came to the rescue again, pointing out that our old Vulkan scheduler implementation had some regressions [back in October](https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2022/#graphics-and-general-bug-fixes) of last year, when [byte[]](https://github.com/liamwhite) worked on making homebrew apps work with Vulkan.
+bylaws came to the rescue again, pointing out that our old Vulkan scheduler implementation had some regressions [back in October](https://yuzu-emu.org/entry/yuzu-progress-report-oct-2022/#graphics-and-general-bug-fixes) of last year, when [byte[]](https://github.com/liamwhite) worked on making homebrew apps work with Vulkan.
 
 This meant that games and homebrew would have to wait for a frame to show up on screen before starting to render, which in some cases is a bad example of feedback looping at its worst.
 
 By {{< gh-hovercard "9931" "waiting in the background" >}} for the queue to be emptied without having to wait for the frame to be presented, byte[] fixed the regression.
 Thanks bylaws!
 
-Remember that lovely game we talked about [last month?](https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2023/#other-gpu-and-video-changes)
+Remember that lovely game we talked about [last month?](https://yuzu-emu.org/entry/yuzu-progress-report-feb-2023/#other-gpu-and-video-changes)
 The one for all ages! Totally safe to play with your family.
 
 [vonchenplus](https://github.com/vonchenplus) decided to make it playable, so ~~weebs~~ players around the world could enjoy the amazing gameplay of `Moero Crystal H`, by {{< gh-hovercard "9943" "fixing" >}} some errors in how yuzu processed the inline index and draw texture commands.
@@ -163,7 +163,7 @@ We need more information to fully understand the issue, but for now, {{< gh-hove
 	"./xcfix.png"
 >}}
 
-The other long-standing issue affecting the Xenoblade trilogy (well, Definitive Edition and 2 at least) has been plaguing yuzu since the legendary [Texture Cache Rewrite](https://yuzu-mirror.github.io/entry/yuzu-tcr/). 
+The other long-standing issue affecting the Xenoblade trilogy (well, Definitive Edition and 2 at least) has been plaguing yuzu since the legendary [Texture Cache Rewrite](https://yuzu-emu.org/entry/yuzu-tcr/). 
 It was the random "rainbow mode" that could happen anytime during gameplay, or in a specific late-game cutscene in `Xenoblade Chronicles 2` that I won’t spoil for new players.
 If you played it in yuzu, you know which one. 
 It makes you wonder if you’re in [Rapture](https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/Bioshock).
@@ -179,7 +179,7 @@ Another observed problem was excessive lighting making the whole scene unreadabl
   >}}
 
 Maide found that the issue was caused by {{< gh-hovercard "10004" "replacing" >}} fresh guest data with stale host data in the environment lighting cubemaps. 
-The solution is to only copy data that has been marked as GPU-modified, following the behaviour of the [Buffer Cache Rewrite](https://yuzu-mirror.github.io/entry/yuzu-bcr/).
+The solution is to only copy data that has been marked as GPU-modified, following the behaviour of the [Buffer Cache Rewrite](https://yuzu-emu.org/entry/yuzu-bcr/).
 
 {{< single-title-imgs-compare
 	"This isn’t 2009, we don’t need this much bloom, thank you very much (Xenoblade Chronicles: Definitive Edition)"

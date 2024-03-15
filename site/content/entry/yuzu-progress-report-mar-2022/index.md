@@ -188,7 +188,7 @@ If video playback feels smoother, you now know the reason! Thanks epicboy!
 This is a very common issue caused mostly by very outdated GPU drivers installed by Windows Update, or custom slower drivers provided by laptop manufacturers that are used to lie on battery life metrics or keep up with cheapened cooling solutions.
 This most commonly affects Intel GPUs, but Vega based Radeon GPUs can also suffer from it occasionally.
 
-Another popular reason for this issue, as mentioned in [previous reports](https://yuzu-mirror.github.io/entry/yuzu-progress-report-dec-2021/#ui-changes), is outdated Vulkan injectors breaking support altogether.
+Another popular reason for this issue, as mentioned in [previous reports](https://yuzu-emu.org/entry/yuzu-progress-report-dec-2021/#ui-changes), is outdated Vulkan injectors breaking support altogether.
 Software like OBS Studio, OBS Streamlabs, Bandicam, Action!, Overwolf, GShade, iCUE, MSI Afterburner, or *anything* with an overlay that injects into Vulkan can completely break rendering if it is outdated, or the developers don’t keep up with recent Vulkan releases.
 
 {{< gh-hovercard "7986" "toast’s fixes solve 2 different scenarios" >}}.
@@ -199,7 +199,7 @@ There’s more work to do, but this lets us get closer to offering Vulkan as the
 epicboy found out that {{< gh-hovercard "8106" "avoiding a doubly locked mutex" >}} fixes a crash when using Extreme GPU accuracy on the OpenGL backend, making it a safe option for those aiming for the most possible accurate rendering.
 This option is only accessible from `Emulation > Configure... > Graphics > Advanced`.
 
-He also includes an {{< gh-hovercard "8068" "optimization focused on eliminating `if(false) …` branches in the shader code" >}}. 
+He also includes an {{< gh-hovercard "8068" "optimization focused on eliminating `if(false) {…}` branches in the shader code" >}}. 
 This has the added benefit of reducing shader build times ever so slightly. Hey, less shader stuttering is less shader stuttering!
 
 ## Not all changes benefit everybody

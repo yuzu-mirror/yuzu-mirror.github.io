@@ -12,7 +12,7 @@ Dear yuz-ers, we had fantastic progress during June! Driver bugs are being squas
 
 ## PSA for AMD Radeon users (and NVIDIA tags along)
 
-Let’s begin with a driver bug we [mentioned last month](https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2022/#graphical-changes-driver-issues-and-the-nostalgia-bliss-that-is-the-good-old-64).
+Let’s begin with a driver bug we [mentioned last month](https://yuzu-emu.org/entry/yuzu-progress-report-may-2022/#graphical-changes-driver-issues-and-the-nostalgia-bliss-that-is-the-good-old-64).
 The Vulkan extension `VK_KHR_push_descriptor` finally arrived for AMD hardware with driver version 22.5.2 for Windows, but it wasn’t stable. Radeon users would tell you that any game would crash in Vulkan after updating.
 To mitigate this, [toastUnlimited](https://github.com/lat9nq) implemented an extension block for the specific Vulkan driver version AMD reports for 22.5.2 (and its equivalent Linux AMDVLK package), 2.0.226.
 
@@ -54,7 +54,7 @@ Now, thanks to this great find by bylaws, the Dovahkiin can finally wake up in t
 
 You can see we have some rendering issues to solve.
 
-One of our recent important rendering changes was the [NVFlinger rewrite](https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2022/#graphical-changes-and-optimizations), who would have guessed that coding an implementation closer to the Switch would result in a smoother gaming experience?
+One of our recent important rendering changes was the [NVFlinger rewrite](https://yuzu-emu.org/entry/yuzu-progress-report-mar-2022/#graphical-changes-and-optimizations), who would have guessed that coding an implementation closer to the Switch would result in a smoother gaming experience?
 
 However, after its release, user reports mentioned timing and frame pacing issues in games like `Super Smash Bros. Ultimate`. 
 Match time would pass increasingly slower, around a second longer per minute on Ryzen systems, and exacerbated with Intel Alder Lake CPUs (12th gen).
@@ -66,7 +66,7 @@ Weird CPU architectures aside, while the issue is solved, Intel Alder Lake users
 
 While still on the topic of NVFlinger goodies, we present a highly requested feature!
 Veteran users will remember that during its single threaded days, yuzu would allow control over game speed. 
-With the arrival of multicore, known at the time as [Project Prometheus](https://yuzu-mirror.github.io/entry/yuzu-prometheus/), this feature was only available in single core mode, to the chagrin of many people. How time flies!
+With the arrival of multicore, known at the time as [Project Prometheus](https://yuzu-emu.org/entry/yuzu-prometheus/), this feature was only available in single core mode, to the chagrin of many people. How time flies!
 
 {{< gh-hovercard "8508" "yuzu now has control over the frame time calculation," >}} allowing a new method to unlimit the framerate regardless of the CPU emulation mode!
 You can find the option in `Emulation > Configure… > General > Limit Speed Percent`.
@@ -86,7 +86,7 @@ Unfortunately, he soon ran into more trouble, as it was exceedingly difficult to
 The source of the pain was not having any way to use a debugger with the emulated games.
 
 Originally, yuzu inherited a `GDB-compatible debugger interface` from [Citra](https://citra-emu.org), but it was lacking many important features.
-And even that had to be deprecated during [Project Prometheus](https://yuzu-mirror.github.io/entry/yuzu-prometheus/) (multicore emulation) because of its inherent shortcomings.
+And even that had to be deprecated during [Project Prometheus](https://yuzu-emu.org/entry/yuzu-prometheus/) (multicore emulation) because of its inherent shortcomings.
 
  * It only worked with single core mode
  * It was _slow_ - it could sometimes take 30+ minutes to boot a game, particularly if you had any logging scripts
@@ -160,7 +160,7 @@ The debugger interface is now thread-stable, edge cases in stepping and pausing 
 
 When talking about user interface and experience, you can always count on [Docteh](https://github.com/Docteh).
 
-[In a repeat of what Morph fixed back in February](https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2022/#general-bugfixes-and-ui-changes), Docteh found out that after a crash, the yuzu main window may reopen in some kind of borderless fullscreen… *thing*.
+[In a repeat of what Morph fixed back in February](https://yuzu-emu.org/entry/yuzu-progress-report-feb-2022/#general-bugfixes-and-ui-changes), Docteh found out that after a crash, the yuzu main window may reopen in some kind of borderless fullscreen… *thing*.
 The culprit was {{< gh-hovercard "8400" "the `UILayout\geometry` value in yuzu’s qt-config.ini file." >}} 
 A slap in the face and the issue should be gone for good. Ouch.
 

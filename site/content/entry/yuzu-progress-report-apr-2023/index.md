@@ -17,7 +17,7 @@ Poor Melia up there.
 And that’s exactly what we did.
 
 A more accurate name for this change would be “a rewrite of the Buffer Cache Rewrite”, {{< gh-hovercard "10084" "perhaps rBCR for short?" >}} 
-Essentially, Blinkhawk rewrote most of the old buffer cache changes that [Rodrigo](https://github.com/ReinUsesLisp) introduced [two years ago](https://yuzu-mirror.github.io/entry/yuzu-bcr/), taking into account the new demands of recent games and the issues found with the original BCR.
+Essentially, Blinkhawk rewrote most of the old buffer cache changes that [Rodrigo](https://github.com/ReinUsesLisp) introduced [two years ago](https://yuzu-emu.org/entry/yuzu-bcr/), taking into account the new demands of recent games and the issues found with the original BCR.
 
 Part of the work {{< gh-hovercard "10088" "also involves:" >}}
 
@@ -89,7 +89,7 @@ For those interested in trying it, the toggle is available in `Emulation > Confi
 
 [vonchenplus](https://github.com/vonchenplus) continues to work on making the {{< gh-hovercard "10008" "code match the information NVIDIA has made public" >}} in their latest documentation.
 
-You may remember [Wollnashorn](https://github.com/Wollnashorn) from their role in [overhauling the Vulkan pipeline cache](https://yuzu-mirror.github.io/entry/yuzu-progress-report-jan-2023/#new-challenger-approaching).
+You may remember [Wollnashorn](https://github.com/Wollnashorn) from their role in [overhauling the Vulkan pipeline cache](https://yuzu-emu.org/entry/yuzu-progress-report-jan-2023/#new-challenger-approaching).
 Now, Wollnashorn presents us with a technique to bypass hardware limitations in order to make `The Legend of Zelda: Breath of the Wild` render accurately on non-NVIDIA hardware.
 
 Object edges, especially grass blades, had distinct black borders on AMD and Intel GPUs.
@@ -152,7 +152,7 @@ Fixing this special case solved the depth-of-field rendering issues in `Kirby St
 >}}
 
 Still on fire, and with more work to come, Blinkhawk hasn’t stopped.
-For something light, he decided to refactor a big part of [Accelerate DMA](https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2023/#project-yfc-175) to do {{< gh-hovercard "10082" "texture downloads" >}} through the texture cache instead.
+For something light, he decided to refactor a big part of [Accelerate DMA](https://yuzu-emu.org/entry/yuzu-progress-report-feb-2023/#project-yfc-175) to do {{< gh-hovercard "10082" "texture downloads" >}} through the texture cache instead.
 The result is a return to the performance `Pokémon Sword & Shield` and `Hyrule Warriors: Age of Calamity` had before the old Y.F.C 1.75 changes.
 Add up the gains from Y.F.C 1.90, and you have a winner for low-end systems!
 
@@ -195,7 +195,7 @@ Properly {{< gh-hovercard "10056" "returning this error as a result" >}} is enou
 	"./igs.png| Nothing beats the classics (IGS Classic Arcade Collection)"
   >}}
 
-One of the options made available to our [LDN](https://yuzu-mirror.github.io/entry/ldn-is-here/) users is the ability to [create private rooms](https://yuzu-mirror.github.io/help/feature/multiplayer/), providing hosts with several options to configure their servers as they want.
+One of the options made available to our [LDN](https://yuzu-emu.org/entry/ldn-is-here/) users is the ability to [create private rooms](https://yuzu-emu.org/help/feature/multiplayer/), providing hosts with several options to configure their servers as they want.
 
 [twitchax](https://github.com/twitchax) knows that for certain server hosts, such as `fly.io`, a {{< gh-hovercard "10068" "custom bind address" >}} is needed.
 They implemented the functionality and now users can pass the `--bind-address` argument to the room’s configuration.
@@ -298,7 +298,7 @@ You can be sure I’ll be nagging our GPU devs until it gets added.
 
 ### AMD, delivering on their promises
 
-[Last month,](https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/#amd-2332-and-newer-drivers) we mentioned that AMD introduced a regression that caused graphical corruption and crashes with some games.
+[Last month,](https://yuzu-emu.org/entry/yuzu-progress-report-mar-2023/#amd-2332-and-newer-drivers) we mentioned that AMD introduced a regression that caused graphical corruption and crashes with some games.
 
 We’re happy to announce that since driver version 23.4.2 and later the issue is resolved for Vega and newer, allowing Radeon Windows users to fully benefit from the new Vulkan extensions supported by the latest drivers, reducing shader building stuttering to a minimum. 
 Just as AMD promised, except...

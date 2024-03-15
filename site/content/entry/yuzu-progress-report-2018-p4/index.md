@@ -49,7 +49,7 @@ Recently we have had new features like Joystick Hot-plugging support and Touch I
 While Joystick hot-plugging allows us to connect/disconnect controllers on-the-go, without crashing the emulator, Touch Input handling allows us to use a physical touch screen for input, in the place of a mouse.
 
 Web Services & Telemetry features are used to gather anonymous user statistics and for other backend stuff like user authentication.
-We now have a [Compatibility Database](https://yuzu-mirror.github.io/game/) which lists the playability information for various games.
+We now have a [Compatibility Database](https://yuzu-emu.org/game/) which lists the playability information for various games.
 Mind you that this list is a work-in-progress and is community driven.
 Play games on yuzu and while playing, go to `Help -> Report Compatibility` and submit info to help improve the database.
 `Discord Rich Presence`, a novelty feature, was also added so that yuzu fans could show off in their discord statuses.
@@ -461,7 +461,7 @@ His other notable works include:
 * Added support for `LayeredFS` mods - which brings infinite possibilities for games in yuzu.
 * Added support for packed updates - which are basically `XCI` files with both base game and updates.
 * Implemented DLC loading.
-* Added support for full key-derivation, so that you don't need 3rd party tools for dumping keys, only our [quickstart](https://yuzu-mirror.github.io/help/quickstart/) guide.
+* Added support for full key-derivation, so that you don't need 3rd party tools for dumping keys, only our [quickstart](https://yuzu-emu.org/help/quickstart/) guide.
 * Added support for loading IPS patches.
 * Added support for the more easier IPSwitch format patches.
 * Implemented save data types - `TemporaryStorage` and `DeviceSaveData`.
