@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="Recommended GPU Drivers for Linux &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/wiki/recommended-gpu-drivers-for-linux/" />
+    <meta property="og:description" content="Intel For recent versions of distros such as Ubuntu 20.04 and Fedora 32, the default installed version of Mesa provided by the distro is recommended, running the Iris driver and ANV for Vulkan. For older versions such as Ubuntu 18.04, Linux Mint 19.3, Debian Buster, RHEL 8, and others, users are likely to run in to some issues (issues that have yet to be reported for yuzu specifically, but be advised)." />
+<meta name="description" content="Intel For recent versions of distros such as Ubuntu 20.04 and Fedora 32, the default installed version of Mesa provided by the distro is recommended, running the Iris driver and ANV for Vulkan. For older versions such as Ubuntu 18.04, Linux Mint 19.3, Debian Buster, RHEL 8, and others, users are likely to run in to some issues (issues that have yet to be reported for yuzu specifically, but be advised)." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/logo.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/wiki/recommended-gpu-drivers-for-linux/"> 
+
+    <title>Recommended GPU Drivers for Linux - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section">
+    <h1 class="title">Recommended GPU Drivers for Linux</h1>
+    <div class="content">
+        <h2 id="intel">Intel</h2>
+<p>For recent versions of distros such as Ubuntu 20.04 and Fedora 32, the default installed version of Mesa provided by the distro is recommended, running the Iris driver and ANV for Vulkan. For older versions such as Ubuntu 18.04, Linux Mint 19.3, Debian Buster, RHEL 8, and others, users are likely to run in to some issues (issues that have yet to be reported for yuzu specifically, but be advised). For now as a cautionary measure, here are some recommendations:</p>
+<ul>
+<li>Ubuntu 20.04, 20.10, Linux Mint 20, Debian Bullseye: The stable version of Mesa is recommended.
+<ul>
+<li>Optionally, users can install Kisak&rsquo;s Mesa PPAs (see below).</li>
+</ul>
+</li>
+<li>Ubuntu 18.04, Linux Mint 19: Install <a href="https://launchpad.net/~kisak/+archive/ubuntu/kisak-mesa">Kisak&rsquo;s Mesa Fresh PPA</a>:
+<ul>
+<li>Debian Buster users can try this, but there&rsquo;s been no investigation to confirm that this works well on the distribution. Install the PPA at your own risk.</li>
+<li><strong>Don&rsquo;t forget to use HWE X and kernel or equivalent</strong> [<a href="https://launchpad.net/~kisak/+archive/ubuntu/kisak-mesa">source</a>] [<a href="https://wiki.ubuntu.com/Kernel/LTSEnablementStack">link</a>].</li>
+</ul>
+</li>
+</ul>
+<pre tabindex="0"><code>sudo add-apt-repository ppa:kisak/kisak-mesa
+sudo apt-get update
+sudo apt-get dist-upgrade
+</code></pre><ul>
+<li>Fedora 32, 33, Rawhide: The stable version of Mesa is recommended.
+<ul>
+<li>Optionally, users can install the <a href="#amd">AMD</a> recommendation for Fedora 32.</li>
+</ul>
+</li>
+<li>RHEL 8 and equivalent: No confirmed solution. Users can try manually building Mesa, installing it to an alternate root location, and setting the variables <code>LD_LIBRARY_PATH</code> and <code>LIBGL_DRIVERS_PATH</code> appropriately, but this has not been confirmed to work.</li>
+<li>Arch Linux and Manjaro: The default version of Mesa is recommended. For Vulkan, install <code>vulkan-intel</code>.
+<ul>
+<li>(Optional) Enable <a href="https://wiki.archlinux.org/index.php/Unofficial_user_repositories#mesa-git">mesa-git</a> unofficial repository your machine, then install <code>mesa-git</code>  and <code>vulkan-intel-git</code>.
+<ul>
+<li>Users who have not setup multilib can safely skip 32-bit packages.</li>
+<li>Don&rsquo;t forget to add <code>SigLevel = PackageOptional</code> when you enable the <code>mesa-git</code> repository.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="nvidia">NVIDIA</h2>
+<p>The latest available proprietary NVIDIA blob in the package manager is recommended. Drivers older than the 450 series may not be compatible with Linux 5.8 and above. Aside from this, users should expect a similar yuzu experience to that found on Windows, as the drivers are nearly identical.</p>
+<ul>
+<li>Ubuntu and Linux Mint: Install the latest available NVIDIA driver:
+<ul>
+<li>Mint 20, Ubuntu 18.04 and Ubuntu 20.04 should use <code>nvidia-driver-440</code> for now until the newer drivers are compatible with the older kernel versions.</li>
+<li>Ubuntu 20.10 and later can use <code>nvidia-driver-450</code>.</li>
+</ul>
+</li>
+<li>Debian: See the <a href="https://wiki.debian.org/NvidiaGraphicsDrivers">their wiki page</a> to install the most recent NVIDIA driver available for your graphics card.</li>
+<li>Fedora, RHEL and equivalent like CentOS: Enable <a href="https://rpmfusion.org/Configuration">RPM Fusion</a> (at least <strong>nonfree</strong>), update, then install <code>xorg-x11-drv-nvidia</code>
+<ul>
+<li>RPM Fusion free is needed to install FFmpeg libraries for yuzu, so both will need to be enabled anyway.</li>
+</ul>
+</li>
+<li>Arch Linux: Depending on your needs, install either <code>nvidia</code> or <code>nvidia-dkms</code> in pacman</li>
+<li>Manjaro: Use Manjaro Settings Manager -&gt; Hardware Configuration -&gt; Auto Install Proprietary Driver</li>
+</ul>
+<h2 id="amd">AMD</h2>
+<p>Mesa compiled with at least LLVM 11 is recommended to use RadeonSI. yuzu&rsquo;s OpenGL shader decompiler generates shaders that are often incompatible with Mesa based on LLVM 10, resulting in frequent unrecoverable driver crashes. Using a version of Mesa built on LLVM 11 or later can circumvent most of this, but for games that already cause yuzu to generate invalid shaders (e.g. Fire Emblem: Three Houses), crashes will still occur.</p>
+<p>The recommended Vulkan driver is Mesa&rsquo;s RADV driver on either LLVM or ACO (the installed version&rsquo;s default is recommended). <a href="https://github.com/GPUOpen-Drivers/AMDVLK">AMDVLK</a> also works okay in most scenarios, but can be a bit slower and has notable bugs in some games like Super Smash Bros. Ultimate. These drivers can be installed simultaneously and selected in yuzu at runtime, so the user can compare the two if they wish.</p>
+<ul>
+<li>Ubuntu 20.10 and later, Debian Bullseye: The stable version of Mesa is recommended.
+<ul>
+<li>Update the machine if it has not been recently: the LLVM version has updated to 11 and is now sufficient to run yuzu.</li>
+<li>Optionally, users can install Kisak&rsquo;s Mesa PPAs (see below).</li>
+</ul>
+</li>
+<li>Ubuntu 18.04 and 20.04, Linux Mint 19 and 20: Install <a href="https://launchpad.net/~kisak/+archive/ubuntu/kisak-mesa">Kisak&rsquo;s Mesa Fresh PPA</a> (frequent builds of Mesa using LLVM 11)
+<ul>
+<li>Debian Buster users can try this, but there&rsquo;s been no investigation to confirm that this works well on the distribution. Install the PPA at your own risk.</li>
+<li><strong>Don&rsquo;t forget to use HWE X and kernel or equivalent</strong> [<a href="https://launchpad.net/~kisak/+archive/ubuntu/kisak-mesa">source</a>] [<a href="https://wiki.ubuntu.com/Kernel/LTSEnablementStack">link</a>].</li>
+</ul>
+</li>
+</ul>
+<pre tabindex="0"><code>sudo add-apt-repository ppa:kisak/kisak-mesa
+sudo apt-get update
+sudo apt-get dist-upgrade
+</code></pre><ul>
+<li>Fedora 33, Rawhide: The stable version of Mesa is recommended.
+<ul>
+<li>Optionally, users can install the following recommendation for Fedora 32.</li>
+</ul>
+</li>
+<li>Fedora 32: Enable and install <a href="https://copr.fedorainfracloud.org/coprs/che/mesa/">Che&rsquo;s Mesa COPR</a> (daily builds of Mesa git using LLVM 12):</li>
+</ul>
+<pre tabindex="0"><code>sudo dnf copr enable che/llvm
+sudo dnf copr enable che/mesa
+sudo dnf update
+</code></pre><ul>
+<li>RHEL 8 and equivalent: No confirmed solution. Users can try manually building Mesa and LLVM 11, installing them to an alternate root location, and setting the variables <code>LD_LIBRARY_PATH</code> and <code>LIBGL_DRIVERS_PATH</code> appropriately, but this has not been confirmed to work.</li>
+<li>Arch Linux and Manjaro: The stable version of Mesa is recommended. For Vulkan, install <code>vulkan-radeon</code>.
+<ul>
+<li>Update the machine if it has not been recently: the LLVM version has updated to 11 and is now sufficient to run yuzu.</li>
+<li>(Optional) Enable <a href="https://wiki.archlinux.org/index.php/Unofficial_user_repositories#mesa-git">mesa-git</a> unofficial repository, then install <code>mesa-git</code>  and <code>vulkan-radeon-git</code> (frequent builds of Mesa git using LLVM 12).
+<ul>
+<li>Users who have not setup multilib can safely skip 32-bit packages.</li>
+<li>Don&rsquo;t forget to add <code>SigLevel = PackageOptional</code> when you enable the <code>mesa-git</code> repository.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="environment-variables">Environment Variables</h2>
+<p>Some environment variables are needed to fix certain graphical issues in yuzu or increase performance. A variable can be used simply by pre-pending the command with the needed variables. For example, to play Kirby on AMD:</p>
+<pre tabindex="0"><code>force_integer_tex_nearest=true ./yuzu
+</code></pre><h3 id="nvidia-1">NVIDIA</h3>
+<ul>
+<li><code>__GL_THREADED_OPTIMIZATIONS=1</code> can net additional performance.</li>
+</ul>
+<h3 id="amd-1">AMD</h3>
+<ul>
+<li><code>force_integer_tex_nearest=true</code> fixes black textures in Kirby Fighters 2 and Kirby Star Allies.</li>
+<li><code>AMD_DEBUG=nohyperz</code> fixes black textures in The Legend of Zelda: Breath of the Wild and both Xenoblade Chronicles games for GCN ≥ 4.0 GPUs.</li>
+<li><code>mesa_glthread=true</code> can net additional performance, but only if the executable is not named <code>yuzu</code>. Otherwise, this variable already defaults to <code>true</code> for executables named <code>yuzu</code>, so it may not be necessary.</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Mesa supports OpenGL 4.6 for Intel Gen 8 GPUs (Broadwell, Gen 5 CPUs) when using the (now default) Iris driver. yuzu will not work with the older i965 driver.</li>
+<li>Users looking to build Mesa on Arch Linux themselves can follow the <a href="https://github.com/yuzu-mirror/yuzu/wiki/%5BDeprecated%5D-Building-Mesa-on-Arch-Linux">old guide</a>.</li>
+</ul>
+<h2 id="pitfalls">Pitfalls</h2>
+<ul>
+<li>Using nouveau (Mesa) with NVIDIA is not recommended. Since the <a href="https://github.com/yuzu-emu/yuzu/pull/4967">Texture Cache Rewrite</a> was merged, games have been booting on nouveau. However, almost all games, especially those that require 3D rendering, have some sort of issues.</li>
+<li>Do not use AMDGPU-PRO. :)
+<ul>
+<li>AMDGPU-PRO is fine to use for most of its features (OpenCL, AMF, Vulkan to some extent), but it is <em>strongly</em> recommended not to install its libGL component.</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</section>
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2024 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>

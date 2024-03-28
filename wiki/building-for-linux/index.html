@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="Building for Linux &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/wiki/building-for-linux/" />
+    <meta property="og:description" content="This article was written for developers. Users looking to simply run yuzu should try downloading Mainline first. As it is an AppImage, it only needs to be downloaded and made executable to use it.
+Dependencies You&rsquo;ll need to download and install the following to build yuzu:
+GCC v11&#43; (for C&#43;&#43;20 support) &amp; misc This page is being updated as we transition to GCC 11 If GCC 12 is installed, Clang v14&#43; is required for compiling CMake 3." />
+<meta name="description" content="This article was written for developers. Users looking to simply run yuzu should try downloading Mainline first. As it is an AppImage, it only needs to be downloaded and made executable to use it.
+Dependencies You&rsquo;ll need to download and install the following to build yuzu:
+GCC v11&#43; (for C&#43;&#43;20 support) &amp; misc This page is being updated as we transition to GCC 11 If GCC 12 is installed, Clang v14&#43; is required for compiling CMake 3." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/logo.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/wiki/building-for-linux/"> 
+
+    <title>Building for Linux - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section">
+    <h1 class="title">Building for Linux</h1>
+    <div class="content">
+        <p><strong>This article was written for developers. Users looking to simply run yuzu should try downloading <a href="https://yuzu-emu.org/downloads/">Mainline</a> first. As it is an AppImage, it only needs to be downloaded and made executable to use it.</strong></p>
+<hr>
+<h3 id="dependencies">Dependencies</h3>
+<p>You&rsquo;ll need to download and install the following to build yuzu:</p>
+<ul>
+<li><a href="https://gcc.gnu.org/">GCC</a> v11+ (for C++20 support) &amp; misc
+<ul>
+<li>This page is being updated as we transition to GCC 11</li>
+</ul>
+</li>
+<li>If GCC 12 is installed, <a href="https://clang.llvm.org/">Clang</a> v14+ is required for compiling</li>
+<li><a href="https://www.cmake.org/">CMake</a> 3.15+</li>
+</ul>
+<p>The following are handled by yuzu&rsquo;s externals:</p>
+<ul>
+<li><a href="https://ffmpeg.org/">FFmpeg</a></li>
+<li><a href="https://www.libsdl.org/download-2.0.php">SDL2</a> 2.0.18+</li>
+<li><a href="https://opus-codec.org/downloads/">opus</a></li>
+</ul>
+<p>If version 5.15.2 is not already installed, pre-compiled binaries for Qt 5.15.2 will be downloaded from <a href="https://github.com/yuzu-emu/ext-linux-bin">here</a> automatically by CMake:</p>
+<ul>
+<li><a href="https://qt-project.org/downloads">Qt</a> 5.15+</li>
+</ul>
+<p>All other dependencies will be downloaded by <a href="https://vcpkg.io/">vcpkg</a> if needed:</p>
+<ul>
+<li><a href="https://www.boost.org/users/download/">Boost</a> 1.79.0+</li>
+<li><a href="https://github.com/catchorg/Catch2">Catch2</a> 2.13.7 - 2.13.9</li>
+<li><a href="https://fmt.dev/">fmt</a> 8.0.1+</li>
+<li><a href="http://www.lz4.org">lz4</a> 1.8+</li>
+<li><a href="https://github.com/nlohmann/json">nlohmann_json</a> 3.8+</li>
+<li><a href="https://www.openssl.org/source/">OpenSSL</a></li>
+<li><a href="https://www.zlib.net/">ZLIB</a> 1.2+</li>
+<li><a href="https://facebook.github.io/zstd/">zstd</a> 1.5+</li>
+</ul>
+<p>If an ARM64 build is intended, export <code>VCPKG_FORCE_SYSTEM_BINARIES=1</code>.</p>
+<p>Dependencies are listed here as commands that can be copied/pasted. Of course, they should be inspected before being run.</p>
+<ul>
+<li>Arch / Manjaro:
+<ul>
+<li><code>sudo pacman -Syu --needed base-devel boost catch2 cmake ffmpeg fmt git glslang libzip lz4 mbedtls ninja nlohmann-json openssl opus qt5 sdl2 zlib zstd zip unzip</code></li>
+<li>Building with QT Web Engine needs to be specified when running CMake with the param <code>-DCMAKE_CXX_FLAGS=&quot;-I/usr/include/qt/QtWebEngineWidgets&quot;</code> with qt5-webengine installed.</li>
+<li>GCC 11 or later is required.</li>
+</ul>
+</li>
+<li>Ubuntu / Linux Mint / Debian:
+<ul>
+<li><code>sudo apt-get install autoconf cmake g++-11 gcc-11 git glslang-tools libasound2 libboost-context-dev libglu1-mesa-dev libhidapi-dev libpulse-dev libtool libudev-dev libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-xinerama0 libxcb-xkb1 libxext-dev libxkbcommon-x11-0 mesa-common-dev nasm ninja-build qtbase5-dev qtbase5-private-dev qtwebengine5-dev qtmultimedia5-dev libmbedtls-dev catch2 libfmt-dev liblz4-dev nlohmann-json3-dev libzstd-dev libssl-dev libavfilter-dev libavcodec-dev libswscale-dev</code></li>
+<li>Ubuntu 22.04, Linux Mint 20, or Debian Bullseye or later is required.</li>
+<li>Users need to manually specify building with QT Web Engine enabled.  This is done using the parameter <code>-DYUZU_USE_QT_WEB_ENGINE=ON</code> when running CMake.</li>
+<li>Users need to manually specify building with GCC 11. This can be done by adding the parameters <code>-DCMAKE_C_COMPILER=gcc-11 -DCMAKE_CXX_COMPILER=g++-11</code> when running CMake. i.e.</li>
+<li>Users need to manually disable building SDL2 from externals if they intend to use the version provided by their system by adding the parameters <code>-DYUZU_USE_EXTERNAL_SDL2=OFF</code></li>
+</ul>
+</li>
+</ul>
+<pre tabindex="0"><code>git submodule update --init --recursive
+cmake .. -GNinja -DCMAKE_C_COMPILER=gcc-11 -DCMAKE_CXX_COMPILER=g++-11
+</code></pre><ul>
+<li>Fedora:
+<ul>
+<li><code>sudo dnf install autoconf ccache cmake fmt-devel gcc{,-c++} glslang hidapi-devel json-devel libtool libusb1-devel libzstd-devel lz4-devel nasm ninja-build openssl-devel pulseaudio-libs-devel qt5-linguist qt5-qtbase{-private,}-devel qt5-qtwebengine-devel qt5-qtmultimedia-devel speexdsp-devel wayland-devel zlib-devel ffmpeg-devel libXext-devel</code></li>
+<li>Fedora 32 or later is required.</li>
+<li>Due to GCC 12, Fedora 36 or later users need to install <code>clang</code>, and configure CMake to use it via <code>-DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang</code></li>
+<li>CMake arguments to force system libraries:
+<ul>
+<li>SDL2: <code>-DYUZU_USE_BUNDLED_SDL2=OFF -DYUZU_USE_EXTERNAL_SDL2=OFF</code></li>
+<li>FFmpeg: <code>-DYUZU_USE_EXTERNAL_FFMPEG=OFF</code></li>
+</ul>
+</li>
+<li><a href="https://rpmfusion.org/">RPM Fusion</a> (free) is required to install <code>ffmpeg-devel</code></li>
+</ul>
+</li>
+<li>Gentoo:
+<ul>
+<li><strong>**Disclaimer**</strong>: this dependency list was written by a novice Gentoo user who first set it up with a DE, and then based this list off of the Fedora dependency list. This may be missing some requirements, or includes too many. Caveat emptor.</li>
+<li><code>emerge --ask app-arch/lz4 dev-libs/boost dev-libs/hidapi dev-libs/libzip dev-libs/openssl dev-qt/linguist dev-qt/qtconcurrent dev-qt/qtcore dev-util/cmake dev-util/glslang dev-vcs/git media-libs/alsa-lib media-libs/opus media-sound/pulseaudio media-video/ffmpeg net-libs/mbedtls sys-libs/zlib x11-libs/libXext</code></li>
+<li>GCC 11 or later is required.</li>
+<li>Users may need to append <code>pulseaudio</code>, <code>bindist</code> and <code>context</code> to the <code>USE</code> flag.</li>
+</ul>
+</li>
+</ul>
+<h3 id="cloning-yuzu-with-git">Cloning yuzu with Git</h3>
+<p><strong>Master:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --recursive https://github.com/yuzu-emu/yuzu
+</span></span><span style="display:flex;"><span>cd yuzu
+</span></span></code></pre></div><p><strong>Mainline:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --recursive https://github.com/yuzu-emu/yuzu-mainline
+</span></span><span style="display:flex;"><span>cd yuzu-mainline
+</span></span></code></pre></div><p>The <code>--recursive</code> option automatically clones the required Git submodules.</p>
+<h3 id="building-yuzu-in-release-mode-optimized">Building yuzu in Release Mode (Optimized)</h3>
+<p>If you need to run ctests, you can disable <code>-DYUZU_TESTS=OFF</code> and install Catch2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
+</span></span><span style="display:flex;"><span>cmake .. -GNinja -DYUZU_USE_BUNDLED_VCPKG<span style="color:#f92672">=</span>ON -DYUZU_TESTS<span style="color:#f92672">=</span>OFF
+</span></span><span style="display:flex;"><span>ninja
+</span></span><span style="display:flex;"><span>sudo ninja install 
+</span></span></code></pre></div><p>Optionally, you can use <code>cmake-gui ..</code> to adjust various options (e.g. disable the Qt GUI).</p>
+<h3 id="building-yuzu-in-debug-mode-slow">Building yuzu in Debug Mode (Slow)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
+</span></span><span style="display:flex;"><span>cmake .. -GNinja -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>Debug -DYUZU_USE_BUNDLED_VCPKG<span style="color:#f92672">=</span>ON -DYUZU_TESTS<span style="color:#f92672">=</span>OFF
+</span></span><span style="display:flex;"><span>ninja
+</span></span></code></pre></div><h3 id="building-with-debug-symbols">Building with debug symbols</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir build <span style="color:#f92672">&amp;&amp;</span> cd build
+</span></span><span style="display:flex;"><span>cmake .. -GNinja -DCMAKE_BUILD_TYPE<span style="color:#f92672">=</span>RelWithDebInfo -DYUZU_USE_BUNDLED_VCPKG<span style="color:#f92672">=</span>ON -DYUZU_TESTS<span style="color:#f92672">=</span>OFF
+</span></span><span style="display:flex;"><span>ninja
+</span></span></code></pre></div><h3 id="running-without-installing">Running without installing</h3>
+<p>After building, the binaries <code>yuzu</code> and <code>yuzu-cmd</code> (depending on your build options) will end up in <code>build/bin/</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># SDL</span>
+</span></span><span style="display:flex;"><span>cd build/bin/
+</span></span><span style="display:flex;"><span>./yuzu-cmd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Qt</span>
+</span></span><span style="display:flex;"><span>cd build/bin/
+</span></span><span style="display:flex;"><span>./yuzu
+</span></span></code></pre></div><h3 id="debugging">Debugging</h3>
+<ol>
+<li>Enable CPU debugging
+<img src="https://raw.githubusercontent.com/flathub/org.yuzu_emu.yuzu/master/assets/yuzu-settings-2.png" alt=""></li>
+<li>Disable both Host MMU emulation options
+<img src="https://raw.githubusercontent.com/flathub/org.yuzu_emu.yuzu/master/assets/yuzu-settings-1.png" alt=""></li>
+<li>Run gdb</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd data
+</span></span><span style="display:flex;"><span>gdb ../build/bin/yuzu            <span style="color:#75715e"># Start GDB</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>gdb<span style="color:#f92672">)</span> run                        <span style="color:#75715e"># Run yuzu under GDB</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>gdb<span style="color:#f92672">)</span> bt                         <span style="color:#75715e"># Print a backtrace of the entire callstack to see which codepath the crash occurred on</span>
+</span></span></code></pre></div>
+    </div>
+</section>
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2024 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>

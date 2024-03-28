@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="Switch Mods &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/wiki/switch-mods/" />
+    <meta property="og:description" content="Usage For info on how to use mods, refer to the Game Modding page.
+If you&rsquo;re looking for an automated process to install these mods, you can try the Yuzu Mod Downloader by amakvana.
+DISCLAIMER: This is not an official mod downloader from yuzu team, so we cannot guarantee support for it in our Discord server or support forums. For any issues with this program, contact its developer through the mod downloader&rsquo;s GitHub repository." />
+<meta name="description" content="Usage For info on how to use mods, refer to the Game Modding page.
+If you&rsquo;re looking for an automated process to install these mods, you can try the Yuzu Mod Downloader by amakvana.
+DISCLAIMER: This is not an official mod downloader from yuzu team, so we cannot guarantee support for it in our Discord server or support forums. For any issues with this program, contact its developer through the mod downloader&rsquo;s GitHub repository." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/logo.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/wiki/switch-mods/"> 
+
+    <title>Switch Mods - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section">
+    <h1 class="title">Switch Mods</h1>
+    <div class="content">
+        <h3 id="usage"><strong>Usage</strong></h3>
+<p>For info on how to use mods, refer to the <a href="https://yuzu-emu.org/help/feature/game-modding/">Game Modding page</a>.</p>
+<p>If you&rsquo;re looking for an automated process to install these mods, you can try the <a href="https://github.com/amakvana/YuzuModDownloader/releases/latest">Yuzu Mod Downloader</a> by <a href="https://github.com/amakvana">amakvana.</a></p>
+<blockquote>
+<p><strong>DISCLAIMER:</strong> This is not an official mod downloader from yuzu team, so we cannot guarantee support for it in our Discord server or support forums. For any issues with this program, contact its developer through the <a href="https://github.com/amakvana/YuzuModDownloader">mod downloader&rsquo;s GitHub repository.</a></p>
+</blockquote>
+<hr>
+<h3 id="animal-crossing-new-horizons">Animal Crossing: New Horizons</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Animal%20Crossing%20New%20Horizons/32.9%20Super%20Ultrawide.zip">32:9 Super Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 32:9 aspect ratio for Super Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>2.0.5</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Animal%20Crossing%20New%20Horizons/21.9%20Ultrawide.zip">21:9 Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 21:9 aspect ratio for Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly. Now updated for the latest patch.</td>
+<td><code>2.0.5</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Animal%20Crossing%20New%20Horizons/16.10%20Aspect%20Ratio.zip">16:10 Aspect Ratio</a></td>
+<td>Makes the game render with a 16:10 aspect ratio. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>2.0.5</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading"></h1>
+<h3 id="captain-toad-treasure-tracker">Captain Toad: Treasure Tracker</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Captain%20Toad%20Treasure%20Tracker/32.9%20Super%20Ultrawide.zip">32:9 Super Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 32:9 aspect ratio for Super Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.3.0</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Captain%20Toad%20Treasure%20Tracker/21.9%20Ultrawide.zip">21:9 Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 21:9 aspect ratio for Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.3.0</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Captain%20Toad%20Treasure%20Tracker/4.3%20Aspect%20Ratio.zip">4:3 Aspect Ratio</a></td>
+<td>Makes the game render with a 4:3 aspect ratio for CRT displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.3.0</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Captain%20Toad%20Treasure%20Tracker/Disable_DOF.zip">Disable DOF</a></td>
+<td>Disabled in-game Depth of field</td>
+<td><code>1.0.0</code> <code>1.3.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Captain%20Toad%20Treasure%20Tracker/Disable_On_Screen_Cursor.zip">Disable Screen Cursor Icon</a></td>
+<td>Disabled the on screen interaction cursor icon</td>
+<td><code>1.0.0</code> <code>1.3.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Captain%20Toad%20Treasure%20Tracker/Force_Max_Resolution.zip">Force Max Resolution</a></td>
+<td>Forces the game to always run at 1920x1080</td>
+<td><code>1.0.0</code> <code>1.3.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-1"></h1>
+<h3 id="crash-bandicoot-n-sane-trilogy">Crash Bandicoot N. Sane Trilogy</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Crash%20Bandicoot%20N%20Sane%20Trilogy/60FPS.zip">60 FPS</a></td>
+<td>Makes the game run full speed at 60 FPS</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Crash%20Bandicoot%20N%20Sane%20Trilogy/1920x1080.zip">1920x1080</a></td>
+<td>Makes the Game run at 1080p Resolution</td>
+<td><code>1.0.0</code></td>
+<td>zakaria</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-2"></h1>
+<h3 id="crash-team-racing-nitro-fueled">Crash Team Racing: Nitro-Fueled</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Crash%20Team%20Racing%20NitroFueled/CTRNF_60fps.zip">60 FPS</a></td>
+<td>Makes the game run full speed at 60 FPS</td>
+<td><code>1.0.7</code> <code>1.0.9</code> <code>1.0.10</code> <code>1.0.11</code> <code>1.0.12</code> <code>1.0.13</code> <code>1.0.14</code> <code>1.0.15</code></td>
+<td>Kirby567fan, masagrator, Mauste</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Crash%20Team%20Racing%20NitroFueled/CTRNF_UnlockEverything.zip">Unlock Everything</a></td>
+<td>Unlocks all unlockables and Pit Stop items</td>
+<td><code>1.0.15</code></td>
+<td>DaBlackDeath, iCeParadox64</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-3"></h1>
+<h3 id="donkey-kong-country-tropical-freeze">Donkey Kong Country: Tropical Freeze</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/victoria4dx/switch-mods/raw/main/Donkey%20Kong:%20Tropical%20Freeze/1.0.2/0100C1F0051B6000/32.9%20Super%20Ultrawide.zip">32:9 Super Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 32:9 aspect ratio for Super Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td>1.0.2</td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/victoria4dx/switch-mods/raw/main/Donkey%20Kong:%20Tropical%20Freeze/1.0.2/0100C1F0051B6000/21.9%20Ultrawide.zip">21:9 Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 21:9 aspect ratio for Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td>1.0.2</td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods/raw/main/Donkey%20Kong%20Country:%20Tropical%20Freeze/%5B0100C1F0051B6000%5D/1.0.0/4K-2K.rar">4K Resolution</a></td>
+<td>Makes the game render at 2160p resolution</td>
+<td>1.0.0</td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-4"></h1>
+<h3 id="fire-emblem-three-houses">Fire Emblem: Three Houses</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cdn.discordapp.com/attachments/495758692495523854/762098744396218398/60_FPS.zip">60 FPS</a></td>
+<td>Makes the game run full speed at 60 FPS</td>
+<td><code>1.0.2</code> <code>1.1.0</code> <code>1.1.1</code> <code>1.2.0</code></td>
+<td>masagrator</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Fire%20Emblem%20Three%20Houses/Outline_Removal.zip">Outline Removal</a></td>
+<td>Remove outline of character model</td>
+<td><code>1.0.2</code> <code>1.1.0</code> <code>1.1.1</code> <code>1.2.0</code></td>
+<td>MegaMagikarp</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-5"></h1>
+<h3 id="good-job">Good Job!</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Good%20Job/SPOILER_GoodJob60FPS.zip">60 FPS</a></td>
+<td>Makes the game run full speed at 60 FPS</td>
+<td><code>1.0.0</code></td>
+<td>Kirby567fan</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-6"></h1>
+<h3 id="kirby-star-allies">Kirby: Star Allies</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Kirby%20Star%20Allies/60FPS.zip">60 FPS</a></td>
+<td>Makes the game run full speed at 60 FPS</td>
+<td><code>4.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-7"></h1>
+<h3 id="kirby-and-the-forgotten-land">Kirby and the Forgotten Land</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Kirby%20and%20the%20Forgotten%20Land/32.9%20Super%20Ultrawide.zip">32:9 Aspect Ratio</a></td>
+<td>Makes the game render with a Hor+ 32:9 aspect ratio for Super Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.0.0</code></td>
+<td>victoria4dx, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Kirby%20and%20the%20Forgotten%20Land/21.9.rar">21:9 Aspect Ratio</a></td>
+<td>Makes the game render with a Hor+ 21:9 aspect ratio for Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Kirby%20and%20the%20Forgotten%20Land/Disable%20Dynamic%20Resolution.rar">Disable Dynamic Resolution</a></td>
+<td>Disables dynamic resolution swapping. Helps to reduce stutters caused by dynamic resolution changes</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Kirby%20and%20the%20Forgotten%20Land/60fps.rar">60 FPS</a></td>
+<td>Makes the game run full speed dynamic 60 FPS</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Kirby%20and%20the%20Forgotten%20Land/60fps%20-%20%20Full.rar">Full 60 FPS</a></td>
+<td>Makes the game run full speed dynamic 60 FPS, including distant NPC animations (Very demanding on CPU/GPU)</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Kirby%20and%20the%20Forgotten%20Land/30fps%20-%20%20Full.rar">Full 30 FPS</a></td>
+<td>Makes the game run full speed 30 FPS, including distant 30 FPS NPC animations (NPC animations are normally 15 FPS)</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-8"></h1>
+<h3 id="luigis-mansion-3">Luigi&rsquo;s Mansion 3</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Luigis%20Mansion%203/32.9%20Super%20Ultrawide.zip">32:9 Super Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 32:9 aspect ratio for Super Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.4.0</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Luigis%20Mansion%203/21.9.rar">21:9 Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 21:9 aspect ratio for Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.4.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Luigis%20Mansion%203/120FPS%20-%201.4.0.rar">120 FPS</a></td>
+<td>Unlocks framerate to 120 FPS.</td>
+<td><code>1.4.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Luigis%20Mansion%203/60_FPS.zip">60 FPS</a></td>
+<td>Unlocks framerate to 60 FPS.</td>
+<td><code>1.0.0</code> <code>1.4.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Luigis%20Mansion%203/Disable-Dynamic-Resolution.zip">Disable Dynamic Resolution</a></td>
+<td>Disables the game&rsquo;s automatic adjustment of resolution. Required for playing this title</td>
+<td><code>1.0.0</code> <code>1.4.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Luigis%20Mansion%203/Disable-Lens-Flare.zip">Disable Lens Flare</a></td>
+<td>Disables the game&rsquo;s  Flashlight Lens Flare. A workaround for it flickering on the Vulkan API</td>
+<td><code>1.0.0</code> <code>1.4.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-9"></h1>
+<h3 id="mario-kart-8-deluxe">Mario Kart 8 Deluxe</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Mario%20Kart%208%20Deluxe/32.9%20Super%20Ultrawide.zip">32:9 Super Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 32:9 aspect ratio for Super Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>2.0.0</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Mario%20Kart%208%20Deluxe/21.9%20Ultrawide.zip">21:9 Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 21:9 aspect ratio for Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>2.0.0</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Mario%20Kart%208%20Deluxe/Force_FXAA_On.zip">Force FXAA</a></td>
+<td>Forces the game to use FXAA</td>
+<td><code>1.7.1</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Mario%20Kart%208%20Deluxe/Level_of_Detail_Enhance.zip">Improved LOD</a></td>
+<td>Increases the detail on far away textures</td>
+<td><code>1.7.1</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-10"></h1>
+<h3 id="mario-strikers-battle-league">Mario Strikers™: Battle League</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Mario%20Strikers%20Battle%20League/cutscene%20skip.7z">No Intro/Credits bypass mod</a></td>
+<td>Bypasses the issue with game intro and credits video(s) by replacing it with a &lsquo;dummy&rsquo; 1 second video file.</td>
+<td><code>1.0.0</code></td>
+<td>piplup55</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-11"></h1>
+<h1 id="heading-12"></h1>
+<h3 id="mario-tennis-aces">Mario Tennis Aces</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Mario%20Tennis%20Aces/Disable_Dynamic_Resolution.zip">Disable Dynamic Resolution</a></td>
+<td>Disables the game&rsquo;s automatic adjustment of resolution.</td>
+<td><code>1.0.0</code> <code>3.1.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Mario%20Tennis%20Aces/60fps.rar">60 FPS</a></td>
+<td>Makes the game run full speed at 60 FPS.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-13"></h1>
+<h3 id="metroid-dread">Metroid Dread</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Metroid%20Dread/Disable_Bloom.7z">Disable Bloom</a></td>
+<td>Disables Bloom effect. Might break other blur effects.</td>
+<td><code>1.0.0</code></td>
+<td>Edgarska</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Metroid%20Dread/Disable_FXAA.7z">Disable FXAA</a></td>
+<td>Disables the anti-aliasing of the game.</td>
+<td><code>1.0.0</code></td>
+<td>Edgarska</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-14"></h1>
+<h3 id="monster-hunter-generations-ultimate">Monster Hunter Generations Ultimate</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Monster%20Hunter%20Generations%20Ultimate/60FPS_mod.rar">60FPS</a></td>
+<td>Changes target frame-rate from 30fps to 60fps.</td>
+<td><code>1.4.0</code></td>
+<td>masagrator</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Monster%20Hunter%20Generations%20Ultimate/4K-2K.rar">4K Resolution</a></td>
+<td>Renders the game at 4K Docked</td>
+<td><code>1.4.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Monster%20Hunter%20Generations%20Ultimate/120fps-v1.4.0.rar">120 FPS</a></td>
+<td>Unlocks the framerate to run at 120 FPS</td>
+<td><code>1.4.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-15"></h1>
+<h3 id="no-more-heroes-3">No More Heroes 3</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/NMH3_60FPS.zip">60 FPS</a></td>
+<td>Unlocks the framerate to run at 60 FPS during gameplay, the open world, and cutscenes.</td>
+<td><code>1.0.2</code></td>
+<td>Kirby567Fan</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/NMH3_240FPS.zip">240 FPS (Unlocked FPS)</a></td>
+<td>Unlocks the framerate to run at 240 FPS during gameplay, the open world, and cutscenes. Essentially unlocked fps.</td>
+<td><code>1.0.2</code></td>
+<td>Kirby567Fan</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/720p_NormalOpenWorldDistance.zip">720p Graphics Mod With Normal Open World Distance</a></td>
+<td>720p resolution and increased graphical quality. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/720p%2BMB_NormalOpenWorldDistance.zip">720p+MB Graphics Mod With Normal Open World Distance</a></td>
+<td>720p resolution and increased graphical quality with added motion blur. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/720p_HighOpenWorldDistance.zip">720p Graphics Mod With High Open World Distance</a></td>
+<td>720p resolution and increased graphical quality with farther open world draw distance. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/720p%2BMB_HighOpenWorldDistance.zip">720p+MB Graphics Mod With High Open World Distance</a></td>
+<td>720p resolution and graphical quality with farther open world draw distance and added motion blur. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/1080p_NormalOpenWorldDistance.zip">1080p Graphics Mod With Normal Open World Distance</a></td>
+<td>1080p resolution and increased graphical quality. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/1080p%2BMB_NormalOpenWorldDistance.zip">1080p+MB Graphics Mod With Normal Open World Distance</a></td>
+<td>1080p resolution and increased graphical quality with added motion blur. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/1080p_HighOpenWorldDistance.zip">1080p Graphics Mod With High Open World Distance</a></td>
+<td>1080p resolution and increased graphical quality with farther open world draw distance. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/1080p%2BMB_HighOpenWorldDistance.zip">1080p+MB Graphics Mod With High Open World Distance</a></td>
+<td>1080p resolution and graphical quality with farther open world draw distance and added motion blur. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/1440p_NormalOpenWorldDistance.zip">1440p Graphics Mod With Normal Open World Distance</a></td>
+<td>1440p resolution and increased graphical quality. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/1440p%2BMB_NormalOpenWorldDistance.zip">1440p+MB Graphics Mod With Normal Open World Distance</a></td>
+<td>1440p resolution and increased graphical quality with added motion blur. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/1440p_HighOpenWorldDistance.zip">1440p Graphics Mod With High Open World Distance</a></td>
+<td>1440p resolution and increased graphical quality with farther open world draw distance. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/1440p%2BMB_HighOpenWorldDistance.zip">1440p+MB Graphics Mod With High Open World Distance</a></td>
+<td>1440p resolution and graphical quality with farther open world draw distance and added motion blur. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/4k_NormalOpenWorldDistance.zip">4K Graphics Mod With Normal Open World Distance</a></td>
+<td>4K resolution and increased graphical quality. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/4k%2BMB_NormalOpenWorldDistance.zip">4K+MB Graphics Mod With Normal Open World Distance</a></td>
+<td>4K resolution and increased graphical quality with added motion blur. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/4k_HighOpenWorldDistance.zip">4K Graphics Mod With High Open World Distance</a></td>
+<td>4K resolution and increased graphical quality with farther open world draw distance. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/No%20More%20Heroes%203/4k%2BMB_HighOpenWorldDistance.zip">4K+MB Graphics Mod With High Open World Distance</a></td>
+<td>4K resolution and graphical quality with farther open world draw distance and added motion blur. <a href="https://youtu.be/NeEmMi4Ado0">List of Improvements and Video Example</a></td>
+<td><code>1.0.0</code> <code>1.0.1</code> <code>1.0.2</code></td>
+<td>NikkMann</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-16"></h1>
+<h3 id="paper-mario-the-origami-king">Paper Mario: The Origami King</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Paper%20Mario%20The%20Origami%20King/60FPS.zip">60 FPS</a></td>
+<td>Makes the game run full speed at 60 FPS. Please note that there are currently timing issues in mini-games/battles. The game <em>may</em> also soft lock when using this mod.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-17"></h1>
+<h3 id="pokemon-brilliant-diamond">Pokemon Brilliant Diamond</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Pokemon%20Brilliant%20Diamond/704212">True Pokemon Scale + Following Speed Fix</a></td>
+<td>Makes pokemon have their true size in battles/overworld, and adjusts their walking speed to be the same as the player.</td>
+<td><code>1.1.0</code> <code>1.1.1</code> <code>1.1.2</code></td>
+<td>Edgarska</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Pokemon%20Brilliant%20Diamond/704321">True Pokemon Scale Battle Camera Fix + Faster Battles</a></td>
+<td>Fixes most of the issues with large pokemon not fitting into the screen during battles when using true scale, includes Faster Battles because they&rsquo;re incompatible.</td>
+<td><code>1.1.0</code> <code>1.1.1</code> <code>1.1.2</code></td>
+<td>Edgarska</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Pokemon%20Brilliant%20Diamond/703516">Faster Battles</a></td>
+<td>Removes the delay between the text box appearing and a pokemon initiating an attack during battles. Use only if not using True Scale.</td>
+<td><code>1.1.0</code> <code>1.1.1</code> <code>1.1.2</code></td>
+<td>Edgarska</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Pokemon%20Brilliant%20Diamond/703136">No Depth of Field + No FXAA</a></td>
+<td>Removes Depth of Field and FXAA. Removing FXAA disables color grading.</td>
+<td><code>1.1.0</code> <code>1.1.1</code> <code>1.1.2</code></td>
+<td>Edgarska</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Pokemon%20Brilliant%20Diamond/703009">No Depth of Field</a></td>
+<td>Removes Depth of Field only</td>
+<td><code>1.1.0</code> <code>1.1.1</code> <code>1.1.2</code></td>
+<td>Edgarska</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Pokemon%20Brilliant%20Diamond/Lowered_Bloom.7z">Lowered Bloom</a></td>
+<td>Lowers bloom just enough to not make everything look blurry at night, while still having bloom for lights.</td>
+<td><code>1.1.0</code> <code>1.1.1</code> <code>1.1.2</code></td>
+<td>Edgarska</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Pokemon%20Brilliant%20Diamond/703023">Bike Anywhere + Lowered Bloom</a></td>
+<td>Use the bike anywhere and also includes Lowered Bloom since they are incompatible.</td>
+<td><code>1.1.0</code> <code>1.1.1</code> <code>1.1.2</code></td>
+<td>Edgarska</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Pokemon%20Brilliant%20Diamond/703012">Easier Underground Digging</a></td>
+<td>Makes cracks appear sooner, and makes existing cracks bigger so it&rsquo;s easier to see under them.</td>
+<td><code>1.1.0</code> <code>1.1.1</code> <code>1.1.2</code></td>
+<td>Edgarska</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-18"></h1>
+<h3 id="pokemon-lets-go-eevee">Pokemon, Let&rsquo;s Go Eevee!</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Pokemon%20Lets%20Go%20Eevee/60_FPS_Eevee.zip">60 FPS</a></td>
+<td>Runs the game at a 60 FPS cap. Will be double speed at 60 FPS</td>
+<td><code>1.0.0</code> <code>1.0.2</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, DuIslingr</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-19"></h1>
+<h3 id="pokemon-lets-go-pikachu">Pokemon, Let&rsquo;s Go Pikachu!</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Pokemon%20Lets%20Go%20Pikachu%20/60_FPS_Pikachu.zip">60 FPS</a></td>
+<td>Runs the game at a 60 FPS cap. Will be double speed at 60 FPS</td>
+<td><code>1.0.0</code> <code>1.0.2</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, DuIslingr</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-20"></h1>
+<h3 id="pokemon-sword-exefs">Pokemon Sword (exeFS)</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cdn.discordapp.com/attachments/356187763139280896/849209813656928286/force-max-resolution-sword.zip">Force Max Resolution</a></td>
+<td>Forces the game to always run at 1920x1080.</td>
+<td><code>1.0.0</code> <code>1.2.0</code> <code>1.2.1</code> <code>1.3.0</code> <code>1.3.1</code> <code>1.3.2</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan, DuIslingr</td>
+</tr>
+<tr>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods/raw/main/Pok%C3%A9mon%20Sword/%5B0100ABF008968000%5D/1.3.2/Remove%20Outlines.rar">Remove Outlines</a></td>
+<td>Removes character outlines from the game (Useful for resolution scaling)</td>
+<td><code>1.3.2</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Pokemon%20Sword%20exeFS/60-FPS-sword.zip">60 FPS</a></td>
+<td>Runs the game at a 60 FPS cap. Will be double speed at 60 FPS</td>
+<td><code>1.0.0</code> <code>1.2.0</code> <code>1.2.1</code> <code>1.3.0</code> <code>1.3.1</code> <code>1.3.2</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan, DuIslingr</td>
+</tr>
+<tr>
+<td><a href="https://cdn.discordapp.com/attachments/356187763139280896/849209817809944596/Pokemon-Sword-Wifi-Fix.zip">Y Comm Wifi Fix</a></td>
+<td>Stops an error message from popping up when you press the Y Comm button</td>
+<td><code>1.0.0</code> <code>1.2.0</code> <code>1.2.1</code> <code>1.3.0</code> <code>1.3.1</code> <code>1.3.2</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, DuIslingr, Claude von Riegan</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-21"></h1>
+<h3 id="pokemon-shield-exefs">Pokemon Shield (exeFS)</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cdn.discordapp.com/attachments/356187763139280896/849209811420577832/Force_max_resolution_shield.zip">Force Max Resolution</a></td>
+<td>Forces the game to always run at 1920x1080.</td>
+<td><code>1.0.0</code> <code>1.2.0</code> <code>1.2.1</code> <code>1.3.0</code> <code>1.3.1</code> <code>1.3.2</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan, Morph, DuIslingr</td>
+</tr>
+<tr>
+<td><a href="https://cdn.discordapp.com/attachments/893635908157464657/913905256725884989/Remove-Outlines-Shield.zip">Remove Outlines</a></td>
+<td>Removes character outlines from the game (Useful for resolution scaling)</td>
+<td><code>1.0.0</code> <code>1.3.2</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Norstyrm</td>
+</tr>
+<tr>
+<td><a href="https://cdn.discordapp.com/attachments/356187763139280896/849209829469585408/60-FPS-shield.zip">60 FPS</a></td>
+<td>Runs the game at a 60 FPS cap. Will be double speed at 60 FPS</td>
+<td><code>1.0.0</code> <code>1.2.0</code> <code>1.2.1</code> <code>1.3.0</code> <code>1.3.1</code> <code>1.3.2</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan, Morph, DuIslingr</td>
+</tr>
+<tr>
+<td><a href="https://cdn.discordapp.com/attachments/356187763139280896/849209815720001586/Pokemon-Shield-Wifi-Fix.zip">Y Comm Wifi Fix</a></td>
+<td>Stops an error message from popping up when you press the Y Comm button</td>
+<td><code>1.0.0</code> <code>1.2.0</code> <code>1.2.1</code> <code>1.3.0</code> <code>1.3.1</code> <code>1.3.2</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, DuIslingr , Claude von Riegan</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-22"></h1>
+<h3 id="pokemon-swordshield-romfs">Pokemon Sword/Shield (romFS)</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://bit.ly/3rKjhYz">ReTextured 1.6</a></td>
+<td>A HD Redesign of the game. Better textures, Texture Quality &amp; Much Higher Detail in all areas. Now Supports all game Updates &amp; DLC</td>
+<td><code>1.2.0</code> <code>1.2.1</code> <code>1.3.0</code> <code>1.3.1</code> <code>1.3.2</code></td>
+<td>BSoD Gaming</td>
+</tr>
+<tr>
+<td><a href="http://bit.ly/37VnVL3">ReTextured 1.6 Alternate Link</a></td>
+<td>A HD Redesign of the game. Better textures, Texture Quality &amp; Much Higher Detail in all areas. Now Supports all game Updates &amp; DLC</td>
+<td><code>1.2.0</code> <code>1.2.1</code> <code>1.3.0</code> <code>1.3.1</code> <code>1.3.2</code></td>
+<td>BSoD Gaming</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-23"></h1>
+<h3 id="shin-megami-tensei-v">Shin Megami Tensei V</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Shin%20Megami%20Tensei%20V/Config_SMTV_1080p.zip">Forced 1080p, 60 FPS, Increased LOD, Disabled Ambient Occlusion</a></td>
+<td>Varied config changes for SMTV, the main points of which being a forcibly increased resolution (works in cutscenes), 60 FPS, increased draw distance and disabled ambient occlusion (responsible for weird dithered-looking shadows). I recommend you do NOT use the emulator&rsquo;s built-in resolution scaler alongside this mod.</td>
+<td><code>1.0.0</code> <code>1.0.1</code></td>
+<td>TheHatedGravity</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Shin%20Megami%20Tensei%20V/file">2K Shadow Mod Collection</a></td>
+<td>A collection including each of the SMT V mods listed below, but with added high res shadows.</td>
+<td><code>1.0.0</code> <code>1.0.1</code></td>
+<td>Sandvich_Hero, Pug O</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Shin%20Megami%20Tensei%20V/60%2BFPS.zip">60 FPS</a></td>
+<td>Increases the framerate to a 60 FPS cap.</td>
+<td><code>1.0.0</code> <code>1.0.1</code></td>
+<td>Sandvich_Hero, Pug O</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Shin%20Megami%20Tensei%20V/60%2BFPS%2BImproved%2BLOD%2BHigh.zip">Improved LOD High + 60 FPS</a></td>
+<td>Greatly increases the draw distance and applies a 60 FPS cap.</td>
+<td><code>1.0.0</code> <code>1.0.1</code></td>
+<td>Sandvich_Hero, Pug O</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Shin%20Megami%20Tensei%20V/Improved_LOD_High.zip">Improved LOD High</a></td>
+<td>Greatly increases the draw distance With the Vanilla 30 FPS cap.</td>
+<td><code>1.0.0</code> <code>1.0.1</code></td>
+<td>Sandvich_Hero, Pug O</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Shin%20Megami%20Tensei%20V/60%2BFPS%2BImproved%2BLOD%2BMedium.zip">Improved LOD Medium + 60 FPS</a></td>
+<td>Mildly increases the draw distance and applies a 60 FPS cap, may improve performance over High LOD.</td>
+<td><code>1.0.0</code> <code>1.0.1</code></td>
+<td>Sandvich_Hero, Pug O</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Shin%20Megami%20Tensei%20V/Improved%2BLOD%2BMedium.zip">Improved LOD Medium</a></td>
+<td>Mildly increases the draw distance with the Vanilla 30 FPS cap, may improve performance over High LOD.</td>
+<td><code>1.0.0</code> <code>1.0.1</code></td>
+<td>Sandvich_Hero, Pug O</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-24"></h1>
+<h3 id="sonic-mania">Sonic Mania</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Sonic%20Mania/DevMenu.zip">Dev Menu</a></td>
+<td>Allows you to access the game&rsquo;s dev menu by pressing the Minus button.</td>
+<td><code>1.00</code> <code>1.03</code> <code>1.04</code></td>
+<td>SuperSonic16</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-25"></h1>
+<h3 id="splatoon-2">Splatoon 2</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Splatoon%202/Disable_Dynamic_Resolution.zip">Disable Dynamic Resolution</a></td>
+<td>Disables the game&rsquo;s automatic adjustment of resolution.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Splatoon%202/60_Lobby.zip">60 FPS</a></td>
+<td>Makes Inkopolis Square and Octo Expansion credits run at 60fps instead of 30fps.</td>
+<td><code>1.0.0</code> <code>5.1.0</code> <code>5.2.2</code> <code>5.5.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Nimbo</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Splatoon%202/30FPS.zip">30 FPS</a></td>
+<td>Makes the whole game run at 30fps instead of 60fps for low end PC&rsquo;s, May make the ingame Timer half of the speed in some levels from the Octo Expansion dlc</td>
+<td><code>5.4.0</code> <code>5.5.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, shadow, AndNowIsTheTime, Galax2000</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-26"></h1>
+<h3 id="super-mario-3d-world--bowsers-fury">Super Mario 3D World + Bowser&rsquo;s Fury</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/32.9%20Super%20Ultrawide.zip">32:9 Super Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 32:9 aspect ratio for Super Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/UltraWide%20-%20v2.rar">21:9 Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 21:9 aspect ratio for Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/60fps-Handheld%20-%20v9.rar">60 FPS Handheld Mode</a></td>
+<td>Makes the game run at 60 FPS in handheld mode.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/BigHead.rar">Big Head Mode</a></td>
+<td>Big Head Mode.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/Disable-Bloom.rar">Disable Bloom</a></td>
+<td>Disables the bloom effect.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/Disable-DOF.rar">Disable Depth of Field</a></td>
+<td>Disables DoF effect.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/Disable-Dynamic-Resolution%20-v2.rar">Disable Dynamic Resolution</a></td>
+<td>Disables dynamic resolution, greatly improving image quality</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/Disable-FXAA-v2.rar">Disable FXAA</a></td>
+<td>Disables FXAA</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/Enable-Filters.rar">Enable Filters</a></td>
+<td>Enable filters.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/Force-FXAA.rar">Force FXAA</a></td>
+<td>Forces FXAA on.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/Parkour.rar">Parkour</a></td>
+<td>Parkour mode. This changes the game physics making wall climbing easier.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%203D%20World%20%20Bowsers%20Fury/Quality-Mode.rar">Max Quality Mode</a></td>
+<td>Makes the game render at enhanced quality settings, may greatly affect performance</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-27"></h1>
+<h3 id="super-mario-odyssey">Super Mario Odyssey</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%20Odyssey/32.9%20Super%20Ultrawide.zip">32:9 Super Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 32:9 aspect ratio for Super Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.3.0</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%20Odyssey/21.9%20Ultrawide.zip">21:9 Ultrawide</a></td>
+<td>Makes the game render with a Hor+ 21:9 aspect ratio for Ultrawide displays. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.3.0</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%20Odyssey/16.10%20Aspect%20Ratio.zip">16:10 Aspect Ratio</a></td>
+<td>Makes the game render with a 16:10 aspect ratio. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.3.0</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%20Odyssey/4.3%20Aspect%20Ratio.zip">4:3 Aspect Ratio</a></td>
+<td>Makes the game render with a 4:3 aspect ratio. Enable &lsquo;Stretch to Window&rsquo; in Yuzu&rsquo;s graphics settings for this to work properly.</td>
+<td><code>1.3.0</code></td>
+<td><a href="https://github.com/victoria4dx/switch-mods">victoria4dx</a>, <a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%20Odyssey/34208">Clean UI</a></td>
+<td>Removes coins, moons, health, and a few other UI elements from the game.</td>
+<td><code>Any</code></td>
+<td>Eloeri</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%20Odyssey/Disable_Deferred_Shading.zip">Disable Deferred Shading</a></td>
+<td>Disables deferred shading, fixing a shadow issue for AMD Navi GPUs running under the Vulkan backend.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%20Odyssey/Disable_Dynamic_Resolution.zip">Disable Dynamic Resolution</a></td>
+<td>Disables the game&rsquo;s automatic adjustment of resolution.</td>
+<td><code>1.0.0</code> <code>1.3.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%20Odyssey/Disable_FXAA.zip">Disable FXAA</a></td>
+<td>Disables the anti-aliasing of the game. Recommended if you are upscaling the game.</td>
+<td><code>1.0.0</code> <code>1.3.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%20Odyssey/Disable_Camera_Motion_Blur.zip">Disable Camera Motion Blur</a></td>
+<td>Disables the blur that happens when the camera is moved.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Mario%20Odyssey/SMO_Web_Applet_Bypass.7z">Disable Web Applet</a></td>
+<td>Disables the Web Applet, fixing a crash when traveling from Cascade to Sand Kingdom for the first time.</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://mega.nz/file/zXRm3TgB#ks0vf90a9UmxqWSoL_ht7Rfz0EAZ8EWltPa14UU0TtQ">Screenshot Mode Graphics</a></td>
+<td>Makes the game render at enhanced quality settings, may greatly affect performance</td>
+<td><code>1.0.0</code> <code>1.3.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://cdn.discordapp.com/attachments/309388626385436672/914082331860566026/Coins_Dont_Matter.zip">Coins Don&rsquo;t Matter Cheat</a></td>
+<td>Coins no longer deduct. Coins always set to 9999. Purple Coins always set to 100. Items in Shop cost nothing (they require X but they don&rsquo;t deduct X)</td>
+<td><code>1.3.0</code></td>
+<td>thethiny</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-28"></h1>
+<h3 id="super-smash-bros-ultimate">Super Smash Bros. Ultimate</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Smash%20Bros%20Ultimate/30_FPS.zip">30 FPS</a></td>
+<td>Makes the game full speed at 30 FPS</td>
+<td><code>1.0.0</code> <code>3.1.0</code> <code>7.0.0</code> <code>8.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Super%20Smash%20Bros%20Ultimate/Boot_Straight_to_menu.zip">Boot Straight to Menu</a></td>
+<td>Makes the game boot straight into the main menu.</td>
+<td><code>1.0.0</code> <code>3.1.0</code> <code>7.0.0</code> <code>8.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Claude von Riegan</td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-29"></h1>
+<h3 id="the-legend-of-zelda-breath-of-the-wild">The Legend of Zelda: Breath of the Wild</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/The%20Legend%20of%20Zelda%20Breath%20of%20the%20Wild/34141">Clean UI</a></td>
+<td>Removes hearts, stamina, arrow reticle, ZL targeting arrow, and other UI elements.</td>
+<td><code>Any</code></td>
+<td>Eloeri, Leoetlino</td>
+</tr>
+<tr>
+<td><a href="https://cdn.discordapp.com/attachments/356187763139280896/798516683936759848/Disable_Dynamic_Resolution.zip">Disable dynamic Resolution</a></td>
+<td>Runs the game at 1080p Resolution</td>
+<td><code>1.0.0</code> <code>1.6.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://cdn.discordapp.com/attachments/356187763139280896/798516557982072852/60FPS.zip">60 FPS</a></td>
+<td>Runs the game at Static 60 FPS (If lower than 60, Gameplay is slow)</td>
+<td><code>1.6.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-30"></h1>
+<h3 id="the-legend-of-zelda-links-awakening">The Legend of Zelda: Link&rsquo;s Awakening</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/The%20Legend%20of%20Zelda%20Links%20Awakening/Blur_Removal.zip">Blur Removal</a></td>
+<td>Removes the tilt-shift blur.</td>
+<td><code>1.0.0</code> <code>1.0.1</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/The%20Legend%20of%20Zelda%20Links%20Awakening/zla-cheats.zip">Infinite Cheats</a></td>
+<td>Allows for Infinite Ammo, Bombs, Magic Powder, and Rupees.</td>
+<td><code>1.0.0</code></td>
+<td>CJBoK</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/The%20Legend%20of%20Zelda%20Links%20Awakening/34940">Clean UI</a></td>
+<td>Removes hearts, weapons icon, and interaction prompts.</td>
+<td><code>Any</code></td>
+<td>Eloeri</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/The%20Legend%20of%20Zelda%20Links%20Awakening/Stable-60fps-v2.zip">Stable 60 FPS</a></td>
+<td>Disables the Dynamic switching from 60 to 30 FPS</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-31"></h1>
+<h3 id="the-legend-of-zelda-skyward-sword-hd">The Legend of Zelda: Skyward Sword HD</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/The%20Legend%20of%20Zelda%20Skyward%20Sword%20HD/30fps.zip">30 FPS</a></td>
+<td>Makes the game fullspeed at 30 FPS.</td>
+<td><code>1.0.0</code> <code>1.0.1</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Nimbo</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/The%20Legend%20of%20Zelda%20Skyward%20Sword%20HD/2K.rar">1440p/2K Resolution</a></td>
+<td>Allows the game to render at 1440p/2K Resolution (Greatly affects performance)</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/The%20Legend%20of%20Zelda%20Skyward%20Sword%20HD/4K.rar">2160p/4K resolution</a></td>
+<td>Allows the game to render at 2160p/4K Resolution (Greatly affects performance).</td>
+<td><code>1.0.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="heading-32"></h1>
+<h3 id="xenoblade-chronicles-definitive-edition">Xenoblade Chronicles: Definitive Edition</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Xenoblade%20Chronicles%20Definitive%20Edition/60_FPS.zip">60 FPS</a></td>
+<td>Makes the game run full speed at 60 FPS. Please note that the UI will only be full speed at 60fps.</td>
+<td><code>1.0.0</code> <code>1.1.2</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a>, Kirby567fan, DuIslingr</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Xenoblade%20Chronicles%20Definitive%20Edition/More%20Affinity%20Coins%20%28x4%29.zip">More Affinity Coins (x4)</a></td>
+<td>Multiply the Affinity Coins gained when level up or kill a unique monster for the first time.</td>
+<td><code>1.1.2</code></td>
+<td>lasyan3</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Xenoblade%20Chronicles%20Definitive%20Edition/More%20Affinity%20Coins%20%28x8%29.zip">More Affinity Coins (x8)</a></td>
+<td>Multiply the Affinity Coins gained when level up or kill a unique monster for the first time.</td>
+<td><code>1.1.2</code></td>
+<td>lasyan3</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Xenoblade%20Chronicles%20Definitive%20Edition/More%20Arts%20Points%20%28x2%29.zip">More Arts Points (x2)</a></td>
+<td>Multiply the Arts points gained from battles. <strong>Please note:</strong> the points showed when a monster is killed don&rsquo;t change, but the values are correctly increased.</td>
+<td><code>1.1.2</code></td>
+<td>lasyan3</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Xenoblade%20Chronicles%20Definitive%20Edition/More%20Arts%20Points%20%28x4%29.zip">More Arts Points (x4)</a></td>
+<td>Multiply the Arts points gained from battles. (same note)</td>
+<td><code>1.1.2</code></td>
+<td>lasyan3</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Xenoblade%20Chronicles%20Definitive%20Edition/More%20Skills%20Points%20%28x2%29.zip">More Skills Points (x2)</a></td>
+<td>Multiply the Skills points gained from battles. <strong>Please note:</strong> the points showed when a monster is killed don&rsquo;t change, but the values are correctly increased.</td>
+<td><code>1.1.2</code></td>
+<td>lasyan3</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Xenoblade%20Chronicles%20Definitive%20Edition/More%20Skills%20Points%20%28x4%29.zip">More Skills Points (x4)</a></td>
+<td>Multiply the Skills points gained from battles. (same note)</td>
+<td><code>1.1.2</code></td>
+<td>lasyan3</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Xenoblade%20Chronicles%20Definitive%20Edition/Speed%20increased%20%28x1.25%29.zip">Speed increased (x1.25)</a></td>
+<td>Increase the speed of your main character. <strong>Please note:</strong> this also impacts enemies speed but so far it doesn&rsquo;t generates any trouble during playthrough.</td>
+<td><code>1.1.2</code></td>
+<td>lasyan3</td>
+</tr>
+<tr>
+<td><a href="https://raw.githubusercontent.com/yuzu-mirror/yuzu-mod-archive/main/files/Xenoblade%20Chronicles%20Definitive%20Edition/Speed%20increased%20%28x1.5%29.zip">Speed increased (x1.5)</a></td>
+<td>Increase the speed of your main character. (same note)</td>
+<td><code>1.1.2</code></td>
+<td>lasyan3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xenoblade-chronicles-3">Xenoblade Chronicles 3</h3>
+<table>
+<thead>
+<tr>
+<th>Mod</th>
+<th>Description</th>
+<th>Applies to</th>
+<th>Credit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cdn.discordapp.com/attachments/495758692495523854/1007153835371921448/Vulkan_Workaround.rar">Bloom/Brightness Bug Workaround (Vulkan)</a></td>
+<td>Fixes the graphical bugs with the Vulkan GPU backend rendering that manifest as extreme bloom/brightness in certain areas of the game, as well as various issues with rendering cutscenes.</td>
+<td><code>1.1.0</code></td>
+<td><a href="https://github.com/theboy181/switch-ptchtxt-mods">theboy181</a></td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</section>
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2024 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>

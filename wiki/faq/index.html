@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="FAQ &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/wiki/faq/" />
+    <meta property="og:description" content="If you are unable to find the answer to your question, please join our Discord server for support: Discord Server
+Table of contents yuzu starts with the error “VCRUNTIME140_1.dll was not found” How do I get Games? Can I use a Mariko Switch/Switch Lite/OLED Model for the dumping process? yuzu starts with the error &ldquo;Broken Vulkan Installation Detected&rdquo; yuzu starts with the error &ldquo;Missing Derivation Components&rdquo; yuzu starts with the error &ldquo;Unable to start application: Os { code: 2, kind: NotFound, message: “The system cannot find the file specified." />
+<meta name="description" content="If you are unable to find the answer to your question, please join our Discord server for support: Discord Server
+Table of contents yuzu starts with the error “VCRUNTIME140_1.dll was not found” How do I get Games? Can I use a Mariko Switch/Switch Lite/OLED Model for the dumping process? yuzu starts with the error &ldquo;Broken Vulkan Installation Detected&rdquo; yuzu starts with the error &ldquo;Missing Derivation Components&rdquo; yuzu starts with the error &ldquo;Unable to start application: Os { code: 2, kind: NotFound, message: “The system cannot find the file specified." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/logo.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/wiki/faq/"> 
+
+    <title>FAQ - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section">
+    <h1 class="title">FAQ</h1>
+    <div class="content">
+        <p>If you are unable to find the answer to your question, please join our Discord server for support: <a href="https://discord.gg/u77vRWY">Discord Server</a></p>
+<h3 id="table-of-contents"><strong>Table of contents</strong></h3>
+<ul>
+<li><a href="#yuzu-starts-with-the-error-vcruntime140_1dll-was-not-found">yuzu starts with the error “VCRUNTIME140_1.dll was not found”</a></li>
+<li><a href="#how-do-i-get-games">How do I get Games?</a></li>
+<li><a href="#can-i-use-a-mariko-switchswitch-liteoled-model-for-the-dumping-process">Can I use a Mariko Switch/Switch Lite/OLED Model for the dumping process?</a></li>
+<li><a href="#yuzu-starts-with-the-error-broken-vulkan-installation-detected">yuzu starts with the error &ldquo;Broken Vulkan Installation Detected&rdquo;</a></li>
+<li><a href="#yuzu-starts-with-the-error-missing-derivation-components">yuzu starts with the error &ldquo;Missing Derivation Components&rdquo;</a></li>
+<li><a href="#yuzu-starts-with-the-error-unable-to-start-application-os-code-2-kind-notfound-message-the-system-cannot-find-the-file-specified">yuzu starts with the error &ldquo;Unable to start application: Os { code: 2, kind: NotFound, message: “The system cannot find the file specified.” }&rdquo;</a></li>
+<li><a href="#yuzu-will-not-update-further-or-starts-with-a-qt-platform-error">yuzu will not update further or starts with a Qt platform error</a></li>
+<li><a href="#yuzu-closes-when-opening-configure">yuzu closes when opening Configure</a></li>
+<li><a href="#my-game-is-lagging-and-dropping-to-low-framerates">My game is Lagging and Dropping to Low Framerates</a></li>
+<li><a href="#how-do-i-use-mods-or-cheats">How do I use mods or cheats?</a></li>
+<li><a href="#how-do-i-install-game-updates-or-dlc">How do I install game updates or DLC?</a></li>
+<li><a href="#how-do-i-uninstall-game-updates-or-dlc">How do I uninstall game updates or DLC?</a></li>
+<li><a href="#how-do-i-set-up-my-controls">How do I set up my controls?</a></li>
+<li><a href="#how-do-i-use-my-gamecube-controller-adapter">How do I use my GameCube controller adapter?</a></li>
+<li><a href="#how-do-i-add-a-save-to-my-game">How do I add a save to my Game</a></li>
+<li><a href="#yuzu-closes-when-launching-game">yuzu closes when launching game</a></li>
+<li><a href="#games-fail-to-launch-with-the-error-werfaultexe---application-error---the-application-was-unable-to-start-correctly">Games fail to launch with the error: &ldquo;WerFault.exe - Application Error&rdquo;</a></li>
+<li><a href="#what-is-boxcat">What is Boxcat?</a></li>
+<li><a href="#why-am-i-getting-an-error">Why am I getting an error?</a></li>
+<li><a href="#what-are-mods-and-how-do-i-install-them">What are Mods and how do I install them?</a></li>
+<li><a href="#how-do-i-upload-my-log-file">How do I upload my log file?</a></li>
+<li><a href="#what-is-telemetry">What is Telemetry?</a></li>
+<li><a href="#how-do-i-install-early-access">How do I install Early Access?</a></li>
+<li><a href="#what-is-yuzu">What is yuzu?</a></li>
+<li><a href="#which-software-license-is-yuzu-licensed-under">Which software license is yuzu licensed under?</a></li>
+<li><a href="#which-platforms-does-yuzu-support">Which platforms does yuzu support?</a></li>
+<li><a href="#what-are-the-system-requirements-for-yuzu">What are the system requirements for yuzu?</a></li>
+<li><a href="#how-do-i-build-yuzu-for-the-os-that-i-use">How do I build yuzu for the OS that I use?</a></li>
+<li><a href="#who-made-yuzu">Who made yuzu?</a></li>
+</ul>
+<h3 id="yuzu-starts-with-the-error-vcruntime140_1dll-was-not-found"><strong>yuzu starts with the error “VCRUNTIME140_1.dll was not found”</strong></h3>
+<p><img src="https://cdn.discordapp.com/attachments/512678820092968971/699336946698158120/VC_missing.png" alt=""></p>
+<p>Could also show up as “MSVCP140_ATOMIC_WAIT.dll was not found”.</p>
+<p>Current versions of yuzu require the latest versions of Microsoft Visual C++. Please download and install the following dependency:</p>
+<p><a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads">https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads</a></p>
+<p>Go to Visual Studio 2015, 2017 and 2019, and select the link next to x64.</p>
+<h3 id="how-do-i-get-games"><strong>How do I get games?</strong></h3>
+<p>You are legally required to dump your games from your Nintendo Switch. To do so, please follow our in-depth <a href="https://yuzu-emu.org/help/quickstart/">Quickstart Guide</a>.</p>
+<h3 id="can-i-use-a-mariko-switchswitch-liteoled-model-for-the-dumping-process"><strong>Can I use a Mariko Switch/Switch Lite/OLED Model for the dumping process?</strong></h3>
+<p>Yes, but support for those models is beyond our scope since they require hardware-based modifications to load custom firmware. We still recommend obtaining a Switch console that is vulnerable to the <code>fusée-gelée</code> RCM exploit, as it&rsquo;s still the most accessible way for jailbreaking. To check if your Switch is hackable using this exploit, visit <a href="https://ismyswitchpatched.com">Is My Switch Patched?</a> and enter your console’s serial number.</p>
+<h3 id="yuzu-starts-with-the-error-broken-vulkan-installation-detected"><strong>yuzu starts with the error &ldquo;Broken Vulkan Installation Detected&rdquo;</strong></h3>
+<p>This problem indicates that the Vulkan initialization failed on the previous boot of yuzu. Please perform the following:</p>
+<ul>
+<li>Update your graphics drivers</li>
+<li>Uninstall/update problematic screen-recording or overlay software</li>
+<li>Verify your Vulkan installation by navigating to Emulation &gt; Configure &gt; Graphics &gt; Click &ldquo;Check for Working Vulkan&rdquo;</li>
+</ul>
+<p>If issues persist, please reach out for support via our <a href="https://discord.gg/u77vRWY">Discord server</a> or our <a href="https://community.citra-emu.org/c/yuzu-support/14">Forum</a>.</p>
+<h3 id="yuzu-starts-with-the-error-missing-derivation-components"><strong>yuzu starts with the error &ldquo;Missing Derivation Components&rdquo;</strong></h3>
+<p><img src="https://cdn.discordapp.com/attachments/512678820092968971/699337208443699307/Keys_missing.PNG" alt=""></p>
+<p>yuzu requires console keys to play your games. Please follow our <a href="https://yuzu-emu.org/help/quickstart/">Quickstart Guide</a> to dump these keys and system files from your Nintendo Switch.</p>
+<p>These console keys (prod.keys/title.keys) need to be placed in the following directories:</p>
+<p>You may need to create the following &ldquo;keys&rdquo; folder:</p>
+<ul>
+<li>Windows: <code>C:\Users\USERNAME\AppData\Roaming\yuzu\keys</code></li>
+<li>Linux: <code>/home/USERNAME/.local/share/yuzu/keys</code></li>
+</ul>
+<p><strong>NOTE: This yuzu directory can be quickly accessed by selecting file/open yuzu folder within the emulator</strong></p>
+<h3 id="yuzu-starts-with-the-error-unable-to-start-application-os--code-2-kind-notfound-message-the-system-cannot-find-the-file-specified-"><strong>yuzu starts with the error &ldquo;Unable to start application: Os { code: 2, kind: NotFound, message: “The system cannot find the file specified.” }&rdquo;</strong></h3>
+<p><img src="https://cdn.discordapp.com/attachments/356187763139280896/709806101134049320/error_2.PNG" alt=""></p>
+<p>This problem is usually caused by a false positive of your antivirus software, most commonly by Avast and AVG. These applications will often incorrectly detect yuzu as malicious software and delete the executable as a result.</p>
+<p>You can confirm it is a false positive with an online scanner, such as <a href="https://www.virustotal.com">VirusTotal</a> if you wish.</p>
+<p>To fix this, you&rsquo;ll need to either disable or uninstall your antivirus software. Make sure to reboot if you choose to uninstall it.</p>
+<p>Afterwards, follow the instructions below for <code>yuzu will not update further or starts with a Qt platform error</code> to delete any residual files of the failed installation.</p>
+<h3 id="yuzu-will-not-update-further-or-starts-with-a-qt-platform-error"><strong>yuzu will not update further or starts with a Qt platform error</strong></h3>
+<p><img src="https://cdn.discordapp.com/attachments/356187763139280896/700495249817993266/QT_Error.PNG" alt=""></p>
+<ul>
+<li>Close all instances of yuzu and any installer processes you may have running.</li>
+<li>Press Win+R, in the opened window type <code>%localappdata%</code> and press Enter.</li>
+<li>Select the <code>yuzu</code> folder and delete it. If it is being used by another process, please double-check that you do not have any yuzu related applications running.</li>
+<li>Launch the installer and install yuzu again.</li>
+</ul>
+<p><strong>Note: Doing this will not touch your existing keys - saves for yuzu, as they reside in %appdata%\yuzu\ not localappdata yuzu folder.</strong></p>
+<h3 id="yuzu-closes-when-opening-configure"><strong>yuzu closes when opening Configure</strong></h3>
+<p>This problem may be caused by a corrupt configuration file.
+Press Win+R, type <code>%appdata%\yuzu\config</code> and delete the <code>qt-config.ini</code> file. Your global settings will be lost after doing this, reconfigure accordingly.</p>
+<p>Alternatively, some screen recording applications use dubious methods to inject themselves into software, causing crashes. Some examples are Reshade, GShade, Bandicam, Action and Screenrec. Uninstall the software if you have it installed. For Reshade-GShade if you need to keep it installed at the very least turn off its ability to touch Vulkan globally on windows to allow Yuzu&amp;Vulkan to work again.</p>
+<p>We recommend using OBS Studio, Radeon ReLive, Nvidia ShadowPlay or Microsoft XBox Game Bar.</p>
+<p>Overwolf is also a known cause of issues, we recommend avoiding it.</p>
+<h3 id="my-game-is-lagging-and-dropping-to-low-framerates"><strong>My game is Lagging and Dropping to Low Framerates</strong></h3>
+<p>You are likely experiencing Shader Caching. Shaders are small programs running on a graphic card, responsible for rendering graphics like terrain, explosions, characters, etc. Since a PC cannot directly execute switch shaders, it first has to translate them to a format a PC can understand. This translation process is time consuming, and you&rsquo;ll notice it in two ways:</p>
+<ul>
+<li>
+<p>While playing, if yuzu needs to translate a new shader, the game will stutter. Loading into a game for the first time can give long freezes due to the number of shaders. As you keep playing, the amount of stuttering will decrease.</p>
+</li>
+<li>
+<p>When launching a game, the shader cache is loaded. To speed up this process there exists an additional &ldquo;precompiled&rdquo; cache. This cache may get reset every time you update yuzu or install a new GPU driver. The precompiled cache will then be compiled from scratch, causing a longer load time.</p>
+</li>
+</ul>
+<p>Vulkan and OpenGL have separate caches, but different OpenGL backends share the same cache. This means that on Nvidia you can build up shaders with less stutter on GLASM, then use GLSL for more performance.</p>
+<p><strong>IMPORTANT: Since the cache stores parts of the game, we don&rsquo;t condone sharing or downloading these, since it is considered piracy.</strong></p>
+<h3 id="how-do-i-use-mods-or-cheats"><strong>How do I use mods or cheats?</strong></h3>
+<p>For a list of useful mods for your favorite games, check our database with <a href="https://yuzu-emu.org/wiki/switch-mods/">Switch Mods</a></p>
+<p>To add mods to a specific game, simply right click the game in yuzu&rsquo;s games list, select <code>Open Mod Data Location</code> and structure your mod files similar to this example:</p>
+<p><code>Mod directory/mod name/romfs</code>
+<em>or</em>
+<code>Mod directory/mod name/exefs</code></p>
+<p>To add cheats, structure your cheat file similar to this example:</p>
+<p><code>Mod directory/cheat name/cheats</code></p>
+<p>An example of a correctly structured mod directory can be seen below:</p>
+<p><img src="https://cdn.discordapp.com/attachments/512678820092968971/697113928852963378/Mod_Format.PNG" alt=""></p>
+<p>The mods provided on our <a href="https://yuzu-emu.org/wiki/switch-mods/">Switch Mods</a> page are already structured accordingly and only need to be extracted into the mod directory folder as is.</p>
+<p>Once added to the correct mod directory, simply right click the game again, select properties and activate the installed mod. The same process can be followed in reverse for de-activating mods</p>
+<p><img src="https://cdn.discordapp.com/attachments/512678820092968971/697124627520159804/Mods_on.PNG" alt=""></p>
+<h3 id="how-do-i-install-game-updates-or-dlc"><strong>How do I install game updates or DLC?</strong></h3>
+<p>Installing updates and DLC is simple. In the top left corner of the emulator window, select <code>File / Install Files to NAND</code>, then select the file you wish to install. Once installed, your files should load automatically and the installed update or DLC will be shown in the games list add-ons column of the corresponding game.</p>
+<p>If you wish to activate/deactivate a specific update or DLC then right click your game in the games list, select <code>Properties</code>, then enable or disable as needed.(See Below)</p>
+<p><img src="https://cdn.discordapp.com/attachments/512678820092968971/697129823407177789/Updates_and_DLC.PNG" alt=""></p>
+<p>Reinstalling or Overwriting Updates/DLC is as simple as following the above instructions, selecting your files and installing your Update/DLC. When doing this, any previously installed files will be removed and replaced by the newly installed versions.</p>
+<h3 id="how-do-i-uninstall-game-updates-or-dlc"><strong>How do I uninstall game updates or DLC?</strong></h3>
+<p>To delete your installed game Updates or DLCs, right click your game, then select Remove. From here you can delete/uninstall your game Updates and DLCs from the options list (See Below)</p>
+<p><img src="https://cdn.discordapp.com/attachments/356187763139280896/739433965584384010/Remove_updates_and_DLC.PNG" alt=""></p>
+<h3 id="how-do-i-set-up-my-controls"><strong>How do I set up my controls?</strong></h3>
+<p>Since the Nintendo Switch is a complicated device controller input wise, you will need to change some input settings depending on the game you wish to play.</p>
+<p>Open the yuzu settings and go to <code>Controls</code>.</p>
+<p><strong>For all games other than Pokemon Let&rsquo;s Go set the controls like this:</strong></p>
+<p><img src="https://cdn.discordapp.com/attachments/749020865626374244/749029883556135043/mjolnir_pro.gif" alt=""></p>
+<ul>
+<li>Click on the checkbox next to <code>Connect Controller</code> if it is not already checked.</li>
+<li>Select <code>Pro Controller</code> in the combobox below if needed (this is also the default).</li>
+<li>Select your desired input device under <code>Input Device</code>.</li>
+<li>Controllers: All buttons should automatically be mapped for the selected input device.</li>
+<li>Keyboard: The <code>Defaults</code> button on bottom right sets default keyboard mappings.</li>
+<li>Change mappings if desired.</li>
+<li>Repeat steps for other players if desired.</li>
+<li>Confirm with <code>OK</code>.</li>
+</ul>
+<p><strong>For Pokemon Let&rsquo;s Go set your controls like this:</strong></p>
+<p><img src="https://cdn.discordapp.com/attachments/749020865626374244/749029890065432586/mjolnir_handheld.gif" alt=""></p>
+<ul>
+<li>Click on the checkbox next to <code>Connect Controller</code> if it is not already checked.</li>
+<li>Select <code>Handheld</code> in the combobox below.</li>
+<li>Select your desired input device under <code>Input Device</code>.</li>
+<li>Controllers: All buttons should automatically be mapped for the selected input device.</li>
+<li>Keyboard: The <code>Defaults</code> button on bottom right sets default keyboard mappings.</li>
+<li>Change mappings if desired.</li>
+<li>Confirm with <code>OK</code>.</li>
+</ul>
+<h3 id="how-do-i-use-my-gamecube-controller-adapter"><strong>How do I use my GameCube controller adapter?</strong></h3>
+<p>The GameCube adapter communicates with yuzu over the <code>libusb</code> protocol. This works natively on Linux, but requires the installation of a compatible driver on Windows using Zadig.</p>
+<h4 id="zadig-driver-installation">Zadig driver installation</h4>
+<p>Plug in the GameCube controller adapter if it hasn&rsquo;t been already. Download and launch <a href="https://zadig.akeo.ie/">Zadig</a>.
+If you&rsquo;re using the Mayflash adapter, make sure you switch it to <code>Wii U</code> or Zadig won&rsquo;t pick it up properly.</p>
+<ol>
+<li>
+<p>From the <code>Options</code> menu in Zadig, select <code>List All Devices</code></p>
+</li>
+<li>
+<p>In the pulldown menu, select <code>WUP-028</code>. Ensure that its USB ID is <code>057E 0337</code>.</p>
+</li>
+</ol>
+<ul>
+<li>If it does not appear in the list then try inserting the adapter (specifically its black USB cord) into another USB port.</li>
+</ul>
+<ol start="3">
+<li>On the right column, select <code>WinUSB</code> then click <code>Replace Driver</code>. Select <code>Yes</code> to modify the system driver.</li>
+</ol>
+<p>When the notification that the driver is installed successfully is displayed, you can close Zadig and continue to configuring the controller with yuzu.</p>
+<h4 id="gamecube-controller-configuration">GameCube controller configuration</h4>
+<p>Ensure the adapter is plugged in prior to launching yuzu. Then follow the <a href="#how-do-i-set-up-my-controls">How do I set up my controls?</a> instructions, selecting <code>Gamecube controller X</code> as the <code>Input Device</code>, where <code>X</code> is the port in which the controller is plugged into.</p>
+<p><img src="https://cdn.discordapp.com/attachments/737476434536431737/760951986417172520/gc_automap.png" alt=""></p>
+<h3 id="how-do-i-add-a-save-to-my-game"><strong>How do I add a save to my Game</strong></h3>
+<p>To add a save, simply right-click your game in the Games List, Select <code>Open Save Data Location</code>, then Select your User from the Profile Selector</p>
+<p><img src="https://media.discordapp.net/attachments/799182828038258698/1047061922027163648/image.png" alt=""></p>
+<p><img src="https://media.discordapp.net/attachments/799182828038258698/1047061922366894141/image.png" alt=""></p>
+<p>Once your <code>Save Data Location</code> is open, place your applicable game save in the folder presented to you.</p>
+<p><img src="https://media.discordapp.net/attachments/799182828038258698/1047062761177366548/image.png?width=898&amp;height=284" alt=""></p>
+<h3 id="yuzu-closes-when-launching-game"><strong>yuzu closes when launching game</strong></h3>
+<ul>
+<li>If you happen to have issue launching game and have Nod32 ESET Antivirus installed. Please uninstall it and reboot. Or add yuzu into the HIPS exclusions. It is known to cause issue with emulators recently.</li>
+<li>Example adding exception below
+<img src="https://user-images.githubusercontent.com/23653025/178130047-be87687b-54ae-410e-aabd-ad843406d14f.png" alt="image">
+<img src="https://user-images.githubusercontent.com/23653025/178130025-254491e6-a568-4f79-8c4c-b9353a624667.png" alt="image"></li>
+</ul>
+<h3 id="games-fail-to-launch-with-the-error-werfaultexe---application-error---the-application-was-unable-to-start-correctly">Games fail to launch with the error: &ldquo;WerFault.exe - Application Error - The application was unable to start correctly&rdquo;</h3>
+<p>This typically occurs when yuzu runs out of RAM. Increase the size of your pagefile to resolve the issue.</p>
+<h3 id="what-is-boxcat">What is Boxcat?</h3>
+<p>Please read the following article: <a href="https://yuzu-emu.org/help/feature/boxcat/">Boxcat</a></p>
+<h3 id="why-am-i-getting-an-error">Why am I getting an error?</h3>
+<p>Please look up your error in the following page: <a href="https://yuzu-emu.org/help/reference/error-codes/">Error Codes</a></p>
+<h3 id="what-are-mods-and-how-do-i-install-them">What are Mods and how do I install them?</h3>
+<p>Please read the following article: <a href="https://yuzu-emu.org/help/feature/game-modding/">Mods</a></p>
+<h3 id="how-do-i-upload-my-log-file">How do I upload my log file?</h3>
+<p>Please read the following guide: <a href="https://yuzu-emu.org/help/reference/log-files/">How to Upload the Log File</a></p>
+<h3 id="what-is-telemetry">What is Telemetry?</h3>
+<p>Please read the following article: <a href="https://yuzu-emu.org/help/feature/telemetry/">What is Telemetry?</a></p>
+<h3 id="how-do-i-install-early-access">How do I install Early Access?</h3>
+<p>Please read the following guide: <a href="https://yuzu-emu.org/help/early-access/">How to install Early Access</a></p>
+<hr>
+<h3 id="what-is-yuzu"><strong>What is yuzu?</strong></h3>
+<p>yuzu is an experimental open-source emulator for the Nintendo Switch from the creators of Citra.
+It is written in C++ with portability in mind, with builds actively maintained for Windows, Linux and Android. The emulator currently can play various commercial titles and homebrew applications with varying degrees of success.</p>
+<h3 id="which-software-license-is-yuzu-licensed-under"><strong>Which software license is yuzu licensed under?</strong></h3>
+<p>yuzu is an open-source project, licensed under the GPLv2 (or any later version). Refer to the license document for more information.</p>
+<h3 id="which-platforms-does-yuzu-support"><strong>Which platforms does yuzu support?</strong></h3>
+<p>yuzu is actively tested and supported on various 64-bit versions of Windows (10 and up), Linux and Android (11 and up). macOS is no longer supported due to Apple deprecating OpenGL.</p>
+<h3 id="what-are-the-system-requirements-for-yuzu"><strong>What are the system requirements for yuzu?</strong></h3>
+<p>yuzu currently requires an OpenGL 4.6 capable GPU and a CPU that has high single-core performance. It also requires a minimum of 8 GB of RAM. For more details, see our <a href="https://yuzu-emu.org/help/quickstart/#hardware-requirements">Quickstart Guide</a>.</p>
+<h3 id="how-do-i-build-yuzu-for-the-os-that-i-use"><strong>How do I build yuzu for the OS that I use?</strong></h3>
+<p>Take a look at the following guides for steps on building yuzu for the following platforms:</p>
+<ul>
+<li><a href="https://github.com/yuzu-mirror/yuzu/wiki/Building-for-Linux">Linux</a></li>
+<li><a href="https://github.com/yuzu-mirror/yuzu/wiki/Building-for-Windows">Windows</a></li>
+</ul>
+<h3 id="who-made-yuzu"><strong>Who made yuzu?</strong></h3>
+<p>yuzu has an active team of open-source developers. The list of contributors can be <a href="https://github.com/yuzu-emu/yuzu/graphs/contributors">found on GitHub</a>.</p>
+
+    </div>
+</section>
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2024 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
