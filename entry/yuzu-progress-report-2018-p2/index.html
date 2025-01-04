@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="Progress Report 2018 Part 2 &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/" />
+    <meta property="og:description" content="We bring you part 2 of the extensive coverage on yuzu&rsquo;s tremendous progress. So buckle up for an
+exciting ride, cause its gonna blow your mind!
+ 
+
+***Haven&#39;t read the first part yet? Read it [here](https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p1)***
+" />
+<meta name="description" content="We bring you part 2 of the extensive coverage on yuzu&rsquo;s tremendous progress. So buckle up for an
+exciting ride, cause its gonna blow your mind!
+ 
+
+***Haven&#39;t read the first part yet? Read it [here](https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p1)***
+" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/"> 
+
+    <title>Progress Report 2018 Part 2 - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/banner_hu45a1001b90bd6809a7f503ce0dcafbc6_701139_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">Progress Report 2018 Part 2</span>
+    </div>
+    
+    
+    <div>
+        <span class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/CaptV0rt3x/summary">CaptV0rt3x</a>
+            on July 21 2018
+        </span>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p>We bring you part 2 of the extensive coverage on yuzu&rsquo;s tremendous progress. So buckle up for an
+exciting ride, cause its gonna blow your mind!
+ </p>
+<h5 style="text-align: center;">
+***Haven't read the first part yet? Read it [here](https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p1)***
+</h5>
+<h2 id="general-improvements">General Improvements</h2>
+<p>Software development best practices dictate that one should reuse code whenever possible.
+In line with this rule, yuzu began as a fork of the Citra code base with the core emulation code stripped out.
+This allows yuzu to focus on the core switch emulation while still having a very functional user interface, but after some time, the code for the user interface will slowly start to diverge.
+Several people chipped in to bringing the improvements over from Citra, most notably <a href="https://github.com/lioncash">Lioncash</a>, who over a period of time, has made many number of changes to bring yuzu up to date.
+We also ported over some of Citra&rsquo;s recent features like the new fmtlib-based logging backend (thanks to <a href="https://github.com/jroweboy">jroweboy</a> &amp; <a href="https://github.com/daniellimws">daniellimws</a> ), &lsquo;About&rsquo; dialog, full-screen rendering support, and themes support.</p>
+<p>We have also implemented features like:</p>
+<ul>
+<li>Added decrypted NCA support.</li>
+<li>OpenGL extensions support - checking, to ensure system requirements are met.</li>
+<li>64-bit games - checking, to ensure unsupported 32-bit games aren&rsquo;t launched.</li>
+<li>Switch-specific <em><strong>Docked mode</strong></em> configuration setting.</li>
+<li>Improved FPS counter.</li>
+<li>And many more.</li>
+</ul>
+<p>All of these improvements were only possible because of the efforts of many contributors.</p>
+<h2 id="cpu-emulation">CPU emulation</h2>
+<p>The Nintendo Switch is powered by a custom Nvidia Tegra SoC.
+For the uninitiated, a SoC (system-on-chip) integrates components like CPU, GPU, memory, input/output ports, storage, etc., on a single chip.
+The Switch&rsquo;s SoC (Nvidia ODNX02-A2), is a Tegra X1 chip, has 4 ARM Cortex-A57 CPU cores and 4 ARM Cortex-A53 CPU cores.
+The CPU is based on the ARM architecture, which has already been well documented.
+We first used <a href="http://www.unicorn-engine.org/">Unicorn</a> for the CPU emulation.
+However Unicorn is meant to assist developers that are debugging code, and isn&rsquo;t capable of running games at an acceptable framerate.
+Truth be told, <a href="https://github.com/lioncash">Lioncash</a> even back-ported relevant changes to Unicorn to make AArch64 emulation more complete.
+Our version of Unicorn (QEMU 2.12.50) is miles ahead of actual mainline Unicorn (QEMU 2.2.1).</p>
+<p>No one, dev and user alike, wants their emulator to be slow.
+So our talented developers <a href="https://github.com/MerryMage">MerryMage</a> and Lioncash are working tirelessly to bring ARMv8 support to <a href="https://github.com/MerryMage/dynarmic">Dynarmic</a>, the dynamic recompiler that Merry wrote for Citra.
+Dynarmic was designed from the beginning to be reusable for many different ARM CPUs, so when we needed a fast and stable recompiler, we already knew what we would use.
+Thanks to their efforts Dynarmic now supports many ARMv8 instructions and we have shifted to using Dynarmic for CPU emulation.
+They are currently working to implement complete ARMv8 support in the near future.</p>
+<p>Dynarmic is generally fast, but it is still missing implementations of a few instructions.
+When dynarmic hits a missing instruction, it has to fallback to Unicorn, and falling back to using Unicorn is even slower than just using Unicorn directly!
+In order to fallback to Unicorn, we need to copy all the CPU state from Dynarmic to Unicorn, execute Unicorn, and then copy the state back to Dynarmic.
+These fallbacks are really slow.
+Once we implement all instructions in Dynarmic, we will no longer need these and our CPU emulation will be much faster than it is now.
+The most recent update to Dynarmic has vastly improved performance in almost all games, with games going up to 60FPS in some cases.</p>
+<h2 id="gpu-emulation">GPU emulation</h2>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./hmbrewgfx.png" title="Testing (yuzu)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/hmbrewgfx_hud6cef65aee04137f6b0a00ed7a85416b_12931_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Testing (yuzu)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Testing (yuzu)</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./hmbrewgfx_nx.jpg" title="Actual (Switch)"><img src="./hmbrewgfx_nx.jpg" alt="Actual (Switch)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Actual (Switch)</p>
+        
+    </div>
+    
+</div>
+
+<p>We got to the point where commercial games were running on yuzu around February 2018.
+We could tell that they were almost ready to draw because they were submitting a command list to the emulated Nvidia GPU services.
+For a brief explanation, command lists are how games configure the GPU hardware and let the game know that it is ready to start rendering.
+Subv did a lot of work figuring out how the GPU register writes happen and on the communication protocols to get it working.</p>
+<p>As mentioned earlier, the Switch uses a Nvidia Tegra Soc which houses a GPU based on Maxwell architecture.
+Nvidia&rsquo;s hardware is proprietary and has no public documentation on how it works.
+Fortunately, Maxwell based GPUs were released 3 years ago and there are millions of devices using these GPUs.
+The people from Linux community and various other places tried to create open source drivers for these GPUs, despite it being proprietary hardware.
+They did a lot of leg work on finding out how these GPUs work.
+The <a href="https://nouveau.freedesktop.org/wiki/">Nouveau</a> project creates these open source Linux drivers for Nvidia GPUs and Tegra family of SoCs.
+Although Linux drivers for desktop/laptop GPUs aren&rsquo;t the same as the GPU driver for a console like Switch, which runs its own OS, there is a fair amount of overlap.
+There were also tools like <a href="https://github.com/envytools/envytools">envytools</a> and its submodule envydis (disassembler), which did a lot of research into shader decoding.
+envydis doesn&rsquo;t have any documentation about actual workings of each shader instruction, it just has the name, decoding and parameters.
+The work done by these projects helped us in bringing initial emulation of GPU.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./sonic_glitch.png" title="Sonic Mania - Then">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/sonic_glitch_hufdcb4fbaa3c1387a1190faa15bcb61e8_218242_817x0_resize_q90_bgffffff_box_3.jpg" alt="Sonic Mania - Then"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Sonic Mania - Then</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./sonicmania.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Sonic Mania - Now</p>
+        
+    </div>
+    
+</div>
+
+<p>With the help of these projects we made good progress in GPU emulation and got games to submit drawing calls, not just configuring the hardware but actually writing to registers, indicating that they were ready to draw triangles on the screen.
+Even the simplest 2D games are no longer just 2D.
+As the Switch uses a modern GPU, there is no hardware for drawing 2D.
+So games instead make 2 triangles in the shape of a rectangle, and then render the current screen as a texture and blits it to the 2 triangles.
+This way, the game is still a flexible 2D game, but can take advantage of the fast 3D rendering capabilities that the GPU offers.</p>
+<p>The first game to show graphics was &ldquo;Puyo Puyo Tetris&rdquo; around late February - early March.
+The game calls this kind of generic <code>write</code> to drawing registers indicating that it was done rendering a batch of triangles.
+So we knew that we were drawing and we now had to figure out how to decode these triangles and render them on screen.
+At the end of the day, Switch uses a modern GPU and like most modern GPUs it relies on a programmable pipeline.
+A programmable pipeline gives game developers the power to control some of the graphics pipeline with a full featured programming language, and these programs that they write are called shaders.
+Game developers will write shaders in languages such as GLSL and HLSL, and the graphics driver will compile these into a GPU specific assembly language.
+Shaders are really useful to give game developers the ability to change how the geometry is drawn, and even how the pixels are colored on the screen.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./debug.png" title="Behind the scenes!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/SMO_debug_hu35bc4c3521104030c4ec846ff3b9eea3_695450_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Behind the scenes!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Behind the scenes!</p>
+        
+    </div>
+    
+</div>
+
+<p>Because of how much shaders influence the whole scenes, GPU emulation development is not just a matter of handling triangles its also about handling shaders.
+We had to actually implement the shader programs to get more graphics output, meaning we needed to decompile each shader instruction.
+In case you were wondering, Nintendo Switch games are built with precompiled shader binaries, so we can&rsquo;t just run the original program.
+Instead we have to analyze the shader instructions and figure out novel ways to get convert it back to a high level shader code again.
+Figuring out what each shader instruction means wasn&rsquo;t an easy task, as this was all Nvidia&rsquo;s proprietary code.
+We worked a lot with <a href="https://github.com/gdkchan">gdkchan</a>, as he had made a bit of progress with this, and quickly learned how to decode GPU data based on nouveau and envytools.
+envytools and envydis (disassembler) did the reverse engineering of how shaders work in Maxwell based GPUs, so we already know most of the disassemblies of the instructions, but not always what they do.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./sonic_1.png" title="">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/sonic_1_hu980a03fb888b9996bd20865fe304049f_1412311_1024x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./sonic_2.png" title="">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/sonic_2_hu12e94855088089fc15ff1a7da97ea99a_231146_776x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./sonic_3.png" title="">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/sonic_3_hue6e99d43a3dc176ed1ed09c1cdc8b4bb_110688_781x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./sonic_4.png" title="">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/sonic_4_hu4c2eba2a952733c66639354d6241ac92_225245_736x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./sonic_5.png" title="">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/sonic_5_hu1bd682b2ba1f779a79c1ca7b2cb1cb99_425045_769x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+        
+    </div>
+    
+</div>
+
+<p>For actual shader implementation in yuzu, we decided to base it on a recent addition to Citra, a shader recompiler that converts the emulated 3DS shaders into GLSL so they can be run on the host GPU.
+Instead of running all these shader programs (which have to run for thousands of vertices) on the CPU, we translate these shaders into OpenGL GLSL and upload the program directly as is to GPU.
+This is better as GPUs are designed to run these programs in parallel for thousands of vertices, whereas CPUs are not.
+In Citra, we were running the fragment shaders on the GPU since at least 2015, but the vertex and geometry shaders were run on the CPU.
+The 3DS vertex and geometry shaders have some very hard to account for corner cases, and it took many years to make sure that our reverse engineering efforts were correct.
+That way we didn&rsquo;t have to waste effort working on something we couldn&rsquo;t be sure was possible.
+If you would like to read more about the feature in Citra, check out the blog post about it (<a href="https://citra-emu.org/entry/improvements-to-hardware-renderer/">here</a>).</p>
+<p>However this isn&rsquo;t an option in case of yuzu, as Switch&rsquo;s GPU is modern and way too powerful for doing this in software.
+Around April 2018, we were able to get enough of shader instructions implemented to get &ldquo;Puyo Puyo Tetris&rdquo; to show a bit of graphics.
+It wasn&rsquo;t much, just rendered <code>SEGA logo</code> and <code>Tetris logo</code>, and pretty much hung after that.
+Furthermore, we were able to get a few other simple 2D games like &ldquo;Cave Story&rdquo; and &ldquo;The Binding of Issac&rdquo; booting as well.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./splatoon2.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Splatoon 2 - Then</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./splatoon2_work.png" title="Splatoon 2 - Now">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/splatoon2_work_hu05c9b51f67062ef8cc5110b8c9a835c2_363560_823x0_resize_q90_bgffffff_box_3.jpg" alt="Splatoon 2 - Now"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Splatoon 2 - Now</p>
+        
+    </div>
+    
+</div>
+
+<p>Another new feature which we implemented was shader <code>constbuffer</code> support by Subv.
+We have shader programs that we want to reuse for a bunch of different triangles for features like the UI or 3D models.
+It isn&rsquo;t efficient to have individual shaders for every single thing, instead we can have a couple of shader programs that can be reused for everything.
+So, shader <code>constbuffer</code> support is the equivalent of OpenGL <code>uniform</code> and <code>uniform buffer objects (UBO)</code>.
+Uniforms in general are a way to provide constant data to shaders and can also be used to reconfigure the shader as well.</p>
+<p>Initial rendering support and blending support were done by bunnei.
+Blending is used for alpha transparency - translating Switch GPU register writes to OpenGL calls.
+It fixed a bug in &ldquo;Puyo Puyo Tetris&rdquo;, where the <code>Saving...</code> icon in the top left corner had a weird box around it.
+Initial texture support was done by Subv and mainly involved reading a texture from memory, decoding it, and uploading it to OpenGL.</p>
+<p>Coming to rasterizer cache, its computationally expensive to upload a texture from the emulated Switch memory to the host GPU every time it&rsquo;s used.
+The texture will need to be decoded and unswizzled before its uploaded, and then the memory will need to be copied from the CPU RAM into the GPU RAM.
+It&rsquo;s much more efficient to just keep texture in the GPU memory, similar to how it works on hardware with normal PC games, but is a little bit trickier for emulation.
+This is because we don&rsquo;t know when the game might change the texture or modify it.
+bunnei did most of the work to cache these textures, so when a texture is uploaded to OpenGL it is saved in GPU memory and we keep track of it.
+When the CPU or our emulated Switch kernel reads or writes to the memory address that the texture was uploaded to, we check to see what we need to do, and reload the texture only if necessary.
+This also applies to framebuffers because in some cases, games can use them as textures.
+If this caching wasn&rsquo;t existent, we&rsquo;d essentially have to upload every texture to OpenGL memory (host GPU space) on every draw, copy the final framebuffer back to emulated Switch memory (CPU space) so that the game could potentially use it for framebuffer.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./SMO_astc.png" title="Testing Super Mario Odyssey">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/SMO_astc_huea4c317be2a84e48a81f8fc5c6a24133_22614_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Testing Super Mario Odyssey"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Testing Super Mario Odyssey</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./SMO.png" title="Inverted render">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/SMO_hu71e63b6275b517287ad472c3566d69e8_506852_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Inverted render"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Inverted render</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./SMO_2.png" title="Inverted render">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/SMO_2_hu0e1690a64cb2977d3a327e994902f2a6_452071_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Inverted render"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Inverted render</p>
+        
+    </div>
+    
+</div>
+
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./SMO_debug.png" title="Debugging">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/SMO_debug_hu35bc4c3521104030c4ec846ff3b9eea3_695450_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Debugging"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Debugging</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./SMO_work.png" title=" Proper render">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/SMO_work_hue73d60864b60e406a615333fc6b4f14e_971943_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Proper render"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Proper render</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./SMO_2_work.png" title=" Proper render">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/SMO_2_work_hub3c0d23a4d57e4661157b2317266e475_1078903_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Proper render"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Proper render</p>
+        
+    </div>
+    
+</div>
+
+<p>We had a couple of fixes to our rasterizer cache mainly because it was based on Citra&rsquo;s rasterizer cache.
+Because the compressed texture formats that the 3DS uses are not commonly supported by desktop GPUs, Citra&rsquo;s rasterizer cache decodes any compressed textures before uploading and caching them.
+But since the Switch GPU supports many of the same texture formats that desktop OpenGL does, we sped things up by uploading them without decoding them.
+At the start, this support was just hacked into Citra&rsquo;s cache, which didn&rsquo;t end up working correctly all the time.
+One example was the squid texture in &ldquo;Splatoon 2&rdquo;, which was identified and fixed by Subv.
+We also implemented texture color swizzling, a way to swap color components, which is used by &ldquo;Splatoon 2&rdquo; to swap colors for intro background texture.
+So, before we implemented this the colors were all wrong.
+We fixed YUV2 video playback in our shader support, which fixed the previously busted &ldquo;Sonic Mania&rdquo; intro.
+We had to implement a field parameter called component masks in <code>TEX/TEXS</code> shader instructions, to properly decode <code>YUV2</code> videos.
+We also implemented texture wrap modes, which gives the ability to specify whether a texture on a triangle is mirrored or repeating etc.</p>
+<p>There are lots of other things already implemented and many more that have to be implemented.
+As the Switch&rsquo;s GPU is quite advanced, we have dozens of texture formats, vertex formats, lots of registers, different configuration modes, shader instructions that need to be implemented.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./onepiece.png" title="One Piece - Then">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/onepiece_huaf772a61919fe733bfe426286683d5ac_894607_1024x0_resize_q90_bgffffff_box_3.jpg" alt="One Piece - Then"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">One Piece - Then</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./onepiece_work.png" title="One Piece - Now">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/onepiece_work_hu0d817ea96862751b968ab112fa0f99b0_2359158_1024x0_resize_q90_bgffffff_box_3.jpg" alt="One Piece - Now"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">One Piece - Now</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./steam_world.png" title="Steam World Dig 2">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/steam_world_hu29e93ea3b2aeac1cdf73e14df87e91d6_617522_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Steam World Dig 2"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Steam World Dig 2</p>
+        
+    </div>
+    
+</div>
+
+<p>Apart from the above mentioned stuff, there have been many more modifications made to yuzu&rsquo;s GPU HLE (high level emulation).
+These bug fixes or modifications were done on a per-game experimentation basis and as we progress further we will continue to fix our implementations and improve the accuracy of emulation in yuzu.
+All of the progress we have made until now is thanks to the efforts of yuzu&rsquo;s contributors and the good people from Switch hacking communities.</p>
+<h2 id="virtual-file-system-vfs-by-darklordzachhttpsgithubcomdarklordzach-herehttpsgithubcomyuzu-emuyuzupull676">Virtual File System (VFS) by <a href="https://github.com/DarkLordZach">DarkLordZach</a> (<a href="https://github.com/yuzu-emu/yuzu/pull/676">here</a>)</h2>
+<p>A Virtual File System (VFS) is an abstraction layer which allows us to hide the details of where the actual files are stored.
+The purpose of a VFS is to enable the emulated Switch file system to read and write to many different types of backends, without changing anything in the emulated FS code.
+In layman&rsquo;s terms, the game will still think its reading and writing to a file on the Switch, but in reality it could be reading from a zip file, or from a custom mod that the user adds.
+This makes further support for Updates, DLC, new formats, encryption, etc., a little bit easier to implement. <a href="https://github.com/DarkLordZach">DarkLordZach</a> single-handedly worked on VFS for a couple of weeks and successfully implemented it.</p>
+<h2 id="touch-screen-support-by-darklordzachhttpsgithubcomdarklordzach-herehttpsgithubcomyuzu-emuyuzupull683">Touch-Screen Support by <a href="https://github.com/DarkLordZach">DarkLordZach</a> (<a href="https://github.com/yuzu-emu/yuzu/pull/683">here</a>)</h2>
+<p>DarkLordZach has been working very actively on various bug fixes, features and has also been lending a hand in testing games too.
+His latest contribution comes in the form of touch-screen support for yuzu.
+With this feature, yuzu now emulates mouse clicks to touch inputs and if you happen to have a physical touch screen, that can be used as a input device too.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./12switch.png" title="1-2-Switch">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/12switch_hu5943fcc48ef58a8feeaba4fa91573cc2_1561507_1024x0_resize_q90_bgffffff_box_3.jpg" alt="1-2-Switch"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">1-2-Switch</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./arms.png" title="ARMS">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/arms_hu7a0fddefc8dcb12ec377c9f8e7f63a72_48505_1024x0_resize_q90_bgffffff_box_3.jpg" alt="ARMS"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">ARMS</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./celeste.png" title="Celeste">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/celeste_hu311a023d6fcc022eecfdaba64af14289_1339807_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Celeste"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Celeste</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./doom.png" title=" Doom">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/doom_hu126a98f7186d74794b810ff434fde879_1040395_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Doom"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Doom</p>
+        
+    </div>
+    
+</div>
+
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./farming.png" title="Farming Simulator">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/farming_hu448fa3cba308d87914dc5da254770030_1967677_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Farming Simulator"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Farming Simulator</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./Lildew.png" title="Ittle Dew">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/Lildew_hu3a7c36d21e5e3fa52ff16079a1fc20c6_237144_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Ittle Dew"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Ittle Dew</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./minecraft.png" title="Minecraft Story Mode">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/minecraft_hu27e10c8c707ff1f2b36000df43eb5767_1507903_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Minecraft Story Mode"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Minecraft Story Mode</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./picross.png" title="Picross">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/picross_hue3a288f6a70592db8ac9e207f4dfdd87_422434_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Picross"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Picross</p>
+        
+    </div>
+    
+</div>
+
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./minecraft.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Our first 3D rendered game - Minecraft</p>
+        
+    </div>
+    
+</div>
+
+<h2 id="miscellaneous">Miscellaneous</h2>
+<p>Apart from these improvements, we have had multiple PRs which fixed bugs and deadlocks in various games.
+We got graphics output in Super Mario Odyssey, fixed saves related issues, launched many new games to the title screen, booted into few networked dependent games like Doom, implemented few SVCs and shader instructions, fixed a major performance regression with controller support, optimized logging system and did many more optimizations.
+We thank all the contributors for their valuable contributions and applaud their efforts.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./seiken.png" title="Seiken Densetsu Collection">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/seiken_huee7cb9958d903dc908fef7b449c3d000_2067867_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Seiken Densetsu Collection"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Seiken Densetsu Collection</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./setsuna.png" title="I am Setsuna">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/setsuna_hu87643c50d4857a160ba2f8d5d65e63ab_38452_1024x0_resize_q90_bgffffff_box_3.jpg" alt="I am Setsuna"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">I am Setsuna</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./sm&#43;.png" title="Sonic Mania Plus">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/sm&#43;_hu9ee7a4d5adeda0f541e9c5d3e1a17b13_594606_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Sonic Mania Plus"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Sonic Mania Plus</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./snipper.png" title="Snipperclips Plus">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-2018-p2/snipper_hu76b41e8472127447aba499d79b3f7fbd_738517_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Snipperclips Plus"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Snipperclips Plus</p>
+        
+    </div>
+    
+</div>
+
+<h3 style="text-align: center;">
+<b><a href="https://github.com/yuzu-emu/yuzu/">Contributions are always welcome !</a></b>
+</h3>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/35830">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
