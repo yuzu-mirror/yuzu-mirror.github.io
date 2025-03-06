@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="Progress Report March 2023 &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/" />
+    <meta property="og:description" content="Hi yuz-ers! We&rsquo;ve been working hard as usual, and this March saw improvements in performance, graphics, audio, CPU precision, input, and much more!" />
+<meta name="description" content="Hi yuz-ers! We&rsquo;ve been working hard as usual, and this March saw improvements in performance, graphics, audio, CPU precision, input, and much more!" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/"> 
+
+    <title>Progress Report March 2023 - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/banner_hu13fca878cd67d5571281a9837a8008f6_844356_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">Progress Report March 2023</span>
+    </div>
+    
+    
+    <div>
+        <span class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/GoldenX86/summary">GoldenX86</a>
+            on April 10 2023
+        </span>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p>Hi yuz-ers! We&rsquo;ve been working hard as usual, and this March saw improvements in performance, graphics, audio, CPU precision, input, and much more!</p>
+<h2 id="making-cpus-go-the-opposite-of-brrrr">Making CPUs go the opposite of BRRRR</h2>
+<p>One of the biggest changes this month is the set of improvements in CPU accuracy.
+This requires some backtracking so let’s rewind a little bit.</p>
+<p>Back in <a href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jul-2022/#core-timing-or-how-to-suffer-so-much-with-a-fix">July,</a> we explained how <code>CoreTiming</code> operates in its current form, using a host timer.
+A thread called <code>HostTiming</code> is used to process HLE events such as input and audio.
+However, some of these events, like audio, require a high level of timer precision to behave the way games expect, more than Windows would usually allow.</p>
+<p>By default, Windows only allows a precision of 1ms since the OS event loop runs at 1000Hz.
+This is not enough.
+However, devices running Linux, BSD, and MacOS don&rsquo;t face this limitation and can achieve μs (microsecond) levels of precision.</p>
+<p>If a game wants to run at a frametime of 16.67ms (60 FPS), you could wait for 17ms two-thirds of the time and 16ms for the remaining one-third, but this has already proved in the past to be terrible for audio accuracy.
+The alternative, and old method in use for Windows, is to wait for 16ms and do a busy wait for 0.67ms.
+During that 0.67ms, the CPU thread isn&rsquo;t doing anything and consumes power without actually working.</p>
+<p>Here comes the benefit of removing support for Windows 7 and 8/8.1.
+The Windows 10 SDK has new undocumented functions, <code>NtSetTimerResolution</code> and <code>NtDelayExecution</code>, which allow improving timer resolution down to 0.5ms.
+This allows yuzu to wait for 16.5ms and only spin the remaining 0.17ms, which is four times shorter than the previous default method.</p>
+<p>By implementing these <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9889" data-gh-pr="9889">new functions,</a>
+ <a href="https://github.com/Morph1984">Morph</a> reduced the time the CPU spends in a spinlock, resulting in reduced CPU usage for timing-heavy games like Kirby Forgor 💀… <code>Kirby and the Forgotten Land</code>, and <code>Super Smash Bros. Ultimate</code>.
+The new free resources mean better performance for low core count CPUs such as quad cores, and for systems with limited power budgets such as laptops and handhelds.
+With this change, we measured up to a 24% reduction in CPU use or power consumption, depending on the limiting factor.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./usebug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/usebug_hu05b278de8f59bb3ffe0e7f5e9cec37a3_94425_800x0_resize_q90_bgffffff_box_3.jpg" alt="Left: old 1ms precision; Right: current 0.5ms precision. The result comes from your writer’s laptop which runs a Single Language Windows installation, so don’t mind the Spanish. Note that there is a difference in CPU use between the two results"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./usefix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/usefix_hu473113d7ff1ce19aa17ca6e4d3efc844_77708_800x0_resize_q90_bgffffff_box_3.jpg" alt="Left: old 1ms precision; Right: current 0.5ms precision. The result comes from your writer’s laptop which runs a Single Language Windows installation, so don’t mind the Spanish. Note that there is a difference in CPU use between the two results"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Left: old 1ms precision; Right: current 0.5ms precision. The result comes from your writer’s laptop which runs a Single Language Windows installation, so don’t mind the Spanish. Note that there is a difference in CPU use between the two results</p>
+
+
+<p>If you can perform more tasks in the same power envelope, you can improve performance without sacrificing battery life.
+Alternatively, a more common scenario for an emulator, if your ceiling is a fixed framerate, you can reduce temperatures.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./tempbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/tempbug_hu17859b2cb0ec53714f6c5c6be11154a4_45421_800x0_resize_q90_bgffffff_box_3.jpg" alt="This is why the lap in laptop is a lie, mind the package temperature (Xenoblade Chronicles 3)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./tempfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/tempfix_hua495fd005016b0b81e9f4450de5e6bd7_59321_800x0_resize_q90_bgffffff_box_3.jpg" alt="This is why the lap in laptop is a lie, mind the package temperature (Xenoblade Chronicles 3)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">This is why the lap in laptop is a lie, mind the package temperature (Xenoblade Chronicles 3)</p>
+
+
+<p>Users reported that games have less audio stuttering thanks to the improved timer precision.</p>
+<p>Another nice tool that the Windows 10 SDK adds is allowing us to set yuzu as a <code>HighQoS</code> process, hinting to the Windows scheduler that if there are higher performance cores available, they should take priority.
+This further improves performance for current Ryzen CPUs by suggesting to use the best cores of a CCX, and for Intel 12th Gen and newer, by prioritizing P-cores (&ldquo;performance cores&rdquo;, normal cores).</p>
+<p>It’s heavily recommended to keep chipset drivers up to date to take the best advantage of your hardware.</p>
+<p>If the CPU performs in a more efficient way, how do we go even further beyond?
+Well, Morph figured the next step is to improve how the CPU counts time itself!</p>
+<p>On modern CPUs using the x86 architecture, the invariant timer is fetched with the the <a href="https://en.wikipedia.org/wiki/Time_Stamp_Counter">RDTSC</a> instruction.
+The thing with RDTSC is that… it isn’t accurate over longer periods.
+It can’t be on multicore processors.</p>
+<p>The small differences between what RDTSC provides as a best estimate and actual reality causes time drift in games like <code>Super Smash Bros. Ultimate</code>.
+You may notice this issue surfaces its ugly head as inaccurate match times.
+Intel 12th Gen, the most affected CPU architecture we measured (also all the way back in July), was as bad as a second off per minute.</p>
+<p>Morph’s <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9917" data-gh-pr="9917">solution</a>
+ to this issue is to spawn an extra thread whose task is to take two measurements of the TSC for 10 seconds, then take that difference and apply it to know how many actual ticks have passed in those first 10 seconds.
+If you then divide the number of ticks by 10, you get the exact frequency the host RDTSC timer was running at.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./timerbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/timerbug_hu2ef0d7e45e56135ea721dad8f32724ad_1495707_800x0_resize_q90_bgffffff_box_3.jpg" alt="Good thing we don’t have to use old stopwatches for this (Super Smash Bros. Ultimate)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./timerfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/timerfix_hu73bddc4153e34bd6d4a23fa1057653a0_975369_800x0_resize_q90_bgffffff_box_3.jpg" alt="Good thing we don’t have to use old stopwatches for this (Super Smash Bros. Ultimate)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Good thing we don’t have to use old stopwatches for this (Super Smash Bros. Ultimate)</p>
+
+
+<p>The result is practically perfect timing on Ryzen and Intel 11th Gen and older systems, and <em>almost</em> perfect timing on 12th Gen Alder Lake systems.
+Having completely different cores counting time simultaneously inside the CPU is not pretty for this specific application.
+We can’t defeat the hybrid asymmetric nature of Intel’s design, but we managed to reduce the drift from a second per minute, to a second every 5 minutes or so.</p>
+<p>&ldquo;Okay, this is pretty good&rdquo; said Morph, but how can you go even deeper?
+The only option left is to <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9982" data-gh-pr="9982">drop to assembly.</a>
+</p>
+<p>The optimization in question is currently only available for 12th Gen and newer Intel CPUs; AMD has not added support for it yet.
+We’re talking about <a href="https://www.felixcloutier.com/x86/tpause">TPAUSE</a> (CPUID name <code>WAITPKG</code>), a new instruction from Team Blue which allows the CPU to enter a lower power state and idle until a precise amount of time has passed.</p>
+<p>Some testing was required to specify the correct number of cycles for the wait period; a wrong value would reduce precision too much on one extreme, or not produce any benefit on the other.
+100000 cycles was the magic number in Morph’s testing, which reduced CPU use/power consumption by up to 20%, on top of the previous benefits.</p>
+<p>If only Intel GPU drivers <a href="https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/issues/159">worked</a>, their Xe equipped laptops/handhelds would now be very viable yuzu gaming machines…
+Oh well, 12th/13th Gen users running actual working GPU drivers from NVIDIA or AMD will benefit greatly from all this work.</p>
+<h2 id="graphical-changes">Graphical changes</h2>
+<p>Enough with the CPU improvements. What about graphics?
+Well, we have quite a bit to talk about.</p>
+<p>Users reported interesting colour banding on <code>STORY OF SEASONS: A Wonderful Life</code>. <a href="https://github.com/Kelebek1">Maide</a> dug deep into the issue, and identified the culprit in <code>S8_UINT</code> colour formats, like <code>D32_FLOAT_S8_UINT</code> and <code>S8_UINT_D24_UNORM</code>.
+With some trial and error, and some big help from the great <a href="https://github.com/bylaws">bylaws</a> (from the <a href="https://github.com/skyline-emu/skyline">Skyline</a> emulator), Maide managed to sort out the issues, providing <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9896" data-gh-pr="9896">accurate colour rendering</a>
+ without breaking other games.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/sosbug_hu5c8bcb7bb3b76444625e2a3906d5fc1e_1450072_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Now you can enjoy this farming simulator, with all its vibrant hues, without having to worry about colour banding. Isn’t that a-moo-sing? (STORY OF SEASONS: A Wonderful Life)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/sosfix_hu236986598565b2900263fa0d0f4f895d_1205655_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Now you can enjoy this farming simulator, with all its vibrant hues, without having to worry about colour banding. Isn’t that a-moo-sing? (STORY OF SEASONS: A Wonderful Life)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Now you can enjoy this farming simulator, with all its vibrant hues, without having to worry about colour banding. Isn’t that a-moo-sing? (STORY OF SEASONS: A Wonderful Life)</p>
+
+
+<p><a href="https://github.com/ameerj">epicboy</a> strikes again with his ninja updates. This time he gives some love to the <em>still thriving</em> OpenGL gang, bringing all the goodies of <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9913" data-gh-pr="9913">AccelerateDMA,</a>
+ which we discussed in the <a href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2023/#project-yfc-175">last report</a>.</p>
+<p>This means that OpenGL users, especially those with Fermi and Kepler GPUs, can enjoy the speed boost of this pseudo-Y.F.C. 2 change, making games such as <code>Metroid Prime Remastered</code> run much faster.
+No more waiting for Samus to load her arm cannon.</p>
+<p>We strongly advise users of older hardware without good Vulkan support to upgrade to something newer, as support for OpenGL is soon nearing its End of Life. That being said, thanks to epicboy, those who can’t upgrade won’t suffer from terrible performance using the old but gold OpenGL API.</p>
+<p>But that’s not all, epicboy also added an <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9925" data-gh-pr="9925">optimization</a>
+ for <code>GL_SYNC_STATUS</code>, boosting performance slightly.
+Your writer observes a 3-5% performance increase in <code>The Legend of Zelda: Breath of the Wild</code>, one of the few games that runs faster on OpenGL with NVIDIA hardware, if you ignore the shader stuttering.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./botw.png" title=" From 54 to 57 FPS in one of the heaviest spots in the game, OpenGL still has life in it! For now… (The Legend of Zelda: Breath of the Wild)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/botw_hue7f8ce9d3d2f3df2e8310b6792e8e6f5_2293449_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" From 54 to 57 FPS in one of the heaviest spots in the game, OpenGL still has life in it! For now… (The Legend of Zelda: Breath of the Wild)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> From 54 to 57 FPS in one of the heaviest spots in the game, OpenGL still has life in it! For now… (The Legend of Zelda: Breath of the Wild)</p>
+        
+    </div>
+    
+</div>
+
+<p>bylaws came to the rescue again, pointing out that our old Vulkan scheduler implementation had some regressions <a href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2022/#graphics-and-general-bug-fixes">back in October</a> of last year, when <a href="https://github.com/liamwhite">byte[]</a> worked on making homebrew apps work with Vulkan.</p>
+<p>This meant that games and homebrew would have to wait for a frame to show up on screen before starting to render, which in some cases is a bad example of feedback looping at its worst.</p>
+<p>By <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9931" data-gh-pr="9931">waiting in the background</a>
+ for the queue to be emptied without having to wait for the frame to be presented, byte[] fixed the regression.
+Thanks bylaws!</p>
+<p>Remember that lovely game we talked about <a href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2023/#other-gpu-and-video-changes">last month?</a>
+The one for all ages! Totally safe to play with your family.</p>
+<p><a href="https://github.com/vonchenplus">vonchenplus</a> decided to make it playable, so <del>weebs</del> players around the world could enjoy the amazing gameplay of <code>Moero Crystal H</code>, by <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9943" data-gh-pr="9943">fixing</a>
+ some errors in how yuzu processed the inline index and draw texture commands.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./mch.png" title=" Cultured gaming (Moero Crystal H)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/mch_hu38a690a748d339661e36473fc6c160e0_3738961_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Cultured gaming (Moero Crystal H)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Cultured gaming (Moero Crystal H)</p>
+        
+    </div>
+    
+</div>
+
+<p>A recent system update for the Steam Deck messed up the graphics in many games. The culprit? Some issue with <code>VK_EXT_extended_dynamic_state3</code>, one of the Vulkan extensions that helps reduce shader building stutter.</p>
+<p>A combination of yuzu expecting NVIDIA driver behaviour, and a difference in the latest Mesa implementation on the Deck caused what you see next:</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./eds1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/eds1_huaa5b610d9122d93ef767bac5c7409295_2091343_800x0_resize_q90_bgffffff_box_3.jpg" alt="Looks like someone spilled some paint on the screen (The Legend of Zelda: Breath of the Wild)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./eds2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/eds2_hu473653b412ccb6ad1b2dfb0baec0c52d_3481550_800x0_resize_q90_bgffffff_box_3.jpg" alt="Looks like someone spilled some paint on the screen (The Legend of Zelda: Breath of the Wild)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./eds3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/eds3_hub070a68fafb83ba685c66755b0b3e00d_2919142_800x0_resize_q90_bgffffff_box_3.jpg" alt="Looks like someone spilled some paint on the screen (The Legend of Zelda: Breath of the Wild)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Looks like someone spilled some paint on the screen (The Legend of Zelda: Breath of the Wild)</p>
+
+
+<p>byte[] <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9955" data-gh-pr="9955">disabled</a>
+ the feature that caused the problem for now, but we’ll reconsider turning it on again in the future as it’s very likely Mesa <a href="https://gitlab.freedesktop.org/mesa/mesa/-/issues/8325">has already fixed the issues</a> on their end.</p>
+<p>Here’s a couple of important fixes for the Xenoblade fans, which Maide spent a lot of time working on.</p>
+<p>Shaders were broken in-game due to issues with sRGB border colour conversions in the samplers.
+This is a process that converts colours from one colour space to another.
+This would cause inaccuracies that made some checks fail on affected shaders, resulting in discarding the wrong pixels as shadows.</p>
+<p>We need more information to fully understand the issue, but for now, <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9962" data-gh-pr="9962">ignoring</a>
+ colourspace transformations on sRGB samplers allows for hardware-accurate rendering.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/xcbug_hu38d47cad4e7d5eef306f34cae56cb5b4_1633755_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Rex knew what the future held for him, wink wink (Xenoblade Chronicles 2)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/xcfix_hu59e8d7ef4855c73f1cd0f7fa32b6fe37_1652755_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Rex knew what the future held for him, wink wink (Xenoblade Chronicles 2)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Rex knew what the future held for him, wink wink (Xenoblade Chronicles 2)</p>
+
+
+<p>The other long-standing issue affecting the Xenoblade trilogy (well, Definitive Edition and 2 at least) has been plaguing yuzu since the legendary <a href="https://yuzu-mirror.github.io/entry/yuzu-tcr/">Texture Cache Rewrite</a>.
+It was the random &ldquo;rainbow mode&rdquo; that could happen anytime during gameplay, or in a specific late-game cutscene in <code>Xenoblade Chronicles 2</code> that I won’t spoil for new players.
+If you played it in yuzu, you know which one.
+It makes you wonder if you’re in <a href="https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/Bioshock">Rapture</a>.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./sea.png" title=" Somewhere, beyond the (cloud) sea! (Xenoblade Chronicles 2)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/sea_hu0c5198bc6f576610a91d09a5ece53316_8341004_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Somewhere, beyond the (cloud) sea! (Xenoblade Chronicles 2)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Somewhere, beyond the (cloud) sea! (Xenoblade Chronicles 2)</p>
+        
+    </div>
+    
+</div>
+
+<p>Another observed problem was excessive lighting making the whole scene unreadable (especially at night with an HDR display, not a pleasant sudden flashbang).</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./flashbang.png" title=" My eyes! (Xenoblade Chronicles 2)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/flashbang_huac2e0fba6b516d1fb16d91a384c6ff5c_473374_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" My eyes! (Xenoblade Chronicles 2)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> My eyes! (Xenoblade Chronicles 2)</p>
+        
+    </div>
+    
+</div>
+
+<p>Maide found that the issue was caused by <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10004" data-gh-pr="10004">replacing</a>
+ fresh guest data with stale host data in the environment lighting cubemaps.
+The solution is to only copy data that has been marked as GPU-modified, following the behaviour of the <a href="https://yuzu-mirror.github.io/entry/yuzu-bcr/">Buffer Cache Rewrite</a>.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/xcdebug_hu47c3e4f16c6e363287c88e1e51fe6ae5_5207444_1024x0_resize_q90_bgffffff_box_3.jpg" alt="This isn’t 2009, we don’t need this much bloom, thank you very much (Xenoblade Chronicles: Definitive Edition)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/xcdefix_hu399dd37a469819b45d1b5cdd535252f2_4922485_1024x0_resize_q90_bgffffff_box_3.jpg" alt="This isn’t 2009, we don’t need this much bloom, thank you very much (Xenoblade Chronicles: Definitive Edition)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">This isn’t 2009, we don’t need this much bloom, thank you very much (Xenoblade Chronicles: Definitive Edition)</p>
+
+
+<p>With these changes, few graphical issues remain affecting the Xenoblade Chronicles saga, making it a great choice to enjoy on yuzu from start to finish.
+Then you can join your writer in debating over which Queen is the best.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/xc2bug_hu0c5198bc6f576610a91d09a5ece53316_8341004_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Since this issue only happens the first time the cutscene renders, I’ll cheat using bug report pics, bite me (Xenoblade Chronicles 2)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/xc2fix_hu0b2a198fea75b086a405a4f3829e721d_8188046_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Since this issue only happens the first time the cutscene renders, I’ll cheat using bug report pics, bite me (Xenoblade Chronicles 2)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Since this issue only happens the first time the cutscene renders, I’ll cheat using bug report pics, bite me (Xenoblade Chronicles 2)</p>
+
+
+<p>Newcomer <a href="https://github.com/rschlaikjer">rschlaikjer</a>, I hope I pronounced that right, has been digging deep into the texture cache, trying to figure out why a simple visual novel like <code>Tsukihime -A Piece of Blue Glass Moon-</code> would stutter when changing scenes.
+Maybe it’s because the game is too emotional for the emulator to handle.</p>
+<p>The culprit was a missing reference operator when capturing the GPU page table, which caused the table to be copied over and over again thousands of times per second. That would make anyone stutter, let alone an emulator. <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9988" data-gh-pr="9988">Converting</a>
+ the capture to a reference solved the issue, and it might also fix similar problems in other games.</p>
+<p>We’re glad rschlaikjer caught this bug before it got out of hand. We don’t want to end up like <a href="https://youtu.be/NPVRBa-VSMg">that chair</a>.</p>
+<h2 id="ui-changes">UI changes</h2>
+<p>Some issues are so elusive that they go unnoticed for years. Some issues are so complex that they require a deep understanding of all the layers involved to find the right solution. They frustrate many developers who give up, hoping someone else will have better luck.</p>
+<p>And some issues are just plain silly. Like when a game crashes because the default user profile is damaged.</p>
+<p><a href="https://github.com/german77">german77</a> found a simple fix for crashes in dozens of games:  <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9908" data-gh-pr="9908">setting the default profile picture</a>
+ to a real 32x32 resolution instead of 0x0.
+That’s it.</p>
+<p>Continuing to work on UI improvements, german77 also <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9941" data-gh-pr="9941">moved the last audio</a>
+ setting <code>Mute audio when in background</code> to the Audio section, where it belongs. No more wandering around in General for this option.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/audiobug_hu790272569dba658cfda7ee7e661a93c9_35013_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Good, proper order">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/audiofix_hu661ab224fa27ebe25da380f4e5968a92_36082_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Good, proper order">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Good, proper order</p>
+
+
+<p>This next one is a great improvement for UX (user experience), and a huge relief for me personally.
+Before, when using per-game controller profiles, if you forgot to change your input settings before starting a game, you would lose them when the game closes and have to set them up again next time.</p>
+<p>epicboy <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9965" data-gh-pr="9965">fixed this annoying issue</a>
+ and german77 merged the changes.
+Thank you so much for this fix.</p>
+<p>german77 is also working on making the profile selection applet better.
+The <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10006" data-gh-pr="10006">current changes</a>
+ are just the beginning, we will keep you updated on any progress in the future.</p>
+<h2 id="input-improvements">Input improvements</h2>
+<p>Let’s talk about input, where german77 continues to shine.</p>
+<p>Not satisfied with the mouse and keyboard experience when <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9906" data-gh-pr="9906">playing</a>
+ <code>Metroid Prime Remastered</code>, german77 set the default mouse sensitivity to 50% and removed the smoothing filter, improving the performance on high DPI gaming mice after getting valuable feedback from Metroid fans.
+He also lowered the motion threshold, clamped the rotation speed, and accumulated all input until delivery, which fixed the delay and choppiness of the previous implementation.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./prime.png" title=" Have you noticed how Samus lacks a lead indicator? Her suit couldn’t spare a tiny bit more processing power for that? (Metroid Prime Remastered)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/prime_huf3f2f9748c1285d4adfe70ff1233237f_7595158_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Have you noticed how Samus lacks a lead indicator? Her suit couldn’t spare a tiny bit more processing power for that? (Metroid Prime Remastered)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Have you noticed how Samus lacks a lead indicator? Her suit couldn’t spare a tiny bit more processing power for that? (Metroid Prime Remastered)</p>
+        
+    </div>
+    
+</div>
+
+<p>Thanks to those changes, <code>Metroid Prime Remastered</code> showed that it could be a great PC game. If only Nintendo would let it out of its dungeon.</p>
+<p>A common question we get is &ldquo;will this third party Switch controller work?&rdquo;
+The short answer is maybe, but the long answer is a bit more complicated.</p>
+<p>According to Nintendo’s API, Joy-Cons have two modes: active and passive.
+Official Joy-Cons use active mode, but some third party controllers use passive mode, usually because they don’t follow the API properly and don’t support any configuration commands.
+They just run with the default settings, for better or worse.</p>
+<p>That doesn’t mean passive controllers are useless. They still work on the Switch. But it does mean that they work differently. Active controllers update their status every 15 ms, while passive controllers only do it when something happens, such as a button press or release.</p>
+<p>Well, it turns out yuzu didn’t support passive mode until now! So german77’s <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9907" data-gh-pr="9907">changes</a>
+ made a lot of third party controller users happy.
+That’s quite handy, considering how many unofficial controllers are out there.</p>
+<p>The battle with vibration goes on!
+While doing his usual research, german77 found out that if you have more than one player using the same type of controller, or if you use a dual Joy-Con setup with a single controller, you can end up sending two vibration commands to the same controller in a row.
+This can be annoying, and it also takes up the limited bandwidth of Bluetooth connections.</p>
+<p>The <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9939" data-gh-pr="9939">solution is simple:</a>
+ only take the latest element in the <a href="https://www.youtube.com/watch?v=gzY8VH7eb8Y">cool vibrations</a> queue for each controller, check if the controller can handle the requested vibration, and ignore the rest.</p>
+<p>We all love Quality of Life changes, right? Even if they are not very flashy.</p>
+<p>Let’s talk about the <code>Controller Applet</code>, which is responsible for asking players to choose their input settings when the game requests it.
+Until now, the applet was unskippable; you had to give a valid answer to continue with your game.
+While this was passable, it’s bothersome and inaccurate.
+Some games go back to a previous menu instead of getting stuck in an endless loop if the players can’t or won’t confirm their input style.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./applet.png" title=" You shall pass!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/applet_hu4d00f2f4e4589aa2bd3acdfc36ca125a_32651_811x0_resize_q90_bgffffff_box_3.jpg" alt=" You shall pass!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> You shall pass!</p>
+        
+    </div>
+    
+</div>
+
+<p>german77 solved this <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9997" data-gh-pr="9997">behaviour,</a>
+ and while at it also solved a bug where the player count wasn’t correct.</p>
+<p>german77 implemented the… hold on, let me catch my breath first, <code>SetNpadJoyAssignmentModeSingleWithDestination</code> service call.
+He <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9999" data-gh-pr="9999">implemented</a>
+ it hoping to make <code>Let’s Get Fit</code> playable, but unfortunately there are more issues in the way.</p>
+<p>Changing topics to Amiibo support, a lot has happened this month.</p>
+<p>First of all, german77 managed to <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9953" data-gh-pr="9953">write</a>
+ the correct <a href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check">CRC</a>, making Amiibo data written by yuzu compatible with the Switch; no more invalid info.</p>
+<p>Next, if you tried to connect a controller while scanning an Amiibo, it would not be recognized. By <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9981" data-gh-pr="9981">accounting</a>
+ for this and initializing or finalizing the controller, he fixed the issue.</p>
+<p>And last but not least, to wrap up the Amiibo saga, Herman the German Sherman <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9995" data-gh-pr="9995">added support</a>
+ for plain Amiibo files.
+Some Amiibos, like the ones themed after <code>Super Smash Bros. Ultimate</code>, can be edited without the need of keys. Now yuzu can read non-encrypted game data from your Amiibos correctly!</p>
+<h2 id="audio-fixes">Audio fixes</h2>
+<p>Maide managed to spot a bug in how the reverb pre-delay line was being read, causing problems in the output.
+Solving it by <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9890" data-gh-pr="9890">correctly reading</a>
+ via input instead of output gives games like <code>New Super Mario Bros. U Deluxe</code> proper audio.
+Now you can enjoy Mario’s voice without any echo. Mama mia!</p>
+<p>bylaws has been digging deep into <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9969" data-gh-pr="9969">audio synchronization,</a>
+ improving the codebase here and there, and managing to avoid stalls by linking the guest sample tracking to the host.</p>
+<p>This change caused some regressions, as some games are <em>very sensitive</em> to audio scheduling requirements.
+Users reported popping sounds after the merge, so bylaws improved the situation by adding a constant 15 ms of <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10027" data-gh-pr="10027">latency</a>
+ to the sample count reporting.</p>
+<h2 id="other-code-changes">Other code changes</h2>
+<p>Fire Emblem fans have been experiencing freezes in-game, and after some investigation, Morph found out that the culprit was the bounded threadsafe queue, introduced with a pull request from <a href="https://github.com/behunin">behunin</a>.</p>
+<p>The queue’s job is to pass events from an event producer (like the CPU cores) to an event consumer (like the GPU thread).
+The previous implementation, which behunin replaced, kept allocating and freeing memory, causing periodic latency spikes.</p>
+<p>The way to solve this issue is to turn the queue into a <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9778" data-gh-pr="9778">bounded queue,</a>
+ meaning no memory allocation is needed as there is a fixed amount of resources available.
+And that’s what behunin did, but the new queue implementation seemed to be buggy.
+Morph added a <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9971" data-gh-pr="9971">simplified implementation,</a>
+ fixing the new gameplay freezes affecting <code>Fire Emblem: Three Houses</code> and <code>Fire Emblem Engage</code>.</p>
+<p><a href="https://github.com/goldenx86">Your writer</a> re-enabled LTO for GCC builds, following the changes made for Windows last time, but only applying the <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10014" data-gh-pr="10014">optimizations to the core and video_core subprojects,</a>
+ providing Linux users a nice, free performance boost.</p>
+<h2 id="hardware-section">Hardware section</h2>
+<h3 id="amd-2332-and-newer-drivers">AMD 23.3.2 and newer drivers</h3>
+<p>One bad and two good pieces of news.</p>
+<p>On the positive side, AMD has finally added support for the missing dynamic state extensions in their latest Windows driver release, which improves the shader build times and reduces the stuttering on Radeon GPUs, making them perform on par with NVIDIA.</p>
+<p>However, on the negative side, this driver update also introduces a serious regression:</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./amd.png" title=" This can affect your entire desktop (Metroid Prime Remastered)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2023/amd_huf6c4d40ff2cbc00069403b8d4c8f6aae_7081827_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" This can affect your entire desktop (Metroid Prime Remastered)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> This can affect your entire desktop (Metroid Prime Remastered)</p>
+        
+    </div>
+    
+</div>
+
+<p>Some games, such as <code>Metroid Prime Remastered</code> and <code>Pokémon Legends: Arceus</code>, trigger what seems to be an out-of-bounds crash that causes desktop corruption and a driver crash.
+We advise users to stay on driver version 23.3.1 or older for now. Some older Radeon cards may also benefit from using 23.2.2.</p>
+<p>We reported this issue to AMD and they promptly confirmed it, reproduced it, and informed us that they are working on a fix.</p>
+<p>Now <em>that’s</em> how you do customer support.</p>
+<p>Speaking of which…</p>
+<h3 id="doing-intels-job">Doing Intel’s job</h3>
+<p>While testing a crucial rendering fix for <code>The Legend of Zelda: Breath of the Wild</code> that we will discuss next month, Morph did some feature testing to investigate what makes Intel Windows drivers run so horribly.</p>
+<p>His findings are both expected and disappointing.
+The main culprit for about 95% of the crashes is a faulty compute shader stage in the drivers.
+Disabling compute shaders like we used to do for older Intel hardware makes most games run, but not all.
+We still don’t know the cause of the crashes when opening the menu in <code>Xenoblade Chronicles 3</code>.</p>
+<p>We’re now trying to figure out what triggers the compute shaders to crash the driver like this, but this also raises a dilemma.
+Should we patch the issue ourselves, making game rendering worse and letting Intel off the hook, or should we leave it broken so they have to fix it properly?</p>
+<p>The solution while the investigation continues is to use ol’ reliable Linux, or avoid buying hardware that relies only on Intel GPUs. Sigh.</p>
+<h2 id="future-projects">Future projects</h2>
+<p>We’re not even halfway through April and I’m already thrilled about what’s coming up in the next progress report.
+The devs are on fire and they’re not stopping anytime soon.</p>
+<p>Maide is working on more improvements for the Xenoblade series, such as fixing the cloud flickering in <code>Xenoblade Chronicles 2</code>, the particle effects in <code>Xenoblade Chronicles 3</code>, and the texture flickering that affects the whole saga and some other games.
+However, these fixes come at a performance cost, so he needs some help from another GPU developer to optimize them.
+Maybe <a href="https://github.com/FernandoS27">Blinkhawk</a> could lend a hand?</p>
+<p>Nintendo contributed in releasing the holy grail of Vulkan extensions, <a href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_EXT_shader_object.html">VK_EXT_shader_object</a>.
+This extension promises to cut down the amount of work needed to build shaders significantly, as its dependencies suggest, requiring support for all previous dynamic state extensions.</p>
+<p>Most likely Nintendo intends to use it for their internal emulators, maybe for &ldquo;backwards compatibility.&rdquo;
+Regardless of any of that, we have a lot of work ahead of us to add support for this extension.</p>
+<p>But enough about that. Let’s talk about some exciting projects in the works.
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./gaia.jpg" title=" Flute intensifies"><img src="./gaia.jpg" alt=" Flute intensifies"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Flute intensifies</p>
+        
+    </div>
+    
+</div>
+</p>
+<p>Regarding Project Gaia:
+it is still in development.</p>
+<p>Oh, and Project Lime is in release candidate status, under intense internal testing.</p>
+<p>That’s all folks! Thank you for sticking around until the end of this progress report.</p>
+<p>Thanks to Bing Chat for the terrible jokes.</p>
+<p> 
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+
+<script src="https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/js/juxtapose.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/css/juxtapose.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy.min.css" integrity="sha512-HbPh+j4V7pXprvQMt2dtmK/zCEsUeZWYXRln4sOwmoyHPQAPqy/k9lIquKUyKNpNbDGAY06UdiDHcEkBc72yCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.2/umd/popper.min.js" integrity="sha512-aDciVjp+txtxTJWsp8aRwttA0vR2sJMk/73ZT7ExuEHv7I5E6iyyobpFOlEFkq59mWW8ToYGuVZFnwhwIUisKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy-bundle.umd.min.js" integrity="sha512-gbruucq/Opx9jlHfqqZeAg2LNK3Y4BbpXHKDhRC88/tARL/izPOE4Zt2w6X9Sn1UeWaGbL38zW7nkL2jdn5JIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div id="gh-template" style="display: none;">
+    <span>
+        <svg class="gh-hover-icon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"></path></svg>
+    </span>
+    <span>
+        <a class="gh-hover-title" href=""><strong></strong></a>&nbsp;<span class="gh-hover-number"></span>
+    </span>
+    <p class="gh-hover-date"></p>
+</div>
+<style>
+    .gh-hover-icon.open { filter: invert(56%) sepia(47%) saturate(665%) hue-rotate(77deg) brightness(99%) contrast(83%); }
+    .gh-hover-icon.closed { filter: invert(50%) sepia(95%) saturate(3977%) hue-rotate(336deg) brightness(95%) contrast(90%); }
+    .gh-hover-icon.merged { filter: invert(47%) sepia(17%) saturate(4072%) hue-rotate(228deg) brightness(95%) contrast(89%); }
+    .gh-hover { border-bottom: dotted; }
+</style>
+<script>
+    tippy('.gh-hover', {
+        content: 'Loading...',
+        onShow(instance) {
+            showHovercard(instance, 'yuzu');
+        },
+        allowHTML: true,
+        followCursor: 'horizontal',
+        interactive: true,
+    });
+</script>
+</p>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/756599">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
