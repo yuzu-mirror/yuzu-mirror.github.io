@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="New Platform Release - yuzu on Android &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-android/" />
+    <meta property="og:description" content="Hey there, yuz-ers!
+We are happy to announce that yuzu is available, today, for Android!
+There&rsquo;s so much to discuss and show you, let&rsquo;s get started!" />
+<meta name="description" content="Hey there, yuz-ers!
+We are happy to announce that yuzu is available, today, for Android!
+There&rsquo;s so much to discuss and show you, let&rsquo;s get started!" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-android/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-android/"> 
+
+    <title>New Platform Release - yuzu on Android - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-android/banner_hu8ec13a445b100ae52026a201b2f0ca32_593229_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">New Platform Release - yuzu on Android</span>
+    </div>
+    
+    
+    <div>
+        <p class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/CaptV0rt3x/summary">CaptV0rt3x</a>
+            
+            
+            
+            and <a href="https://community.citra-emu.org/u/GoldenX86/summary">GoldenX86</a>
+            
+            on May 30 2023
+        </p>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p>Hey there, yuz-ers!
+We are happy to announce that yuzu is available, today, for Android!
+There&rsquo;s so much to discuss and show you, let&rsquo;s get started!</p>
+<p> </p>
+<h1 id="where-do-i-get-it">Where do I get it?</h1>
+<p>If you&rsquo;re too excited, you can jump in immediately by downloading yuzu from the Google Play Store!<br></p>
+<article class="message" style="border-radius:10px;">
+  <div class="message-header" style="border-radius:10px 10px 0 0;">
+    <p>Download yuzu for free, or support us and receive some fantastic benefits with Early Access.</p>
+  </div>
+  <div class="message-body" style="text-align: center;">
+    <div class="columns is-desktop">
+      <div class="column">
+        <a href="https://play.google.com/store/apps/details?id=org.yuzu.yuzu_emu">
+          <div style="align-items: center"><img alt="yuzu mainline" src="./svg/mainline.svg" width="400"></div>
+          <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="200">
+        </a>
+      </div>
+      <div class="column">
+        <a href="https://play.google.com/store/apps/details?id=org.yuzu.yuzu_emu.ea">
+          <div style="align-items: center;"><img alt="yuzu early access" src="./svg/early_access.svg" width="400"></div>
+          <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="200">
+        </a>
+      </div>
+    </div>
+  </div>
+</article>
+<p>The GitHub releases aren&rsquo;t live yet, but we will edit this article with a link to download them once they are.
+This initial release won&rsquo;t have parity with the feature-rich Desktop builds of yuzu, but we are looking forward to introducing all the features you love as we fine-tune them for Android.</p>
+<br>
+<article class="message"><div class="message-header">
+<p>⚠️ Update</p>
+</div>
+<div class="message-body"><p style="color:white;">
+<b>Standalone GitHub releases are now available <a href="https://github.com/yuzu-emu/yuzu-android/releases/" style="color:#03a9f4;"> here.</a>
+</b>
+</p></div></article>
+<p>Features such as multiplayer over LAN/LDN, Input Profiles, TAS, etc. are not yet available.
+For now, we want to focus on compatibility and performance as performing cutting-edge emulation on typical Android hardware has several challenges.</p>
+<p>If you&rsquo;re still reading, make sure to stick around for a little development history, expectations, and compatibility reports!</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-android/botw_hu288dabd54c4df12af13e179000f13198_2015343_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Breath of the Wild (Samsung Galaxy S20 FE, Mesa Turnip GPU driver Vs. Samsung Galaxy S23, Qualcomm proprietary GPU driver)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-android/botw_adreno_hu48b69fb6684628bb69d2b1fac92e03a3_1694738_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Breath of the Wild (Samsung Galaxy S20 FE, Mesa Turnip GPU driver Vs. Samsung Galaxy S23, Qualcomm proprietary GPU driver)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Breath of the Wild (Samsung Galaxy S20 FE, Mesa Turnip GPU driver Vs. Samsung Galaxy S23, Qualcomm proprietary GPU driver)</p>
+
+
+<h1 id="why">Why?</h1>
+<p>In the past year, we have made significant strides in improving both the accuracy and performance of yuzu.
+And with many more such improvements in progress, we understood that the longer we waited, the more challenging it would become for us to support an Android build.</p>
+<p>With this public release, all future yuzu development activities will account for, and address, both feature and platform compatibility for Android.
+This is expected to help facilitate and streamline our development process to better achieve our goal of platform independence.</p>
+<p>We hope to welcome Android developers interested in lending their expertise to a cutting-edge project and produce new yuzu features, optimizations, and other improvements!</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="skyrim.png" title=" You&#39;re finally awake! yuzu on Android launched! (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/skyrim_hud781edb267d9b060700f6e88ea611772_2753287_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" You&#39;re finally awake! yuzu on Android launched! (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> You&#39;re finally awake! yuzu on Android launched! (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)</p>
+        
+    </div>
+    
+</div>
+
+<h1 id="state-of-things-where-are-we-what-can-users-expect">State of things: Where are we? What can users expect?</h1>
+<p>Before we talk more about where we are and what users can expect, we would like to make a few things clear:</p>
+<ul>
+<li>
+<p>We&rsquo;re committed to improving the feature parity, compatibility, and performance of our Android builds; most improvements for desktop platforms, like Windows and Linux, will also help improve our Android users&rsquo; experience.</p>
+</li>
+<li>
+<p>yuzu Android is in rapid development and early builds should be considered akin to a beta.</p>
+</li>
+<li>
+<p>Expect to see a variety of results regarding compatibility and performance on different devices, discussed in more detail later.</p>
+</li>
+</ul>
+<p>With that out of the way, let&rsquo;s dive into the state of things for yuzu Android.</p>
+<h2 id="some-background">Some background</h2>
+<p>Like our sister project, Citra, yuzu has always been developed with multi-platform support in mind.
+We&rsquo;ve supported major desktop operating systems, such as Windows and Linux, since the earliest builds of yuzu.
+yuzu&rsquo;s core code has, by design, been kept modular and frontend agnostic to ensure any future efforts to expand supported platforms does not run into unwanted dependency issues.</p>
+<p>Although we originally couldn&rsquo;t support macOS due to Apple deprecating OpenGL support on it, there has been a recent rekindling of efforts to support macOS using MoltenVK — and it so happens that the new Macs are powered by 64-bit ARM-based Apple Silicon (M1/M2, at the time of writing) SoCs (System-on-Chip).
+But then we faced another hurdle — Dynarmic&rsquo;s lack of host recompilation support for ARM64.</p>
+<p>In case you weren&rsquo;t aware, yuzu uses <a href="https://github.com/merryhime/dynarmic">Dynarmic</a> for its CPU emulation.
+Dynarmic works by recompiling (translating) the Nintendo Switch&rsquo;s (guest) ARM CPU instructions to the user&rsquo;s (host) CPU.
+And because Dynarmic didn&rsquo;t yet support recompiling guest code for ARM64, yuzu&rsquo;s CPU emulation couldn&rsquo;t work on any of these host CPUs.</p>
+<p>Thanks to the efforts of <a href="https://github.com/liamwhite">byte[]</a> and <a href="https://github.com/merryhime">merryhime</a>, this hurdle didn&rsquo;t stand in our way for too long.
+With ARM64 host support ready to go, byte[] set his sights on getting yuzu to work on macOS.
+But that&rsquo;s a story for another day.</p>
+<p>By the way, did you know that there are other platforms that use ARM64 SoCs extensively?</p>
+<h2 id="bringing-yuzu-to-android">Bringing yuzu to Android</h2>
+<p>Knowing that Dynarmic support for ARM64 host recompilation was underway and that Vulkan support on Android would probably be better than macOS, we were optimistic about getting yuzu working on Android.</p>
+<p><a href="https://github.com/FearlessTobi">flTobi</a> and <a href="https://github.com/bunnei">bunnei</a> quickly started putting things together, with the first goal to simply get yuzu building for Android.
+These early builds lacked a working renderer to display graphics, but progress was promising.
+After some fixes, they got a few 32-bit games such as <code>Mario Kart 8 Deluxe</code> and <code>Captain Toad: Treasure Tracker</code> booting with just the audio.</p>
+<p>Once the Dynarmic ARM64 support was completed, byte[] joined them and the trio got working on getting the Vulkan renderer backend working on Android.
+While OpenGL ES didn&rsquo;t pan out, bunnei was able to get yuzu to render basic homebrew on Android with Vulkan:</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./proto1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/proto1_hu7d98b4fdf5c238ed23a9bd72a736787e_143512_800x0_resize_q90_bgffffff_box_3.jpg" alt=" "></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./proto2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/proto2_hu69b8e6990c2f06e174d60a343c3330c1_493248_800x0_resize_q90_bgffffff_box_3.jpg" alt=" "></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light"> </p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./proto3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/proto3_hu838d443e1e1ba4b878618efd8b6f96d7_327396_800x0_resize_q90_bgffffff_box_3.jpg" alt="Snake, try to remember the basics of rendering"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./proto4.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/proto4_hu09610889b48776ed7123ed31fee600b4_192509_800x0_resize_q90_bgffffff_box_3.jpg" alt="Snake, try to remember the basics of rendering"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Snake, try to remember the basics of rendering</p>
+
+
+<p>With our lead moderator <a href="https://github.com/Schplee">Flamboyant Ham</a> working on a new input overlay design and app themes, <a href="https://github.com/german77">german77</a> started working with them on integrating the input backend to the touch-screen overlay.
+As a sudden surprise for us, developer <a href="https://github.com/t895">t895</a>, who&rsquo;s been improving <a href="https://github.com/dolphin-emu/dolphin">Dolphin&rsquo;s</a> Android app, accepted our request and joined the team to work on overhauling our app UI.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./ui1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/ui1_hu6f59b90a9a19086cdc720f134d322330_321432_800x0_resize_q90_bgffffff_box_3.jpg" alt="Peruse our settings and customize as you see fit!"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./ui2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/ui2_hu4600dbf20a8fb46467e980eca82b2a1e_134627_800x0_resize_q90_bgffffff_box_3.jpg" alt="Peruse our settings and customize as you see fit!"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./ui3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/ui3_hu842b9b18c85d57cf7828ed87c6130ac0_124189_800x0_resize_q90_bgffffff_box_3.jpg" alt="Peruse our settings and customize as you see fit!"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Peruse our settings and customize as you see fit!</p>
+
+
+<p>Together, with Flamboyant Ham creating the designs and t895 working his dev magic, an onboarding process and search menu were added, helping users select their keys, games folder, and search for titles with ease!</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./intro1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/intro1_hu62de5ba706f9889db5cef6161a430b03_131518_800x0_resize_q90_bgffffff_box_3.jpg" alt="Simple and straightforward - our favorite!"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./intro2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/intro2_hufd006daf3df20b8b2809baf415a949b0_104201_800x0_resize_q90_bgffffff_box_3.jpg" alt="Simple and straightforward - our favorite!"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./search.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/search_hue69d5fd14331a06f2918393a60a118f7_2531671_800x0_resize_q90_bgffffff_box_3.jpg" alt="Simple and straightforward - our favorite!"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Simple and straightforward - our favorite!</p>
+
+
+<p>Special thanks to the Citra GPU dev, <a href="https://github.com/GPUCode">GPUCode</a>, for taking their time away from Citra Android and Vulkan development to improve this release with their special sauce <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/9973" data-gh-pr="9973">Async Presentation</a>
+.</p>
+<h1 id="what-to-expect">What to expect?</h1>
+<p>Android is a platform that boasts a huge userbase, but brings with it its fair share of problems.
+As there is a lot of hardware variation for Android devices, compatibility and performance will vary.
+So, to temper expectations, we would like to clarify our minimum requirements for the near future.</p>
+<h2 id="hardware-requirements">Hardware requirements</h2>
+<p>At the moment, yuzu requires devices powered by Qualcomm Snapdragon SoCs which have Adreno GPUs.
+Devices powered by SoCs like Exynos, Mediatek, etc. are expected to not work at all due to their &ldquo;worse-than-Adreno&rdquo; GPU drivers, at least for the near future.</p>
+<br>
+<article class="message"><div class="message-header">
+<p>⚠️ Update</p>
+</div>
+<div class="message-body"><p style="color:white;">
+<b>yuzu now supports Xclipse based and Mali G-series based SoC GPUs.</b>
+</p></div></article>
+<p>Also, yuzu on Android has high RAM requirements, therefore fairly high-end devices provide the best experience (e.g. SD 865 and 8GB of RAM or better).</p>
+<p>yuzu on Android ships with the ability to run custom GPU drivers, such as newer official Adreno drivers, or <a href="https://docs.mesa3d.org/drivers/freedreno.html">Turnip</a> using <a href="https://github.com/bylaws/libadrenotools">libadrenotools</a> to improve the performance on older generation Snapdragon SoCs.
+Apart from this, there are still many more Android-specific optimizations to be done.
+We have plenty of opportunity to improve performance, but this explains the current high minimum system requirements.</p>
+<p>This initial release has been intentionally kept fairly minimal so that we can focus on improving performance and stability.
+As stated earlier, feature parity with our PC builds is something we&rsquo;re committed to, but expect it to happen slowly and not immediately.</p>
+<h2 id="performance-and-compatibility">Performance and Compatibility</h2>
+<p>Regarding software requirements, yuzu requires Android 11 or newer and a myriad of mandatory Vulkan extensions that the Play Store will automatically check for.
+That being said, the Android GPU driver ecosystem is very inconsistent; not all devices will be the same.
+Being able to download and install yuzu doesn&rsquo;t mean the performance or compatibility will be great.
+As expected, Qualcomm is (currently) king here.</p>
+<p>All Qualcomm device users will have the option to test different Mesa Turnip driver versions, thanks to <a href="https://github.com/bylaws/libadrenotools">libadrenotools</a>.
+We will link them in our <a href="https://discord.gg/u77vRWY">Discord server</a>. You can download any compatible drivers, and select them by going to <code>Settings &gt; Install GPU Driver &gt; Install</code> in yuzu.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./gpu_driver_install.png" title=" Just tap on Install!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/gpu_driver_install_hu567ffde8e7b5ab42484669911065be2a_218201_540x0_resize_q90_bgffffff_box_3.jpg" alt=" Just tap on Install!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Just tap on Install!</p>
+        
+    </div>
+    
+</div>
+
+<p>The latest is not always better, and specific games may prefer specific drivers.</p>
+<p>Currently, the best compatibility is achieved using Adreno 600 series GPUs running the Mesa Turnip drivers.
+If you want games to start and render correctly, this is the way to go.</p>
+<p>The best performance comes from Adreno 700 series hardware (Snapdragon 8 Gen 1 and newer), which won&rsquo;t have Turnip support for a while.
+While performance is typically higher, you will experience rendering issues or some games refusing to start.</p>
+<br>
+<article class="message"><div class="message-header">
+<p>⚠️ Update</p>
+</div>
+<div class="message-body"><p style="color:white;">
+<b>Current Turnip drivers provide good support for both Adreno 600 and 700 series hardware, but performance is still better with official Qualcomm drivers in the few games that render correctly with them.</b>
+</p></div></article>
+<p>With that said, take a look at some performance numbers from several games:</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./performance.png" title=" Not too shabby for a first release!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/performance_hu2b55b5b504193e5f4d963ad39e9c9a77_33691_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Not too shabby for a first release!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Not too shabby for a first release!</p>
+        
+    </div>
+    
+</div>
+
+<p>We think that devices with Exynos 2200 and newer SoCs running AMD RDNA2 GPUs could also work well, but we haven’t been able to test them out due to how hard they are to find.</p>
+<br>
+<article class="message"><div class="message-header">
+<p>⚠️ Update</p>
+</div>
+<div class="message-body"><p style="color:white;">
+<b>Samsung's Xclipse 900 series GPUs are perfectly usable now.</b>
+</p></div></article>
+<p>Available information suggests they run some older form of the AMD proprietary driver, so support may be somewhat good knowing AMD&rsquo;s track record.</p>
+<p>Regardless of the device, disabling <code>Docked mode</code> and/or using lower resolution multipliers can help with performance in most games.
+However, your mileage will vary here.
+Some games may prefer docked mode, and some drivers don&rsquo;t play well with resolution multipliers under 1x.
+You&rsquo;ll have to test and see what works for you!</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./graphics_settings.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/graphics_settings_hu5d94fd2028d4082bd4134708cf5e34f5_214628_800x0_resize_q90_bgffffff_box_3.jpg" alt="We&#39;re still figuring out what the best settings are for each game, so please experiment!"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./system_settings.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/system_settings_hu7234e078ed35c3ba308f05c8faf0f119_159848_800x0_resize_q90_bgffffff_box_3.jpg" alt="We&#39;re still figuring out what the best settings are for each game, so please experiment!"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">We&#39;re still figuring out what the best settings are for each game, so please experiment!</p>
+
+
+<p>Cooling is an important factor of performance as well.
+We tested several devices with the Snapdragon 8 Gen 2 SoC, and while a gaming-oriented Redmagic 8 Pro had no problems keeping its clock speeds high (even locked to maximum) and temperatures low, a regular Samsung Galaxy S23, on the other hand, is a boiling machine, climbing to 90°C in seconds.
+This temperature won&rsquo;t damage the device, as TjMax is at 100°C, but higher temperatures do lead to lower clock speeds.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./pokemon_sword_cpu_usage.png" title=" Hand warmer included (Pokémon Sword)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/pokemon_sword_cpu_usage_hube0069d3642a8e9c1324f76d521b68e8_2052366_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Hand warmer included (Pokémon Sword)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Hand warmer included (Pokémon Sword)</p>
+        
+    </div>
+    
+</div>
+
+<p>Overheating leading to thermal throttling can result in a 30-50% performance loss over time, so this is one of the few times when gamer-gimmick marketing isn&rsquo;t lying.</p>
+<p>Regarding other specs, RAM is crucial.
+The recommended value is 8GB or more, big emphasis on more, and the absolute minimum is 6GB, but this will lead to many resource intensive games crashing.
+<code>The Legend of Zelda: Tears of the Kingdom</code> requires 12GB at the moment.</p>
+<p>Storage is not a critical aspect, but keep in mind that Switch games are typically large — there are visual novels over 20GB, and that&rsquo;s not counting updates and DLC.</p>
+<p>Controller input support is in its early stages.
+The ability to configure multiple controllers and their button mappings is currently being worked on, but not yet ready.
+Xbox, PlayStation, and Switch Pro controllers are automatically mapped when they are paired over Bluetooth.
+Generic DirectInput controllers are supported, but until more development time is spent dedicated to them, you may see some mapping issues and potentially missing mappings for buttons.
+Joy-Cons are not supported for now, Android doesn&rsquo;t allow access to them so they will have missing functionality.</p>
+<p>An on-screen input overlay will always be available, and it can be hidden while playing.
+Swipe from the left side of the screen and toggle <code>Input Overlay &gt; Show Overlay</code> if you want to disable it.
+The Button and Stick placements can be adjusted here as well.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./input1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/input1_hu7d05dd863d82bb76b53ea4529660112b_302740_800x0_resize_q90_bgffffff_box_3.jpg" alt="Adjust to your liking"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./input2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/input2_hu95fb207c34b12c5a667f5d67cecc973f_199689_800x0_resize_q90_bgffffff_box_3.jpg" alt="Adjust to your liking"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./input3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/input3_hu6508c04901adf99a6f817434a1842340_205510_800x0_resize_q90_bgffffff_box_3.jpg" alt="Adjust to your liking"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Adjust to your liking</p>
+
+
+<h1 id="setup-guide">Setup guide</h1>
+<p>If you need help setting up yuzu, our <a href="https://yuzu-mirror.github.io/help/quickstart/">Quickstart Guide</a> will provide all the steps required to get up and running.
+All the same requirements apply, including having a PC and the mandatory hacked Nintendo Switch.
+The yuzu on Android onboarding process will have you select the location of your <code>prod.keys</code> file.</p>
+<p>The only major difference is that the yuzu folder is located in <code>Android/data/org.yuzu.yuzu_emu/files</code>, which you will need access to in order to install Switch firmware files and any preferred mods.
+A quick-and-easy management interface for DLC, updates, mods, and saves will be added at a later date, so for those who dare, the process must be done manually for now (or copied from your PC installation of yuzu).</p>
+<p>In recent Android versions, Google started blocking access to app folders in file managers, so it is recommended to instead use Android&rsquo;s integrated file manager to access the yuzu folder. Here is a link to an app that allows users to have <a href="https://play.google.com/store/apps/details?id=com.marc.files">direct access to it</a>.</p>
+<p>Alternatively, you can always connect the phone/tablet to your PC via USB cable. No restrictions apply there.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>And there you have it!
+We&rsquo;re excited for the opportunity that Android provides us, to hear all of your feedback, and we hope you enjoy playing!</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./totk.png" title=" The Legend of Zelda: Tears of the Kingdom">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/totk_hue196ed8fc1e98709b473ca2d2af62eb2_976956_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" The Legend of Zelda: Tears of the Kingdom"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> The Legend of Zelda: Tears of the Kingdom</p>
+        
+    </div>
+    
+</div>
+
+<p>We don&rsquo;t have anything else to talk about for now, but please enjoy the below selection of screenshots taken from yuzu on Android!</p>
+<h1 id="media">Media</h1>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="totk_qcom.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/totk_qcom_hu074e11d2e5e0fb98ddbbcf8fabc0ef1e_1294851_800x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Tears of the Kingdom (Samsung Galaxy S20 FE, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="totk_qcom2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/totk_qcom2_hue62b4ec23f32b8c0ed8dbbc4f2c507c0_531358_800x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Tears of the Kingdom (Samsung Galaxy S20 FE, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">The Legend of Zelda: Tears of the Kingdom (Samsung Galaxy S20 FE, Qualcomm proprietary GPU driver)</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="ssmb.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/ssmb_hub40203b89b0349a673b6fc83cf42921a_2343591_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Smash Bros. Ultimate (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="ssmb2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/ssmb2_hub2f8595851c0b56baecdb4e97414bd69_1756930_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Smash Bros. Ultimate (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Super Smash Bros. Ultimate (Samsung Galaxy S23, Qualcomm proprietary GPU driver)</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="mk1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/mk1_hu3243736b2b1291e5231efd53f2963540_2312787_800x0_resize_q90_bgffffff_box_3.jpg" alt="Mario Kart 8 Deluxe (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="mk2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/mk2_hu169cd2a6f596b44f6c653ec989c7042d_2584405_800x0_resize_q90_bgffffff_box_3.jpg" alt="Mario Kart 8 Deluxe (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Mario Kart 8 Deluxe (Samsung Galaxy S23, Qualcomm proprietary GPU driver)</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="smo1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/smo1_hu51137cb4490c76ca429cacf58bf3786b_2645049_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Odyssey (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="smo2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/smo2_hud82764d666df9cfef2b38dadd79288db_1199547_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Odyssey (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Super Mario Odyssey (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="acnh.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/acnh_hu786a05ac3767d7b9cb95ea54b287b632_2385951_800x0_resize_q90_bgffffff_box_3.jpg" alt="Animal Crossing: New Horizons (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="acnh2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/acnh2_hue6a2ef5067c316512525fa578fa33de5_1603818_800x0_resize_q90_bgffffff_box_3.jpg" alt="Animal Crossing: New Horizons (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Animal Crossing: New Horizons (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)</p>
+
+
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="tloz-awakening.png" title=" The Legend of Zelda: Link&#39;s Awakening (Samsum Galaxy S23, Qualcomm proprietary GPU driver)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/tloz-awakening_hu5c26ec0a00cc0732baf203c54e17d41e_2608019_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" The Legend of Zelda: Link&#39;s Awakening (Samsum Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> The Legend of Zelda: Link&#39;s Awakening (Samsum Galaxy S23, Qualcomm proprietary GPU driver)</p>
+        
+    </div>
+    
+</div>
+
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="tloz-ss.png" title=" The Legend of Zelda: Skyward Sword HD (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/tloz-ss_hu37a2b43980d0e0f56e05c708a55286a4_1715400_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" The Legend of Zelda: Skyward Sword HD (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> The Legend of Zelda: Skyward Sword HD (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)</p>
+        
+    </div>
+    
+</div>
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="dkctf.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/dkctf_hu761ff8e1a346e4ff9195dc630234ac27_2192055_800x0_resize_q90_bgffffff_box_3.jpg" alt="Donkey Kong Country: Tropical Freeze (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="dkctf2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/dkctf2_hu7f9111758047a36445be9bce07f39f8d_2219440_800x0_resize_q90_bgffffff_box_3.jpg" alt="Donkey Kong Country: Tropical Freeze (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Donkey Kong Country: Tropical Freeze (Samsung Galaxy S20 FE, Mesa Turnip GPU driver)</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="fe_engage.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/fe_engage_hu8b9e065c3630838f4fc28def757b9ed0_2258923_800x0_resize_q90_bgffffff_box_3.jpg" alt="Fire Emblem Engage (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="fe_engage2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/fe_engage2_hu2963457f7a863d8e903d83d163676602_2153602_800x0_resize_q90_bgffffff_box_3.jpg" alt="Fire Emblem Engage (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Fire Emblem Engage (Samsung Galaxy S23, Qualcomm proprietary GPU driver)</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="dread.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/dread_hue45dc85ae2b35b9141c22e8b50770a37_1604162_800x0_resize_q90_bgffffff_box_3.jpg" alt="Metroid Dread (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="dread2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/dread2_hu15d80e1f8afc768323d708fcc839e2c4_817863_800x0_resize_q90_bgffffff_box_3.jpg" alt="Metroid Dread (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Metroid Dread (Samsung Galaxy S23, Qualcomm proprietary GPU driver)</p>
+
+
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="pokemon-shield.png" title=" Pokémon Sword (Samsung Galaxy S23, Qualcomm proprietary GPU driver)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/pokemon-shield_hu7ff78e8669b06488b436d03ad0cb1f47_2294918_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Pokémon Sword (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Pokémon Sword (Samsung Galaxy S23, Qualcomm proprietary GPU driver)</p>
+        
+    </div>
+    
+</div>
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="arceus.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/arceus_hu2f09464e5227ffa36c4d0c54fbc0cb38_1764145_800x0_resize_q90_bgffffff_box_3.jpg" alt="Pokemon Legends: Arceus (Samsung Galaxy S20 FE, Turnip GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="arceus2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/arceus2_hub9ae1cfdeaa2dd10bc617b1a13f9828f_1564092_800x0_resize_q90_bgffffff_box_3.jpg" alt="Pokemon Legends: Arceus (Samsung Galaxy S20 FE, Turnip GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Pokemon Legends: Arceus (Samsung Galaxy S20 FE, Turnip GPU driver)</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="sm3d_1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/sm3d_1_hubaf177c44f672af8cc76ae26eb1ea862_1746952_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario 3D World &#43; Bowser&#39;s Fury (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="sm3d_2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/sm3d_2_huab034ee6848261863cd219e07d6fabca_2390210_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario 3D World &#43; Bowser&#39;s Fury (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Super Mario 3D World &#43; Bowser&#39;s Fury (Samsung Galaxy S23, Qualcomm proprietary GPU driver)</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="atelier_ryza_1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/atelier_ryza_1_hu3d04eca0ee8cb50c5c9d28a2c3ad9fc6_2987081_800x0_resize_q90_bgffffff_box_3.jpg" alt="Atelier Ryza: Ever Darkness &amp; the Secret Hideout (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="atelier_ryza_2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/atelier_ryza_2_hub5f7449fe3201ab95d497df57daef16c_2669439_800x0_resize_q90_bgffffff_box_3.jpg" alt="Atelier Ryza: Ever Darkness &amp; the Secret Hideout (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Atelier Ryza: Ever Darkness &amp; the Secret Hideout (Samsung Galaxy S23, Qualcomm proprietary GPU driver)</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="d3_1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/d3_1_hu710f4eb46ad73d26cbc5923896144488_1656624_800x0_resize_q90_bgffffff_box_3.jpg" alt="Diablo III: Eternal Collection (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="d3_2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-android/d3_2_hu888aced21d54d4efda780c12c2e27be2_1970471_800x0_resize_q90_bgffffff_box_3.jpg" alt="Diablo III: Eternal Collection (Samsung Galaxy S23, Qualcomm proprietary GPU driver)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Diablo III: Eternal Collection (Samsung Galaxy S23, Qualcomm proprietary GPU driver)</p>
+
+
+<p> 
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+
+<script src="https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/js/juxtapose.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/css/juxtapose.css">
+</p>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/817979">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
