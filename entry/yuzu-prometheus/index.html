@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="New Feature Release - Prometheus &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-prometheus/" />
+    <meta property="og:description" content="Hello there, yuzu fans!
+We are very excited to share the news of another major feature release.
+Thanks to the efforts of our dev Blinkhawk, yuzu now supports Multicore CPU emulation.
+Hop right in, to read more about it!" />
+<meta name="description" content="Hello there, yuzu fans!
+We are very excited to share the news of another major feature release.
+Thanks to the efforts of our dev Blinkhawk, yuzu now supports Multicore CPU emulation.
+Hop right in, to read more about it!" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-prometheus/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-prometheus/"> 
+
+    <title>New Feature Release - Prometheus - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-prometheus/banner_hub7a3983a9a66f85f92bd5a6838892134_662986_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">New Feature Release - Prometheus</span>
+    </div>
+    
+    
+    <div>
+        <span class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/CaptV0rt3x/summary">CaptV0rt3x</a>
+            on May 09 2020
+        </span>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p>Hello there, yuzu fans!
+We are very excited to share the news of another major feature release.
+Thanks to the efforts of our dev Blinkhawk, yuzu now supports <code>Multicore CPU emulation</code>.
+Hop right in, to read more about it!</p>
+<pre tabindex="0"><code>In Greek mythology, Prometheus is a Titan that aided humanity by teaching how to make fire.
+In modern society, it symbolizes the strive for scientific knowledge.
+The Prometheus Project is about that - the journey to new emulation techniques.
+</code></pre><p>Since we cannot really show performance boosts in pictures, here is a video by BSoD Gaming that takes you through all the improvements.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/rbNd67vIO78" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h2 id="what-is-multicore-cpu-emulation">What is Multicore CPU emulation?</h2>
+<p>As many of you might know, yuzu is considered a HLE (high level emulation) emulator.
+This means that instead of running the real Switch OS (known as <code>Horizon</code>), yuzu has recreated its own version of the OS, built entirely from the ground up.
+Like your PC, the Switch has multiple cores (4, actually), and the <code>Horizon OS</code> can run multiple tasks in parallel on these cores using a kernel construct known as a <a href="https://simple.wikipedia.org/wiki/Thread_(computer_science)">thread</a>.
+However, due to limitations of our old kernel design taken from Citra, yuzu was actually emulating this behavior using a single core on your host PC!
+This had led to an absurdly high CPU requirement for users.</p>
+<p>So, what is <code>&quot;Multicore CPU emulation&quot;</code>?
+Put simply, instead of emulating the CPU on a single thread yuzu will now emulate the CPU using multiple threads; <code>4</code> to be precise - one for each Switch CPU core.
+Although it might sound simple or easy, it is nevertheless the biggest undertaking this project has seen up until now.</p>
+<h2 id="yuzu-cpu-emulation">yuzu CPU emulation</h2>
+<p>yuzu&rsquo;s initial CPU emulation and kernel were heavily based on Citra&rsquo;s.
+The kernel emulated the external behavior of the Switch&rsquo;s kernel but vastly differed from the Switch OS.
+Instead of saving contexts and switching from one guest thread to another within the kernel, we used a mechanism within Citra&rsquo;s kernel that emulated the same behavior but with a complex system of <code>stops</code> and <code>callbacks</code>.</p>
+<p>Not only that, but in the typical tradition of previous emulators, yuzu used something called a <code>cycle timer</code>.
+A cycle timer is a mechanism to emulate <code>time</code> on consoles by counting each guest instruction executed and adding it to global <code>CPU ticks</code>.
+These ticks can then be transformed into time units like nanoseconds by using the guest&rsquo;s CPU frequency.</p>
+<h3 id="drawbacks">Drawbacks</h3>
+<p>Citra&rsquo;s model was perfectly fine for single core emulation.
+It was accurate, simple, and worked perfectly for the 3DS as it used only one of its two cores for apps/games.
+However, in the case of yuzu, this wouldn&rsquo;t hold true.</p>
+<p>The Switch is a much more complicated and modern system that pushes 4 CPU cores, where 3 are used for apps/games.
+Not only that, but the scheduling is more robust and can be used in some more interesting and more complicated ways.
+Using Citra&rsquo;s model for scheduling was all possible in yuzu but it had a few flaws of its own:</p>
+<ol>
+<li>The code didn&rsquo;t match the Switch OS and even though it had the same behavior, it was hard to keep track of changes and replicate them.</li>
+<li>The code was very complex as there was a callback for everything and was hard to maintain.</li>
+<li>This model would be extremely hard to run on multiple host threads.</li>
+</ol>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./smash.png" title=" Super Smash Bros. Ultimate">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-prometheus/smash_hu101f8f5629c33cc11c22bc644a6e8b48_1889482_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Super Smash Bros. Ultimate"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Super Smash Bros. Ultimate</p>
+        
+    </div>
+    
+</div>
+
+<h2 id="prometheus">Prometheus</h2>
+<p>You might&rsquo;ve heard rumors and whispers about this in the community recently.
+<code>Prometheus</code> is the internal codename for this feature&rsquo;s development and it is a total rework of three things:</p>
+<ul>
+<li>Kernel scheduling</li>
+<li>Boot management</li>
+<li>CPU management</li>
+</ul>
+<p><code>Prometheus</code> aims to ensure that emulation behaves the same as on the Switch while matching the code with the Switch&rsquo;s original OS code.
+And, as a by-product, host multicore support using host timing has been added to yuzu.
+Host timing is just yuzu using the host&rsquo;s (user&rsquo;s) internal clock for timing.</p>
+<p>The multicore feature of <code>Prometheus</code> is a beast in terms of thread handling.
+Originally yuzu used at best <code>2</code> threads: one for the CPU and one for the emulated GPU.
+Technically we also use a thread each for the UI, logging, the host GPU driver, and the host audio driver, but let&rsquo;s ignore them for the time being.</p>
+<p>With multicore, there are now <code>6</code> threads in use: four for the CPU, one for the timer, and one for the emulated GPU.
+It is worth noting that CPU core 4 is rarely used.
+Of these 6, effectively 5 threads have considerable use but not all will be running constantly.</p>
+<h3 id="planning">Planning</h3>
+<p><code>Prometheus</code> was a big undertaking that was set in two phases: planning phase and development phase.
+The planning phase was all about studying our current setup to make it work under this new scheme.
+This happened roughly over 8 months, and was mostly just research and brainstorming.</p>
+<p>During this phase, <a href="https://github.com/FernandoS27">Blinkhawk</a> encountered multiple challenges and considerations for development.
+He started studying other emulators that already did multicore emulation such as Cemu, RPCS3, and Ryujinx.</p>
+<p>These emulators all differed in their approaches to multicore.
+Some used Fibers for guest threads, 1:1 guest-host kernel threads, cycle timing, or host timing.
+In computer science, Fibers are lightweight threads of execution (<a href="https://en.wikipedia.org/wiki/Fiber_(computer_science)">Wikipedia</a>).</p>
+<p>For yuzu, we initially planned to use Fibers and cycle timers.
+We chose Fibers over kernel threads because changing a Fiber is at worst 50 host CPU cycles, whereas a kernel thread can be thousands of cycles and there&rsquo;s no guarantee that the host OS will start running it right away.</p>
+<p>In the case of cycle timers for yuzu multicore, they ended up being quite a pain.
+Cycle timers have many advantages over host timers:</p>
+<ol>
+<li>They are deterministic,</li>
+<li>They don&rsquo;t leak the host state, and</li>
+<li>They always advance for every instruction that Cycle timers are run.</li>
+</ol>
+<p>We tried many theoretical models for multicore cycle timers and they all were pretty hard to set up while still having flaws.
+Sadly, cycle timers don&rsquo;t work too great for multicore settings, because it is very hard to keep all the cores advancing at the same pace and to emulate idling accurately.
+For all these reasons, we opted for host timing instead.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./bayo.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-prometheus/bayo_hu19299866e2cf58365e376d05984f745f_2432767_800x0_resize_q90_bgffffff_box_3.jpg" alt="Bayonetta 2"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./bayo2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-prometheus/bayo2_hu675859afa04abcaf1cd2c00333877b20_1663252_800x0_resize_q90_bgffffff_box_3.jpg" alt="Bayonetta 2"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./bayo3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-prometheus/bayo3_hue187bf6f8d5b0cd2a83687ca303a3bd3_2726965_800x0_resize_q90_bgffffff_box_3.jpg" alt="Bayonetta 2"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Bayonetta 2</p>
+
+
+<h3 id="development---issues">Development - Issues</h3>
+<p>Development started on February 1st of 2020.
+The first thing <a href="https://github.com/FernandoS27">Blinkhawk</a> did was to implement <a href="https://en.wikipedia.org/wiki/Spinlock">Spinlocks</a>, Fibers, and host timing.
+Afterwards, he went ahead with the massive overhaul.</p>
+<p>As he started the overhaul, the first issue he encountered was that for some reason yuzu was creating and destroying JITs (just-in-time compilers).
+Thus, whenever we resumed code from a guest thread and it went back to the JIT, it would hard crash.
+This was fixed by caching the JITs depending on the state of the page table, instead of creating a JIT every time.
+This way we could also avoid creating more JITs than necessary.</p>
+<p>The second issue occurred on booting the first homebrew on multicore, where we found that guest vsync was messed up.
+By redesigning the server session we were able to identify the cause and fix it.</p>
+<p>Here is where things started getting interesting.
+<a href="https://github.com/FernandoS27">Blinkhawk</a> implemented Condition Variables and Mutexes, which are the base syncing mechanisms in any multithreaded environment, and found an issue with how our JIT functions.
+Our JIT was heavily designed to work like Citra&rsquo;s and it expected that on any <code>SVC (Supervisor call)</code> call to kernel, the code returned back afterwards.</p>
+<p>Under the new architecture, a thread could easily call an <code>SVC</code> and be paused there, while another thread started running on that same JIT, thus causing a conflict.
+The easy solution was that instead of making a JIT per core, we would make a JIT per thread.
+This solution, however, costs us additional memory usage.</p>
+<p>After fixing these issues, we were finally able to boot <em>Super Mario Odyssey</em> on multicore, but many games were still soft-locking due to an old bug we thought eradicated: <code>Mutex Corruption</code>.
+Mutex Corruption happens due to issues with exclusive memory handling in ARMv8.
+As it turned out, <a href="https://github.com/MerryMage/dynarmic">dynarmic</a> had to be modified to fix it.</p>
+<p>After looking into it, <a href="https://github.com/FernandoS27">Blinkhawk</a> realized exclusive memory in <a href="https://github.com/MerryMage/dynarmic">dynarmic</a> was prone to a race condition when the exclusive address was written by a non-exclusive write.
+The solution was to save the current value on exclusive read and then atomic exchange it with a new value on exclusive write.
+By fixing this, most of the games were able to go in-game and many of them were fully playable.</p>
+<p>Two games had interesting bugs on multicore: <code>Luigi's Mansion 3</code> &amp; <code>Hyrule Warriors</code>.</p>
+<p><code>Luigi's Mansion 3</code> had an issue in which two threads, <code>A</code> &amp; <code>B</code>, were running on cores 0 and 1 and after some scheduling, <code>B</code> was rescheduled to core 0 and <code>A</code> to core 1.
+But a thread cannot start running on a new core until it is liberated (freed).
+So core 0 scheduler was holding <code>A</code> and waiting for <code>B</code> to be freed, while core 1 scheduler was holding <code>B</code> and waiting for <code>A</code> to be freed, thereby causing a deadlock.
+The solution was that instead of exchanging threads on scheduling switch, we free the current thread and switch to an “intermediary” thread and then from there proceed to the next thread.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./lm3.png" title=" Luigi&#39;s Mansion 3">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-prometheus/lm3_hubad3a22faa814b510ae136b0698635f6_1703373_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Luigi&#39;s Mansion 3"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Luigi&#39;s Mansion 3</p>
+        
+    </div>
+    
+</div>
+
+<p><code>Hyrule Warriors</code> had an issue that was caused by host timing.
+Our host timing implementation was based on Cemu&rsquo;s approach and used x64 architecture&rsquo;s hardware timer directly.
+This timer is way more accurate than ARMv8&rsquo;s hardware timer present in the Switch.</p>
+<p>The game soft locked at a point because a thread infinitely looped on a <code>TimedWait</code> of 30 nanoseconds.
+This function did some time calculations and later checked with the current time.
+If the timeout wasn&rsquo;t reached at that moment, an <code>SVC</code> was called which paused the thread for some time and let the next thread run, effectively causing a <code>yield</code>.</p>
+<p>In the Switch&rsquo;s hardware, the timer&rsquo;s accuracy isn&rsquo;t too great and a <code>TimedWait</code> of 30 nanoseconds always resulted in the thread calling the <code>SVC</code>.
+Our host timer, however, was way more accurate and that function would never call the <code>SVC</code>.
+The solution, ironically, was to reduce the accuracy of our host timer a bit, to better match actual hardware.</p>
+<p>Another interesting challenge was implementing pausing/resuming in multicore.
+As you know, you can pause and resume yuzu in our current versions.
+This was simple before because emulation occurred in steps and you just had to stop on the next step.
+But on multicore, emulation is continuous and unmanaged in the same sense.</p>
+<p>Thus, implementing this was very hard due to how multicore scheduling worked.
+The original solution was to modify scheduling to support it but that proved very complicated to do.
+After a while, we figured out a pretty easy solution without having to modify anything.
+We would create a kernel thread for each core and make that kernel thread pass control from and to the CPU Manager to the emulation.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./acnh.png" title=" Animal Crossing: New Horizons">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-prometheus/acnh_hud544a227aae853be9bb13f0d81072e1f_1500385_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Animal Crossing: New Horizons"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Animal Crossing: New Horizons</p>
+        
+    </div>
+    
+</div>
+
+<h2 id="what-to-expect-with-games">What to expect with games?</h2>
+<p>Many of you may be eager for multicore but have in mind that there are other bottlenecks as well.
+Not every game utilizes multithreading effectively and makes the most use of the Switch&rsquo;s CPU.
+Some games, like <code>Super Mario Odyssey</code>, barely use cores 1 &amp; 2, by doing all processing in core 0, effectively making them gain nothing from multicore.
+However, games like <code>Breath of The Wild</code> see <em>some</em> performance boost but are still bottlenecked by the emulated GPU.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./botw_1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-prometheus/botw_1_huc53f1013d404a2d6a3fba25ccf9772c1_1937783_800x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Breath of the Wild"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./botw_2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-prometheus/botw_2_hubf29e1a8ac456615b9efd479b77587de_1891626_800x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Breath of the Wild"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">The Legend of Zelda: Breath of the Wild</p>
+
+
+<p>The emulated GPU depends on four things:</p>
+<ol>
+<li>
+<p>Your CPU&rsquo;s single-core speed.
+A single host CPU core translates all the commands from guest GPU (Switch) into host GPU (User) commands.
+So, having a CPU with great single-core speeds is most beneficial.</p>
+</li>
+<li>
+<p>Your GPU Bus Speed.
+yuzu heavily relies on the bandwidth available in the GPU bus.
+This is the speed at which data is uploaded to and from your GPU and this varies depending on PCIe generation and allocated lanes.</p>
+</li>
+<li>
+<p>The quality of your GPU drivers.
+AMD&rsquo;s drivers for OpenGL are terrible while NVIDIA&rsquo;s are great.</p>
+</li>
+<li>
+<p>Your host GPU itself, be it NVIDIA, AMD, or Intel.</p>
+</li>
+</ol>
+<p>Lastly, be aware that RAM speed, amount of RAM, and the type of processor in your system, will also influence your experience.
+The initial release may use additional memory (100mb to 3Gb depending on the game).
+We are currently stability-testing a fix for this additional memory usage.</p>
+<h3 id="current-known-issues">Current Known Issues</h3>
+<p>Getting multicore to run perfectly is a big deal and in our internal testing we found that <code>audio</code> can be slower in multicore.
+Activate <code>Audio Stretching</code> to mitigate the issue.
+If you come across any softlock or bug that is not present in mainline but present in early access, notify us and include the following data with it.</p>
+<pre tabindex="0"><code>* Game name
+* Version of the game
+* Game savefile
+* Steps to reproduce the softlock
+* Whether the softlock is random or consistent (always happens in the same spot)
+</code></pre><p> 
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+</p>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/230372">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
