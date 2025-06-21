@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="New Feature Release - Resolution Scaler &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-art/" />
+    <meta property="og:description" content="Hey there, yuz-ers!
+For those of you eager to go beyond the limits of Switch hardware and experience the full potential of Switch games, the wait has finally ended.
+Our most requested and anticipated feature — the Resolution Scaler — is finally here!" />
+<meta name="description" content="Hey there, yuz-ers!
+For those of you eager to go beyond the limits of Switch hardware and experience the full potential of Switch games, the wait has finally ended.
+Our most requested and anticipated feature — the Resolution Scaler — is finally here!" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-art/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-art/"> 
+
+    <title>New Feature Release - Resolution Scaler - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-art/banner_hu877f48284ebd2d1e237ac8d7418ddf75_684164_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">New Feature Release - Resolution Scaler</span>
+    </div>
+    
+    
+    <div>
+        <p class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/CaptV0rt3x/summary">CaptV0rt3x</a>
+            
+            
+            
+            and <a href="https://community.citra-emu.org/u/GoldenX86/summary">GoldenX86</a>
+            
+            on October 24 2021
+        </p>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p>Hey there, yuz-ers!
+For those of you eager to go beyond the limits of Switch hardware and experience the full potential of Switch games, the wait has finally ended.
+Our most requested and anticipated feature — the <strong>Resolution Scaler</strong> — is finally here!</p>
+<p> </p>
+<p>This new and massively improved <strong>Resolution Scaler</strong> is now available in the latest yuzu Early Access builds.<br>
+We will be working diligently towards bringing this exciting new feature to our Mainline builds as soon as it&rsquo;s ready for a full release.</p>
+<article class="message is-danger">
+<div class="message-body" style="color:#f14668"><b>Latest Nvidia drivers are causing rendering issues with OpenGL. Please make sure to use the last known good driver: 472.12</b></div>
+</article>
+<article class="message is-warning">
+<div class="message-body" style="color:#ffc107"><b>All following images have large file sizes when expanded. Please consider if on a Metered Connection.</b></div>
+</article>
+<h2 id="what-is-resolution-scaler">What is Resolution Scaler?</h2>
+<p>Resolution Scaler is a new yuzu feature, which scales the dimensions of textures that Switch games render to, and then renders the games at the scaled resolution.
+This allows games that were designed to render at lower resolutions (720p/900p/1080p), to go far beyond what was intended and be played at much higher resolutions (2K/4K/8K) in the same window!</p>
+<p>The massive undertaking to reimplement this complex feature was only possible thanks to the combined efforts of our talented developers <a href="https://github.com/FernandoS27"><strong>Blinkhawk</strong></a>, <a href="https://github.com/breadfish64"><strong>BreadFish</strong></a>, <a href="https://github.com/ameerj"><strong>epicboy</strong></a>, and <a href="https://github.com/reinuseslisp"><strong>Rodrigo</strong></a>.</p>
+<p> 
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./metroid_dread.png" title="Metroid Dread (4x)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-art/metroid_dread_hua7fe460ad658f0f0eb308ef48e0bc77f_13446256_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Metroid Dread (4x)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Metroid Dread (4x)</p>
+        
+    </div>
+    
+</div>
+</p>
+<h2 id="old-scaler">Old Scaler</h2>
+<p>Blinkhawk implemented the original Resolution Scaler back in July of 2019.
+However, the approach he took to achieve that was a bit different.
+It was inspired by <a href="https://cemu.info/"><strong>Cemu&rsquo;s</strong></a> graphic packs, but rather than having a manual graphics pack developed for each title, it would automatically generate scaling profiles as the user played.</p>
+<p>The generation algorithm used a database that recorded texture types and whether they were scalable or not.
+The database was initially empty and, as the game ran, the algorithm would keep learning which textures to scale and which not to.
+This approach was necessary, because of how yuzu was initially designed.</p>
+<p>Originally, yuzu&rsquo;s memory reads were <code>reactive</code> — meaning textures were downloaded only when games tried to read them and hence it wasn&rsquo;t possible to know which textures were going to be downloaded.</p>
+<p>Although these memory reads were fixed a few months later, the Scaler still needed changes to be made to the management of uniform buffers, so that it would be supported on drivers other than Nvidia.
+However, the planned rewrites of the <a href="https://yuzu-mirror.github.io/entry/yuzu-tcr/"><strong>Texture Cache</strong></a>, <a href="https://yuzu-mirror.github.io/entry/yuzu-bcr/"><strong>Buffer Cache</strong></a>, and the massive GPU emulation overhaul with <a href="https://yuzu-mirror.github.io/entry/yuzu-hades/"><strong>Project Hades</strong></a> further delayed developers from working on the Scaler, resulting in it never getting merged.</p>
+<p> 
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="aoc1x.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-art/aoc1x_hu6750194acdd6dec7e398869f2880ad5c_4294494_800x0_resize_q90_bgffffff_box_3.jpg" alt="Hyrule Warriors: Age of Calamity (1x Vs. 3x)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="aoc3x.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-art/aoc3x_hu60b94c369c8c9720b7946a0454bfc58a_19400042_800x0_resize_q90_bgffffff_box_3.jpg" alt="Hyrule Warriors: Age of Calamity (1x Vs. 3x)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Hyrule Warriors: Age of Calamity (1x Vs. 3x)</p>
+
+</p>
+<h2 id="enter-project-art">Enter Project ART</h2>
+<p>Once all of the heavy lifting subsided, Blinkhawk quickly went back to working on the Resolution Scaler and instead of continuing work on the original scaler, he decided to rewrite it from the ground up.</p>
+<p>Learning from the experiences of the original, Blinkhawk designed and created the new scaling system, which took a significant amount of time and effort.
+He initially researched and experimented with a lot of different design approaches and learned their challenges, before finally landing on this new scaling system.</p>
+<br>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-art/botwbilinearzoom_hu3bfde729f9128864194207c65b2a68fc_3750078_1024x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Breath of the Wild (Bilinear Vs. FSR @ 2x)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-art/botwfsrzoom_hu807e78a74f12de1ec8aa37506447de5e_2673945_1024x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Breath of the Wild (Bilinear Vs. FSR @ 2x)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">The Legend of Zelda: Breath of the Wild (Bilinear Vs. FSR @ 2x)</p>
+
+
+<p>Unlike the original scaler, which was inspired by Cemu&rsquo;s profile-based scaling, Project ART uses a rating system.
+The meticulously designed rating system works by having a set of rules dictating which <code>render targets</code> can be scaled and having a rating for each texture.
+We couldn&rsquo;t simply use a binary &ldquo;YES/NO&rdquo; system because, unbeknownst to us, some games may render textures only once.
+Scaling these is pointless and has the potential to break them.</p>
+<p>For the uninitiated, <a href="https://en.wikipedia.org/wiki/Render_Target"><strong>render targets</strong></a> are just textures that the game renders to.
+Textures can only earn <code>1</code> credit per frame.
+And to earn that <code>1</code> credit, the texture itself as well as any other textures in that renderpass, all need to satisfy our set of rules.
+After accruing <code>2</code> or more credits, the texture will be scaled and now all rendering will be done in the scaled resolution for that texture.</p>
+<p>The textures keep earning more credits as frames pass.
+But if in any frame, even a single texture within a renderpass fails to satisfy the set of rules, all texture scores will be reset to <code>0</code>.
+If a texture interacts with other textures, its new rating will either be based on the current rating of those textures or will be increased to the maximum possible rating, if one of those textures is already scaled.</p>
+<br>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-art/dread_bilinear_zoom_hu6542f3e19365a57537f2968133a91146_1920015_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Metroid Dread (Bilinear Vs. FSR @ 2x)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-art/dread_fsr_zoom_hu8ddbb4c990c46b5fb012ec121d00b3de_1409273_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Metroid Dread (Bilinear Vs. FSR @ 2x)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Metroid Dread (Bilinear Vs. FSR @ 2x)</p>
+
+
+<h2 id="the-rest-of-the-puzzle-pieces">The Rest of the Puzzle Pieces</h2>
+<p>After the scaling system was ready, Rodrigo helped implement the shader patching required for scaling.
+This was needed to ensure shaders behaved properly when textures were scaled.</p>
+<p>While Blinkhawk was working on improving scaling in Vulkan and the texture cache, epicboy was working in parallel to add scaling support on the OpenGL side.
+But little did they know, their bug squashing crusade was just about to begin.</p>
+<p>As scaling is intrusive, bugs can occur in a myriad of ways.
+Scaling occurs when games load in textures, which is usually during loading screens, but the visual bugs tend to happen later during gameplay.
+This makes it quite hard to figure out where the bug originally manifested.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./smp1x.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-art/smp1x_hu40be40745cbf293254d6e68fe0f31b74_3356223_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Party (1x Vs. 3x)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./smp3x.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-art/smp3x_hu3fce8cf3650005ff277118a9fdf1bb4c_16515346_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Party (1x Vs. 3x)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Super Mario Party (1x Vs. 3x)</p>
+
+
+<p>Fast-forward a few weeks, and thanks to continuous iterative internal testing, our developers were finally able to fix most of the bugs they came across.</p>
+<p>With much of the scaler work nearly being done, Blinkhawk ported some texture filters from Citra and adapted those to be scaling filters for yuzu.
+BreadFish later tuned them and also added a little something extra, AMD&rsquo;s <a href="https://www.amd.com/en/technologies/radeon-software-fidelityfx-super-resolution"><strong>FidelityFX™ Super Resolution</strong></a> (FSR)!</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./smo1x.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-art/smo1x_hu74d3629948bea5d3c3af3712f3ad56b9_3905692_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Odyssey (1x Vs. 3x)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./smo3x.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-art/smo3x_hubdc8eca32926903c779ce0d8e6896dad_17824972_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Odyssey (1x Vs. 3x)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Super Mario Odyssey (1x Vs. 3x)</p>
+
+
+<h2 id="benefits-of-project-art">Benefits of Project ART</h2>
+<p>The feature-set of Project ART includes the following:</p>
+<ul>
+<li>Native Resolution Scaling:
+<ul>
+<li><strong>Upscaling</strong> (2x, 3x, 4x, 5x, 6x) and <strong>Downscaling</strong> (0.5x, 0.75x).</li>
+</ul>
+</li>
+<li>FXAA Pre-filtering Pass</li>
+<li>Fixed various bugs introduced from the Texture Cache Rewrite (TCR).</li>
+<li>Window Adaptation Filters</li>
+</ul>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./filters.png" title="">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-art/filters_hud6d478e00299c7d27a92ea7602413b16_109661_1024x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+        
+    </div>
+    
+</div>
+
+<br>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-art/mk8bilinearzoom_hu885ac1f655081c796a5581c29af71f09_3968667_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Mario Kart 8 Deluxe (Bilinear Vs. FSR @ 2x)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-art/mk8fsrzoom_hu888d10fd8882f28b9ff91ac018873fe2_2263151_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Mario Kart 8 Deluxe (Bilinear Vs. FSR @ 2x)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Mario Kart 8 Deluxe (Bilinear Vs. FSR @ 2x)</p>
+
+
+<h2 id="what-to-expect-from-project-art">What to expect from Project ART</h2>
+<p>The Resolution Scaler requires much more VRAM as compared to games running at their native resolutions.
+Here are some minimum and recommended values based on our testing:</p>
+<center><img src="./scaling.png" width="500"></img></center>
+&nbsp;
+<p>Upscaling works with most games!
+We currently know of two games that don&rsquo;t upscale - <code>Paper Mario: The Origami King</code> and <code>Crash Bandicoot 4: It's About Time</code>.
+These games are incompatible because they use a compute shader to render an image, which is challenging to work around.
+However, thanks to mods, <code>Paper Mario: The Origami King</code> can be upscaled with a workaround discussed below.</p>
+<p>Downscaling, surprisingly, turned out to be more stable than we thought.
+With this, you can gain 20% or more performance at the cost of reduced quality.
+It works for most of the games we tested, but our testing has been limited.
+We currently know of one game that doesn&rsquo;t downscale (but upscales) — <code>Sonic Colors: Ultimate</code>.</p>
+<br>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-art/acnh%201x%2030fps_huad5cd4788bb90a84b8039365431c9cec_2750594_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Animal Crossing (1x 30FPS vs. 0.5x 36FPS)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-art/acnh%2005x%2036fps_hu53dac30b4996a9eff21a9786f4af4fdc_808040_960x0_resize_q90_bgffffff_box_3.jpg" alt="Animal Crossing (1x 30FPS vs. 0.5x 36FPS)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Animal Crossing (1x 30FPS vs. 0.5x 36FPS)</p>
+
+
+<p>Some games that have their own FXAA need a mod to disable their built-in FXAA.
+This is because the games use hard coded texture dimensions in their FXAA filters, which leads to poor anti-aliasing quality or artifacts.
+<code>Pokémon Sword/Shield</code> needs the <a href="https://github.com/yuzu-emu/yuzu/wiki/Switch-Mods#pokemon-swordshield-romfs"><strong>No Outlines</strong></a> mod for optimal picture quality, as the outlines don&rsquo;t scale correctly.</p>
+<p><code>Kirby Star Allies</code>	 is known to have an additional performance cost when upscaled.
+This is caused by the need to downscale textures before upscaling in order to bypass some crashes and issues in the game.</p>
+<p>Special thanks to our community member and modder <a href="https://github.com/theboy181">theboy181</a>, who created new mods that help with upscaling some of the games listed earlier.</p>
+<ul>
+<li><a href="https://cdn.discordapp.com/attachments/799182828038258698/901595782501781534/Paper_Mario_Origami_King_-_4K.rar">Paper Mario: The Origami King 4K</a></li>
+<li><a href="https://cdn.discordapp.com/attachments/799182828038258698/901595757117866045/XenoBlade_Chronicles_2_-_SuperSampling_x2.rar">Xenoblade Chronicles 2 - Super Sampling x2</a></li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>As we couldn&rsquo;t fully test the Resolution Scaling with the entire Switch game library, we look forward to all the user feedback we will receive.
+Your reports will be important in fixing bugs and polishing the Scaler to be the best experience possible.</p>
+<p>If you encounter any issues, bugs, or crashes, please reach out to us via our <a href="https://discord.gg/u77vRWY"><strong>Discord</strong></a> Patreon channels.
+We hope you love this new feature and will be back with more exciting news in the future! Happy emulating!</p>
+<p> 
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+
+<script src="https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/js/juxtapose.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/css/juxtapose.css">
+</p>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/477883">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>

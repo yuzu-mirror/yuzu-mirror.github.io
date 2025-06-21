@@ -1,0 +1,2091 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="Progress Report May 2023 &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/" />
+    <meta property="og:description" content="What a month! GOAT releases, yuzu ventures onto new platforms, we get a taste of Project Gaia, full Amiibo support, further Project Y.F.C., and a lot more!
+Put on your safety belt and start playing some eurobeat, this will be a long ride." />
+<meta name="description" content="What a month! GOAT releases, yuzu ventures onto new platforms, we get a taste of Project Gaia, full Amiibo support, further Project Y.F.C., and a lot more!
+Put on your safety belt and start playing some eurobeat, this will be a long ride." />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/"> 
+
+    <title>Progress Report May 2023 - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/banner_hu83cafe3568eaa49d62614bf61ac3ca9b_592620_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">Progress Report May 2023</span>
+    </div>
+    
+    
+    <div>
+        <span class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/GoldenX86/summary">GoldenX86</a>
+            on June 17 2023
+        </span>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p><em>What a month!</em> GOAT releases, yuzu ventures onto new platforms, we get a taste of Project Gaia, full Amiibo support, further Project Y.F.C., and a lot more!
+Put on your safety belt and start playing some <a href="https://youtu.be/8B4guKLlbVU">eurobeat</a>, this will be a long ride.</p>
+<h2 id="the-legend-of-zelda-tears-of-the-vram">The Legend of Zelda: Tears of the VRAM</h2>
+<p>Six years and the wait was worth it.
+No pay to win mechanics, no soul-draining microtransactions, no apology letter published after release. <a href="https://youtu.be/i1qnIBLNOG0?t=16">Just game, just good game</a>.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./totk1.png" title=" Runs on a 2015 tablet. (The Legend of Zelda: Tears of the Kingdom)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/totk1_hu4c26e6f44ce602714c2f9c45119e276c_6949524_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Runs on a 2015 tablet. (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Runs on a 2015 tablet. (The Legend of Zelda: Tears of the Kingdom)</p>
+        
+    </div>
+    
+</div>
+
+<p>Zelda is back, and once again teaches the gaming industry how to make a video game, while also making it fit inside a 15-year-old USB stick and run on an 8-year-old mobile SoC.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./totk2.png" title=" And it’s only 16GB! (The Legend of Zelda: Tears of the Kingdom)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/totk2_hu1691cbeb1cce00455f62c66c8a7c7a9a_6221803_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" And it’s only 16GB! (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> And it’s only 16GB! (The Legend of Zelda: Tears of the Kingdom)</p>
+        
+    </div>
+    
+</div>
+
+<p><code>The Legend of Zelda: Tears of the Kingdom</code> not only made its predecessor (a game which already reinvented how open-world gameplay should be done) look like a tech demo, but it also turned out to be one massive heavyweight, punching way above its class in hardware requirements when emulated.
+The combination of a heavier physics engine, massive amounts of shaders, and the ludicrous use of enormous ASTC textures has brought emulators to their knees.</p>
+<p>Let’s begin with the most complex problem the Princess introduced the project to. The old Switch-emulation-on-PC nemesis, now elevated to new heights: ASTC.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./deer.png" title=" Deer. (The Legend of Zelda: Tears of the Kingdom)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/deer_hue909b28ae187dd3247bf93e7ec2d87af_11809427_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Deer. (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Deer. (The Legend of Zelda: Tears of the Kingdom)</p>
+        
+    </div>
+    
+</div>
+
+<p>As there isn&rsquo;t a single dedicated desktop or laptop graphics card that supports the native decoding of <a href="https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression">ASTC textures</a> (with the exception of Intel iGPUs), yuzu is forced to transcode them on the fly into a safe and lossless format that all GPUs support; in this case, the <code>RGBA8</code> format.</p>
+<p>This was perfectly fine until now (even on 2GB GPUs), since <code>ASTRAL CHAIN</code> was the only game that made &ldquo;extensive&rdquo; use of ASTC textures, shipping with 4K textures on a mobile device intended for 1080p and 720p screen resolutions.
+Our garbage collector, introduced two years ago with <a href="https://yuzu-mirror.github.io/entry/yuzu-hades/">Project Hades</a>, which our veteran users know as “the memory Reaper”, was tuned for this worst case scenario at the time.</p>
+<p>But what happens if a game with many more textures and a teletransportation system that allows the player to reach different regions in-game (and, in turn, load a truckload of new, different textures) releases?
+What if this hypothetical game made use of dozens and dozens of huge ASTC textures?</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./totk3.png" title=" The VRAM is on fire! (The Legend of Zelda: Tears of the Kingdom)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/totk3_hu69161542e16dd42527c449c77bb331f0_9025078_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" The VRAM is on fire! (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> The VRAM is on fire! (The Legend of Zelda: Tears of the Kingdom)</p>
+        
+    </div>
+    
+</div>
+
+<p>Well, suddenly the old and trusted garbage collector we developed is no longer capable of keeping even 8GB GPUs working.
+That’s right, the VRAM starvation affecting the PC gaming industry hurts yuzu too.
+Serious changes had to be made, and they had to allow 2GB GPUs to still be compatible somehow.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./gpu.jpg" title=" Your writer’s Tower of VRAM Testing. GTX 750 2GB, RX 550 2GB, and RX 6600 8GB. Not pictured, GTX 1650 4GB, GTX 1660 SUPER 6GB, and RTX 3060 Ti 8GB"><img src="./gpu.jpg" alt=" Your writer’s Tower of VRAM Testing. GTX 750 2GB, RX 550 2GB, and RX 6600 8GB. Not pictured, GTX 1650 4GB, GTX 1660 SUPER 6GB, and RTX 3060 Ti 8GB"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Your writer’s Tower of VRAM Testing. GTX 750 2GB, RX 550 2GB, and RX 6600 8GB. Not pictured, GTX 1650 4GB, GTX 1660 SUPER 6GB, and RTX 3060 Ti 8GB</p>
+        
+    </div>
+    
+</div>
+
+<p>The solution, which took many attempts, was split into several parts to ensure that no other games were negatively affected by the changes, and required the combined efforts of <a href="https://github.com/Kelebek1">Maide</a>, <a href="https://github.com/liamwhite">byte[]</a> and <a href="https://github.com/FernandoS27">Blinkhawk</a>.</p>
+<p>While investigating very low VRAM devices, byte[] found that yuzu used <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10286" data-gh-pr="10286">incompatible memory property flags</a>
+ when the Vulkan memory allocator was under pressure, causing low VRAM GPUs to crash when trying to actually use a recycled allocation.</p>
+<p>Having more VRAM available certainly helps, but that’s not enough to avoid the game from biting off more than the GPU’s memory can chew under stressful conditions — for example, teleporting between different regions.</p>
+<p>Previously, if VRAM was almost full, the memory manager would try to use shared memory, which is just a portion of system RAM, for new allocations.
+This caused massive slowdowns during gameplay, as the transfer operation of going over system RAM, CPU, PCIe, GPU, and finally VRAM is a slow process that introduces a high latency.</p>
+<p>Collecting memory in VRAM is much faster than transferring data over to system RAM.
+So, instead of relying on the slow shared memory, the memory manager (Reaper) now <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10288" data-gh-pr="10288">keeps everything in dedicated memory</a>
+ (VRAM), leaving some free space to accommodate sudden spikes in VRAM usage when new assets are loaded.
+If you see 2GB or more of always-free VRAM in your system, know that its purpose is to keep gameplay smooth, even on 4GB GPUs.
+Don’t worry, we’re not wasting your precious VRAM. We’re just keeping it warm and cozy for when you need it.
+This also has the added benefit of saving on system RAM consumption, allowing 8GB RAM users to have more stable gameplay.</p>
+<p>All of this is not enough to allow 4GB VRAM users or less to achieve stable gameplay, so it’s time to reveal the ace up yuzu’s sleeve.
+What if, instead of relying on the pixel-accurate but bigger <code>RGBA8</code> texture format, the emulator recompressed to some other smaller formats?</p>
+<p>Ladies and gentlemen, we present you <code>ASTC recompression</code>, a <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10398" data-gh-pr="10398">new option</a>
+ available in <code>Emulation &gt; Configure &gt; Graphics &gt; Advanced</code> that intends to reduce VRAM consumption by turning those Ganon-cursed unsupported ASTC textures into something more suitable for low-VRAM GPUs.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./astcrecomp.png" title=" We recommend avoiding BC1 if possible.">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/astcrecomp_hua6fbb28a9636f9125975b59c1e7c36d0_14281_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" We recommend avoiding BC1 if possible."></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> We recommend avoiding BC1 if possible.</p>
+        
+    </div>
+    
+</div>
+
+<p>The principle is pretty simple, we just add one more step to the recompression process, from ASTC &gt; RGBA8, to ASTC &gt; RGBA8 &gt; <a href="https://en.wikipedia.org/wiki/S3_Texture_Compression">BC1 or BC3</a>.</p>
+<p>The default <code>Uncompressed</code> setting uses the old <code>RGBA8</code> method, which preserves the original image quality, but also consumes the most VRAM.
+For users that wish to emulate <code>Tears of the Kingdom</code>, we recommend setting this option if their GPU has at least 10-12GB of VRAM.
+For other, more <strong>reasonable</strong> games, this option is suitable for users with cards with at least 4GB of VRAM.</p>
+<p>The <code>BC3 (medium quality)</code> setting reduces the VRAM usage of ASTC textures by a factor of four, with a very minimal loss in quality, typically showing as marginally softer textures.
+This setting is recommended for emulating <code>Tears of the Kingdom</code> on 6GB and 8GB GPUs.
+For other games, this setting is good for GPUs with 3GB of VRAM.</p>
+<p>Finally, the <code>BC1 (low quality)</code> setting cuts down the VRAM consumption by a factor of eight, but will also have a significant impact on texture quality, to the point where some assets will look completely different.
+We don’t recommend using this setting unless you really have to.
+It allows users with 4GB of VRAM to play <code>Tears of the Kingdom</code> without significant issues, and will make 2GB users have a smoother and more reliable experience in other games.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./bc11.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/bc11_hu1f674452370eccfd708de7b768ba77de_11681037_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last, BC1 vs BC3 vs ASTC (Fire Emblem Engage)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./bc31.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/bc31_hu94f37d3941248d118c6ab5ac7ce2c451_8337901_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last, BC1 vs BC3 vs ASTC (Fire Emblem Engage)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./astc1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/astc1_huead856a653126882f7408344941cb705_8190681_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last, BC1 vs BC3 vs ASTC (Fire Emblem Engage)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">From first to last, BC1 vs BC3 vs ASTC (Fire Emblem Engage)</p>
+
+
+<p>As you can see, BC1 destroys image quality in some games.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./bc12.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/bc12_hu7985fb6b7462d7a53a917bbf4a86066b_2623192_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last, BC1 vs BC3 vs ASTC (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./bc32.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/bc32_hu0b16de1510bcea3c9bf010ebc2cc5a26_2580495_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last, BC1 vs BC3 vs ASTC (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./astc2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/astc2_hue80861dd99209960b580762d9d2c534d_2558465_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last, BC1 vs BC3 vs ASTC (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">From first to last, BC1 vs BC3 vs ASTC (The Legend of Zelda: Tears of the Kingdom)</p>
+
+
+<p>But in others, the difference is less noticeable.
+If you only have 2GB of VRAM and 8GB of RAM, the sacrifice may be worth it.</p>
+<p>This is currently done using the CPU, but GPU acceleration is planned for the future.
+We also hope to add an option to use BC7 in the future to provide a higher quality experience.</p>
+<p>Keep in mind that <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10398" data-gh-pr="10398">ASTC recompression</a>
+ only works on ASTC textures, so the actual VRAM usage reduction will depend on the game. Not every resource held in VRAM is ASTC.
+If your hardware can handle ASTC natively, this setting won’t do anything for you, as there&rsquo;s no need for any recompression.</p>
+<p>In addition, byte[] has also <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10422" data-gh-pr="10422">tuned the memory manager</a>
+ to be more ruthless.
+This change should help improve gameplay stability during long sessions on systems with less RAM.
+yuzu always aims to support a minimum of 8GB of RAM on systems with dedicated GPUs.</p>
+<p>He also made sure that <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10452" data-gh-pr="10452">memory collection doesn’t happen during the configuration step,</a>
+ so that it doesn&rsquo;t cause a device loss (i.e. the GPU driver shutting down).</p>
+<p>By fixing the <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10433" data-gh-pr="10433">block depth adjustment on slices,</a>
+ Blinkhawk solved the rendering issues affecting the gloom textures on the terrain in <code>Tears of the Kingdom</code>, a bug that was especially frustrating on low VRAM hardware.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/gloombug_hu97940f3797ff5cf99ed91267dcd08503_1482598_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Let’s not make the gloom feel depressed… (The Legend of Zelda: Tears of the Kingdom)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/gloomfix_huc6e12810f24c64c096e2f247e20b96a2_1445193_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Let’s not make the gloom feel depressed… (The Legend of Zelda: Tears of the Kingdom)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Let’s not make the gloom feel depressed… (The Legend of Zelda: Tears of the Kingdom)</p>
+
+
+<p>And for integrated GPU users with 16GB of system RAM or less, such as the Steam Deck, newcomer <a href="https://github.com/scorpion81">scorpion81</a> has a treat for you.
+<a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10411" data-gh-pr="10411">Setting a hard cap at 4GB</a>
+ allows <code>Tears of the Kingdom</code> to be playable without hitting the page file/swap too hard.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./astcbug.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./astcfix.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">The difference made on a 2GB equipped GTX 750 (The Legend of Zelda: Tears of the Kingdom)</p>
+
+
+<p>That wraps up the list of changes made to memory management to allow <code>Tears of the Kingdom</code> to be playable in at least the components listed in our <a href="https://yuzu-mirror.github.io/help/quickstart/#hardware-requirements">hardware requirements</a>.</p>
+<p>These changes would not be necessary if GPUs just supported ASTC textures.
+Wouldn&rsquo;t you like your games to be no bigger than 100GB instead of having software features that ruin image quality, such as frame generation?
+Native ASTC decoding support would make this possible.</p>
+<p>An Intel Iris Xe iGPU can run the game at 30 FPS in handheld mode while using less memory than any other hardware combination, all thanks to being their last GPU capable of decoding ASTC.
+More on Intel&rsquo;s driver support later.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./totkception.png" title=" We need to go deeper! (The Legend of Zelda: Tears of the Kingdom)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/totkception_hu47371e20be95bdb32a4f67883fedbadf_6286128_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" We need to go deeper! (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> We need to go deeper! (The Legend of Zelda: Tears of the Kingdom)</p>
+        
+    </div>
+    
+</div>
+
+<p>This was the worst part&hellip; up to this point. More work was needed to get the game to boot and render properly. Let’s dive into that.</p>
+<p>One thing that both the Switch and Android devices have in common is the way they present to the screen.
+Google&rsquo;s OS uses <code>SurfaceFlinger</code> (the only good Linux presentation method), and the Switch uses <code>nvnflinger</code>, which is a custom adaptation of <code>SurfaceFlinger</code> designed for the Switch&rsquo;s firmware and operating system.
+While this gives us a good frame of reference for how <code>nvnflinger</code> should be emulated, sometimes bugs can still sneak in.
+These bugs are not always easy to spot, especially if no game had rendering problems until now.</p>
+<p>byte[] realised that yuzu was <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10236" data-gh-pr="10236">serialising binder responses incorrectly</a>
+ (in a different way to how Android does it).
+Fixing this simple bug allowed for <code>Tears of the Kingdom</code> to boot.</p>
+<p>Meanwhile, Maide implemented <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10234" data-gh-pr="10234">shader fixes,</a>
+ suggested by <a href="https://github.com/Kristijan1001">Kristijan1001</a>, solving issues with cloud flickering and missing geometry in The Depths.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./depths.jpeg" title=" Your GPU is fine, it’s just software. (The Legend of Zelda: Tears of the Kingdom)"><img src="./depths.jpeg" alt=" Your GPU is fine, it’s just software. (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Your GPU is fine, it’s just software. (The Legend of Zelda: Tears of the Kingdom)</p>
+        
+    </div>
+    
+</div>
+
+<p>Next is a bug that only affected the base game. Following updates were unaffected, as they rendered in a different order.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./red.png" title=" Ganon likes to record Link… (The Legend of Zelda: Tears of the Kingdom)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/red_hud6d4bcc4aeed3191d1fee6deb4efb26a_1662324_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Ganon likes to record Link… (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Ganon likes to record Link… (The Legend of Zelda: Tears of the Kingdom)</p>
+        
+    </div>
+    
+</div>
+
+<p>This mysterious red dot on the right was caused by <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10243" data-gh-pr="10243">incorrectly tracking</a>
+ render target indexes when clearing.
+Thanks to some behaviour changes made by Maide, Link is no longer being spied on.</p>
+<p>After the game was released, several users reported that the date in the game&rsquo;s save files was always set to January 1st, 1970.
+After checking the behaviour of the Switch, byte[] implemented <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10244" data-gh-pr="10244">a few changes</a>
+ that solved the issue with an updated service implementation that allows for computing the time in nanoseconds, automatically adjusting for clock skew, and using the same clock source as the system’s steady clock.</p>
+<p>There were also reports of graphical glitches when using the 2X resolution scaling factor: Link and terrain textures would become corrupted after switching weapons.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./2x.png" title=" Scrambled textures. (The Legend of Zelda: Tears of the Kingdom)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/2x_hud4ddb31e2abf39c65898258ea642c893_2656586_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Scrambled textures. (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Scrambled textures. (The Legend of Zelda: Tears of the Kingdom)</p>
+        
+    </div>
+    
+</div>
+
+<p>Blinkhawk quickly found the cause of this problem: wrong clears were performed in the code responsible for synchronization in the buffer cache.
+<a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10249" data-gh-pr="10249">Some tweaks,</a>
+ and the game can be safely played while scaled.</p>
+<p>For the Linux AMD users, especially those not using the latest Mesa RADV Vulkan driver releases, byte[] found that one of the features of <code>VK_EXT_extended_dynamic_state3</code>, dynamic depth clamp, was implemented incorrectly in the driver, leading to vertex explosions in some expository moments in the game.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/radvbug_hu3e3fbdd95b8c532ec485605a68ef924b_215985_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Oh, there goes the vertex… (The Legend of Zelda: Tears of the Kingdom)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/radvfix_hu21bf0834f03b5ea53d95076456c9f7f6_2208018_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Oh, there goes the vertex… (The Legend of Zelda: Tears of the Kingdom)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Oh, there goes the vertex… (The Legend of Zelda: Tears of the Kingdom)</p>
+
+
+<p><a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10262" data-gh-pr="10262">Disabling the feature</a>
+ for the affected driver version and older solves this issue.</p>
+<p>Another identified issue affected the light projection made by the Ultrahand ability, intended to help the player position objects.
+The green glow had a pixelated look, caused by <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10402" data-gh-pr="10402">missing barriers on attachment feedback loops.</a>
+</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    <img src="./ultrabug.jpg" alt="Green Lantern hand. (The Legend of Zelda: Tears of the Kingdom)">
+    
+    
+    
+    
+    
+    <img src="./ultrafix.jpg" alt="Green Lantern hand. (The Legend of Zelda: Tears of the Kingdom)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Green Lantern hand. (The Legend of Zelda: Tears of the Kingdom)</p>
+
+
+<p>Several keyboard strokes later, and byte[] went green with envy.</p>
+<p>Next on the list of weird rendering issues is one that affected camera changes — for example, when talking to an NPC or aiming with the bow/throwing a weapon.
+Large areas in front of the player would turn black for a frame and then return to normal.
+Needless to say, it was very distracting.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./bow.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> A bow so cursed, it tries to take you to the Shadow Realm! (The Legend of Zelda: Tears of the Kingdom)</p>
+        
+    </div>
+    
+</div>
+
+<p>This bug was caused by the way the <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10418" data-gh-pr="10418">texture cache</a>
+ processed aliases and overlaps, which were in the wrong order and caused sync problems.
+After a few tries by Blinkhawk and byte[], the issue was finally fixed.</p>
+<p>While investigating bugs related to <code>Tears of the Kingdom</code>, a copy-paste error hidden in the code for 3 years was also found.
+In the shader recompilation code, <a href="https://github.com/ReinUsesLisp">Rodrigo</a> copied over the wrong value from one line to the next.
+This is another interesting case of the problem not being an issue until now, as no one noticed this bug until Zelda needed rescuing again&hellip;
+By <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10459" data-gh-pr="10459">changing a single character,</a>
+ byte[] solved the terrain gaps that could be spotted from a distance all over the map, but most noticeably in The Depths.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/gapbug_hu499b45ba78b0d6d67f03437b528d7810_2847630_1024x0_resize_q90_bgffffff_box_3.jpg" alt="What’s deeper than The Depths? (The Legend of Zelda: Tears of the Kingdom)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/gapfix_hufe7d491bb8f69350d1ae04f2af87db62_2833307_1024x0_resize_q90_bgffffff_box_3.jpg" alt="What’s deeper than The Depths? (The Legend of Zelda: Tears of the Kingdom)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">What’s deeper than The Depths? (The Legend of Zelda: Tears of the Kingdom)</p>
+
+
+<p>In an interesting case where a UI setting is needed to improve a game’s rendering, byte[] added an option to <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10464" data-gh-pr="10464">clean the cache storage for a game,</a>
+ which can be accessed from the <code>Remove</code> menu when right clicking a game in yuzu’s game list.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./remove.png" title=" It’s fun to watch the game reconstruct the images in real time.">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/remove_hu11d246035b50058ef89bca88801cf802_29282_790x0_resize_q90_bgffffff_box_3.jpg" alt=" It’s fun to watch the game reconstruct the images in real time."></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> It’s fun to watch the game reconstruct the images in real time.</p>
+        
+    </div>
+    
+</div>
+
+<p>This option is needed because using Asynchronous shader building in <code>Emulation &gt; Configure… &gt; Graphics &gt; Advanced</code> will mess up fused weapon icons in the weapon selection menu, as well as autobuild history.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/cachebug_hua9a14e9e9ea5142730f8724f2b9950ce_2680105_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Not even close, baby! (The Legend of Zelda: Tears of the Kingdom)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/cachefix_huef5336b2385dcd7ea9d9005c249bbfb3_2885615_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Not even close, baby! (The Legend of Zelda: Tears of the Kingdom)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Not even close, baby! (The Legend of Zelda: Tears of the Kingdom)</p>
+
+
+<p>Disabling Asynchronous shader building and clearing the cache storage lets the game properly rebuild the images of all your weaponized abominations.</p>
+<p>That’s the progress so far with <code>The Legend of Zelda: Tears of the Kingdom</code>!
+You may have noticed there are no performance improvements mentioned here.
+We’re following one of the most important rules of coding, “Make it work. Make it right. Make it fast.”</p>
+<p>As this is a particularly popular game (and for good reason), here are some recommendations that user reports and fixes have taught us.</p>
+<ul>
+<li>This game is very demanding on hardware. What we list in yuzu’s <code>recommended</code> <a href="https://yuzu-mirror.github.io/help/quickstart/#hardware-requirements">hardware requirements</a> is the minimum needed to sustain 30 FPS in most areas. A 6-core desktop Zen 2/11th gen Core, 16GB of RAM, and a GPU with at least 6GB of VRAM are the baseline for now.</li>
+<li>The latest CPUs (Zen 4/13th gen Core, always speaking of desktop products) provide massive improvements in IPC, RAM bandwidth, and cache sizes. Where a Ryzen 7 5800X3D barely manages 55 FPS, a Ryzen 5 7600 reaches 90 FPS.</li>
+<li>Normal GPU accuracy can be used to improve performance safely.</li>
+<li>Unsafe CPU accuracy can improve performance at the cost of small inaccuracies.</li>
+<li>Enabling asynchronous presentation degrades performance a bit.</li>
+<li>Don&rsquo;t use <code>Decode ASTC textures asynchronously</code> for this game, it will cause crashes.</li>
+<li>In some rare cases audio events can cause crashes, so be careful when using multi-arrow bows and bombs.</li>
+<li>The Depths are particularly hungry for VRAM. Remember to use ASTC recompression if you are VRAM starved. We recommend at least 8GB of VRAM for 2X resolution scaling using BC3 compression.</li>
+<li>The modding community has been providing amazing mods. Dynamic framerate, improved resolution and details, and much more are only a few clicks away. Here’s a <a href="https://github.com/HolographicWings/TOTK-Mods-collection">collection with recommendations</a>.</li>
+<li>Old FPS mods compatible with the base version of the game (1.0.0) are unstable and will cause softlocks and crashes during certain actions like the Game Over screen. Update your game and use newer mods.</li>
+<li>Remember to test the game without mods before reporting issues, as mods are still altering memory regions to work.</li>
+<li>If you disabled <code>Use Fast GPU Time</code> due to recommendations from modders, do it only for <code>Tears of the Kingdom</code>, as you will be seriously affecting performance in other games. Right clicking a game in yuzu’s game list and selecting properties shows the per-game configuration. We strongly recommend keeping <code>Use Fast GPU Time</code> enabled in all scenarios.</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=1pN8TvupNn4">Now go. Let the Legend come back to life.</a></p>
+<h2 id="project-lime">Project Lime</h2>
+<a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10508" data-gh-pr="10508">Bet you didn’t expect this.</a>
+
+<p>That’s right, with the blessing from Skyline’s <a href="https://github.com/bylaws">bylaws</a>, help from Dolphin’s <a href="https://github.com/t895">t895</a> and Citra’s <a href="https://github.com/GPUCode">GPUCode</a>, work from yuzu’s and Citra’s <a href="https://github.com/FearlessTobi">flTobi</a>, <a href="https://github.com/bunnei">bunnei</a>, <a href="https://github.com/merryhime">Merry</a>, <a href="https://github.com/Schplee">Flamboyant Ham</a>, <a href="https://github.com/german77">german77</a>, and more, yuzu is now <a href="https://yuzu-mirror.github.io/downloads/#android">available for Android devices</a>!</p>
+<p>We recommend that you read the dedicated yuzu on Android article <a href="https://yuzu-mirror.github.io/entry/yuzu-android/">here</a>.
+In this section, we will give you an overview of our future plans, some tips on settings and hardware requirements, and a realistic outlook on what you can expect from yuzu on Android right now.</p>
+<p>The Android version of yuzu was not an easy feat. It took us almost eight months of hard work to make it happen.
+Right now, the core is essentially the same as the desktop version, with an Android UI and <em>very few</em> platform-specific tweaks.
+This means you can enjoy features like 32-bit game support, NVDEC video decoding support, motion, controller automapping, resolution scaling, and filters.
+On the other hand, features like mod and cheat management, LDN, and the controller configuration applet are still under development.
+Our goal is to gradually have the Android builds reach parity with the PC version.</p>
+<p>In addition to the Google Play Store, we will soon be posting releases on our GitHub, and F-Droid is also on the horizon.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./lime1.png" title=" Don’t judge, it’s a light game and loads quickly, it was great for testing. (Sakura Neko Calculator)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/lime1_hu3025deda088ea43d826cd4ce5d7e4bbf_1119083_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Don’t judge, it’s a light game and loads quickly, it was great for testing. (Sakura Neko Calculator)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Don’t judge, it’s a light game and loads quickly, it was great for testing. (Sakura Neko Calculator)</p>
+        
+    </div>
+    
+</div>
+
+<p>One of the biggest lessons we learned from Project Lime is that, even after 8 years since the launch of the NVIDIA Tegra X1 (the SoC that powers the Nintendo Switch), Android SoC vendors still don’t know how to make GPU drivers.</p>
+<p>They all started working on Vulkan drivers around the same time in 2016. And yet, none of them have managed to deliver a compliant and stable Vulkan Android driver, except for the rare few NVIDIA devices.</p>
+<p>It is obvious that only 4 vendors have the expertise and the commitment to make Vulkan drivers work: NVIDIA, AMD, and Mesa, with a special mention for Intel, who recently stepped up their game.</p>
+<p>Although not one of these 4, we decided that limiting support to Qualcomm SoCs was our only option for now if we didn&rsquo;t want to spend several months further modifying our GPU code to accommodate all the quirks and broken extensions of Android phones and tablets.
+Not because their driver is decent — it’s bad.
+But it was just good enough to get some games to render, albeit incorrectly most of the time.</p>
+<p>Qualcomm is the best option (and for now, the only one) because bylaws created <a href="https://github.com/bylaws/libadrenotools">AdrenoTools</a>, which lets users load the <em><strong>vastly</strong></em> superior <a href="https://docs.mesa3d.org/drivers/freedreno.html">Mesa Turnip</a> drivers on their Adreno 600 series GPUs, providing more accurate rendering, comparable to the quality expected of PC products.
+Any Qualcomm SoC with a name like “Snapdragon ###” from the 460 to the 888+ equipped with an Adreno 600 series GPU can choose to use either the proprietary Qualcomm driver or Mesa Turnip.</p>
+<p>The performance gain you can expect from a device with a Snapdragon Gen 1 or Gen 2 is quite significant.
+But the problem is that, while the Adreno 700 series GPU that comes with it is very powerful hardware-wise, the proprietary Qualcomm driver for it is subpar at best, and Mesa has only just begun to work on adding support for Turnip.
+There&rsquo;s an early driver release to test, but results are not great for now.
+It will take weeks, if not months, before we see proper support emerge. In the meantime, we intend to work on improving the rendering on the official Adreno drivers.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./driver.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/driver_hu79e5580693449f2927282912ff23d783_115103_800x0_resize_q90_bgffffff_box_3.jpg" alt="Try several, don’t marry the first one that works. Divorcing a shader cache isn’t fun."></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./driver2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/driver2_hu79e5580693449f2927282912ff23d783_116167_800x0_resize_q90_bgffffff_box_3.jpg" alt="Try several, don’t marry the first one that works. Divorcing a shader cache isn’t fun."></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Try several, don’t marry the first one that works. Divorcing a shader cache isn’t fun.</p>
+
+
+<p>The Adreno 500 series is too outdated for yuzu. Its proprietary Vulkan driver is missing many of the essential features required, and Turnip has no plans to support it either.</p>
+<p>Mali is an example of good but weak hardware being limited by the quirks of its available drivers.
+Unlike Adreno, Mali has no viable Mesa alternative to rescue it, and the current proprietary Mali drivers are in bad shape for Switch emulation.
+Its current status is that it won’t boot any game on yuzu, but:</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./mali.jpg" title=""><img src="./mali.jpg" alt="Internal dev build, work-in-progress in getting G series Mali running."></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./mali2.jpg" title=""><img src="./mali2.jpg" alt="Internal dev build, work-in-progress in getting G series Mali running."></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Internal dev build, work-in-progress in getting G series Mali running.</p>
+
+
+<p>We’re working on solving all the quirks needed to get Mali rendering on yuzu as soon as possible.
+This is the most common GPU vendor on the platform after all.
+Mali support will happen, we just need some time.
+Expect news very soon!</p>
+<p>The last case of hardware that should work, but doesn’t, is the AMD RDNA2-based Xclipse 920 from Samsung, used only in the latest Exynos 2200 SoC, and somehow completely skipped from the S23 series phones.
+Available information suggests that it may just be an old AMD Windows driver ported to Android, but for some reason the devices refuse to start rendering on yuzu.
+This is a GPU we want to get working, as there is no clear reason why it doesn&rsquo;t work, while desktop AMD products work almost flawlessly.
+Unfortunately, we haven&rsquo;t yet been able to get our hands on one, but we&rsquo;ll update with more info once we do.</p>
+<p>For all other vendors like PowerVR, Vivante, etc: don&rsquo;t bother.
+These vendors offer such low quality drivers that support is impossible.</p>
+<p>We’re working hard on improving GPU compatibility, adding the necessary changes needed to boot within the limitations set by the vendors.</p>
+<p>CPU emulation still relies on the Dynarmic JIT, instead of native code execution.
+This allows us to run 32-bit games like <code>Mario Kart 8 Deluxe</code>, but is slow for 64-bit games.
+Expect “good” compatibility, similar to the desktop version thanks to this, but also low performance and high temperatures.
+Native code execution, or NCE (do I smell <code>Project Nice</code>?) is on our list of goals for the Android builds.</p>
+<p>The CPU itself, while very crucial for performance and the main bottleneck for now, is less important than the GPU, for the reasons previously mentioned (the drivers).
+The same rules as on PC apply here: 6 cores or more is preferred, and the highest possible IPC is strongly recommended. A Snapdragon 8 Gen 2 can be twice as fast as a Snapdragon 865.</p>
+<p>RAM use is both a blessing and a curse.
+A blessing because Android devices natively support ASTC textures — the format is designed for such devices.
+This allows the GPU to use very little RAM, just like on the Switch.</p>
+<p>The curse is that, because Android is such a heavy OS, there is no guarantee that complex games will run on devices with 6GB of RAM. 8GB is the strong recommendation, which puts compatibility on the pricey side of the spectrum.
+A certain Zelda game we wrote a lot about currently requires at least 12GB of RAM to run.</p>
+<p>There are ongoing efforts to reduce memory requirements, such as native code execution and <a href="https://en.wikipedia.org/wiki/Unified_Memory_Architecture">UMA</a> optimizations for the GPU code, but the reality is that emulation adds overhead and Android will only get fatter over time.
+We may be able to get light 2D games running on 4GB devices, but we don&rsquo;t expect complex 3D games to run on less than 8GB any time soon, if ever.</p>
+<p>We have set the minimum required operating system to Android 11.
+This decision was made to prevent installation on completely unsuitable hardware (like Adreno 500 series devices or older T series Mali GPUs), and to reduce installation on low-memory devices as much as possible.
+This is final, as there are no plans to support older Android versions.</p>
+<p>Of course, it must be a 64-bit Android 11 or newer; just like on desktop, 32-bit devices will never be supported.</p>
+<p>Users with capable hardware stuck on older Android versions can either build yuzu themselves and remove the code responsible for performing this check, or install custom ROMs such as <a href="https://lineageos.org/">LineageOS</a> to get unofficial Android updates on their device.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./lime2.png" title=" Your writer will enjoy playing visual novels and simple platformers. (The Liar Princess and the Blind Prince)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/lime2_hueff6b71be2e0d0f9bb98040525381bef_1762391_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Your writer will enjoy playing visual novels and simple platformers. (The Liar Princess and the Blind Prince)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Your writer will enjoy playing visual novels and simple platformers. (The Liar Princess and the Blind Prince)</p>
+        
+    </div>
+    
+</div>
+
+<p>Now that we have covered the harsh reality of Android software and hardware, let’s focus on the current experience.</p>
+<p>We included a customisable input overlay with haptics, which can be disabled if you prefer to play with a Bluetooth Xbox controller, Sony Dualshock 4 or Dual Sense, or a Nintendo Pro Controller, and a framerate counter.
+You can access these settings in-game by dragging from the left side of the screen.</p>
+<p>If you updated from a previous version, the overlay may be invisible. Just select <code>Overlay Options &gt; Reset Overlay</code> to make it visible again.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./settings1.png" title=" Set as you see fit. (Cooking Mama: Cookstar)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/settings1_hue4d1bdf3d0261eecda07c557799ce8e2_1136719_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Set as you see fit. (Cooking Mama: Cookstar)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Set as you see fit. (Cooking Mama: Cookstar)</p>
+        
+    </div>
+    
+</div>
+
+<p>While playing a game you can select Settings from the left menu, or select it from the main menu.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./settings2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/settings2_hu49138a21e1d583ef4777a555be7a1086_114570_800x0_resize_q90_bgffffff_box_3.jpg" alt="Expect this tab to expand in the coming months."></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./settings3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/settings3_huffda48ad9043c8eec40ecef47ef12a69_151188_800x0_resize_q90_bgffffff_box_3.jpg" alt="Expect this tab to expand in the coming months."></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Expect this tab to expand in the coming months.</p>
+
+
+<p>Here you will find setting and customization options. Most are self-explanatory, but if you want explanations for the options in Advanced settings, check our settings glossary <a href="https://community.citra-emu.org/t/settings-glossary/768483">here</a>.</p>
+<p>After the initial configuration is done, just tap a game and play.
+A search option is available for your convenience, along with a few search filters.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./list.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/list_hu2320918461605780dbcca582471489a6_2209877_800x0_resize_q90_bgffffff_box_3.jpg" alt="Choose your destiny."></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./search.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/search_hud0f3348da429cdff75027bfc9d114daa_1605280_800x0_resize_q90_bgffffff_box_3.jpg" alt="Choose your destiny."></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Choose your destiny.</p>
+
+
+<p>One of the first improvements added by <a href="https://github.com/PabloG02">PabloG02</a> is a <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10534" data-gh-pr="10534">save manager</a>
+ that can be accessed from the Settings.
+This makes importing and exporting saves very simple. Thank you!</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./saves.png" title=" It’s dangerous to go alone, take this!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/saves_hu645ef100a855fb762da9c3fedb9aeb66_117171_540x0_resize_q90_bgffffff_box_3.jpg" alt=" It’s dangerous to go alone, take this!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> It’s dangerous to go alone, take this!</p>
+        
+    </div>
+    
+</div>
+
+<p>One important thing to remember: Android has the most… unusual file system permissions.
+We recommend creating a yuzu folder on your storage root to store your keys, as to avoid any permissions issues.</p>
+<p>You can get different Adreno and Turnip driver versions to test from <a href="https://github.com/K11MCH1/AdrenoToolsDrivers/releases">here</a>.
+Keep in mind, this option will only change the driver for yuzu. It won’t (and can’t) replace anything on a system level.</p>
+<p>At the time of writing, we recommend <a href="https://github.com/K11MCH1/AdrenoToolsDrivers/releases/tag/v23.2.0-dev">Turnip 23.2.0</a> (or <a href="https://github.com/K11MCH1/AdrenoToolsDrivers/releases/tag/v23.1.0-dev">23.1.0</a> if you have Android 11) for Adreno 600, while Adreno 700 users can run the <a href="https://github.com/K11MCH1/AdrenoToolsDrivers/releases/tag/v676.22FIX">Qualcomm 676.22</a> driver to improve performance and compatibility somewhat.</p>
+<p>There’s an early alpha Turnip release supporting Adreno 730 and 740 products (but not 725) <a href="https://github.com/K11MCH1/AdrenoToolsDrivers/releases/tag/v23.2.0_A7XX">here</a>.
+It is also compatible with Adreno 600 series hardware, so it’s a simple global driver to test.</p>
+<p>There have been reports of users not being able to load custom drivers — we are still investigating this, but there&rsquo;s still a lot of work to do.</p>
+<p>For those interested in playing with the source, we have a work-in-progress build guide <a href="https://yuzu-mirror.github.io/wiki/building-for-android/">here</a>.</p>
+<p>That’s all fo… What do you mean there’s still a whole article to write?
+Oh right, we have more to talk about!</p>
+<h2 id="other-graphical-changes">Other graphical changes</h2>
+<p>Because this isn’t just a Zelda emulator after all.</p>
+<p>Who wants more <code>Project Y.F.C.</code> goodies?
+Blinkhawk serves us <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10155" data-gh-pr="10155">Reactive Flushing,</a>
+ with fries.</p>
+<p>In the early days of yuzu, if the CPU were to read an area modified by the GPU, full sync flushing between the host and guest GPU (emulated and system’s GPU) would trigger (let’s call it “old reactive flushing”).
+This was safe and rendered things properly, but was also slow.
+Blinkhawk replaced this system with predictive flushing some years ago, improving performance significantly but introducing several graphical regressions, such as broken shadows and lighting, wrong thumbnails on saves and photos, and even vertex explosions.</p>
+<p>With this release of the yuzu fried chicken, Blinkhawk introduces the new Reactive Flushing, which has the following fixes:</p>
+<ul>
+<li>Fixes old regressions such as <code>Bayonetta 2</code>&rsquo;s shadows.</li>
+<li>Fixes lighting in <code>Xenoblade Chronicles</code> games.</li>
+<li>Improves performance in buffer-heavy games like <code>Monster Hunter Rise</code>.</li>
+<li>Thumbnails and in-game photos in a bunch of games such as: saves in <code>Xenoblade Chronicles Definitive Edition</code> and <code>Xenoblade Chronicles 3</code>, camera photos in <code>ASTRAL CHAIN</code>, and partially fixes thumbnails in <code>Luigi's Mansion 3</code>.</li>
+<li>Vertex explosions in <code>Pokemon Violet/Scarlet</code> and <code>Yoshi’s Crafted World</code>.</li>
+<li>Make High GPU Accuracy fully use asynchronous buffers in Vulkan, improving performance.</li>
+</ul>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./rf1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/rf1_hu8dbdccbc6ed361d5e89f2d55e23c50ba_4823016_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last: Bayonetta 2, ASTRAL CHAIN, Xenoblade Chronicles Definitive Edition, and Luigi’s Mansion 3"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./rf2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/rf2_hu1f096d0b69a6735dffe23ed72d798c9e_224002_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last: Bayonetta 2, ASTRAL CHAIN, Xenoblade Chronicles Definitive Edition, and Luigi’s Mansion 3"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./rf3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/rf3_hu99696c8b361a4017b324bb9289331f33_807874_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last: Bayonetta 2, ASTRAL CHAIN, Xenoblade Chronicles Definitive Edition, and Luigi’s Mansion 3"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./rf4.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/rf4_hu34564d58e04b064fb3a255d797339f18_1115335_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last: Bayonetta 2, ASTRAL CHAIN, Xenoblade Chronicles Definitive Edition, and Luigi’s Mansion 3"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">From first to last: Bayonetta 2, ASTRAL CHAIN, Xenoblade Chronicles Definitive Edition, and Luigi’s Mansion 3</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./rf6.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/rf6_hudfeaeac304dba5b51f0356eaea661685_2177740_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last: Mario &#43; Rabbids Kingdom Battle, Pokémon Scarlet, and Yoshi&#39;s Crafted World"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./rf7.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/rf7_hu797db64f8f829402eac55b0e0c4cfe38_1504355_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last: Mario &#43; Rabbids Kingdom Battle, Pokémon Scarlet, and Yoshi&#39;s Crafted World"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./rf8.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/rf8_hu05d53871f60f905ec6c5cfbc8b961c40_3548527_800x0_resize_q90_bgffffff_box_3.jpg" alt="From first to last: Mario &#43; Rabbids Kingdom Battle, Pokémon Scarlet, and Yoshi&#39;s Crafted World"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">From first to last: Mario &#43; Rabbids Kingdom Battle, Pokémon Scarlet, and Yoshi&#39;s Crafted World</p>
+
+
+<p>The option still carries a performance cost, sometimes a considerable one.
+It’s enabled by default, but users can disable it from <code>Emulation &gt; Configure… &gt; Graphics &gt; Advanced &gt; Enable Reactive Flushing</code>.
+If you need the performance, and can tolerate the graphical regressions introduced by disabling it, the option is there.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./reactive.png" title=" If you have performance to spare, keep it enabled.">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/reactive_hubd6eef459c8ea3e6a379f091fac92161_14845_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" If you have performance to spare, keep it enabled."></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> If you have performance to spare, keep it enabled.</p>
+        
+    </div>
+    
+</div>
+
+<p>Users with AMD and Intel GPUs complained that high-framerate mods couldn&rsquo;t push the framerate past the display&rsquo;s refresh rate when using Vulkan.
+This was because the VSync toggle was assuming the best option for each hardware driver based on compatibility.</p>
+<p>What used to be just VSync on, off, or triple buffer in the good old OpenGL days is now more complex with Vulkan, even if current games insist on mistakenly calling the setting “VSync on” for legacy reasons.
+In fact, nowadays there are 4 VSync options commonly supported by GPU drivers:</p>
+<ul>
+<li>Immediate: No VSync. Tearing will happen, but no framerate restrictions will apply.</li>
+<li>FIFO: Double buffering. This is equivalent to yuzu’s old VSync on. Tearing won’t happen, but input will have one frame of latency, and the refresh rate can’t exceed the display’s capabilities.</li>
+<li>Relaxed FIFO: Identical to regular FIFO, but allows for tearing to happen if a desynchronisation happens. Can be considered similar to adaptive VSync. Useful for games with dynamic framerates.</li>
+<li>Mailbox: Triple buffering, avoids tearing while allowing for framerates higher than the refresh rate of the display. Similar to what AMD calls Enhanced sync, and what NVIDIA calls Fast sync.</li>
+</ul>
+<p>Mailbox is the obvious recommendation for most games, so of course only NVIDIA on Windows, Mesa on Linux, and Android drivers offer support for it.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./vsync.png" title=" Android has no tolerance for tearing.">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/vsync_hu8208f0c845c8bc89fe93622ab7464e50_4915_486x0_resize_q90_bgffffff_box_3.jpg" alt=" Android has no tolerance for tearing."></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Android has no tolerance for tearing.</p>
+        
+    </div>
+    
+</div>
+
+<p>Per your writer’s <del>begging</del> request, <a href="https://github.com/lat9nq">toastUnlimited</a> updated the old VSync toggle in the Graphics menu to a <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10125" data-gh-pr="10125">proper drop list</a>
+ mentioning all available Vulkan options.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./mailbox.png" title=" If it is an option, pick Mailbox.">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/mailbox_hu0cfaecfd579b213e5427a84ff9fe5935_31918_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" If it is an option, pick Mailbox."></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> If it is an option, pick Mailbox.</p>
+        
+    </div>
+    
+</div>
+
+<p>If, for example, someone with an AMD or Intel GPU on Windows wants to play <code>Super Smash Bros. Ultimate</code> with a 120 FPS mod on a 60 Hz display, they now have the option to use Immediate mode, which is what the emulator switches to when the player unlocks the framerate with Ctrl + U.
+The rest can just enjoy Mailbox.</p>
+<p>We recommend setting the driver’s control panel to Enhanced/Fast sync for the best results.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./amd.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/amd_hu68872be7292166c3d641d27f66b99701_481412_800x0_resize_q90_bgffffff_box_3.jpg" alt="Press F to sync"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./nvidia.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/nvidia_hua5e5873b92bd27e4a2cc31b038ec2870_77019_800x0_resize_q90_bgffffff_box_3.jpg" alt="Press F to sync"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./intel.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/intel_hu6d3abb7448a4b00d0dcb1390428ba7fe_90849_800x0_resize_q90_bgffffff_box_3.jpg" alt="Press F to sync"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Press F to sync</p>
+
+
+<p>Maide found an issue related to the size of the pipeline cache.
+yuzu used to return the size of the shader code in bytes, which was later used to resize the unsigned 64 bit integer array in charge of storing the cache, making the array 8 times larger than it was supposed to be.
+This is fixed by <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10145" data-gh-pr="10145">using the length of the array</a>
+ instead of the size in bytes.</p>
+<p>A common complaint from users with 8GB of RAM is that games become unstable over time. This isn&rsquo;t necessarily a memory leak — it&rsquo;s likely just the system running out of RAM as new shaders are added to the pipeline cache.
+This change greatly benefits them.
+<del>But it’s 2023, you should seriously consider getting 16GB by now. Tears of the Kingdom is not Super Mario Odyssey.</del></p>
+<p>ASTC continues to be in the news here — this time a problem with <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10206" data-gh-pr="10206">3D ASTC</a>
+ textures, because it isn’t enough to deal with flat 2D ones.
+A bug in their implementation caused the level Frantic Fields in <code>Donkey Kong Country: Tropical Freeze</code> to render incorrectly.
+Some tweaks by the ‘hawk, and the Kong army is back in action.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./dk.png" title=" No more quicksand! (Donkey Kong Country: Tropical Freeze)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/dk_huf12c2bfd48914622096c4076786a9c57_3069171_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" No more quicksand! (Donkey Kong Country: Tropical Freeze)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> No more quicksand! (Donkey Kong Country: Tropical Freeze)</p>
+        
+    </div>
+    
+</div>
+
+<p>yuzu&rsquo;s buffer cache is responsible for storing most forms of arbitrary data for the GPU to process.
+Buffers can be modified by either the GPU or the CPU, so yuzu would track the buffer to one type of modification, then wait for the other type of modification to synchronize the data. But in reality, <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10216" data-gh-pr="10216">performing the synchronization</a>
+ before tracking the modification would make much more sense.
+Maide noticed this discrepancy and set out to correct it, streamlining the code.</p>
+<p>Since the old code would track buffers globally, some draws would end up ignoring channel swaps, leading to leftover values from the wrong channel getting bound in uniform buffers.
+If instead we <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10469" data-gh-pr="10469">move buffer bindings</a>
+ to be channel specific, the issue is solved.
+This fix should affect more games using multiple 3D channels too.</p>
+<p>Continuing with code optimisations, Maide found some incorrect behaviour in how render targets are selected.</p>
+<p>The <code>Render Target</code> (The OG RT for rendering devs before RTX came to town) is a texture containing the image to be rendered during a draw or clear operation.</p>
+<p>The emulator has to look at the format of the available render targets to determine which one to clear.
+For example, suppose there are 5 images bound as render targets, indexed from <code>0</code> to <code>4</code>, and the game requests to clear the render target with index <code>2</code>.
+The next step is to look at the format of render <code>target[2]</code> in the array.
+This is where the old code would work incorrectly and inefficiently, as it would iterate through all the render targets and pick the first one that returned a valid format corresponding to <code>target[2]</code>.
+This could very well be <code>target[2]</code> as expected, or an earlier render target such as <code>target[0]</code> or <code>target[1]</code>, in which case the code would completely ignore the actual render target we wanted to clear.</p>
+<p>In short, this process was both slower and potentially unsafe due to the risk of clearing the wrong render target.
+Not happy with this, Maide worked to sort it out, getting <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10217" data-gh-pr="10217">the correct render target</a>
+ cleared.</p>
+<p>Time to introduce another term! <code>Descriptor Sets</code> are a feature of the Vulkan API. Their purpose is to allow the CPU to update input bindings, the list of resources used by a shader, in an efficient way.</p>
+<p>Previously, yuzu would share the same descriptor set update queues between guest operations (operations directly translated from a game) and host operations (operations yuzu performs to emulate specific Switch GPU features which don&rsquo;t exist in Vulkan).
+This could mistakenly end up with host operations overwriting the descriptor set updates of a guest pipeline during processing.
+At best, this would break the state of the guest pipeline, and at worst, it would take down the entire GPU driver.
+If you experienced random crashes in <code>Xenoblade Chronicles</code> games, <code>Luigi’s Mansion 3</code>, <code>Bayonetta 3</code>, among others, you might now know why.</p>
+<p>So, how can this be solved? “Simple!” Let’s just give the host and guest compute pipelines their own <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10222" data-gh-pr="10222">queues.</a>
+
+Having this information in separate queues fixes the data integrity issues, greatly improving stability.</p>
+<p>Newcomer <a href="https://github.com/danilaml">danilaml</a> identified a <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10254" data-gh-pr="10254">missing bitflag</a>
+ in the header responsible for decoding H.264 videos.
+This fixes video rendering for <code>Layton's Mystery Journey: Katrielle and the Millionaires' Conspiracy</code>.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./layton.png" title=" Games are boring without their cutscenes, right? (Layton&#39;s Mysterious Journey: Katrielle and the Millionaires)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/layton_hu61fe7f70d48a912b3d7702ec39e3685b_903484_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Games are boring without their cutscenes, right? (Layton&#39;s Mysterious Journey: Katrielle and the Millionaires)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Games are boring without their cutscenes, right? (Layton&#39;s Mysterious Journey: Katrielle and the Millionaires)</p>
+        
+    </div>
+    
+</div>
+
+<p>Not stopping there, danilaml also added support for deinterlaced video playback by using the <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10283" data-gh-pr="10283">yadif filter</a>
+ included with <a href="https://ffmpeg.org/">FFmpeg</a>, fixing the game&rsquo;s video rendering.
+Thank you!</p>
+<p>Intel’s Linux Mesa Vulkan driver, ANV, broke the <code>VK_KHR_push_descriptor</code> extension with version 22.3.0 and later, causing several games to fail to boot.
+toastUnlimited <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10365" data-gh-pr="10365">disabled the extension</a>
+ to ensure proper game compatibility, and then, after a quick response from the ANV developers fixing the issue, byte[] <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10414" data-gh-pr="10414">allowed the use</a>
+ of the extension on current Mesa versions.
+Mesa is an example of how GPU driver development should be done.</p>
+<p>GPUCode improved overall performance when using Vulkan in a few percentage points by <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10474" data-gh-pr="10474">removing a wait semaphore.</a>
+
+Every bit helps.</p>
+<p><a href="https://github.com/ameerj">Epicboy</a> continues his crusade to improve OpenGL.
+This time, he <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10483" data-gh-pr="10483">fixed</a>
+ the use of <code>Accelerate ASTC texture decoding</code> when ASTC recompression was set to Uncompressed.</p>
+<p>And finally, to close this section, Maide fixed homebrew console apps crashing by <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10506" data-gh-pr="10506">skipping a section of the buffer cache</a>
+ that isn’t needed when an app doesn’t use graphics.</p>
+<h2 id="project-gaia-lite">Project Gaia-lite</h2>
+<p>byte[] implemented some file system changes on his own, giving us a taste of what’s to come.</p>
+<p>Here’s a fun one. Why does it take minutes to boot <code>Fire Emblem Engage</code> or <code>Animal Crossing: New Horizons</code> with mods?
+Because the old implementation became quadratically slower as the number of the files in the game increased!</p>
+<p><a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10183" data-gh-pr="10183">Fixing</a>
+ the terrible time complexity reduces patch times during boot in <code>Fire Emblem Engage</code> from one and a half minutes to <em>three seconds</em>, and in <code>Animal Crossing: New Horizons</code> from about a minute to <em>one and a half seconds</em>. Wow!</p>
+<p>That function wasn&rsquo;t the only source of unnecessarily quadratic behavior. Reads also grew quadratically in time with file count, which has now been <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10463" data-gh-pr="10463">optimized,</a>
+ improving in-game load times as well as boot times.</p>
+<p>Another source of slowdown we&rsquo;ve identified comes from unnecessary copying and freeing of strings, and we plan to address this in Project Gaia in the future.</p>
+<p>Finally, a savedata reader for <code>cache storage</code> needed to be <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10237" data-gh-pr="10237">stubbed</a>
+ to get <code>Tears of the Kingdom</code> to boot.</p>
+<h2 id="input-and-amiibo-improvements">Input and Amiibo improvements</h2>
+<p>HD Rumble is one of the marketed features of the Switch, which is a cool way of saying the official Switch controllers have <code>Linear Resonant Actuators</code> in charge of rumble, instead of the good old rumble motors we were used to in the past.</p>
+<p>Well, Sony’s DualSense controller also has linear resonant actuators, so in theory, it should be able to emulate HD Rumble.
+The problem is that SDL, the API we use to support non-Nintendo controllers on yuzu, currently doesn’t expose a way to take advantage of these fancy actuators.</p>
+<p>Well, newcomer <a href="https://github.com/marius851000">marius851000</a> improved this situation for DualSense owners, so they came up with the idea to <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10119" data-gh-pr="10119">change the rumble amplitude</a>
+ based on the frequency requested by the game, with 140-400 Hz operating as the low frequency, and 200-700 Hz as the high frequency.
+This way, some sense of “rumble audio”, and an overall better shaky-shaky experience, is achieved.
+Thank you!</p>
+<p>To help you see if the motion controls are working, german77 has added a <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10167" data-gh-pr="10167">cute little cube</a>
+ to the controller preview.
+Feel free to play with it!</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./motion.png" title=" Warning, it’s addictive.">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/motion_hu5a14615918c04a3900571ae7311923ba_33611_489x0_resize_q90_bgffffff_box_3.jpg" alt=" Warning, it’s addictive."></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Warning, it’s addictive.</p>
+        
+    </div>
+    
+</div>
+
+<p>Stick drift is not the only fear for gamers using controllers, there’s also the rarer <em>motion drift!</em>
+This could happen naturally, or after some <em>serious gaming</em> moments, so an option for <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10203" data-gh-pr="10203">recalibration</a>
+ was needed.
+Thankfully german77 took care of it, adding the option if you right click the Motion # mapping in <code>Emulation &gt; Configure… &gt; Controls</code>.
+If you use it, remember to leave the controller/device on a flat surface for at least 5 seconds so the process can take place.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./gyro.png" title=" Stop shaking!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/gyro_hud5dc13a28e9fbe9cdfd4f257119508a4_28667_499x0_resize_q90_bgffffff_box_3.jpg" alt=" Stop shaking!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Stop shaking!</p>
+        
+    </div>
+    
+</div>
+
+<p>Now something for the <del>dirty cheaters</del> open-minded players out there.
+Games will block trying to use the same Amiibo more than once, so german77 added a way to <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10207" data-gh-pr="10207">randomly generate a new ID</a>
+ each time the Amiibo is used. The option can be enabled from <code>Emulation &gt; Configure.. &gt; Controls &gt; Advanced &gt; Use random Amiibo ID</code>.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./id.png" title=" Bottom right corner, can’t miss it.">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/id_hu98332bea17ee04d2b7ea800ee8f5ed2a_37465_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Bottom right corner, can’t miss it."></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Bottom right corner, can’t miss it.</p>
+        
+    </div>
+    
+</div>
+
+<p>Keep in mind games like <code>Super Smash Bros. Ultimate</code> will complain if the ID changes.</p>
+<p>Scanning for Amiibos seems to be a very demanding task for the available Bluetooth bandwidth when using Joy-Cons.
+To mitigate this, german77 <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10265" data-gh-pr="10265">reduced the scan rate</a>
+ from once per frame (30 or 60 Hz) to 5 Hz, and reduced the number of attempts to get valid data to 1 down from 7.
+This should alleviate the right Joy-Con’s oversaturation of the available Bluetooth bandwidth, reducing stutters considerably.</p>
+<p>But what if you want to enjoy some Amiibo scanning on your Pro Controller?
+Previously, support was only available for Joy-Cons.
+But now, <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10344" data-gh-pr="10344">Pro Controllers are also supported!</a>
+ As long as the controller is connected over Bluetooth and the custom Pro Controller driver is enabled in <code>Emulation &gt; Configure.. &gt; Controls &gt; Advanced &gt; Enable direct Pro Controller driver [EXPERIMENTAL]</code>.
+That EXPERIMENTAL label is in its last days now.</p>
+<p>Not stopping there with the Amiibo changes, german77 also implemented <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10396" data-gh-pr="10396">full support for Amiibo writing</a>
+ when using a Joy-Con or Pro Controller!
+This enables the last missing piece for full Amiibo emulation, just as you would use them on the Switch itself.</p>
+<p>Feel free to scan to your heart&rsquo;s content! As long as you managed to grab one of the plastic things while they were in stock.</p>
+<p>It&rsquo;s worth mentioning that writing Amiibo data will require dumping the relevant keys.
+However, if all you want to do is load decrypted Amiibo dumps, german77 <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10415" data-gh-pr="10415">added support</a>
+ for using them without needing to dump the Amiibo keys.</p>
+<p>At this point, the only thing left to complete Amiibo support is to add a manager!</p>
+<h2 id="audio-and-miscellaneous-changes">Audio and miscellaneous changes</h2>
+<p>The war against properly shutting down yuzu rages on.
+This time Maide implements a <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10128" data-gh-pr="10128">fix in the DSP engine</a>
+ so it closes before a required system instance is terminated.
+This way a deadlock is avoided during shutdown, improving the situation slightly.
+Another battle won, but how many remain?</p>
+<p>This next one left us wondering&hellip;
+<a href="https://github.com/ronikirla">ronikirla</a> reported that <code>Pokémon Mystery Dungeon Rescue Team DX</code> would consistently crash due to a read access violation after two hours of gameplay.</p>
+<p>That’s not a simple bug to track down and fix, yet someone in ronikirla&rsquo;s Twitch chat identified the issue as a <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10178" data-gh-pr="10178">bad block check</a>
+ in the address space code and passed along a fix.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./pmd.png" title=" Love the art style! (Pokémon Mystery Dungeon Rescue Team DX)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/pmd_hu74176344ca696e4eceaffd94e3b889d8_4269472_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Love the art style! (Pokémon Mystery Dungeon Rescue Team DX)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Love the art style! (Pokémon Mystery Dungeon Rescue Team DX)</p>
+        
+    </div>
+    
+</div>
+
+<p>The change seems to also fix <code>Advance Wars 1+2: Re-Boot Camp</code>.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./aw.png" title=" Bond, yuzu Bond. (Advance Wars 1&#43;2: Re-Boot Camp)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/aw_hu1b26414fd4c4e53c79337156101a36d9_4380502_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Bond, yuzu Bond. (Advance Wars 1&#43;2: Re-Boot Camp)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Bond, yuzu Bond. (Advance Wars 1&#43;2: Re-Boot Camp)</p>
+        
+    </div>
+    
+</div>
+
+<p>Recent changes made to audio emulation improved performance and solved crashes, but also had an interesting regression.
+Some sound effects played at a slower speed.</p>
+<p>After doing some extensive reverse engineering, Maide reached the conclusion that due to how the DSP works, a <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10221" data-gh-pr="10221">5 ms timeout</a>
+ is needed in the processing wait.
+With the timeout implemented, <code>SUPER MARIO ODYSSEY</code> and <code>Kirby Star Allies</code>, among others can now play back their audio at full speed.</p>
+<p><a href="https://github.com/danilaml">danilaml</a> continues to deliver the good stuff.
+This time, simply <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10362" data-gh-pr="10362">updating cubeb</a>
+ (one of our audio backends, and most of the time the default one) fixed a bug that muted the emulator after waking the PC from sleep.
+Feel free to close your lids and continue later!</p>
+<p>Users noticed that after recent changes to fix the wire audio in <code>SUPER MARIO ODYSSEY</code>, audio in many games could desync and sound crackled or distorted.
+bylaws suggested allowing the audio buffer to <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10471" data-gh-pr="10471">wait indefinitely</a>
+ if a queue is too big, so Maide implemented this idea and et voilà, the problem is gone!
+(Pardon my French; Spanish is cooler).</p>
+<h2 id="ui-improvements">UI improvements</h2>
+<p>If your yuzu is configured with multiple user profiles, and the <code>Prompt for user on game boot</code> option in <code>Emulation &gt; Configure &gt; General</code> option is enabled, you will have to click the profile you want to boot and then click OK.
+Well, for the newcomer <a href="https://github.com/Qigo42">Qigo42</a>, this was unsatisfactory, so they allowed the <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10189" data-gh-pr="10189">profile selection pop-up</a>
+ to work with just a double click!
+Nothing beats quality-of-life changes. Thank you!</p>
+<p><a href="https://github.com/jbeich">jbeich</a> is back, fixing <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10205" data-gh-pr="10205">BSD support</a>
+ again!
+It’s always good to have more OS alternatives working.</p>
+<p>Continuing the trend in quality-of-life changes, newcomer <a href="https://github.com/grimkor">grimkor</a> has a nice gift for us.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./context.png" title=" And now, for your convenience…">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/context_hu46997d07b4f2c6fc1abd9425f442806f_3804_211x0_resize_q90_bgffffff_box_3.jpg" alt=" And now, for your convenience…"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> And now, for your convenience…</p>
+        
+    </div>
+    
+</div>
+
+<p>A <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10352" data-gh-pr="10352">context menu</a>
+ for the filter and antialiasing options! You no longer have to go through the entire list of options if you want to try a different one, simply right click and choose.
+Thank you!</p>
+<p>If you double clicked a game in the game list, you could end up double clicking it again or pressing enter before the game list got unloaded, which would cause yuzu to try to load the game twice, and usually just crash.
+german77 fixed this up by <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10482" data-gh-pr="10482">immediately disabling the game list</a>
+ after a game has been launched.</p>
+<h2 id="hardware-section">Hardware section</h2>
+<p>We no longer only support the PC! In future articles, we will include any news for Android GPU vendors.</p>
+<h3 id="nvidia">NVIDIA</h3>
+<p>We have some good news and a little disappointment for the Green Team.
+But first, we have some progress with the Maxwell and Pascal situation.</p>
+<p>In the past, we used to recommend users to stick to older driver releases for the GTX 750/900/1000 series, as anything newer than the 470 driver series was unstable.
+Thanks to the work done with the garbage collector for <code>Tears of the Kingdom</code>, we now know that the problem with these cards is how the driver handles out-of-memory situations.
+We were even able to observe it on Turing cards with 4GB, so it wasn&rsquo;t unique to older cards, we just didn&rsquo;t have a game that used VRAM as much as Zelda.</p>
+<p>We reported our findings to NVIDIA with a test case, so it’s in their hands now.</p>
+<p>As the VRAM fills up, an AMD card will get slower and slower until it stops working and crashes yuzu, while an NVIDIA GPU would corrupt the entire desktop, taking all the displays with it, sometimes even forcibly rebooting the system.</p>
+<p>Using the ASTC recompression option helps a lot to avoid this problem.
+But if it does happen, it can still cause a system lock or reboot, so we need a way to mitigate this while NVIDIA investigates the issue.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/nvidiabug_hu013442e1f034522763ac77510f38d058_1763805_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Now playable with only 2GB of VRAM! (The Legend of Zelda: Tears of the Kingdom)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/nvidiafix_hu9e782bcf9dfa45b179a0b37047b4e46f_896532_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Now playable with only 2GB of VRAM! (The Legend of Zelda: Tears of the Kingdom)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Now playable with only 2GB of VRAM! (The Legend of Zelda: Tears of the Kingdom)</p>
+
+
+<p>Fortunately, we stumbled upon a stopgap measure that solves the problem, and we updated our <a href="https://community.citra-emu.org/t/recommended-settings/319349">recommended settings</a> guide to include it.
+Just change <code>Vulkan/OpenGL presentation method</code> in the NVIDIA Control Panel to <code>Prefer layered on DXGI Swapchain</code>.
+The same setting used to get AutoHDR working helps contain the out-of-VRAM crashes.
+Using this in combination with BC1 ASTC recompression will make old 2GB cards run without crashes.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./nvcp.png" title=" This interface is so old…">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/nvcp_hue047e2b4af35569fb587c75128172f73_24253_530x0_resize_q90_bgffffff_box_3.jpg" alt=" This interface is so old…"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> This interface is so old…</p>
+        
+    </div>
+    
+</div>
+
+<p>Switching to the the good side of news, <a href="https://github.com/HolographicWings/">HolographicWings</a> made an amazing tutorial on how to use <code>DLDSR</code> in yuzu <a href="https://github.com/HolographicWings/TOTK-Mods-collection/blob/main/Guide/Guide.pdf">here</a>.
+DLDSR is a way to use the Tensor cores available in RTX cards to upscale the image. You can consider it a mix of DLSS and FSR 1.0, as it works for any game, but uses deep learning instead of traditional filters.
+Needless to say, it’s a great way to improve image quality if you have the hardware to test it.</p>
+<p>And in other good news, <a href="https://special-k.info/">Special K</a> now supports HDR in Vulkan and it works with yuzu!
+NVIDIA is still the only supported vendor, as this is only possible thanks to the magic <code>Prefer layered on DXGI Swapchain</code> option, but the quality and customization offered by Special K over AutoHDR is outstanding. That expensive OLED never looked so tempting.</p>
+<p>Note that we have confirmed in testing that <code>Prefer layered on DXGI Swapchain</code> needs to be manually enabled for Special K to work properly.
+This also includes other NVIDIA-exclusive goodies such as input lag reduction thanks to NVIDIA Reflex.
+Feel free to experiment with the app, it&rsquo;s amazing.</p>
+<p>Here are some comparison pics in .jxr format, they can be opened with the default Photo app included with Windows 11, and an SDR control capture in .png format:</p>
+<ul>
+<li>First the scene in <a href="https://github.com/yuzu-emu/yuzu-emu.github.io/blob/hugo/site/content/entry/yuzu-progress-report-may-2023/sdr.png">SDR</a>, the default experience.</li>
+<li>Windows 11’s <a href="https://github.com/yuzu-emu/yuzu-emu.github.io/blob/hugo/site/content/entry/yuzu-progress-report-may-2023/autohdr.jxr">AutoHDR</a> with the Cemu renaming trick.</li>
+<li>SpecialK’s HDR with <a href="https://github.com/yuzu-emu/yuzu-emu.github.io/blob/hugo/site/content/entry/yuzu-progress-report-may-2023/specialk.jxr">Perceptual Boost disabled</a>.</li>
+<li>SpecialK’s HDR with <a href="https://github.com/yuzu-emu/yuzu-emu.github.io/blob/hugo/site/content/entry/yuzu-progress-report-may-2023/specialkpb.jxr">Perceptual Boost enabled</a>.</li>
+</ul>
+<p>Keep in mind, Special K needs to be tuned to the capabilities of the display, and my humble 350 nit Gigabyte G27Q is a disservice to what this change can do on actually good HDR displays.
+Expect better results if you have an OLED, or a display with dimming zones and a higher peak brightness.</p>
+<p>Now, on to the disappointing news: the RTX 4060 Ti.</p>
+<p>We don’t understand what kind of decisions NVIDIA took when deciding the Ada Lovelace GeForce product stack, but it has been nothing but mistakes.
+The RTX 4060 Ti 8GB with only a 128-bit wide memory bus and GDDR6 VRAM is a serious downgrade for emulation when compared to its predecessor, the 256-bit wide equipped RTX 3060 Ti.
+You will be getting slower performance in Switch emulation if you get the newer product.
+We have no choice but to advise users to stick to Ampere products if possible, or aim higher in the product stack if you have to get a 4000 series card for some reason (DLSS3 or AV1 encoding), which is clearly what NVIDIA is aiming for.</p>
+<p>The argument in favour of Ada is the increased cache size, which RDNA2 confirmed in the past helps with performance substantially, but it also has a silent warning no review mentions: if you saturate the cache, you’re left with the performance of a 128-bit wide card, and it’s very easy to saturate the cache when using the resolution scaler — just 2X is enough to tank performance.</p>
+<p>Spending 400 USD on a card that has terrible performance outside of 1X scaling is, in our opinion, a terrible investment, and should be avoided entirely.
+We hope the 16GB version at least comes equipped with GDDR6X VRAM, which would increase the available bandwidth and provide an actual improvement in performance for this kind of workload.</p>
+<h3 id="amd">AMD</h3>
+<p>AMD has shown steady progress with each new driver release and, thanks to this, the experience on yuzu is in very good shape for Radeon owners, besides some documented hardware limitations causing graphical issues we&rsquo;ve mentioned <a href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2023/#amd-delivering-on-their-promises">in the past</a>.</p>
+<p>The main exception is a rendering issue affecting <code>Tears of the Kingdom</code>, which only happens with RDNA3 hardware, the RX 7000 series.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./rdna1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/rdna1_huba7fb081b6abfe4dc05cb4142b8c0b37_180216_800x0_resize_q90_bgffffff_box_3.jpg" alt="Both the RX 7900 and RX 7600 series are affected. (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./rdna2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/rdna2_hucbdf059d8a2682edf0f036817329fb07_238824_800x0_resize_q90_bgffffff_box_3.jpg" alt="Both the RX 7900 and RX 7600 series are affected. (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./rdna3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/rdna3_hu175162c6e17dd125a4cc3e3c9b305672_240888_800x0_resize_q90_bgffffff_box_3.jpg" alt="Both the RX 7900 and RX 7600 series are affected. (The Legend of Zelda: Tears of the Kingdom)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Both the RX 7900 and RX 7600 series are affected. (The Legend of Zelda: Tears of the Kingdom)</p>
+
+
+<p>As you can see, the textures get mangled in an interesting way.
+We couldn’t find any issue in the code, and older hardware is not affected, so we submitted a simple test case to AMD to demonstrate the extent of the problem.
+Affected users will have to wait to see if future driver updates solve this.</p>
+<h3 id="intel">Intel</h3>
+<p>After the… peculiar <a href="https://github.com/IGCIT/Intel-GPU-Community-Issue-Tracker-IGCIT/issues/159">discussion</a> we had with Intel regarding their drivers and how they handle bug reports, we are happy to announce the <a href="https://www.intel.com/content/www/us/en/download/729157/intel-arc-iris-xe-graphics-beta-windows.html">latest public beta driver</a> solves the SPIR-V issues we reported seven months ago!
+We strongly recommend Intel Windows users to update to this driver to improve stability with most games.</p>
+<p>Sadly, fixing this issue showed us two areas where yuzu is at fault.
+But luckily both issues have fixes in testing in the latest Early Access release (at the time of writing). If everything goes according to plan, they should hit Mainline in a few days. Stay tuned.</p>
+<p>The first problem is in yuzu&rsquo;s code.
+Some compute shaders have barriers in places that result in generating invalid SPIR-V code, and while NVIDIA and AMD have no problem with it, Intel is following the Vulkan specification much more closely and doesn’t like the result, leading to crashes.
+While we test the solution, for now we recommend Mainline Intel users to keep the <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10181" data-gh-pr="10181">freshly added</a>
+ <code>Enable Compute Pipelines (Intel Vulkan only)</code> disabled in <code>Emulation &gt; Configure… &gt; Graphics &gt; Advanced</code>.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./compute.png" title=" This is just temporary (famous last words…)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2023/compute_hu99131a1e93851dbfb303e19b6f4d772f_19272_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" This is just temporary (famous last words…)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> This is just temporary (famous last words…)</p>
+        
+    </div>
+    
+</div>
+
+<p>The other issue is a hardware limitation.
+Intel decided to remove support for Float64 operations on their Generation 12 graphics products (UHD 700/Xe/Arc) without providing a driver fallback.
+Well, it turns out that, for unknown reasons, <code>Tears of the Kingdom</code> requires over the top precision in its cutscenes — precision that current Intel hardware physically lacks, causing us to crash when building the shader.
+We’re testing a Float64 to Float32 shader conversion to solve the problem.
+For now, Mainline Intel users will want to use a save that&rsquo;s past the intro cutscene, or use OpenGL, as the OpenGL spec dictates that Float64 must be supported one way or another, even if it is via software emulation.</p>
+<p>Currently, the game is playable at a mostly-consistent 30 FPS with an i5 1240P running an Iris Xe iGPU (if you stick to handheld rendering), and exhibits better performance than AMD&rsquo;s Vega iGPUs.</p>
+<p>For those interested in the experience with desktop products, here is footage captured with an Arc A770 16GB:</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./totk.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Arc is viable! (The Legend of Zelda: Tears of the Kingdom)</p>
+        
+    </div>
+    
+</div>
+
+<h2 id="future-projects">Future projects</h2>
+<p>We don’t have much to announce for now regarding ongoing projects — we were very busy with <code>Tears of the Kingdom</code> and the Android release!</p>
+<p>GPUCode is working on a couple of cool things. One of them is implementing a way to have an equivalent to <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/10545" data-gh-pr="10545">DXGI presentation</a>
+ working on Intel and AMD hardware; that way, AutoHDR can be used with any GPU vendor, not just NVIDIA.</p>
+<p>That’s all folks! For real this time. If you&rsquo;ve reached this point, thank you for your patience and for reading to the end. We hope you&rsquo;ve enjoyed this mega-report! See you next month!
+<del>We all need some sleep…</del></p>
+<p> 
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+
+<script src="https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/js/juxtapose.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/css/juxtapose.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy.min.css" integrity="sha512-HbPh+j4V7pXprvQMt2dtmK/zCEsUeZWYXRln4sOwmoyHPQAPqy/k9lIquKUyKNpNbDGAY06UdiDHcEkBc72yCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.2/umd/popper.min.js" integrity="sha512-aDciVjp+txtxTJWsp8aRwttA0vR2sJMk/73ZT7ExuEHv7I5E6iyyobpFOlEFkq59mWW8ToYGuVZFnwhwIUisKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy-bundle.umd.min.js" integrity="sha512-gbruucq/Opx9jlHfqqZeAg2LNK3Y4BbpXHKDhRC88/tARL/izPOE4Zt2w6X9Sn1UeWaGbL38zW7nkL2jdn5JIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div id="gh-template" style="display: none;">
+    <span>
+        <svg class="gh-hover-icon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"></path></svg>
+    </span>
+    <span>
+        <a class="gh-hover-title" href=""><strong></strong></a>&nbsp;<span class="gh-hover-number"></span>
+    </span>
+    <p class="gh-hover-date"></p>
+</div>
+<style>
+    .gh-hover-icon.open { filter: invert(56%) sepia(47%) saturate(665%) hue-rotate(77deg) brightness(99%) contrast(83%); }
+    .gh-hover-icon.closed { filter: invert(50%) sepia(95%) saturate(3977%) hue-rotate(336deg) brightness(95%) contrast(90%); }
+    .gh-hover-icon.merged { filter: invert(47%) sepia(17%) saturate(4072%) hue-rotate(228deg) brightness(95%) contrast(89%); }
+    .gh-hover { border-bottom: dotted; }
+</style>
+<script>
+    tippy('.gh-hover', {
+        content: 'Loading...',
+        onShow(instance) {
+            showHovercard(instance, 'yuzu');
+        },
+        allowHTML: true,
+        followCursor: 'horizontal',
+        interactive: true,
+    });
+</script>
+</p>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/835148">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
