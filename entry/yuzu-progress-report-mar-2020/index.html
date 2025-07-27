@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="Progress Report March 2020 &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/" />
+    <meta property="og:description" content="How are you doing in this quarantine, yuzu fans? We hope you are all staying in your homes safe and sound.
+Today, we are bringing you a report on a few changes from the past month for both the Early Access and regular Mainline versions of yuzu." />
+<meta name="description" content="How are you doing in this quarantine, yuzu fans? We hope you are all staying in your homes safe and sound.
+Today, we are bringing you a report on a few changes from the past month for both the Early Access and regular Mainline versions of yuzu." />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/"> 
+
+    <title>Progress Report March 2020 - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/banner_hu9cb28f851ed259906d933f48fa8773b4_1970853_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">Progress Report March 2020</span>
+    </div>
+    
+    
+    <div>
+        <span class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/GoldenX86/summary">GoldenX86</a>
+            on April 20 2020
+        </span>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p>How are you doing in this quarantine, yuzu fans? We hope you are all staying in your homes safe and sound.
+Today, we are bringing you a report on a few changes from the past month for both the Early Access and regular Mainline versions of yuzu.</p>
+<p>We have on our plate a couple of bug fixes, some graphical improvements, the first “performance win” for Intel GPUs, a really serious case of serendipity, and some groundwork for amazing improvements that will be coming to you in a “near-ish” future.</p>
+<h2 id="bug-fixes-and-improvements">Bug fixes and improvements</h2>
+<p>After some intensive debugging by <a href="https://github.com/ReinUsesLisp">Rodrigo</a>, an OpenGL rendering bug in <em>ARMS</em> (that was with us since the game started to boot), was solved by simply updating our buildbot virtual machine from Visual Studio 2017 to the latest 2019 version.
+Thanks to <a href="https://github.com/DarkLordZach">DarkLordZach</a> for the change!</p>
+<p>PSA - Please update to or install the latest <a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads">Visual C++ 2019 x64 redistributable</a>, or else you won’t be able to open yuzu, as it will complain that the library <code>VCRUNTIME140.dll</code> cannot be found.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./03.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/03_huba731c05b2030af474625a750c3c6b98_1508838_800x0_resize_q90_bgffffff_box_3.jpg" alt="Better, right?"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./04.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/04_huba731c05b2030af474625a750c3c6b98_2290030_800x0_resize_q90_bgffffff_box_3.jpg" alt="Better, right?"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Better, right?</p>
+
+
+<p><a href="https://github.com/perillamint">perillamint</a> and <a href="https://github.com/bunnei">bunnei</a> stubbed (this means to send a fake <code>everything’s OK</code> signal so the game can continue) some VR related services.
+These changes are needed for version 1.6.0 of <em>The Legend of Zelda: Breath of the Wild</em>, 1.3.0 of <em>Super Mario Odyssey</em>, and versions 3.1.0 and above of <em>Super Smash Bros. Ultimate</em>.</p>
+<p>Commercial games aren&rsquo;t everything.
+<a href="https://github.com/ReinUsesLisp">Rodrigo</a> decided to give homebrew lovers and old-school gamers something to play with by implementing some attributes from the old OpenGL 1.X and 2.X days.
+It’s now possible to run <code>Xash3D</code>, so you can frag in Counter-Strike, or follow G-Man’s orders in Half-Life!
+Currently, this needs to be manually built with newer dependencies, but that should be solved for good in the near future.</p>
+<p><a href="https://github.com/Margen67">Margen67</a> and <a href="https://github.com/Morph1984">Morph</a> wanted to improve the graphics for games and so they added Anisotropic Filtering (AF) to yuzu.
+With this feature in place, distant textures now look much sharper, improving game quality even over what the original Switch can produce!
+Games like <em>Pokémon Sword</em>, <em>Pokémon Shield</em>, and <em>Fire Emblem: Three Houses</em> benefit a lot from this; however, some other games don’t respond well to this new feature, one example being <em>Astral Chain</em>.
+Feel free to experiment with it!</p>
+<p>An example in <em>Pokémon Sword</em>:</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./15.png" title=" AF Off">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/15_hub6fd0ed88b11c739593d60d9d70227d6_2376597_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" AF Off"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> AF Off</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./14.png" title=" AF 16x">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/14_hu47323c1785615f481e268616f3cef3a8_2619321_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" AF 16x"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> AF 16x</p>
+        
+    </div>
+    
+</div>
+
+<p>And another example in <em>Fire Emblem: Three Houses</em>:</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./01.png" title=" AF Off">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/01_hu64956838eccc65f162b2fcdc624c92ab_4230166_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" AF Off"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> AF Off</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./02.png" title=" AF 8x">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/02_huab724fcd5e66b238ff86d06cc451908d_4567500_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" AF 8x"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> AF 8x</p>
+        
+    </div>
+    
+</div>
+
+<p>Shader cache invalidations are something our users don’t like at all.
+We don&rsquo;t either, but it’s all part of the process of improving yuzu to achieve better performance and accuracy.
+For example, one of our recent invalidations was needed to fix the reflections in <em>Luigi’s Mansion 3</em>, making certain parts of the game playable.</p>
+<p>Because the art of dancing is important, <a href="https://github.com/namkazt">namkazt</a> and <a href="https://github.com/ReinUsesLisp">Rodrigo</a> have been fighting with the code, allowing us to enjoy 3D graphics in <em>Hatsune Miku: Project DIVA MEGA39&rsquo;s</em>, and as collateral, fixed some rendering issues in <em>Bayonetta 1</em> and <em>Super Smash Bros. Ultimate</em>.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./07.png" title=" Miku Miku Dance!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/07_hub3fcad4e816063b14bc5f4cec2e99abb_1031672_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Miku Miku Dance!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Miku Miku Dance!</p>
+        
+    </div>
+    
+</div>
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./08.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/08_huf23a89b7915fd5e96bfc51719849d6bb_452459_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Smash Bros. Ultimate&#39;s menu (Before &amp; After)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./09.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/09_hu59139d71bd9dea5c1ee169483351f4a3_670564_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Smash Bros. Ultimate&#39;s menu (Before &amp; After)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Super Smash Bros. Ultimate&#39;s menu (Before &amp; After)</p>
+
+
+<p><a href="https://github.com/Kewlan">Kewlan</a>, a regular in our Discord Server, submitted a small change to our input mapping GUI, changing the position of the shoulder buttons so they no longer make anyone angry.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./11.png" title=" Incorrect.">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/11_huba87b04d42b97d6b1ad0d7366d6c2fd6_3249_192x0_resize_q90_bgffffff_box_3.jpg" alt=" Incorrect."></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Incorrect.</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./12.png" title=" Much better.">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2020/12_hu132b5e3351c683c044b063a9e9bd8921_2793_193x0_resize_q90_bgffffff_box_3.jpg" alt=" Much better."></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Much better.</p>
+        
+    </div>
+    
+</div>
+
+<p>We also have a cool improvement by <a href="https://github.com/FearlessTobi">Tobi</a>.
+The Switch is a surround sound compatible console and our implementation of downmixing removed any channel that wasn’t left or right.
+By keeping the extra channels and mixing them in the left and right stereo outputs, the sound in tons of games, including <em>Luigi’s Mansion 3</em>, <em>Sonic Forces</em>, and <em>Bayonetta</em>, has been improved.</p>
+<h2 id="a-peculiar-case-of-even-a-broken-clock-is-right-twice-a-day">A peculiar case of &ldquo;Even a broken clock is right twice a day!&rdquo;</h2>
+<p>The Nintendo Switch supports <code>ASTC</code>, a type of texture format generally used in mobile hardware, such as phones and tablets, in order to reduce bandwidth usage (a limited resource in those devices).
+Since it&rsquo;s a heavily compressed format, decoding it via the CPU, like it is normally done on PC, is a time-consuming task.</p>
+<p>To give an example, Astral Chain is a game that uses <code>ASTC</code> very extensively and in bizarre ways, as previous fixes and optimizations have shown.
+On NVIDIA and AMD graphics hardware, the first scene of a new game typically takes <code>17</code> seconds to load. The GPU has to wait for the CPU to decode all the <code>ASTC</code> textures, and thus slowing down the whole process.</p>
+<p>Thanks to <a href="https://github.com/ReinUsesLisp">Rodrigo&rsquo;s</a> research, it was discovered that on any recent Intel GPU this same operation is immediate and occurs with no delay, due to it being the only vendor providing a native <code>ASTC</code> decoder in their hardware.
+That’s right, the best way to experience Astral Chain in yuzu is with a small, and typically inferior, iGPU (like the ones that come in any desktop or notebook CPU from Intel).</p>
+<p>On the topic of formats, implementing the <code>RG32</code> and <code>RGB32</code> vertex formats fixed a room that refused to load in The Legend of Zelda: Link’s Awakening in Vulkan.
+Great work, <a href="https://github.com/ReinUsesLisp">Rodrigo</a>!</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./13.PNG" title=" It works!"><img src="./13.PNG" alt=" It works!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> It works!</p>
+        
+    </div>
+    
+</div>
+
+<h2 id="paving-the-road-for-even-bigger-changes">Paving the road for even bigger changes</h2>
+<p><a href="https://github.com/ReinUsesLisp">Rodrigo</a>&rsquo;s initial work on <code>Transform Feedback</code> has concluded and is now partially working.
+This has already helped games like POKKÉN Tournament DX, Donkey Kong Country: Tropical Freeze and Xenoblade Chronicles.</p>
+<p>An optimization by <a href="https://github.com/FernandoS27">Blinkhawk</a> reduced the use of RAM by 1GB.
+When talking about RAM usage, less is best!</p>
+<p>Now, for an important but also astonishing fix; one that nobody expected, not even our project leader <a href="https://github.com/bunnei">bunnei</a>.
+While he was working on fixing what seemed to be a simple bug on Final Fantasy VIII, he also accidentally fixed Super Smash Bros. Ultimate fights!
+This case of serendipity, is without a doubt, a surprise, but a welcome one.</p>
+<p>Now all users can brawl to their hearts&rsquo; content thanks to a measly 5-line change in yuzu’s code!
+However, keep in mind that any Super Smash Bros. Ultimate update newer than 3.1.0 will work, but will also make the characters T-pose, resulting in hilarious fights and victory screens.
+We’re working on resolving this, but for now, stick to update 3.1.0 or older!</p>
+<p><a href="https://github.com/bunnei">bunnei</a> fixed audio crackling in various games like Crash Team Racing and Super Mario Odyssey.
+We are slowly but surely improving our audio quality.
+He also implemented initial support for <code>32-bit ARM</code> emulation.
+Nothing tangible can be tested yet, but thanks to this, it will be possible in the future to run <code>32-bit</code> games like Mario Kart 8 Deluxe.</p>
+<p>And last but not least, <a href="https://github.com/FernandoS27">Blinkhawk</a> has been making some serious changes to yuzu&rsquo;s GPU emulation, while also laying the foundation for the recent rework of yuzu&rsquo;s Virtual Memory Manager (codename: Project Epimetheus).</p>
+<p>These, in turn, will help further advance the development of Project Prometheus, one of the super-secret Projects our devs are currently working on to bring some considerable changes to yuzu’s performance and hardware requirements.
+Stay tuned to hear more about them in the future!</p>
+<p>That’s all for now folks, see you in the April report.</p>
+<p> 
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+</p>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/217502">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
