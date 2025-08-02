@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="New Feature Release - Fastmem Support &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-fastmem/" />
+    <meta property="og:description" content="Hey there, yuz-ers!
+While all of you wait eagerly for the release of Project Hades, our shader decompiler rewrite, we thought we&rsquo;d bring you a nice little surprise to keep you occupied.
+We present to you, the newest addition to yuzu&rsquo;s ever-improving features list - Fastmem (Fast Memory Access)!" />
+<meta name="description" content="Hey there, yuz-ers!
+While all of you wait eagerly for the release of Project Hades, our shader decompiler rewrite, we thought we&rsquo;d bring you a nice little surprise to keep you occupied.
+We present to you, the newest addition to yuzu&rsquo;s ever-improving features list - Fastmem (Fast Memory Access)!" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-fastmem/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-fastmem/"> 
+
+    <title>New Feature Release - Fastmem Support - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-fastmem/banner_hu43da85a417cd002724cf23f1e7487ca8_902702_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">New Feature Release - Fastmem Support</span>
+    </div>
+    
+    
+    <div>
+        <span class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/CaptV0rt3x/summary">CaptV0rt3x</a>
+            on June 08 2021
+        </span>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p>Hey there, yuz-ers!
+While all of you wait eagerly for the release of Project Hades, our shader decompiler rewrite, we thought we&rsquo;d bring you a nice little surprise to keep you occupied.
+We present to you, the newest addition to yuzu&rsquo;s ever-improving features list - Fastmem (Fast Memory Access)!</p>
+<p> </p>
+<p>This is now available in the latest yuzu Early Access build (1759 or newer) and we intend to make this available in Mainline builds very soon.
+As always, we ask that you test various games with these builds and if you encounter any issues, bugs, or crashes, please reach out to us via the <a href="https://discord.gg/u77vRWY">Discord</a> Patreon channels.</p>
+<p><strong>Note: This feature is enabled by default.</strong></p>
+<h2 id="what-is-fastmem">What is Fastmem?</h2>
+<p>Fastmem or Fast Memory Access, is a well-known feature among emulator developers and emulation enthusiasts.
+Emulators like <a href="https://dolphin-emu.org/">Dolphin</a> and <a href="https://citra-emu.org/">Citra Android</a> have implemented this in the past.</p>
+<p>All modern Operating Systems have this concept of &ldquo;virtual memory,&rdquo; where addressable memory (from the running process) is a space of memory addresses that are only &ldquo;known&rdquo; to that process, e.g. Discord on your PC, or Super Mario Odyssey on your Switch — and the addresses are translated by the Switch&rsquo;s MMU (Memory Management Unit) to the physical location in the Switch’s physical RAM as the game runs.</p>
+<p> </p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./MMU.png" title="Illustration of an MMU (By Mdjango, Andrew S. Tanenbaum)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-fastmem/MMU_hu8193ff6017aea71cb7f5920cb65b79d7_41187_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Illustration of an MMU (By Mdjango, Andrew S. Tanenbaum)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Illustration of an MMU (By Mdjango, Andrew S. Tanenbaum)</p>
+        
+    </div>
+    
+</div>
+
+<p>In yuzu, we emulate the Switch&rsquo;s virtual address space for the running process.
+But, that means for each time the game tries to read/write memory, which happens millions of times per frame, we need to basically &ldquo;decode&rdquo; where that Switch virtual address maps to our &ldquo;emulated&rdquo; Switch memory (RAM allocated for yuzu).
+This adds a lot of overhead when you consider how much the game reads/writes to memory.</p>
+<p>The idea behind Fastmem here is to map the emulated Switch game&rsquo;s addressable memory on the host (Windows / Linux), at offset addresses.
+The offset is a constant.</p>
+<h2 id="the-technical---how">The Technical - HOW?</h2>
+<p>On the Switch, we have 4GB of memory.
+The hardware supports a virtual memory size of 48bits (just like x64); however, the Switch kernel limits this to only 39bit to save some memory for storing page tables.
+This results in a 512GB virtual address space (2^39) for use. (A page table is the data structure used to store the mapping between virtual addresses and physical addresses.)</p>
+<p>To emulate this, we allocated a HUGE page table, which had an offset for each memory page addressable in the virtual memory region of the Switch. This table alone was 1GB in size!
+And whenever a game wanted to access the memory, we looked up this table, which resulted in roughly ~10 x64 CPU instructions and twice the memory latency.
+That latency being: first read the table&rsquo;s value, then read the correct memory.</p>
+<p>Fastmem, however, uses the host MMU to rebuild the same 39bit virtual memory arena.
+Here, we&rsquo;re lucky that Nintendo limits the memory to 39bit.
+We cannot allocate 48bit because that&rsquo;s the entire virtual address space on the host.</p>
+<p>This cuts the effort to access the memory down to 3+1 x64 CPU instructions with a single memory latency.
+3 instructions to check if the pointer is smaller than 39 bit, and one memory load instruction.
+We need this size check to ensure out-of-bounds memory access won&rsquo;t return any physical address.</p>
+<h2 id="the-challenges">The Challenges</h2>
+<p>Implementing Fastmem required two major things in <a href="https://github.com/MerryMage/dynarmic/">Dynarmic</a>, our JIT recompiler.</p>
+<p><strong>First:</strong> A64 Fastmem support on Dynarmic.</p>
+<p>Dynarmic has had support for A32 Fastmem (see Citra Android) for a while now.
+A64 Fastmem support was <a href="https://github.com/MerryMage/dynarmic/pull/528">originally worked on a year ago by MerryMage and vdwjeremy</a> but it never got merged to the master branch.</p>
+<p><a href="https://github.com/degasus/">degasus</a> worked with <a href="https://github.com/MerryMage/">MerryMage</a> to clean up and get <a href="https://github.com/MerryMage/dynarmic/pull/613">these changes merged</a> to the master branch so that yuzu could benefit from this.</p>
+<p><strong>Second:</strong> To generate the 512GB virtual address space with the same mappings as on the Switch.</p>
+<p>degasus proved last year that this was easy to implement on Linux as the POSIX mmap call provided very similar features to the Horizon OS.
+But it was a huge challenge for Windows, as the Windows Virtual Memory API is larger with a few missing features.
+Moreover, while Windows page tables were 4K aligned, Windows memory management was 64K aligned for <a href="https://devblogs.microsoft.com/oldnewthing/20031008-00/?p=42223">outdated reasons</a>.</p>
+<h2 id="the-solutions">The Solutions</h2>
+<p>Turns out, Microsoft had realized this too and frequently patched their Virtual Memory API.
+With the release of Windows 10 v1803, their new API supported new &ldquo;placeholder&rdquo; memory which didn&rsquo;t suffer from the previous limitations.</p>
+<p>Thanks to <a href="https://github.com/BreadFish64/">Breadfish64</a>, who used this new API in their Gameboy emulator and showed us that it was now indeed possible to support Fastmem on Windows.
+Unfortunately, this makes the feature usable only on Windows versions 1803 and higher.</p>
+<p>Since we already met the base requirements for our new Fastmem implementation long ago, our devs were able to quickly address the missing pieces.
+<a href="https://github.com/bunnei/">bunnei</a> implemented the much-needed kernel rework changes in yuzu, degasus cleaned up their original proof-of-concept code for Linux, and <a href="https://github.com/ReinUsesLisp/">Rodrigo</a> implemented the Windows Fastmem support.
+<a href="https://github.com/FernandoS27">Blinkhawk</a> provided valuable advice and coordinated these efforts to get the feature release-ready.</p>
+<h2 id="the-results">The Results</h2>
+<p>As an added bonus, game booting/loading times have been improved thanks to these changes.
+Thanks to developer Rodrigo, Normal GPU accuracy no longer triggers a myriad of exceptions on the Smash character selection screen, improving its performance from 10-20 FPS to a full 60.</p>
+<p> 
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./SSBU.png" title="Super Smash Bros. Ultimate">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-fastmem/SSBU_hu59186921872e87ac8045b58428fbe211_2417530_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Super Smash Bros. Ultimate"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Super Smash Bros. Ultimate</p>
+        
+    </div>
+    
+</div>
+</p>
+<p>For all game benchmarks, we utilized a PC built to our own recommended hardware spec.
+In this testing we observed performance improvements ranging from 15-60% in some of the most demanding areas of gameplay.
+Please note the marked titles that were tested with the processor limited to 2.4Ghz, to synthetically make it slower than usual and highlight the improvements.</p>
+<p> 
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./BENCH_01.png" title="The * indicates titles tested at 2.4Ghz">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-fastmem/BENCH_01_hu49f9560544469445580c5ab129245522_90593_1024x0_resize_q90_bgffffff_box_3.jpg" alt="The * indicates titles tested at 2.4Ghz"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">The * indicates titles tested at 2.4Ghz</p>
+        
+    </div>
+    
+</div>
+</p>
+<p> 
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./BENCH_02.png" title="The * indicates titles tested at 2.4Ghz">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-fastmem/BENCH_02_huf21840f7b36a43b8c316bf0189f61422_101568_1024x0_resize_q90_bgffffff_box_3.jpg" alt="The * indicates titles tested at 2.4Ghz"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">The * indicates titles tested at 2.4Ghz</p>
+        
+    </div>
+    
+</div>
+</p>
+<h5 id="thats-all-we-have-for-now-see-you-soon-with-exciting-news-about-project-hades-and-more-happy-emulating">That&rsquo;s all we have for now, see you soon with exciting news about Project Hades and more! Happy emulating!</h5>
+<p> 
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+</p>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/415882">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>

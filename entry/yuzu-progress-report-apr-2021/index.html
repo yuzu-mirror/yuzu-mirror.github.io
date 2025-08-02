@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="Progress Report April 2021 &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/" />
+    <meta property="og:description" content="Howdy yuz-ers! Another month gone, another progress report written. From new firmware versions to Vulkan fixes, we have quite a bit to talk about, so let’s get right into it!" />
+<meta name="description" content="Howdy yuz-ers! Another month gone, another progress report written. From new firmware versions to Vulkan fixes, we have quite a bit to talk about, so let’s get right into it!" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/"> 
+
+    <title>Progress Report April 2021 - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/banner_hu1204dd516603e30b8f02fa16a0006096_848076_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">Progress Report April 2021</span>
+    </div>
+    
+    
+    <div>
+        <p class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/GoldenX86/summary">GoldenX86</a>
+            
+            
+            
+            and <a href="https://community.citra-emu.org/u/Honghoa/summary">Honghoa</a>
+            
+            on May 09 2021
+        </p>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p>Howdy yuz-ers! Another month gone, another progress report written. From new firmware versions to Vulkan fixes, we have quite a bit to talk about, so let’s get right into it!</p>
+<h2 id="project-eleuthia">Project Eleuthia</h2>
+<p>As described in <a href="https://yuzu-mirror.github.io/entry/yuzu-applet-overlays/">its own dedicated article</a>, <a href="https://github.com/Morph1984">Morph</a> and <a href="https://github.com/Its-Rei">Rei</a> have been very busy <a href="https://github.com/yuzu-emu/yuzu/pull/6133"><em>rei</em>mplementing the applets</a> yuzu uses.</p>
+<p>This first step implements the <code>On-Screen Keyboard</code> (or OSK) that games use, and the <code>Error Display</code> yuzu uses to alert the user to bugs, missing data, or crashes.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./osk1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/osk1_hu570db074cf62d4f9859fc182e850552e_597810_800x0_resize_q90_bgffffff_box_3.jpg" alt="Examples of the different kinds of keyboards games request"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./osk2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/osk2_hu790d73f10f126ef0c4712e58cbf5a128_86692_800x0_resize_q90_bgffffff_box_3.jpg" alt="Examples of the different kinds of keyboards games request"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./osk3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/osk3_hu710b6c0150e0c275201c73ef535b2701_249683_800x0_resize_q90_bgffffff_box_3.jpg" alt="Examples of the different kinds of keyboards games request"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Examples of the different kinds of keyboards games request</p>
+
+
+<p>Another major advantage is adding gamepad support! No need to get off the couch to grab a keyboard anymore.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./error1.png" title=" An error example">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/error1_hu60695a5bfb724efeb7fda18e719f6e79_54846_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" An error example"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> An error example</p>
+        
+    </div>
+    
+</div>
+
+<p>Part of the effort included working around Qt’s quirks, so as a by-product users now have the option to select either the old <code>Exclusive Fullscreen</code> (recommended and used as default on Linux), or the <a href="https://github.com/yuzu-emu/yuzu/pull/6135">new</a> <code>Borderless Fullscreen</code> (recommended for most cases and to have OSK properly working).</p>
+<p>Borderless not only gives us better input support for gamepads, but also reduces screen tearing and improves clock management related performance issues on some AMD GPUs.</p>
+<h2 id="input-improvements">Input improvements</h2>
+<p>A feature lacking from our <code>Stereo Vision</code> implementation was support for the Switch’s motion detection, and by this we don&rsquo;t mean Joy-Cons, but rather the actual console.
+This is commonly used for moving the camera with your head when the Switch is in the Labo goggles.</p>
+<p><a href="https://github.com/german77">german77</a> <a href="https://github.com/yuzu-emu/yuzu/pull/6226">implemented SevenSixAxis and ConsoleSixAxisSensor</a>, continuing from <a href="https://github.com/yuzu-emu/yuzu/pull/6224">previous work</a> done by <a href="https://github.com/Morph1984">Morph,</a> allowing your configured motion device to freely let you look around in compatible games.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./vr.png" title=" Please don&#39;t use it like this...">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/vr_hu83682f27ceb9ddfde613d1cd19ad58d4_22601_372x0_resize_q90_bgffffff_box_3.jpg" alt=" Please don&#39;t use it like this..."></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Please don&#39;t use it like this...</p>
+        
+    </div>
+    
+</div>
+
+<p>Both the left and right Joy-Cons map their buttons to different memory locations, as <a href="https://github.com/german77">german77</a> found out.
+He discovered that we had the wrong <a href="https://github.com/yuzu-emu/yuzu/pull/6131">location for the SL and SR buttons.</a>
+One fix later, and everything is as it should be.</p>
+<p>A long standing bug when trying to play <code>Mario Kart 8 Deluxe</code> in local split screen multiplayer was a freeze that occurred when confirming all connected players.
+<a href="https://github.com/yuzu-emu/yuzu/pull/6205">Morph</a> fixed this crash by <a href="https://github.com/yuzu-emu/yuzu/pull/6205">sending the focus state change message</a> on applet state changes.</p>
+<p>Thank you EmulationFanatic and riperiperi for the help!</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./mk8input.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Better to crash other players than crash the game!</p>
+        
+    </div>
+    
+</div>
+
+<p>Taking inspiration from <a href="https://rpcs3.net/">RPCS3</a>, <a href="https://github.com/yuzu-emu/yuzu/pull/6205">Morph</a> <a href="https://github.com/yuzu-emu/yuzu/pull/6241">sets the default keyboard input</a> to something more suitable for PC users.
+You just can’t beat WASD movement, especially when combined with mouse aiming.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./keys.png" title=" Rip and tear, press and click until it is done">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/keys_hu2773565411ba624b4ad48db890d304fc_73287_872x0_resize_q90_bgffffff_box_3.jpg" alt=" Rip and tear, press and click until it is done"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Rip and tear, press and click until it is done</p>
+        
+    </div>
+    
+</div>
+
+<p>Gamecube controllers connected to an adapter sometimes reported the joystick off-center due to invalid data being sent during the connection.
+<a href="https://github.com/german77">german77</a> solved this <a href="https://github.com/yuzu-emu/yuzu/pull/6243">by taking 4 measurements during initialization</a>, ensuring that the controller finds its center, like any warrior should.</p>
+<h2 id="user-interface-changes">User interface changes</h2>
+<p><a href="https://github.com/Kewlan">Kewlan</a> is back with more UI improvements!</p>
+<p>To start off, they&rsquo;ve <a href="https://github.com/yuzu-emu/yuzu/pull/6198">added a favourite option in the context menu,</a> so you can force some of your games to the top of the list.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./fav.png" title=" Just right click them!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/fav_huff3a3f0a0eaa0ba7c1cdd8235e9d227b_56553_442x0_resize_q90_bgffffff_box_3.jpg" alt=" Just right click them!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Just right click them!</p>
+        
+    </div>
+    
+</div>
+
+<p>Additionally, they <a href="https://github.com/yuzu-emu/yuzu/pull/6261">updated the results from a filtered search</a> after you remove a directory. This fixes incorrect behaviour if the user decides to modify the game folders while doing a filtered search.</p>
+<p>And lastly, they fixed a <a href="https://github.com/yuzu-emu/yuzu/pull/6263">random bug that caused folders to expand or collapse when moving them in the game list.</a></p>
+<p>Several users reported that <code>Super Smash Bros. Ultimate</code> may get stuck when loading our web applet, making the whole game softlock.
+Turns out the URL used by the applet was getting deleted before being used.
+<a href="https://github.com/Morph1984">Morph</a> got around this bug <a href="https://github.com/yuzu-emu/yuzu/pull/6257">by extending the lifetime of the URL.</a></p>
+<h2 id="its-12-oclock-and-its-time-for-a-new-firmware">It’s 12 o’clock and it’s time for a new firmware!</h2>
+<p>A big challenge made its entrance last month: the Nintendo Switch&rsquo;s firmware version was finally updated to Version 12.X, which has kept our developers quite busy figuring out what has changed and what needs to be implemented.</p>
+<p>Thanks to joint efforts of <a href="https://github.com/german77">german77</a>, <a href="https://github.com/ameerj">epicboy</a>, <a href="https://github.com/lioncash">lioncash</a>, and <a href="https://github.com/Morph1984">Morph</a>, yuzu was able to update many system call ID tables (<a href="https://github.com/yuzu-emu/yuzu/pull/6153">PR #6153</a>, <a href="https://github.com/yuzu-emu/yuzu/pull/6154">PR #6154</a>), services and function tables (<a href="https://github.com/yuzu-emu/yuzu/pull/6157">PR #6157</a>, <a href="https://github.com/yuzu-emu/yuzu/pull/6158">PR #6158</a>, <a href="https://github.com/yuzu-emu/yuzu/pull/6159">PR #6159</a>, <a href="https://github.com/yuzu-emu/yuzu/pull/6160">PR #6160</a>, <a href="https://github.com/yuzu-emu/yuzu/pull/6161">PR #6161</a>, <a href="https://github.com/yuzu-emu/yuzu/pull/6164">PR #6164</a>, <a href="https://github.com/yuzu-emu/yuzu/pull/6171">PR #6171</a>), as well as some system values (<a href="https://github.com/yuzu-emu/yuzu/pull/6155">PR #6155</a>).</p>
+<p>Firmware updates generally aim to improve the stability of the hardware and patch exploits, but they might also add support for new features under the hood, which usually requires changes to services, their structures, and other monsters lurking within the OS.
+Since future games could make use of any of these things, it’s imperative to integrate and support these changes as soon as possible.</p>
+<h2 id="general-bugfixes">General bugfixes</h2>
+<p>Recently, <a href="https://github.com/lat9nq">toastUnlimited</a> caught some bugs using <a href="https://github.com/google/sanitizers/wiki">Sanitizers</a>: a number of tools present in some compilers, which are used to analyse the source code and alert the programmer about memory-related problems (leaks, overflows), undefined behaviour (code that works in one environment but might fail in another), data races (a synchronization problem that appears when dealing with multiple threads accessing the same data), etc.
+This led to a series of PRs implementing fixes in yuzu&rsquo;s code, such as: <a href="https://github.com/yuzu-emu/yuzu/pull/6141">Prevent stack-use-after-scope</a>, which ensures that data that used to be accessed indirectly through pointers cannot be accessed again once the reference is lost (possibly corrupting the data that was being pointed to), <a href="https://github.com/yuzu-emu/yuzu/pull/6142">Avoid reference binding to misaligned address</a>, as well as a number of undefined behaviour bugs that occurred when copying memory from one address to another (<a href="https://github.com/yuzu-emu/yuzu/pull/6143">PR #6143</a>, <a href="https://github.com/yuzu-emu/yuzu/pull/6145">PR #6145</a>, and <a href="https://github.com/yuzu-emu/yuzu/pull/6146">PR #6146</a>).</p>
+<p>toastUnlimited also reported an overflow that occurred when he tried playing <code>Pokémon Sword</code> and <code>Pokémon Let's Go Pikachu</code>’s demo, which was related to some of the operations realized by the clock.
+This helped <a href="https://github.com/Morph1984">Morph</a> notice a problem in the implementation of the <code>CalculateStandardUserSystemClockDifferenceByUser</code> function, and <a href="https://github.com/yuzu-emu/yuzu/pull/6167">promptly submit a fix</a>.</p>
+<p>Different processes communicate through mechanisms known as <code>IPC</code> (Inter-Process Communication), and they can send data by using <code>data buffers</code>, typically used for large data transfers, or <code>raw arguments</code>, which are usually composed of smaller data sets.
+In the case of the clock service of this function, this information has to be sent through the aforementioned <code>data buffers</code>, but it was being extracted as <code>raw arguments</code> instead.
+This caused the function to operate using uninitialized data (in other words, junk), since it retrieved the wrong values.
+What should have been generally reported as a couple of milliseconds was instead being reported as a time span of trillions of years — approximately, 320 000 times the calculated age of the universe!
+Thankfully, the fix only required a small change, so now the values are retired from the proper buffers, and yuzu won&rsquo;t try to dilate time any more (relatively speaking, if you catch my drift).</p>
+<p><a href="https://github.com/ameerj">epicboy</a> made a follow-up of previous work that aimed to improve the accuracy of how the values for <code>resource limits</code> are <a href="https://github.com/yuzu-emu/yuzu/pull/6185">used in the kernel</a>.</p>
+<p>By nature, all resources in any piece of hardware are limited.
+The amount of memory, the number of I/O devices, and even the number of processors, just to name a few examples, have a fixed value that cannot be changed at whim, without changing the hardware first.
+One of the many functions of the kernel in an operating system is to manage and distribute these resources to the processes that request them  — and for this, it must know the availability and limits of these resources.
+Whenever a process is created or deleted, the hardware calculates the amount of memory that is free to use and being used by checking and updating the variables that keep track of these resources.</p>
+<p>Previously, yuzu created processes in such a way that each instance of a process had their own value for <code>resource limits</code>.
+This was a work-around to ensure that, whenever a process queried the kernel for the amount of memory available, a correct value was always returned.
+This, however, is not how the hardware works.
+Memory is a resource that is shared system-wide among all the processes, and the task of the kernel to coordinate how these resources are shared among the processes in the system.</p>
+<p>With this PR, processes don&rsquo;t &ldquo;own&rdquo; their own instance of <code>resource limits</code>, and they now use the global kernel instance instead.</p>
+<p><a href="https://github.com/MerryMage/dynarmic">Dynarmic</a> — yuzu&rsquo;s JIT, used to translate the Switch’s ARM CPU instructions — was recently updated again in order to <a href="https://github.com/yuzu-emu/yuzu/pull/6132">increase the size of the code cache</a> (where yuzu stores the translated code), and add support for some unimplemented instructions from the <code>thumb32</code> set, expanding the amount of code that can be translated.</p>
+<p><a href="https://github.com/degasus">degasus</a> found that the code cache size was too small when testing <code>The Legend of Zelda: Breath of the Wild</code>, and alerted <a href="https://github.com/MerryMage">merry</a>, the chief maintainer, about the problem.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./smash.png" title=" No items, The Best only, Final Destination">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/smash_huab2d8b3d86d2c120eabadd193b8a6a99_3577392_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" No items, The Best only, Final Destination"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> No items, The Best only, Final Destination</p>
+        
+    </div>
+    
+</div>
+
+<p>Surprisingly, this simple change fixed a very obnoxious problem in a completely different game: the strange slowdowns in <code>Super Smash Bros. Ultimate</code>.
+It turned out that these slowdowns were unrelated to the power of the computer running yuzu, nor were they neither related to building the shader cache.
+Dynarmic was just translating code again, simply because the cache where the translated code was stored was too small.
+But now, with the new size value in place, Dynarmic has no need for any recompilation, and the emulation can proceed smoothly.</p>
+<p>Continuing with previous <code>Super Smash Bros. Ultimate</code> Spirit Board’s fixes, <a href="https://github.com/Morph1984">Morph</a> <a href="https://github.com/yuzu-emu/yuzu/pull/6170">synchronized the network clock to the local clock</a>, solving the game timers getting reset.</p>
+<p><a href="https://github.com/Morph1984">Morph</a> also fixed <code>GetClockSnapshotFromSystemClockContext</code>.
+<a href="https://github.com/yuzu-emu/yuzu/pull/6214">This PR</a> allowing <code>Super Kirby Clash</code> and <code>Yo-Kai Watch 4</code> to boot.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./kirby.png" title=" Poyo!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/kirby_hu6c8d95f6728eb2366b73b7add2812006_2931019_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Poyo!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Poyo!</p>
+        
+    </div>
+    
+</div>
+
+<p><a href="https://github.com/Morph1984">Morph</a> <a href="https://github.com/yuzu-emu/yuzu/pull/6234">stubbing <code>SetRequestExitToLibraryAppletAtExecuteNextProgramEnabled</code></a> and <a href="https://github.com/german77">german77</a> <a href="https://github.com/yuzu-emu/yuzu/pull/6235">adding the <code>ectx:aw</code> service</a> made <code>Pixel Game Maker Series Werewolf Princess Kaguya</code> boot!</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./kaguya.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/kaguya_hu8efd136892d8794cbd2c43d30d0e4c68_362752_800x0_resize_q90_bgffffff_box_3.jpg" alt="Right picture is from a more recent PR that will be mentioned in the next progress report (Pixel Game Maker Series Werewolf Princess Kaguya)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./kaguya2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/kaguya2_huf172acf33f244f5a2a658f67cd06bccc_252578_800x0_resize_q90_bgffffff_box_3.jpg" alt="Right picture is from a more recent PR that will be mentioned in the next progress report (Pixel Game Maker Series Werewolf Princess Kaguya)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Right picture is from a more recent PR that will be mentioned in the next progress report (Pixel Game Maker Series Werewolf Princess Kaguya)</p>
+
+
+<p>The game currently has rendering bugs especially affecting Nvidia hardware. AMD users will have a better experience in this particular game for now.</p>
+<h2 id="graphics-improvements">Graphics improvements</h2>
+<p>For our <del>thermonuclear</del> laptop users and heavy multitaskers, the legendary <a href="https://github.com/degasus">degasus</a> has a treat for you.
+By <a href="https://github.com/yuzu-emu/yuzu/pull/6162">avoiding spin loops</a> in the video core, more idle time is achieved with no performance loss.
+This means the GPU can enter <code>sleep</code> state more often, resulting in lower temperatures/power consumption, better battery life, and allows the scheduler to take on other tasks waiting in the background, improving system responsiveness.
+No more burned thighs while on the pause menu, laptop users!</p>
+<p><a href="https://github.com/Joshua-Ashton">Joshua-Ashton</a>, the Frog Master from <a href="https://github.com/doitsujin/dxvk">DXVK</a>, brought us a few Vulkan fixes and improvements.</p>
+<p>First on the list is avoiding a device loss (GPU locks up and the driver restarts it) by <a href="https://github.com/yuzu-emu/yuzu/pull/6180">checking the return value of vkAcquireNextImageKHR.</a></p>
+<p>Joshua also <a href="https://github.com/yuzu-emu/yuzu/pull/6181">enabled the individual features</a> from <code>VK_EXT_robustness2</code>, instead of just enabling the extension.</p>
+<p>And finally, <a href="https://github.com/yuzu-emu/yuzu/pull/6182">fixing a wrong offset for null vertex buffers</a> to properly follow the Vulkan specification.
+You never know when a driver will behave in erratic ways. Fixes like this allow developers to report bugs to the vendors&rsquo; driver development teams, thanks to confirming everything is within specs. Any resulting error falls under responsibility of the driver teams.</p>
+<p>OpenGL wasn&rsquo;t the only API to have BGR issues, it turns out Vulkan can also suffer from &ldquo;blue madness&rdquo; when a game uses the <code>A1B5G5R5_UNORM</code> texture format.</p>
+<p><a href="https://github.com/ameerj">epicboy</a> <a href="https://github.com/yuzu-emu/yuzu/pull/6238">swapped the Red and Blue channels</a> of this format, fixing colours in games like <code>Pokémon Let’s Go Eevee/Pikachu</code>, <code>Shantae: Risky’s Revenge</code>, and many others!
+You can see the result in the following pictures, before (left) and after (right).</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./pokebug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/pokebug_hu863223a432dd4bc55841f46140c761f7_1227246_800x0_resize_q90_bgffffff_box_3.jpg" alt="I didn’t want Pokémon Blue! (Pokémon Let&#39;s Go, Eevee!)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./pokefix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/pokefix_hu1591ffdf51d53f7b932f06839e43a3ea_1129846_800x0_resize_q90_bgffffff_box_3.jpg" alt="I didn’t want Pokémon Blue! (Pokémon Let&#39;s Go, Eevee!)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">I didn’t want Pokémon Blue! (Pokémon Let&#39;s Go, Eevee!)</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./shanbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/shanbug_hu7d964a72ff5fd61efd93e64944faf03f_951050_800x0_resize_q90_bgffffff_box_3.jpg" alt="That’s definitely not Vivi (Shantae: Risky’s Revenge)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./shanfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-apr-2021/shanfix_hubae4324284a41f0a1aac33a149688ddb_1004284_800x0_resize_q90_bgffffff_box_3.jpg" alt="That’s definitely not Vivi (Shantae: Risky’s Revenge)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">That’s definitely not Vivi (Shantae: Risky’s Revenge)</p>
+
+
+<h2 id="linux-build-system">Linux Build System</h2>
+<p><a href="https://github.com/lat9nq">toastUnlimited</a> has been periodically improving yuzu’s build system for our Linux user base.
+Not all our users want or are able to use the official AppImage, so not only did our build instructions need to be improved, but it was also equally important to refine the environment necessary to get yuzu running — namely, the dependencies, build process, etc.</p>
+<p>The first step was to <a href="https://github.com/yuzu-emu/yuzu/pull/6204">make SDL2</a> <a href="https://github.com/yuzu-emu/yuzu/pull/6207">an external dependency.</a>
+This would allow us to ship the latest version without having to face Linux distributions&rsquo; incompatibilities due to different build flags (different characteristics being enabled), or outright outdated versions that aren’t able to support all of the required features that our input asks for.</p>
+<p>The changes to SDL2 introduced an incompatibility with the Conan-provided Boost version. <a href="https://github.com/yuzu-emu/yuzu/pull/6222">Downloading it as an external dependency</a> ensures compatibility, as most of the time the local packages provided by the distribution won’t be enough.
+This change also makes our external download script cross-platform with Windows and other distributions that used to require special workarounds.</p>
+<p>As a special bonus, due to all of these changes, Red Hat Enterprise Linux 8 and its derivatives can build yuzu in a much more user-friendly way.</p>
+<p>For anyone interested, we keep updated build instructions <a href="https://github.com/yuzu-emu/yuzu/wiki/Building-For-Linux">on this page.</a></p>
+<h2 id="future-projects">Future projects</h2>
+<p>This section has lately turned into Project Hades teasing, but we won’t apologize for that! Here’s more info/teasing:</p>
+<p>While working on implementing SPIR-V for OpenGL, we discovered that Nvidia decided to take the lazy way out and just convert SPIR-V back to GLSL, which is then compiled again to GLASM.
+This not only destroys any benefit we expected to gain when switching to SPIR-V by default, it also causes huge delays and rendering problems.
+We are forced to also implement GLSL in Project Hades, introducing a considerable amount of extra work that wasn’t expected.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./hades.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> The best use of Tessellation Shaders ever</p>
+        
+    </div>
+    
+</div>
+
+<p>This will provide better compatibility for Nvidia hardware, saving Fermi once again from the gutter.</p>
+<p>Regarding other project news, Morph’s Project Gaia is growing. german77 is working hard on Project Kraken. bunnei has more kernel changes in the oven.</p>
+<p>That’s all folks! Thank you for sticking with us and see you next month!</p>
+<p> 
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+</p>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/405088">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
