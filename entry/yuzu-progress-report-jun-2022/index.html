@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="Progress Report June 2022 &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/" />
+    <meta property="og:description" content="Dear yuz-ers, we had fantastic progress during June! Driver bugs are being squashed, there are kernel and CPU improvements, UI and input changes, and more!" />
+<meta name="description" content="Dear yuz-ers, we had fantastic progress during June! Driver bugs are being squashed, there are kernel and CPU improvements, UI and input changes, and more!" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/"> 
+
+    <title>Progress Report June 2022 - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/banner_huf7f238193ed3891129aeb36c9c83f739_1073212_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">Progress Report June 2022</span>
+    </div>
+    
+    
+    <div>
+        <p class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/GoldenX86/summary">GoldenX86</a>
+            
+            
+            
+            and <a href="https://community.citra-emu.org/u/CaptV0rt3x/summary">CaptV0rt3x</a>
+            
+            on July 10 2022
+        </p>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p>Dear yuz-ers, we had fantastic progress during June! Driver bugs are being squashed, there are kernel and CPU improvements, UI and input changes, and more!</p>
+<h2 id="psa-for-amd-radeon-users-and-nvidia-tags-along">PSA for AMD Radeon users (and NVIDIA tags along)</h2>
+<p>Let’s begin with a driver bug we <a href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-may-2022/#graphical-changes-driver-issues-and-the-nostalgia-bliss-that-is-the-good-old-64">mentioned last month</a>.
+The Vulkan extension <code>VK_KHR_push_descriptor</code> finally arrived for AMD hardware with driver version 22.5.2 for Windows, but it wasn’t stable. Radeon users would tell you that any game would crash in Vulkan after updating.
+To mitigate this, <a href="https://github.com/lat9nq">toastUnlimited</a> implemented an extension block for the specific Vulkan driver version AMD reports for 22.5.2 (and its equivalent Linux AMDVLK package), 2.0.226.</p>
+<p>Skip forward a month and the new 22.6.1 driver is released with <code>VK_KHR_push_descriptor</code> fixed!
+But, and there is a but, the new driver reports the same Vulkan version, 2.0.226, which forces our devs into a dilemma.
+Since the extension block can only work with what the GPU driver reports, the Vulkan driver version in this case, we can either keep the block and ensure compatibility with older broken drivers, or remove the block and force users to update to the current (at the time of writing) 22.6.1 driver.
+<a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8518" data-gh-pr="8518">We opted to do the latter,</a>
+ as it keeps the codebase cleaner, and there is some evidence that suggests this may fix input lag issues found when using FreeSync displays.</p>
+<p>To be specific, AMD Radeon users with cards still supported by AMD (Polaris and newer) must update to the latest video driver, 22.6.1 or newer, in order to get proper Vulkan support.
+Users with older cards out of support (GCN 1 to GCN 3) don’t have to worry, that hardware already can’t update to newer drivers (custom drivers can’t update Vulkan to add new extensions either), and yuzu will use the slower code path that works without requiring support for <code>VK_KHR_push_descriptor</code>.</p>
+<p>Okay, that covers Radeon users. Let’s talk about the greener side.
+With the release of the 516.XX NVIDIA driver series, there seems to be a performance boost for Turing and Ampere GPUs running under Vulkan (that’s 3000, 2000, and 1600 series cards).
+Great, but it has a price.</p>
+<p>Maxwell and Pascal users (1000, 900, 750, and 745 series cards) will experience device loss crashes some minutes into running games in Vulkan.
+A device loss basically means the driver pulling the plug for some reason.
+Until we find the cause of this issue and either implement a fix or report it to NVIDIA, Maxwell and Pascal users should stick to 512.XX drivers.</p>
+<p>It’s always boring to start an article with a bunch of warnings, but this is one of the few tools we have available to reach as many affected users as possible.</p>
+<h2 id="graphical-changes">Graphical changes</h2>
+<p>We should be covering the release of the <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8467" data-gh-pr="8467">first part of <code>Project Y.F.C.</code></a>
+ here, but due to schedule issues it was moved to the next report.
+We&rsquo;re sorry for the inconvenience and we&rsquo;ll make sure to cover it in the next article.
+The good news is that besides yuzu Fried Chicken, there have been other fun GPU improvements to report.</p>
+<p><a href="https://github.com/behunin">Behunin</a> is back with a <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8413" data-gh-pr="8413">very interesting optimization for our <code>gpu_thread</code>,</a>
+ <a href="https://github.com/rigtorp/MPMCQueue">“a bounded multi-producer multi-consumer concurrent queue”</a>.
+This delivers a small 1 or 2 FPS performance boost, but more importantly, better recovery times after load related stuttering spikes.</p>
+<p>The beloved <code>The Elder Scrolls V: Skyrim</code>, once considered the benchmark for open world gaming, until better games came out that is, can now boot!
+<a href="https://github.com/skyline-emu/skyline">Skyline emulator</a> developer <a href="https://github.com/bylaws">bylaws</a> found the reason this classic refused to boot until now: <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8414" data-gh-pr="8414">the assumed behaviour of the first value</a>
+ of the GPU related <a href="https://en.wikipedia.org/wiki/Semaphore_(programming)">semaphore</a> was wrong, it should perform a release instead of returning a constant zero.
+Now, thanks to this great find by bylaws, the Dovahkiin can finally wake up in that cart.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./skyrim.png" title=" Yes, we&#39;re finally awake (The Elder Scrolls V: Skyrim)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/skyrim_hu5352b2bd96b5b488ecde8fabe24a48e0_2840093_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Yes, we&#39;re finally awake (The Elder Scrolls V: Skyrim)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Yes, we&#39;re finally awake (The Elder Scrolls V: Skyrim)</p>
+        
+    </div>
+    
+</div>
+
+<p>You can see we have some rendering issues to solve.</p>
+<p>One of our recent important rendering changes was the <a href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-mar-2022/#graphical-changes-and-optimizations">NVFlinger rewrite</a>, who would have guessed that coding an implementation closer to the Switch would result in a smoother gaming experience?</p>
+<p>However, after its release, user reports mentioned timing and frame pacing issues in games like <code>Super Smash Bros. Ultimate</code>.
+Match time would pass increasingly slower, around a second longer per minute on Ryzen systems, and exacerbated with Intel Alder Lake CPUs (12th gen).</p>
+<p>The solution <a href="https://github.com/bunnei">bunnei</a> arrived to, contrary to what one would think, is to <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8428" data-gh-pr="8428">implement a <em>less accurate</em> behaviour.</a>
+
+yuzu is multithreaded, and very heavily so (even if it doesn’t show up in CPU % usage graphs), and a 100% accurate implementation of NVFlinger would not be sensitive enough for the emulator’s requirements.</p>
+<p>Weird CPU architectures aside, while the issue is solved, Intel Alder Lake users are recommended to run the latest BIOS and chipset driver versions. Check your motherboard/laptop support sites for these updates.</p>
+<p>While still on the topic of NVFlinger goodies, we present a highly requested feature!
+Veteran users will remember that during its single threaded days, yuzu would allow control over game speed.
+With the arrival of multicore, known at the time as <a href="https://yuzu-mirror.github.io/entry/yuzu-prometheus/">Project Prometheus</a>, this feature was only available in single core mode, to the chagrin of many people. How time flies!</p>
+<p><a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8508" data-gh-pr="8508">yuzu now has control over the frame time calculation,</a>
+ allowing a new method to unlimit the framerate regardless of the CPU emulation mode!
+You can find the option in <code>Emulation &gt; Configure… &gt; General &gt; Limit Speed Percent</code>.
+Needless to say, if you want to make a game run faster, the game should allow it, and you must have the hardware performance to reach the new target speed.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./speed.png" title=" No visual change compared to previous versions, but completely new functionality">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/speed_hu8d70aea3dec927e0d3a183edff1ca53a_21188_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" No visual change compared to previous versions, but completely new functionality"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> No visual change compared to previous versions, but completely new functionality</p>
+        
+    </div>
+    
+</div>
+
+<h2 id="debugger">Debugger</h2>
+<p>Now, we&rsquo;re going to dive into a bit of developer paradise here.</p>
+<p>A few months ago, yuzu developer <a href="https://github.com/liamwhite">byte[]</a> found himself trying to debug some game issues in yuzu involving <a href="https://www.youtube.com/watch?v=-z99PKe7kOA">a certain Welsh cat</a>, among others.
+Unfortunately, he soon ran into more trouble, as it was exceedingly difficult to view the internal states of games and watch or modify their behaviour without needing to extensively hack up yuzu.</p>
+<p>The source of the pain was not having any way to use a debugger with the emulated games.</p>
+<p>Originally, yuzu inherited a <code>GDB-compatible debugger interface</code> from <a href="https://citra-emu.org">Citra</a>, but it was lacking many important features.
+And even that had to be deprecated during <a href="https://yuzu-mirror.github.io/entry/yuzu-prometheus/">Project Prometheus</a> (multicore emulation) because of its inherent shortcomings.</p>
+<ul>
+<li>It only worked with single core mode</li>
+<li>It was <em>slow</em> - it could sometimes take 30+ minutes to boot a game, particularly if you had any logging scripts</li>
+<li>It had some significant code quality issues</li>
+</ul>
+<p>After being removed during the Prometheus rewrite, yuzu did not have <em><strong>any</strong></em> debugger interface for a long time.</p>
+<h3 id="wait-what-is-gdb-again">Wait, what is GDB again?</h3>
+<blockquote>
+<p style="color:cyan;">The GNU Debugger (GDB) is a portable debugger that runs on many Unix-like systems and works for many programming languages, including Ada, C, C++, Objective-C, Free Pascal, Fortran, Go, and partially others.</p>
+<p>&ndash; <a href="https://en.wikipedia.org/wiki/GNU_Debugger"><em>Wikipedia</em></a></p>
+</blockquote>
+<p>With GDB, you can:</p>
+<ul>
+<li>Step through code on an instruction-by-instruction basis</li>
+<li>Modify memory and registers on-the-fly</li>
+<li>Even completely replace sections of running code dynamically</li>
+</ul>
+<p>Thus, you can see how extremely useful having a <code>GDB-compatible debugger interface</code> is, for developers and mod creators alike, as you can now debug games, homebrew, and game mods without having to fiddle with the console every single time.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./gdb1.png" title=" A 32-bit example, in this case Super Mario Galaxy">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/gdb1_hu89d5ef38f8c23b467d91e540df40ebba_417683_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" A 32-bit example, in this case Super Mario Galaxy"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> A 32-bit example, in this case Super Mario Galaxy</p>
+        
+    </div>
+    
+</div>
+
+<h3 id="challenges">Challenges</h3>
+<p>After the old debugger interface had been deprecated, a few members of the community forked it and continued to patch and maintain it.
+A few notable ones are <a href="https://github.com/Hedges/yuzu">Hedges</a> and <a href="https://github.com/astrelsky/yuzu">astrelsky</a>.
+It was thanks to these forks that byte[] was able to add <a href="https://github.com/yuzu-emu/yuzu/pull/8000">initial support for the Wii Hagi emulator</a> in yuzu.</p>
+<p>However, he was soon faced with a much more annoying problem.
+<a href="https://github.com/yuzu-emu/yuzu/pull/8148">Recent changes to yuzu&rsquo;s CPU emulation</a> were causing Super Mario Galaxy to <a href="https://en.wikipedia.org/wiki/Deadlock">deadlock</a>.
+This issue only happened in multicore mode, right after the end of the first video cutscene. He was out of ideas and needed a functional debugger to continue investigating the issue.</p>
+<p>Since the old debugger interface didn&rsquo;t support multicore mode, byte[] had to start from scratch.
+Motivated by his drive to figure out the issue, byte[] began working towards a new GDB-compatible debugger interface for yuzu and he had very specific goals:</p>
+<ul>
+<li>It should work</li>
+<li>It should quickly get out of the way, so he could focus more on the root cause</li>
+</ul>
+<p>As the saying goes, &ldquo;the first step is always the hardest&rdquo;.
+And for byte[], indeed it was; his biggest challenge: &ldquo;Not knowing where to start&rdquo;.</p>
+<p>byte[] had the networking code written and working, but did not initially understand how to tie it with the threading code. After some healthy brainstorming sessions with other devs, he eventually figured out solutions for the challenges he was facing.</p>
+<h3 id="changes">Changes</h3>
+<p>Since he was starting from scratch, byte[] took the opportunity to make some sorely needed improvements to the interface.</p>
+<p>The old debugger interface was based on &ldquo;stepping&rdquo; the emulated CPU core. <code>Stepping</code> here means executing one instruction of the emulated program at a time.</p>
+<p>This posed a number of problems because almost all games have multiple threads, and if you are stepping and a thread asks to wait, then another thread can start running in its place in the same CPU core, with all the state changed. This breaks continuity and can even crash the debugger.</p>
+<p><a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8394" data-gh-pr="8394">The new debugger interface</a>
+ overcomes this by performing debug stepping on threads instead of stepping the emulated CPU core. In yuzu&rsquo;s context, when a thread is stepped, the debugger will ask the thread to step, then the Dynarmic interface will detect this condition and tell Dynarmic to step it, and when the thread has been scheduled again, it will mark that the thread stepped and notify the debugger again.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./gdb2.png" title=" Super Mario Odyssey, in gibberish form">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/gdb2_hu881e36d07d8d1637c29563b58620d48d_121505_938x0_resize_q90_bgffffff_box_3.jpg" alt=" Super Mario Odyssey, in gibberish form"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Super Mario Odyssey, in gibberish form</p>
+        
+    </div>
+    
+</div>
+
+<h3 id="what-are-the-benefits">What are the benefits?</h3>
+<p>Apart from this, we have a few more notable quality-of-life (QoL) additions.
+The debugger interface is now thread-stable, edge cases in stepping and pausing are now handled, and it has tons of useful debugging features, like:</p>
+<ul>
+<li>Support for both 32-bit and 64-bit code</li>
+<li>Ability to modify any memory and registers at any time</li>
+<li>Readout of guest thread names</li>
+<li>Support for unlimited numbers of instruction breakpoints</li>
+<li>Support for up to 4 memory watchpoints</li>
+</ul>
+<h2 id="ui-changes">UI changes</h2>
+<p>When talking about user interface and experience, you can always count on <a href="https://github.com/Docteh">Docteh</a>.</p>
+<p><a href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-feb-2022/#general-bugfixes-and-ui-changes">In a repeat of what Morph fixed back in February</a>, Docteh found out that after a crash, the yuzu main window may reopen in some kind of borderless fullscreen… <em>thing</em>.
+The culprit was <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8400" data-gh-pr="8400">the <code>UILayout\geometry</code> value in yuzu’s qt-config.ini file.</a>
+
+A slap in the face and the issue should be gone for good. Ouch.</p>
+<p>With the intention of helping new users adapt to yuzu, Docteh <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8405" data-gh-pr="8405">renamed the status bar</a>
+ <code>DOCK</code> text (which used to only change colour to reflect its status) to <code>DOCKED/HANDHELD</code>.
+Now the current emulated status is clearer, and users won’t confuse it when using dark or light themes.
+Making things easier to understand must never be underestimated. Car makers should try it someday.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./dockbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/dockbug_hu80643cd51cad0f4c1bf57e7967bf0065_1865_800x0_resize_q90_bgffffff_box_3.jpg" alt="The devil is in the details"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./dockfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/dockfix_hu45af5b43c13e176b2b54bf3f99776ffd_2225_800x0_resize_q90_bgffffff_box_3.jpg" alt="The devil is in the details"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">The devil is in the details</p>
+
+
+<p>Translation bugs always manage to slip by.
+The first time yuzu is opened, it will display a big folder with a plus icon, asking the user to add the location of their game dumps.
+The text of this message failed to re-translate if the user changed the interface language from <code>Emulation &gt; Configure… &gt; General &gt; UI &gt; Interface Language</code>.
+Solving this <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8449" data-gh-pr="8449">took a couple of changes in how the window handles re-translation.</a>
+</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./addbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/addbug_hud2a2efa4f5c891ba26d5b0a2d9321050_27408_800x0_resize_q90_bgffffff_box_3.jpg" alt="Good way to learn another language!"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./addfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/addfix_hu4636cbb4c5d1ba72c28f38b2c3d0ac79_24909_800x0_resize_q90_bgffffff_box_3.jpg" alt="Good way to learn another language!"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Good way to learn another language!</p>
+
+
+<p>Docteh is also sneaking <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8427" data-gh-pr="8427">some preliminary work for migrating to Qt6</a>
+ in the future.
+The <code>QDesktopWidget</code> class is <a href="https://doc.qt.io/qt-5/qdesktopwidget.html">now officially deprecated</a>, so <code>QScreen</code> takes its place.</p>
+<p>Additionally, some classes affecting the Web Applet were also deprecated, so <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8477" data-gh-pr="8477">some tweaks were in order to ensure future compatibility.</a>
+
+Hopefully Qt6 will mean the return of the Web Applet by default?</p>
+<p>Once we’re ready to migrate, this should provide better dynamic DPI scaling, allowing 4K display users to finally understand what is going on in the control settings window, for example.</p>
+<h2 id="input-improvements">Input improvements</h2>
+<p>Input is <a href="https://github.com/german77">german77’s</a> speciality, a “diamond in the rough” that is being polished one PR at a time, for eternity….</p>
+<p>Continuing the work with <code>Ring Fit Adventure</code>, german77 <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8487" data-gh-pr="8487">stubbed the <code>PerformSystemButtonPressingIfInFocus</code> service</a>
+, solving an SVC (Supervisor Call) crash which occurred when pressing ZL or ZR.</p>
+<p>With the official Switch update for the firmware version 13.2.0, Nintendo implemented a new <code>GetVibrationDeviceInfo</code>.
+While german77 worked on implementing those changes, one game in particular refused to work, <code>de Blob</code>.
+When this game sends a controller disconnect signal, it uses a <code>-1</code> value, which is invalid as only unsigned values are accepted on the Switch.
+Maybe it’s an emulation issue somewhere, or this game just loves to do this and the Switch just accepts invalid values. Regardless, our solution is to <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8492" data-gh-pr="8492">replicate this peculiar behaviour.</a>
+
+The end result is <code>de Blob</code> now gets in-game!</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./deblob2.png" title=" de Blob 2">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/deblob2_hu50cd847777931ce576a197f60a8340df_1512288_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" de Blob 2"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> de Blob 2</p>
+        
+    </div>
+    
+</div>
+
+<h2 id="kernel-and-cpu-changes">Kernel and CPU changes</h2>
+<p>Possibly the most silent part of yuzu’s code, but also the most critical.
+Kernel emulation is the engine block that keeps all parts working together in harmony, so you can expect that changing even a small part of it can have ripple effects anywhere.
+One must tread carefully, heh, thread carefully.
+Sorry, not sorry.</p>
+<p>Anyway, byte[] has been particularly busy this month in this delicate area, screwdriver in hand and not fearing anything.
+Several changes include getting up to date with the latest reverse engineering findings, but there’s more.</p>
+<p>To help with pause and resume functionality, he has <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8457" data-gh-pr="8457">implemented KProcess suspension,</a>
+ “the kernel mechanism intended for this” as the pull request explains.
+Clean pause and resume is always a blessing when you have to leave the PC to do something else.</p>
+<p>While working on <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8388" data-gh-pr="8388">simplifying guest pauses</a>
+ for single core and multicore emulation, byte[] discovered that if asynchronous GPU emulation and multicore CPU emulation were disabled (something we strongly recommend against, but it’s a valid option for CPU thread starved users, or FX users), a race condition would happen when initializing the CPU and GPU threads.
+Several single threads still are multiple threads.
+Hammer in hand, byte[] <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8476" data-gh-pr="8476">implemented some barriers</a>
+ to fix this specific crash.</p>
+<p>Pause is the word of the week, and this time, it could make a specific game crash.
+The old StallCPU behaviour would wait for all thread execution to stop.
+It was slow, but safe.
+<code>Fire Emblem: Three Houses</code> would get into a GPU thread race condition with the new method.
+<a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8483" data-gh-pr="8483">Telling the kernel to wait for all threads to stop on pause</a>
+ avoids the crash.</p>
+<p>If, for some reason, yuzu would jump to an invalid address, emulation would hang and the log would get spammed with infinite amounts of <code>Unmapped Reads</code>.
+Fixing this required work on both Dynarmic and yuzu, resulting in <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8490" data-gh-pr="8490">stopping ReadCode callbacks to unmapped addresses.</a>
+</p>
+<p><a href="https://github.com/shadowninja108/exlaunch">exlaunch</a> is a framework for injecting C or C++ code into Switch applications and modules.
+exlaunch can work on unpatched units, allowing developers to “go to town” with it.
+yuzu didn’t support it, but <a href="https://github.com/comex">comex</a> <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8504" data-gh-pr="8504">implemented the required functionality</a>
+ to have it up and running.
+Thank you!</p>
+<p>Newcomer <a href="https://github.com/DCNick3">DCNick3</a> joins the fray!
+For their first brawl, they <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8473" data-gh-pr="8473">implemented the <code>ExitProcess</code> SVC,</a>
+ which allows homebrew apps to gracefully exit on close.</p>
+<h2 id="issues-with-third-party-antiviruses">Issues with third-party antiviruses</h2>
+<p>Users have recently reported crashes starting with Mainline version 1075 and newer.
+The cause seems to be third-party antiviruses, more specifically ESET/ NOD32.
+A <a href="https://help.eset.com/ees/8/en-US/idh_hips_main.html">HIPS</a> false positive is issued, sandboxing yuzu and blocking its access to the system page file.
+Basically, if fastmem is unable to secure 4GB of page file to work (or 6GB if the extended memory option is enabled), the emulator will crash.</p>
+<p>Three options are available to solve this for now:</p>
+<ul>
+<li>The user can disable fastmem from yuzu’s settings, the setting is in <code>Emulation &gt; Configure… &gt; General &gt; Debug</code>, from there, enable the option labeled as <code>Enable CPU Debugging</code> at the bottom, and from the CPU tab, disable both <code>Enable Host MMU Emulation</code> options near the bottom. This will produce a performance loss that can reach up to 30% on some games.</li>
+<li>Add a HIPS exception to both yuzu folders, <code>%appdata%\yuzu</code> and <code>%localappdata%\yuzu</code>. User reports show mixed results with this approach.</li>
+<li>Outright uninstall ESET and use Windows Defender instead.</li>
+</ul>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./fastmem1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/fastmem1_hu5bb7061befbfda8019af1f450f35aebb_30173_800x0_resize_q90_bgffffff_box_3.jpg" alt="Here are image examples on how to reach the required options"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./fastmem2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jun-2022/fastmem2_hu7ec8ad1b0bffc68567e26485de3e2907_34238_800x0_resize_q90_bgffffff_box_3.jpg" alt="Here are image examples on how to reach the required options"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Here are image examples on how to reach the required options</p>
+
+
+<h2 id="future-changes">Future changes</h2>
+<p>toastUnlimited has been working on <a class="gh-hover" href="https://github.com/yuzu-emu/yuzu/pull/8455" data-gh-pr="8455">making yuzu compatible to be compiled with</a>
+ <a href="https://clang.llvm.org/">LLVM Clang</a> under <a href="https://www.mingw-w64.org/">MinGW-w64</a>.
+There are multiple reasons to consider this approach:</p>
+<ul>
+<li>The default compiler we use for Windows builds, MSVC, is currently unstable on its latest 2022 version, forcing us to revert to version 2019, and making yuzu lose some compiler optimizations in the process, losing a bit of performance.</li>
+<li>GCC 12, the default Linux compiler yuzu uses, has optimization errors and problems with some warnings, making it unviable at the moment.</li>
+<li>Clang allows for aggressive optimizations that should provide good performance boosts. One example is <a href="https://polly.llvm.org/">Polly</a>.</li>
+<li>Along with GCC, LLVM makes it much easier to produce code optimized for the SSE4.2 instruction set. That’s right Core 2 Duo users, you’re next in line for the chopping block.</li>
+</ul>
+<p>The main reason we haven’t switched to this new system by default is <code>Project Gaia</code>, or, well, the lack of Gaias currently.
+Some of its changes are mandatory to get Clang builds up and running on Windows.
+While this pull request is completed, its full implementation will be on hold until Gaia is out, which isn’t far away now.</p>
+<p>Get a kettle, boil some <a href="https://www.youtube.com/watch?v=XE6DT9y7L-w">wotah</a>, and make yourself a cuppa tea, because <code>Project London</code> has bloody began.</p>
+<p>That’s all folks! Thank you for staying until the end. See you next month!</p>
+<p> 
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy.min.css" integrity="sha512-HbPh+j4V7pXprvQMt2dtmK/zCEsUeZWYXRln4sOwmoyHPQAPqy/k9lIquKUyKNpNbDGAY06UdiDHcEkBc72yCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.2/umd/popper.min.js" integrity="sha512-aDciVjp+txtxTJWsp8aRwttA0vR2sJMk/73ZT7ExuEHv7I5E6iyyobpFOlEFkq59mWW8ToYGuVZFnwhwIUisKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tippy.js/6.3.7/tippy-bundle.umd.min.js" integrity="sha512-gbruucq/Opx9jlHfqqZeAg2LNK3Y4BbpXHKDhRC88/tARL/izPOE4Zt2w6X9Sn1UeWaGbL38zW7nkL2jdn5JIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div id="gh-template" style="display: none;">
+    <span>
+        <svg class="gh-hover-icon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"></path></svg>
+    </span>
+    <span>
+        <a class="gh-hover-title" href=""><strong></strong></a>&nbsp;<span class="gh-hover-number"></span>
+    </span>
+    <p class="gh-hover-date"></p>
+</div>
+<style>
+    .gh-hover-icon.open { filter: invert(56%) sepia(47%) saturate(665%) hue-rotate(77deg) brightness(99%) contrast(83%); }
+    .gh-hover-icon.closed { filter: invert(50%) sepia(95%) saturate(3977%) hue-rotate(336deg) brightness(95%) contrast(90%); }
+    .gh-hover-icon.merged { filter: invert(47%) sepia(17%) saturate(4072%) hue-rotate(228deg) brightness(95%) contrast(89%); }
+    .gh-hover { border-bottom: dotted; }
+</style>
+<script>
+    tippy('.gh-hover', {
+        content: 'Loading...',
+        onShow(instance) {
+            showHovercard(instance, 'yuzu');
+        },
+        allowHTML: true,
+        followCursor: 'horizontal',
+        interactive: true,
+    });
+</script>
+</p>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/597525">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
