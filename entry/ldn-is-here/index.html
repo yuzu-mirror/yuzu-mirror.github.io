@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="New Feature Release - Local Wireless Multiplayer &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/ldn-is-here/" />
+    <meta property="og:description" content="Hey there, yuz-ers!
+The MOST awaited feature of yuzu, Local Wireless Multiplayer (LDN), is finally here!
+So what are you waiting for?
+Time to grab your friends and jump right in!" />
+<meta name="description" content="Hey there, yuz-ers!
+The MOST awaited feature of yuzu, Local Wireless Multiplayer (LDN), is finally here!
+So what are you waiting for?
+Time to grab your friends and jump right in!" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/ldn-is-here/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/ldn-is-here/"> 
+
+    <title>New Feature Release - Local Wireless Multiplayer - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/ldn-is-here/banner_huc7f34c2b0d359211f13e02d2e500027f_833919_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">New Feature Release - Local Wireless Multiplayer</span>
+    </div>
+    
+    
+    <div>
+        <span class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/CaptV0rt3x/summary">CaptV0rt3x</a>
+            on September 11 2022
+        </span>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p>Hey there, yuz-ers!
+The MOST awaited feature of yuzu, Local Wireless Multiplayer (LDN), is finally here!
+So what are you waiting for?
+Time to grab your friends and jump right in!</p>
+<h2 id="what-is-this">What is this?</h2>
+<p>The Nintendo Switch console supports various multiplayer options.
+Among these, the following options are useful when you want to play multiplayer with other Switch consoles.
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./multi.png" title=" Table indicating yuzu&#39;s supported Switch multiplayer modes">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/multi_hu869c27aee01372f02c54db3ba004767e_10375_603x0_resize_q90_bgffffff_box_3.jpg" alt=" Table indicating yuzu&#39;s supported Switch multiplayer modes"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Table indicating yuzu&#39;s supported Switch multiplayer modes</p>
+        
+    </div>
+    
+</div>
+</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./Switch_Conn.png" title=" Graphic demonstrating the key differences between the three wireless modes">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/Switch_Conn_huff96b8f7a7fc024f356f04fe93630f03_69367_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Graphic demonstrating the key differences between the three wireless modes"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Graphic demonstrating the key differences between the three wireless modes</p>
+        
+    </div>
+    
+</div>
+
+<article class="message has-text-weight-semibold"><div class="message-body"><p>
+The Switch's HorizonOS uses the LDN service for all Local Wireless communication. <br>
+This is why Local Wireless Multiplayer can also be referred to as LDN Multiplayer.
+</p></div></article>
+<p>Thanks to the incredible efforts of our developers <a href="https://github.com/FearlessTobi">FearlessTobi</a> and <a href="https://github.com/german77">german77</a>, Local Wireless Multiplayer in yuzu is no longer a dream!
+Special thanks to <a href="https://github.com/spacemeowx2/">spacemeowx2</a> and <a href="https://github.com/spacemeowx2/ldn_mitm/graphs/contributors">all the contributors</a> of the <a href="https://github.com/spacemeowx2/ldn_mitm">ldn_mitm</a> project.
+Without their extensive reverse-engineering of the <code>LDN</code> service, and the gracious <a href="https://github.com/spacemeowx2/ldn_mitm#licensing">license exemption</a> for yuzu, this would not have been possible.</p>
+<br>
+<article class="message"><div class="message-header">
+<p>⚠️ Attention</p>
+</div>
+<div class="message-body"><p style="color:white;">
+<b>Currently, Local Wireless Multiplayer (LDN) is only supported between instances of yuzu.<br>
+Multiplayer between yuzu and a real Switch or between yuzu and other emulators is not supported!</b>
+</p></div></article>
+<h2 id="where-can-you-get-it">Where can you get it?</h2>
+<p>The Local Wireless Multiplayer feature is now available in the latest version of the Early Access release.
+We will be working to polish this feature and make this available to the Mainline builds soon.</p>
+<article class="message has-text-weight-semibold"><div class="message-body"><p>
+If you're using the yuzu installer, you'll automatically be updated to the latest build.<br>    
+If you're <b>not</b> using the yuzu installer, please download it from our <a href= https://yuzu-mirror.github.io/downloads/>Download</a> page. <br>
+<br>
+We highly recommend using our installer to always stay up to date on both Mainline and Early Access builds.
+</p></div></article>
+<h2 id="local-wireless-ldn-multiplayer">Local Wireless (LDN) Multiplayer</h2>
+<p>yuzu&rsquo;s Local Wireless multiplayer (LDN) differs a little bit when compared to the Nintendo Switch.
+The Switch console uses the <code>LDN</code> service to scan for other Switch consoles using Wi-Fi and connects all players.
+Here, one player would act as the <code>host</code> and all others would connect to it.</p>
+<p>yuzu, on the other hand, employs virtual rooms to allow players to create and join game lobbies within said rooms.
+Since this emulates the Switch&rsquo;s ability to do local wireless multiplayer, it does NOT rely on Nintendo’s servers and does NOT require a Nintendo Account.
+While on a real Switch, you’d be limited to the people in your immediate vicinity, yuzu boasts a complex server/client infrastructure that forwards a game’s wireless communication across the internet.</p>
+<p>In order to connect with other players, players simply need to join the same room within yuzu’s Public Room Browser.
+But, before opening the Public Room Browser, you will have to first configure your network interface in yuzu.</p>
+<p>You can find this setting under <code>System -&gt; Network</code> and you need to select your internet connection from the drop-down as shown below.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./network_interface.png" title=" yuzu&#39;s Network Interface configuration">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/network_interface_hu41aaa099594271375a47d12cfb274570_11910_976x0_resize_q90_bgffffff_box_3.jpg" alt=" yuzu&#39;s Network Interface configuration"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> yuzu&#39;s Network Interface configuration</p>
+        
+    </div>
+    
+</div>
+
+<p>Out of the box, we provide you with an assortment of public rooms hosted across the world by yuzu.
+Creating and joining rooms is extremely easy in yuzu and can be done in just a few clicks.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./room_browser.png" title=" yuzu&#39;s Public Room Browser">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/room_browser_hu11eff3d42fc80a17318dbb0419957603_77039_898x0_resize_q90_bgffffff_box_3.jpg" alt=" yuzu&#39;s Public Room Browser"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> yuzu&#39;s Public Room Browser</p>
+        
+    </div>
+    
+</div>
+
+<p>If you’re a <a href="https://community.citra-emu.org/signup">Verified User</a>, you can create your very own public room for people to join.
+These public rooms can be seen by anyone using the Public Room Browser, but you can also password protect them to restrict users&rsquo; access.
+Verified Users will have their forum nickname and profile picture populated in the chatroom.
+<br></p>
+<article class="message"><div class="message-header">
+<p>⚠️ Reminder</p></div>
+<div class="message-body"><p style="color:#eed202;">
+<b>When hosting a room, remember to port forward or your friends won’t be able to connect!</b>
+</p></div></article>
+<p>If you prefer not to sign up for our platform, you aren’t out of luck!
+Unverified Users still have the ability to create unlisted rooms, directly connect to unlisted rooms, and can join any yuzu hosted room.</p>
+<p>Do note that Verified Users will have their privileges revoked for violating any yuzu policies while in the room chatroom.
+Please respect the <code>Preferred Game</code> listed in publicly hosted rooms, as even unrelated games will add to the bandwidth load.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./room_chat.png" title=" Public Room chat and moderation features">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/room_chat_huc504af3cabc8ae1facf6e05edf53552d_41876_809x0_resize_q90_bgffffff_box_3.jpg" alt=" Public Room chat and moderation features"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Public Room chat and moderation features</p>
+        
+    </div>
+    
+</div>
+
+<article class="message has-text-weight-semibold"><div class="message-body"><p>
+You can use these rooms for LAN mode games as well — instead of ZeroTier or Hamachi.</b>
+</p></div></article>
+<p>Please visit <a href="https://yuzu-mirror.github.io/help/feature/multiplayer/">our multiplayer guide</a> for further help with Hosting, Port Forwarding, Authentication, and Moderation of your publicly hosted rooms.</p>
+<h2 id="development">Development</h2>
+<p>FearlessTobi began development by leveraging the existing virtual rooms infrastructure from <a href="https://citra-emu.org">Citra</a>.
+Due to code similarities between yuzu and Citra, this tried-and-tested infrastructure easily became the foundation of this feature.</p>
+<p>Now that the virtual rooms were taken care of, Tobi moved onto the <code>LDN</code> service and its protocols.
+Using the research and code from the <a href="https://github.com/spacemeowx2/ldn_mitm">ldn_mitm</a> project, he implemented the necessary changes for yuzu instances to communicate with each other over these virtual rooms.
+During this process, Tobi put an extra emphasis on ensuring no personal data, such as IP addresses, was leaked to the other room members.</p>
+<p>As the feature slowly matured, Tobi began utilizing yuzu&rsquo;s internal team of testers to verify the feature across several titles for compatibility and performance validation.</p>
+<p>With the multiple testing iterations, various bugs and glitches were found.
+german77 relied on his own reverse-engineering and hardware tests to debug these issues, which then made it easy for the team to fix these various problems.
+He also made several UI fixes to improve its usability and brought the codebase up to yuzu standards.</p>
+<h2 id="compatibility">Compatibility</h2>
+<p>Please note that as this is the initial release of the feature, some games may have some limitations.
+We hope to slowly fix these over the course of the next few months.</p>
+<p>yuzu&rsquo;s Local Wireless Multiplayer was tested by our team of Testers and Support staff across a small set of popular titles. Their compatibility findings are as follows:</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./compat.png" title=" List of yuzu-tested multiplayer titles">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/compat_huf92e5188d926f34b5f7738d6648a4772_63075_730x0_resize_q90_bgffffff_box_3.jpg" alt=" List of yuzu-tested multiplayer titles"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> List of yuzu-tested multiplayer titles</p>
+        
+    </div>
+    
+</div>
+
+<h2 id="screenshots">Screenshots</h2>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./acnh1.jpg" title=""><img src="./acnh1.jpg" alt="Animal Crossing: New Horizons"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./acnh2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/acnh2_hu8658004eb70e3ee100c8f2e89ea467e1_7566808_800x0_resize_q90_bgffffff_box_3.jpg" alt="Animal Crossing: New Horizons"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Animal Crossing: New Horizons</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./splatoon2_1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/splatoon2_1_hucc3954b5bd1d5e5a1773ef89f301f6d3_1652509_800x0_resize_q90_bgffffff_box_3.jpg" alt="Splatoon 2"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./splatoon2_3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/splatoon2_3_hu05b004da05f19c435ce8a907bd919a2d_3175440_800x0_resize_q90_bgffffff_box_3.jpg" alt="Splatoon 2"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./splatoon2_2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/splatoon2_2_hu64baf9ece831394f0847f41b8bfd211c_2752489_800x0_resize_q90_bgffffff_box_3.jpg" alt="Splatoon 2"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Splatoon 2</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./mk8d_1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/mk8d_1_hue735e0fbd974e54c7096d3e34a7e428a_12185179_800x0_resize_q90_bgffffff_box_3.jpg" alt="Mario Kart 8 Deluxe"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./mk8d_2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/mk8d_2_hub6d5a5c034e0fc9b975aa3e181120fa4_13216770_800x0_resize_q90_bgffffff_box_3.jpg" alt="Mario Kart 8 Deluxe"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Mario Kart 8 Deluxe</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./arceustrade1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/arceustrade1_hu3910d9d70a0f87fad6b5d88cf3978de9_2183358_800x0_resize_q90_bgffffff_box_3.jpg" alt="Pokémon Legends: Arceus"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./arceustrade2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/arceustrade2_hu3910d9d70a0f87fad6b5d88cf3978de9_1833664_800x0_resize_q90_bgffffff_box_3.jpg" alt="Pokémon Legends: Arceus"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./arceustrade3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/arceustrade3_hu77fb7300e56ab38924c181c177ef6a2f_1347618_800x0_resize_q90_bgffffff_box_3.jpg" alt="Pokémon Legends: Arceus"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Pokémon Legends: Arceus</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./lm3_1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/lm3_1_hua669f8d605631391353c8a49515939dc_3402001_800x0_resize_q90_bgffffff_box_3.jpg" alt="Luigi&#39;s Mansion 3"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./lm3_2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/lm3_2_hude23b105cffabfe0df4b71d37518cec0_3404512_800x0_resize_q90_bgffffff_box_3.jpg" alt="Luigi&#39;s Mansion 3"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Luigi&#39;s Mansion 3</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./ssbu_ldn_2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/ssbu_ldn_2_huf1ceb1dae74e0fdf7d7fe5777e8520ff_5333797_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Smash Bros. Ultimate"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./ssbu_ldn_3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/ssbu_ldn_3_hu0b4b518219c7f472c12e15fc6fb37ddd_7253147_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Smash Bros. Ultimate"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./ssbu_ldn_1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/ssbu_ldn_1_hu5bd954edf72b37a7bcc8e76323e5ed9a_7892025_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Smash Bros. Ultimate"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Super Mario Smash Bros. Ultimate</p>
+
+
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./PLG_1.png" title="">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/PLG_1_hu08be93e48dc9a537b7cfcb864f0dcb6b_1765792_1024x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./PLG_2.png" title="">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/PLG_2_hu7ea0e00104ef9010e0523b4b8386ece4_825191_1024x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+        
+    </div>
+    
+</div>
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./PLG_3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/PLG_3_huc962c3fb60113b966e6aca473bdae0a9_1951329_800x0_resize_q90_bgffffff_box_3.jpg" alt="Pokémon Let&#39;s Go: Pikachu/Eevee"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./PLG_4.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/PLG_4_hud6e753102e729856b0ad23bdbbd3ad61_1969516_800x0_resize_q90_bgffffff_box_3.jpg" alt="Pokémon Let&#39;s Go: Pikachu/Eevee"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Pokémon Let&#39;s Go: Pikachu/Eevee</p>
+
+
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./bdsp_1.png" title="">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/bdsp_1_hufaade000003fcec1e377fa9af2e25342_14586510_1024x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./bdsp_2.png" title="">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/bdsp_2_hu0f80ec23f486f811a92d50517b2fff69_11041179_1024x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+        
+    </div>
+    
+</div>
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./bdsp_3.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/bdsp_3_hu6001c4f4214abf11c18292727dbd142a_874879_800x0_resize_q90_bgffffff_box_3.jpg" alt="Pokémon Brilliant Diamond/Shining Pearl"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./bdsp_4.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/bdsp_4_hu5d54ccd90d782363b6fed77dc0c7a210_12882253_800x0_resize_q90_bgffffff_box_3.jpg" alt="Pokémon Brilliant Diamond/Shining Pearl"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Pokémon Brilliant Diamond/Shining Pearl</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./Diablo3_LDN_1.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/Diablo3_LDN_1_hue9d535ca1e1c3243f0efa875b30436e2_1723115_800x0_resize_q90_bgffffff_box_3.jpg" alt="Diablo III : Eternal Collection"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./Diablo3_LDN_2.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/Diablo3_LDN_2_hu23f5a4d4554a627f4c8d7eb64da8fb40_2039605_800x0_resize_q90_bgffffff_box_3.jpg" alt="Diablo III : Eternal Collection"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Diablo III : Eternal Collection</p>
+
+
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./cowabunga.png" title=" Teenage Mutant Ninja Turtles: The Cowabunga Collection">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/cowabunga_hu2077788e857ed51cda07048d6d6e0baa_5292740_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Teenage Mutant Ninja Turtles: The Cowabunga Collection"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Teenage Mutant Ninja Turtles: The Cowabunga Collection</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./monster_hunter_ultimate.png" title=" Monster Hunter Generations Ultimate">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/monster_hunter_ultimate_hu6880063c5f25d3761b755aa2353ff75e_15124939_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Monster Hunter Generations Ultimate"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Monster Hunter Generations Ultimate</p>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./kirby_dream_buffet.png" title=" Kirby&#39;s Dream Buffet">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/ldn-is-here/kirby_dream_buffet_hu4f26c6ef460b3a44ea8a239e5d7bdba9_5893554_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Kirby&#39;s Dream Buffet"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Kirby&#39;s Dream Buffet</p>
+        
+    </div>
+    
+</div>
+
+<h2 id="fin">Fin</h2>
+<p>As with any new update, we&rsquo;ve tested the feature internally, but our efforts can&rsquo;t compare to the community as a whole.
+We could have easily missed an edge case or some weird bug or issue among the vast collection of games with Local Wireless.</p>
+<p>Test any and all games! Poke, prod, and play! Please break this release if you can! With your help, we can make yuzu the best it can be.
+Please reach out to us on our <a href="https://discord.gg/u77vRWY">Discord</a> and report any bugs you find, so that we can quickly address them.</p>
+<p>That&rsquo;s all we have for now, until next time! Happy emulating! <br><br></p>
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/622491">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
