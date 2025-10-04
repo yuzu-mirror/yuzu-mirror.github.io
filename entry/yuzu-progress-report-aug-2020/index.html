@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="Progress Report August 2020 &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/" />
+    <meta property="og:description" content="Yahallo yuz-ers! We hope you are doing well. This monthly report has a few critical topics to cover. Yet another major rewrite is done, some graphical bugs are fixed, the UI is further refined, and ghosts from our past are expelled. Here we go!" />
+<meta name="description" content="Yahallo yuz-ers! We hope you are doing well. This monthly report has a few critical topics to cover. Yet another major rewrite is done, some graphical bugs are fixed, the UI is further refined, and ghosts from our past are expelled. Here we go!" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/"> 
+
+    <title>Progress Report August 2020 - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/banner_hu140f144cd3481949765887021a123481_973312_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">Progress Report August 2020</span>
+    </div>
+    
+    
+    <div>
+        <p class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/flamboyant_ham/summary">Flamboyant_Ham</a>
+            
+            
+            
+            and <a href="https://community.citra-emu.org/u/GoldenX86/summary">GoldenX86</a>
+            
+            on August 30 2020
+        </p>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p><a href="https://www.youtube.com/watch?v=s28a3nVHCLo">Yahallo</a> yuz-ers! We hope you are doing well. This monthly report has a few critical topics to cover. Yet another major rewrite is done, some graphical bugs are fixed, the UI is further refined, and ghosts from our past are expelled. Here we go!</p>
+<h2 id="project-mjölnir">Project Mjölnir</h2>
+<h3 id="part-1---input-rewrite">Part 1 - Input Rewrite</h3>
+<p>Let&rsquo;s start with the biggest change. One of yuzu&rsquo;s weakest aspects was its input support. It was riddled with bugs, not very intuitive, and lacked several critical features. Earlier this year, <a href="https://github.com/jroweboy">jroweboy</a> and <a href="https://github.com/Its-Rei">Rei</a> decided to start working on what would end up a complete rewrite of the input UI and its internal workings, dubbed <code>Project Aphrodite</code>.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./oldinput.png" title=" Never gonna give you up">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/oldinput_huac776aa75bbe8a9c6284a2d763f8fe45_16651_402x0_resize_q90_bgffffff_box_3.jpg" alt=" Never gonna give you up"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Never gonna give you up</p>
+        
+    </div>
+    
+</div>
+
+<p>As you can see in the following images, the original draft lacked some of the features we have working right now and some that we plan to add in the future. No code is ever complete, better ideas and new implementations can always be achieved. So that&rsquo;s exactly what happened, Rei continued to iterate on the concept design that is inspired by <a href="https://github.com/RPCS3/rpcs3">RPCS3&rsquo;s</a> controller UI.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./concept.png" title=" The first draft, in all its glory">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/concept_hu317c07a073a3eb14c24c64d838270ad8_137086_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" The first draft, in all its glory"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> The first draft, in all its glory</p>
+        
+    </div>
+    
+</div>
+
+<p>With this concept in mind, jroweboy implemented an automapping feature which correctly maps all the inputs upon selecting an input device.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./automap.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Finally, no more spending hours mapping controls!</p>
+        
+    </div>
+    
+</div>
+
+<p>Since jroweboy&rsquo;s departure from emulator development, <a href="https://github.com/Morph1984">Morph</a> continued his legacy and picked up where he left off, not wanting to have all this work go to waste. With renewed hope, both Morph and Rei have taken the reins and are continuously refining the UI to achieve the best user experience possible. Their efforts have culminated in the UI we have today.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./light.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/light_hub11f8a5bdd4e035499395f7b367d8e78_68473_800x0_resize_q90_bgffffff_box_3.jpg" alt="The fruits of our labor, the triforce of themes is complete!"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./dark.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/dark_hufba4d97bf10ab1b481899c3aab01ca6d_74841_800x0_resize_q90_bgffffff_box_3.jpg" alt="The fruits of our labor, the triforce of themes is complete!"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./midnightblue.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/midnightblue_hu6a4f3f57668abe15217cf9406d0a02bd_81625_800x0_resize_q90_bgffffff_box_3.jpg" alt="The fruits of our labor, the triforce of themes is complete!"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">The fruits of our labor, the triforce of themes is complete!</p>
+
+
+<p>The user experience would not be complete unless a <a href="https://github.com/yuzu-emu/yuzu/issues/2906">long standing issue where updating controllers in the UI will not update them in game</a> is fixed. Knowing this, Morph decided to find out what is causing this issue and fix it along with the UI changes. With some guidance from the shark <a href="https://github.com/ogniK5377">ogniK</a>, he discovered that 1. The frontend was not signalling to the backend when a controller changes configuration and 2. <code>StyleSetChangedEvents</code> were not being signalled on a controller change. By fixing these two issues, he managed to fix input issues in a wide array of games and allowed users to change their controller and input devices while in game without needing to restart yuzu.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./controllerselect.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Smash players rejoice!</p>
+        
+    </div>
+    
+</div>
+
+<p>The games that demonstrated the most benefit from these fixes are <code>Pokemon Let's Go: Pikachu</code> and <code>Pokemon Let's Go: Eevee</code>, as single joycons can now be properly detected in game, bringing us one step closer to hardware accuracy.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./plgjoycon.png" title=" Professor Oak! Input is now in working order!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/plgjoycon_hu8dd131a9d55dd5193bc0f12b056af319_715365_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Professor Oak! Input is now in working order!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Professor Oak! Input is now in working order!</p>
+        
+    </div>
+    
+</div>
+
+<h3 id="part-2---controller-applet">Part 2 - Controller Applet</h3>
+<p>Morph began on <a href="https://github.com/yuzu-emu/yuzu/pull/4597">Part 2</a> knowing that yuzu lacked an implementation of a Controller Applet, which is crucial for a lot of multiplayer games such as <code>Super Mario Maker 2</code>, <code>Kirby Star Allies</code>, <code>Hyrule Warriors: Definitive Edition</code> and many more. It had previously been <a href="https://github.com/yuzu-emu/yuzu/pull/1940">attempted</a> by <a href="https://github.com/DarkLordZach">DarkLordZach</a> but was riddled with issues due to the immature input implementation at the time. Therefore, Morph decided that it was time to implement it after gaining knowledge of and fixing HID in <a href="https://github.com/yuzu-emu/yuzu/pull/4530">Part 1</a>.</p>
+<p>While Morph was completing the backend implementation of the applet, Rei was designing the UI that was inspired by DarkLordZach&rsquo;s initial implementation, with an error box showing all the issues with the current controller configuration as shown.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./firstapplet.png" title=" The very first concept of the Controller Applet inspired by DarkLordZach&#39;s initial implementation">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/firstapplet_hu429f9128a53ee58f934d4302edc2013a_30690_429x0_resize_q90_bgffffff_box_3.jpg" alt=" The very first concept of the Controller Applet inspired by DarkLordZach&#39;s initial implementation"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> The very first concept of the Controller Applet inspired by DarkLordZach&#39;s initial implementation</p>
+        
+    </div>
+    
+</div>
+
+<p>After taking a look at this first concept, they decided that it wasn&rsquo;t very intuitive for the user. One morning, as Morph was about to finish the backend implementation, <a href="https://github.com/Its-Rei">Rei</a> had an epiphany to replicate the Switch&rsquo;s native UI for the <code>Controller Applet</code> and whipped up the concept design you see below:</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./secondapplet.png" title=" The one that started it all">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/secondapplet_hue87b2dc649a879ee2eeadaae57336395_55679_852x0_resize_q90_bgffffff_box_3.jpg" alt=" The one that started it all"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> The one that started it all</p>
+        
+    </div>
+    
+</div>
+
+<p>As you can see, this was much closer to the design we have now, but was lacking some features such as the number of supported controllers, LED pattern, border color, and explain text.
+Wanting to get as close to the Switch&rsquo;s design as possible, Morph implemented these features one by one, and the frontend UI was adapted by Rei to include these features, bringing us to the final design we have now.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./supportedplayers.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/supportedplayers_hu95e0e689b9d348b6411e866150343d34_46503_800x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./ledpatterns.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/ledpatterns_hucbfbd3aa669ad5189c086f21b133a127_67097_800x0_resize_q90_bgffffff_box_3.jpg" alt=""></a>
+        
+    </div>
+    
+</div>
+
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./bordercolor.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/bordercolor_hu5829a1639729c7fd792b703e13d76c8f_30514_800x0_resize_q90_bgffffff_box_3.jpg" alt="It&#39;s all coming together now"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./explaintext.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/explaintext_hufa0243c3b409c757204d36a4dd6dfa6f_36477_800x0_resize_q90_bgffffff_box_3.jpg" alt="It&#39;s all coming together now"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">It&#39;s all coming together now</p>
+
+
+<p>As the design was now complete, Morph hooked up all of these features from the backend to the frontend and produced these clean and pretty results!</p>
+<p>Below are comparisons between the Nintendo Switch&rsquo;s and yuzu&rsquo;s Controller Applets:</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./mariokart8deluxe-switch.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/mariokart8deluxe-switch_huf0d9286e767b5fbd90360b1f690819e6_634740_800x0_resize_q90_bgffffff_box_3.jpg" alt="Mario Kart 8 Deluxe"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./mariokart8deluxe-yuzu.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/mariokart8deluxe-yuzu_hu140f144cd3481949765887021a123481_973312_800x0_resize_q90_bgffffff_box_3.jpg" alt="Mario Kart 8 Deluxe"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Mario Kart 8 Deluxe</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./kirbystarallies-switch.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/kirbystarallies-switch_hua797bc24ba1b5d3ebb115aaa828596f1_362296_800x0_resize_q90_bgffffff_box_3.jpg" alt="Kirby Star Allies"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./kirbystarallies-yuzu.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/kirbystarallies-yuzu_huc0b5078c892bbe16104f5ee6d222a0f6_349246_800x0_resize_q90_bgffffff_box_3.jpg" alt="Kirby Star Allies"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Kirby Star Allies</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./smm2-switch.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/smm2-switch_hu11e66a375114d406580736546aead0d5_394708_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Maker 2"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./smm2-yuzu.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/smm2-yuzu_hu38418bc988ae78b07679e30958d70dba_161034_800x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Maker 2"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Super Mario Maker 2</p>
+
+
+<h3 id="there-is-still-more-to-come">There is still more to come!</h3>
+<p>There is always room for improvement, keep your eyes peeled for future additions and features!</p>
+<p>As we cannot fit in all the changes present in both parts, our more tech savvy users can read about all the changes in the following PRs: <a href="https://github.com/yuzu-emu/yuzu/pull/4530">[Mjölnir Part 1]</a>, <a href="https://github.com/yuzu-emu/yuzu/pull/4597">[Mjölnir Part 2]</a>.</p>
+<h2 id="bugfixes-and-improvements">Bugfixes and improvements</h2>
+<p><a href="https://www.khronos.org/">Khronos</a> recently added the new <code>VK_EXT_extended_dynamic_state</code> extension to the Vulkan API, and driver support is slowly being completed by the vendors. Per the norm with newly supported extensions, you can expect stuff to be in a <em>non-perfect</em> state, or as we like to say, &ldquo;Expect Dragons.&rdquo; AMD recently added support for this extension in the 20.8.3 Windows driver, but part of it is glitched, resulting in graphical errors in games like <code>Super Mario Odyssey</code>. <a href="https://github.com/ReinUsesLisp">Rodrigo</a> temporarily solved this by <a href="https://github.com/yuzu-emu/yuzu/pull/4599">blacklisting the extension on the AMD Windows drivers until it is fixed</a>. Intel doesn&rsquo;t support <code>VK_EXT_extended_dynamic_state</code> at the time of writing this, and Nvidia had already fixed their issues with the extension.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./smobug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/smobug_hu29d76e0c715b33afd6b9e504c7eb35d9_2019254_800x0_resize_q90_bgffffff_box_3.jpg" alt="Mario stared into the abyss, and the abyss stared back (Super Mario Odyssey)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./smofix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/smofix_hu92d4ae83699bc956b8c57e242e8352f0_1963968_800x0_resize_q90_bgffffff_box_3.jpg" alt="Mario stared into the abyss, and the abyss stared back (Super Mario Odyssey)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Mario stared into the abyss, and the abyss stared back (Super Mario Odyssey)</p>
+
+
+<p>Continuing with <code>VK_EXT_extended_dynamic_state</code>, a glitch affecting <code>Super Smash Bros. Ultimate</code>, and others, was discovered when using this new extension. Attack sprites were missing during gameplay, but <a href="https://github.com/ReinUsesLisp">Rodrigo</a> was able to <a href="https://github.com/yuzu-emu/yuzu/pull/4555">solve the issue on all compatible drivers</a>.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./smashbug.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="./smashfix.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">The Master Sword can&#39;t just look like a regular sword (Super Smash Bros. Ultimate)</p>
+
+
+<p>Thumbnail pictures in in-game save slots were a black rectangle for most games up until now. By <a href="https://github.com/yuzu-emu/yuzu/pull/4453">fixing block linear copies</a>, <a href="https://github.com/ReinUsesLisp">Rodrigo</a> prevented users from loading up the wrong save or course by mistake in games such as <code>The Legend of Zelda: Breath of the Wild</code> and <code>Super Mario Maker 2</code>.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./smm2bug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/smm2bug_hu4b2b5525ad852db99ed63b5fd60e203f_155389_800x0_resize_q90_bgffffff_box_3.jpg" alt="Ohh, this one was my good course! (Super Mario Maker 2)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./smm2fix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/smm2fix_hu6a2b714de5241d9e6287f4ba3636e3a8_471917_800x0_resize_q90_bgffffff_box_3.jpg" alt="Ohh, this one was my good course! (Super Mario Maker 2)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Ohh, this one was my good course! (Super Mario Maker 2)</p>
+
+
+<h2 id="precision-has-a-cost">Precision has a cost</h2>
+<p>Up until now, CPUs lacking the FMA instruction set had to run generic code as fallback. After a lot of work, <a href="https://github.com/MerryMage">Merry</a> added <a href="https://github.com/yuzu-emu/yuzu/pull/4541">optimizations intended for CPUs lacking the <code>FMA instruction set</code></a>.</p>
+<p>This means that users with CPUs from the AMD Phenom II series or older, Intel 3rd generation Core-i series or older, and all Pentium, Celeron and Atom CPUs can now select the &ldquo;Unsafe&rdquo; setting and see major performance improvements in almost all games. Don&rsquo;t bother to try this setting on CPUs that have FMA, as it will not improve your performance in that case.</p>
+<p>However, due to being a less precise alternative, expect emulation inaccuracies if you decide to enable it. Here be dragons, as they say.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./fma.png" title=" You can find it here">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/fma_huc55a6b6bb383e5106b7b84f50541fb5e_18124_887x0_resize_q90_bgffffff_box_3.jpg" alt=" You can find it here"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> You can find it here</p>
+        
+    </div>
+    
+</div>
+
+<h2 id="ui-changes">UI Changes</h2>
+<p>As part of the input rewrite, <a href="https://github.com/Its-Rei">Rei</a> fixed several consistency bugs affecting the <code>Midnight Blue</code> UI theme. You can see the results below.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./input_before.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/input_before_huae35c3e4ebf6b3b945d5eb6272e9cbda_107980_800x0_resize_q90_bgffffff_box_3.jpg" alt="Input window fixes, before (left) and after (right)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./input_after.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/input_after_hubc1e2a048c0e0fd36709ef298ea74692_108721_800x0_resize_q90_bgffffff_box_3.jpg" alt="Input window fixes, before (left) and after (right)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Input window fixes, before (left) and after (right)</p>
+
+
+<p> </p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./main_before.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/main_before_hu132fb3f1c52866edb312316c6981b879_74016_800x0_resize_q90_bgffffff_box_3.jpg" alt="Gamelist fixes, before (left) and after (right)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./main_after.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/main_after_hu4d07e450fcd465eecebfe6f8e98db147_61441_800x0_resize_q90_bgffffff_box_3.jpg" alt="Gamelist fixes, before (left) and after (right)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Gamelist fixes, before (left) and after (right)</p>
+
+
+<p>Both of our dark themes (Dark and Midnight Blue) had a transparency bug affecting the per-game settings pop-up window. <a href="https://github.com/lat9nq">toastUnlimited</a> made the necessary changes to fix this by <a href="https://github.com/yuzu-emu/yuzu/pull/4420">setting QLabel background color to transparent</a>. You can see the changes below.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./darkbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/darkbug_hu8d5b89c3bb8baa90072867a0e6e6dc2e_204301_800x0_resize_q90_bgffffff_box_3.jpg" alt="Dark theme, before (left) and after (right)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./darkfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/darkfix_hu8d5b89c3bb8baa90072867a0e6e6dc2e_204610_800x0_resize_q90_bgffffff_box_3.jpg" alt="Dark theme, before (left) and after (right)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Dark theme, before (left) and after (right)</p>
+
+
+<p> </p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./midnightbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/midnightbug_hu77c5d9fb6bbc6f4df2a87400cca42e4d_196395_800x0_resize_q90_bgffffff_box_3.jpg" alt="Midnight Blue theme, before (left) and after (right)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="./midnightfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/midnightfix_hu77c5d9fb6bbc6f4df2a87400cca42e4d_196818_800x0_resize_q90_bgffffff_box_3.jpg" alt="Midnight Blue theme, before (left) and after (right)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Midnight Blue theme, before (left) and after (right)</p>
+
+
+<p><a href="https://github.com/lat9nq">toastUnlimited</a> also added an option to <a href="https://github.com/yuzu-emu/yuzu/pull/4515">access game specific settings while playing.</a> This makes it easy to change graphics accuracy or other settings on the fly.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./pergame.png" title=" Found it!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-aug-2020/pergame_hu2da4860b6af3545cca95d1f456df4353_1054381_1024x0_resize_q90_bgffffff_box_3.jpg" alt=" Found it!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light"> Found it!</p>
+        
+    </div>
+    
+</div>
+
+<p><code>Force 30FPS</code> was an option that was used for debugging, and as an emergency brake for the old days when yuzu lacked a proper frame limiter. The fate of this tick-box was undecided for long, moving it to the <code>Debug</code> tab was considered at one point. But in the end, it was finally <a href="https://github.com/yuzu-emu/yuzu/pull/4446">removed by</a> <a href="https://github.com/Morph1984">Morph</a>. This option was no longer functional after the changes of <code>Project Prometheus</code> took effect, so this was a necessary sacrifice.</p>
+<p>Our users reported that some checkboxes were duplicated after the addition of Vulkan. These were <code>Dump Decompressed NRO</code> and <code>Dump ExeFS</code> which could be found both in <code>General &gt; Debug</code> and <code>System &gt; Filesystem &gt; Patch Manager</code>. <a href="https://github.com/FearlessTobi">Tobi</a> put an end to this clone war, <a href="https://github.com/yuzu-emu/yuzu/pull/4429">removing the duplicates in Debug</a>.</p>
+<h2 id="future-projects">Future Projects</h2>
+<p><a href="https://github.com/ameerj">epicboy</a> is working on a universal, GPGPU (General-Purpose GPU) accelerated method to decode ASTC textures. We shall hear more of this after the Texture Cache rewrite is finished.</p>
+<p>Whispers of more audio changes have been heard, and a certain shark will be responsible for this.</p>
+<p><a href="https://www.youtube.com/watch?v=D8zlUUrFK-M">Devs uh&hellip; find a way.</a></p>
+<p>That&rsquo;s all for now folks! See you again in the September progress report!</p>
+<p> 
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+</p>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/302337">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
