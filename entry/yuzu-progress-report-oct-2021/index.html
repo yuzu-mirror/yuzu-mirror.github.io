@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang=" en-us "class="has-navbar-fixed-top">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="theme-color" content="#404040">
+
+    <meta property="og:title" content="Progress Report October 2021 &middot; yuzu" />
+    <meta property="og:site_name" content="yuzu" />
+    <meta property="og:url" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/" />
+    <meta property="og:description" content="Hey there, yuz-ers! We&rsquo;ve had quite an exciting month. Our most anticipated and highly requested feature, Resolution Scaling, is finally out! But we didn&rsquo;t rest on our laurels, a host of other fixes were pushed this month and we can&rsquo;t wait to tell you all about them!" />
+<meta name="description" content="Hey there, yuz-ers! We&rsquo;ve had quite an exciting month. Our most anticipated and highly requested feature, Resolution Scaling, is finally out! But we didn&rsquo;t rest on our laurels, a host of other fixes were pushed this month and we can&rsquo;t wait to tell you all about them!" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/banner.png" />
+
+    <link rel="icon" href="https://yuzu-mirror.github.io/favicon.ico" />
+    <link rel="shortcut icon" href="https://yuzu-mirror.github.io/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/"> 
+
+    <title>Progress Report October 2021 - yuzu</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Dosis" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://yuzu-mirror.github.io/scss/style.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css" type="text/css" />
+
+
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112443698-1"></script>
+
+    
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-112443698-1');
+    </script>
+    
+    
+</head>
+
+<body>
+        <nav class="navbar is-dark is-size-6 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="https://yuzu-mirror.github.io">
+            <svg xmlns="http://www.w3.org/2000/svg" class="navbar-logo" viewBox="0 0 515.83 163.11"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#ff3c28;}.cls-3{fill:#0ab9e6;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M515.83,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,515.83,23.23Z"/><path class="cls-1" d="M421.34,144.4H353.45c-2.35,0-4.72-1.88-4.72-6.08a8.32,8.32,0,0,1,1.33-4.49L410.39,29.36H360.8a4.51,4.51,0,0,1-4.51-4.5V23.28a4.51,4.51,0,0,1,4.48-4.51h.81c58.68-.11,59.11,0,59.66.07a5.19,5.19,0,0,1,4,5.8,8.74,8.74,0,0,1-1.32,3.75L363.33,133.17h58a4.51,4.51,0,0,1,4.51,4.51v2.21A4.51,4.51,0,0,1,421.34,144.4Z"/><path class="cls-1" d="M248.45,23.23v82.06c0,26-11.8,38.44-37.12,39.09h-.12a4.51,4.51,0,0,1-4.51-4.51V137.5a4.51,4.51,0,0,1,4.48-4.5c18.49-.15,26-8.23,26-27.9v-2.37a32.34,32.34,0,0,1-3.34,3.28c-6.39,5.5-14.5,8.29-24.07,8.29-22.86,0-35-12.41-35-35.89V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22a4.52,4.52,0,0,1,4.5,4.51v55c0,7.6,1.82,14.22,5,18.18,3.57,4.56,9.17,6.49,18.75,6.49,10.13,0,17.32-3.76,22-11.5,3.61-5.92,5.43-13.66,5.43-23V23.23a4.52,4.52,0,0,1,4.51-4.51h2.22A4.52,4.52,0,0,1,248.45,23.23Z"/><path class="cls-1" d="M338.12,23.23v73c0,14.5-2.24,25.24-6.84,32.82-5.92,10.15-16.2,15.32-30.53,15.32s-24.62-5.23-30.58-15.57c-4.56-7.64-6.79-18.42-6.79-32.92V23.23a4.51,4.51,0,0,1,4.51-4.51h2.28a4.51,4.51,0,0,1,4.51,4.51v72.5c0,33.53,14.88,37.4,26.07,37.4,12.14,0,26.08-4.17,26.08-36.71V23.23a4.51,4.51,0,0,1,4.51-4.51h2.27A4.51,4.51,0,0,1,338.12,23.23Z"/><g id="g823"><g id="right"><g id="g827"><g id="g833"><path id="path835" class="cls-2" d="M81.56,32.62V163.11a65.25,65.25,0,0,0,0-130.49M94.3,46.91a52.54,52.54,0,0,1,0,101.91V46.91"/></g></g></g><g id="left"><g id="g839"><g id="g845"><path id="path847" class="cls-3" d="M65.24,0a65.25,65.25,0,0,0,0,130.49ZM52.5,14.29V116.2A52.52,52.52,0,0,1,28.12,28.12,52.16,52.16,0,0,1,52.5,14.29"/></g></g></g></g></g></g></svg>
+        </a>
+
+        <div class="burger navbar-burger is-dark" data-target="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="navbar-menu" id="navMenu">
+        <div class="navbar-start">
+              
+            <a class="navbar-item px-lg" href="/entry">
+                Blog
+            </a>
+              
+            <a class="navbar-item px-lg" href="/downloads">
+                Download
+            </a>
+              
+            <a class="navbar-item px-lg" href="/wiki/faq">
+                FAQs
+            </a>
+              
+            <a class="navbar-item px-lg" href="/game">
+                Compatibility
+            </a>
+              
+            <a class="navbar-item px-lg" href="/screenshots">
+                Screenshots
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://www.patreon.com/yuzuteam">
+                Patreon
+            </a>
+              
+            <a class="navbar-item px-lg" href="https://profile.yuzu-mirror.github.io">
+                Profile
+            </a>
+             
+
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://discord.gg/u77vRWY" target="_blank">
+                <i class="fab fa-discord mr-sm"></i> Discord
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://twitter.com/yuzuemu" target="_blank">
+                <i class="fab fa-twitter mr-sm"></i> Twitter
+            </a>
+            <a class="navbar-item px-lg is-hidden-desktop" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <i class="fab fa-github mr-sm"></i> GitHub
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            
+            <a class="navbar-item px-lg is-hidden-touch" href="https://discord.gg/u77vRWY" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-discord"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://twitter.com/yuzuemu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-twitter"></i>
+                </span>
+            </a>
+            <a class="navbar-item px-lg is-hidden-touch" href="https://github.com/yuzu-mirror/yuzu" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-2x fa-github"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</nav>
+
+    
+
+    
+
+
+
+
+<div class="mb-md blog-entry-header single" style="background-image: url('https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/banner_hubd0b9c0dbfa61eba807e3a5c91cd78cb_650205_1280x0_resize_q99_bgffffff_box_3.jpg');background-repeat:no-repeat;background-size:contain;background-position:center;"></div>
+<div class="has-text-centered">
+    <div>
+        <span class="title px-md py-sm">Progress Report October 2021</span>
+    </div>
+    
+    
+    <div>
+        <p class="h3 px-md py-sm">
+            Written by <a href="https://community.citra-emu.org/u/GoldenX86/summary">GoldenX86</a>
+            
+            
+            
+            and <a href="https://community.citra-emu.org/u/Honghoa/summary">Honghoa</a>
+            
+            on November 13 2021
+        </p>
+    </div>
+    
+</div>
+
+
+    
+    
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-four-fifths">
+                    
+<section class="section content pt-sm">
+    <br>
+    <p>Hey there, yuz-ers! We&rsquo;ve had quite an exciting month. Our most anticipated and highly requested feature, Resolution Scaling, is finally out! But we didn&rsquo;t rest on our laurels, a host of other fixes were pushed this month and we can&rsquo;t wait to tell you all about them!</p>
+<h2 id="psa-for-nvidia-users">PSA for NVIDIA users</h2>
+<p>Before delving further, we want to remind NVIDIA users that there are issues with the latest graphics drivers, specifically the 49X releases.</p>
+<p>Past the last 472.XX drivers, NVIDIA removed support for Windows versions prior to 10 and the Kepler series of GPUs (mostly 600 and 700 series cards).
+Additionally, OpenGL GLSL and Vulkan rendering were affected, with GLSL becoming virtually unusable and Vulkan exhibiting minor glitches.</p>
+<p>While NVIDIA works to resolve the issues, and we work on alternatives to mitigate the problems, we&rsquo;ve configured
+<a href="https://github.com/yuzu-emu/yuzu/pull/7243">NVIDIA GPUs on affected drivers to only use GLASM when OpenGL is selected</a>. This seems to workaround most of the GLSL errors we&rsquo;ve been seeing on these latest drives.
+Thanks to <a href="https://github.com/lat9nq">toastUnlimited</a> for the quick update.</p>
+<p>GLSL will still be available for version 472.XX and older drivers.
+If someone wishes to use GLSL on recent 49X series drivers, turn on <code>Enable Graphics Debugging</code> in <code>Emulation &gt; Configure… &gt; General &gt; Debug</code>.
+Keep in mind this will reduce performance, as it is only intended for debugging.</p>
+<p>With the PSA out of the way, let&rsquo;s get into the good stuff!</p>
+<h2 id="project-art">Project A.R.T.</h2>
+<p><code>Advanced Rendering Techniques</code> or was it <code>Aristotle’s Rescaling Technology</code>? I think there&rsquo;s another name I’m forgetting. Maybe <a href="https://github.com/yuzu-emu/yuzu/pull/7219">the Pull Request</a> will have more information for those curious.</p>
+<p>Anyway, <code>Project A.R.T.</code> is out in the wild! <a href="https://github.com/FernandoS27">Blinkhawk</a>, <a href="https://github.com/breadfish64">BreadFish</a>, <a href="https://github.com/ameerj">epicboy</a>, and
+<a href="https://github.com/reinuseslisp">Rodrigo</a> are to thank for this incredible release.</p>
+<p>As explained in its dedicated article <a href="https://yuzu-mirror.github.io/entry/yuzu-art/">here</a>, this is a complete rewrite of our old resolution scaling implementation from 2019.
+Before we jump into the end-user benefits, let&rsquo;s first cover some terminology.
+The correct terms for the scaling process are <code>Upsampling</code> and <code>Supersampling</code>, which can also be more commonly called <code>Downsampling</code>.
+In layman&rsquo;s terms, downsampling means taking a big frame and reducing its size to fit a smaller display. Downsampling is rendering the game at a higher resolution than your
+display’s native one.</p>
+<p>In contrast, <code>upsampling</code> means taking a smaller frame and stretching it to fit a bigger display.
+It results in a lower quality image, but users with low-end GPUs, particularly users of integrated graphics, may prefer to have better framerates over image quality.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./art.png" title="A work of art (read left to right)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/art_hueb3062cf06dcf4b492f3133692bbe1d6_20679_638x0_resize_q90_bgffffff_box_3.jpg" alt="A work of art (read left to right)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">A work of art (read left to right)</p>
+        
+    </div>
+    
+</div>
+
+<p>There seems to be a lot of confusion about this. Remember, improving the visual quality of the game is downsampling, not upsampling.
+Games look their best when they have a 1:1 ratio between rendering and display resolution, or when downsampling.</p>
+<p>With that out of the way, let’s get started.
+All new options can be found in <code>Emulation &gt; Configure… &gt; Graphics</code></p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./options.png" title="yuzu Graphics configuration window ">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/options_hub6d5c511f5ac338e7fd38dff1f912762_23502_1019x0_resize_q90_bgffffff_box_3.jpg" alt="yuzu Graphics configuration window "></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">yuzu Graphics configuration window </p>
+        
+    </div>
+    
+</div>
+
+<p>Starting with <code>Resolution</code>, this option is the Scaling Multiplier being used. It will double the width and height of whatever resolution the game is rendering at.
+At the moment, we offer two upsampling multipliers: <code>0.5X</code> and <code>0.75X</code>, and five downsampling multipliers: <code>2X</code>, <code>3X</code>, <code>4X</code>, <code>5X</code>, and <code>6X</code>.</p>
+<p>Here&rsquo;s an example, <code>Super Mario Odyssey</code> displays a 1920x1080 frame in docked mode but actually renders at 1600x900, and at 1280x720 in undocked mode.
+Applying a 2X resolution to Super Mario Odyssey gives us a rendering resolution of 3200x1800 in docked mode and 2560x1440 in undocked mode.
+3X would give us 4800x2700 and 3840x2160 respectively, 0.5X would be 800x450 and 640x360, and so on.
+Keep in mind that games can reduce graphical details in undocked mode, not only their resolution.</p>
+<p>With high resolutions comes increased texture sizes. This has a significant impact on both video memory (VRAM) and other available graphical resources, like memory bandwidth.
+The user must consider the available VRAM and the performance of the GPU they are using when deciding which resolution multiplier to use.
+For integrated GPU users, RAM overclocking becomes critical, as faster RAM means faster “VRAM” for your iGPU.</p>
+<p>If the GPU runs out of VRAM faster than the emulator or graphics driver can manage resources, yuzu will close, so follow our recommended values in the picture below.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./vram.png" title="We recommend 2GB and lower users to use 1X on graphic intensive games">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/vram_hu0f7f47f68d20f95d5554461536b87a08_15821_813x0_resize_q90_bgffffff_box_3.jpg" alt="We recommend 2GB and lower users to use 1X on graphic intensive games"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">We recommend 2GB and lower users to use 1X on graphic intensive games</p>
+        
+    </div>
+    
+</div>
+
+<p>Small, low-end GPUs (like our recommended GT 1030, RX 550, or any integrated GPU) will see considerable performance benefits when upsampling as the reduction in 3D load and the
+lower VRAM utilization will provide higher framerates.</p>
+<p>People with current mid to high-end GPUs can benefit from the surplus of computational capabilities and available VRAM.
+Actual performance will be determined by each specific game, but it’s safe to assume that good hardware can use a 2X or 3X multiplier with little issue most of the time.
+We personally don’t recommend going higher than 3X as not even the best consumer hardware available at this moment can provide a perfect experience when rendering at very high
+resolutions, but the options are there to experiment with.</p>
+<p>Light or very well optimized games like <code>Super Smash Bros. Ultimate</code> and <code>Metroid Dread</code> can make for great experiences on 4K or 8K displays.
+On the other hand, particular games like <code>Astral Chain</code> should not be downsampled, as they already use 3840x2160 textures.
+Trying high resolution multipliers with games like this will result in your GPU&rsquo;s VRAM not being very happy.</p>
+<p>We strongly recommend using Vulkan for downsampling as VRAM use will be considerably lower as compared to OpenGL.</p>
+<p>Let’s move on to the second option, <code>Window Adapting Filter</code>.</p>
+<p>When using a display with a different native resolution than your rendering resolution, you need some way of deciding which pixels will be shown in the final image. Filters are used for that!</p>
+<p>Currently, yuzu offers 6 filtering options, each recommended for different scenarios, and with different performance costs. We plan to expand this section in the future,
+adding sliders to let users customize the filters to their own tastes.
+And yes, on GPU limited scenarios, the filter in use can affect framerate.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./filters.png" title="Tested on Mario Kart 8 Deluxe, filtering ain&#39;t free!">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/filters_huf9c323c0cf5eb15346b55786288d2947_15704_602x0_resize_q90_bgffffff_box_3.jpg" alt="Tested on Mario Kart 8 Deluxe, filtering ain&#39;t free!"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Tested on Mario Kart 8 Deluxe, filtering ain&#39;t free!</p>
+        
+    </div>
+    
+</div>
+
+<p>While an integrated GPU will suffer the performance cost, even a low-end dedicated card will handle the increased computational load with ease.</p>
+<p>Here are some recommendations and comparisons of all current options against the default bilinear filter.</p>
+<p><code>Nearest Neighbor</code> is ideal for pixel art style games like <code>UNDERTALE</code> or <code>OCTOPATH TRAVELER</code>, it can also provide the best results when the game’s rendering resolution
+matches the window or display’s resolution. It and <code>Bilinear</code> have the lowest performance cost of all the options.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/otbilinear_hucd9d11b2b2fe7cd284b1ce20b994dd42_1539618_1024x0_resize_q90_bgffffff_box_3.jpg" alt="OCTOPATH TRAVELER (Bilinear Vs. Nearest Neighbour)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/otnearest_hu94544779c866e2119187fbd8aee4c885_1614091_1024x0_resize_q90_bgffffff_box_3.jpg" alt="OCTOPATH TRAVELER (Bilinear Vs. Nearest Neighbour)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">OCTOPATH TRAVELER (Bilinear Vs. Nearest Neighbour)</p>
+
+
+<p><code>Bilinear</code> is our combat tested default option. It&rsquo;s very good for downsampling and like <code>Nearest Neighbor</code>, it has almost no performance cost. It’s a great all-rounder.
+If you have a 1080p display, we recommend <code>Bilinear</code> with a 2X resolution multiplier.</p>
+<p><code>Bicubic</code> can produce better downsampling results than <code>Bilinear</code>, but at a slightly higher performance cost. We recommend it for 2X or 3X multipliers on 1080p displays.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/botwbilinear_huad67af673bfe25941e438dd0e7ef5933_1382345_1024x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Breath of the Wild (Bilinear Vs. Bicubic)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/botwbicubic_hu53573981f313c71bcfd36673143eb881_1239711_1024x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Breath of the Wild (Bilinear Vs. Bicubic)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">The Legend of Zelda: Breath of the Wild (Bilinear Vs. Bicubic)</p>
+
+
+<p><code>Gaussian</code> is intended for extreme cases, like when the user wants to test a very high multiplier. It also has a high performance cost.
+When very high values are used, the image can, ironically, start to become pixelated again. The gaussian blur produced by this filter will help provide a more pleasant image.
+Recommended for 4X to 6X multipliers on 1080p displays.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/dreadbilinear_hu84b71936d0cc0e909a566a8e5d9525ff_917436_720x0_resize_q90_bgffffff_box_3.jpg" alt="Metroid Dread (Bilinear Vs. Gaussian)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/dreadgaussian_huafae6c885c8ec8de4fa5e2547565563b_829533_720x0_resize_q90_bgffffff_box_3.jpg" alt="Metroid Dread (Bilinear Vs. Gaussian)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Metroid Dread (Bilinear Vs. Gaussian)</p>
+
+
+<p><code>Scaleforce</code> was invented by BreadFish. It is a great downsampling filter for 3D games and a fine upsampling filter for 2D games, while also only requiring a moderate performance
+cost. A true jack of all trades.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/otbilinear_hucd9d11b2b2fe7cd284b1ce20b994dd42_1539618_1024x0_resize_q90_bgffffff_box_3.jpg" alt="OCTOPATH TRAVELER (Bilinear Vs. Scaleforce)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/otscaleforce_hu7357fe75a9a451639ceb9e68201c3181_1559024_1024x0_resize_q90_bgffffff_box_3.jpg" alt="OCTOPATH TRAVELER (Bilinear Vs. Scaleforce)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">OCTOPATH TRAVELER (Bilinear Vs. Scaleforce)</p>
+
+
+<p><code>AMD Fidelity FX™ Super Resolution</code>, or FSR for short, is <a href="https://github.com/GPUOpen-Effects/FidelityFX-FSR">in AMD’s own words</a> “&hellip;an open source, high-quality solution
+for producing high resolution frames from lower resolution inputs.”</p>
+<p>This means that it is particularly useful for low-end users trying to restore some of the missing details lost when upsampling a game to gain performance.
+It is NOT recommended for downsampling, as the output resolution is used as part of the process. A perfect pick for people forced to run 0.5X or 0.75X multipliers for performance reasons.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/smo1xbilinear_hu7ec165b64df65c7ccd99ffde914f6eca_3540520_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Odyssey (1X Bilinear Vs. 0.75X FSR)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/smo075xfsr_hu21a730d6822a81e5ef7aa54a1e355131_3658527_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Super Mario Odyssey (1X Bilinear Vs. 0.75X FSR)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Super Mario Odyssey (1X Bilinear Vs. 0.75X FSR)</p>
+
+
+<p>If the user tries FSR while downsampling, they <em><strong>will be reducing image quality</strong></em> and will end up only seeing the sharpening aspect of the filter, negating any advantage of
+increasing the rendering resolution while incurring the full performance cost of it.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/zlabilinearbad_hu662f8740bad7c8488dec4c46cca87f54_2045562_1024x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Link&#39;s Awakening (2X Bilinear Vs. 2X FSR on a 1080p display)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/zlafsrbad_hu5b2718a9fb856aec59ac8f43941c790a_752358_1024x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Link&#39;s Awakening (2X Bilinear Vs. 2X FSR on a 1080p display)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">The Legend of Zelda: Link&#39;s Awakening (2X Bilinear Vs. 2X FSR on a 1080p display)</p>
+
+
+<p>So, in short, if the rendering resolution is <em>higher</em> than the display’s resolution, FSR should be avoided.
+If the rendering resolution is <em>equal or lower</em> than the display’s resolution, FSR is an excellent shader-based filtering option, but with the highest performance cost on the
+list.</p>
+<p>As a way to cheat around this limitation, AMD and NVIDIA Windows users can fake higher display resolutions with the use of
+<a href="https://www.amd.com/en/support/kb/faq/dh2-010">Virtual Super Resolution</a> and <a href="https://www.nvidia.com/en-us/geforce/technologies/dsr/technology/">Dynamic Super Resolution</a>
+respectively.
+This way, for example, a 1080p display can fake a 2160p (4K) maximum resolution, giving FSR a lot more information to play with.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/zlabilineargood_hub2b74858f536bbc2b3a962e9ba8182d7_2047005_1024x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Link&#39;s Awakening (2X Bilinear Vs. 2X FSR on a 4K display)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/zlafsrgood_hu641e1924be04b784e5db81d80bcfd41f_2151116_1024x0_resize_q90_bgffffff_box_3.jpg" alt="The Legend of Zelda: Link&#39;s Awakening (2X Bilinear Vs. 2X FSR on a 4K display)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">The Legend of Zelda: Link&#39;s Awakening (2X Bilinear Vs. 2X FSR on a 4K display)</p>
+
+
+<p>Finally our current last option, <code>Anti-Aliasing Method</code>.
+Pixels are almost squares and squares aren&rsquo;t great for displaying curves. Anti-aliasing methods are used to smooth out this undesired effect.
+At the moment we only offer <a href="https://en.wikipedia.org/wiki/Fast_approximate_anti-aliasing">FXAA</a>, which can help reduce the excessive sharpening shown when using FSR.
+In the near future, we plan to add more options like <a href="https://en.wikipedia.org/wiki/Morphological_antialiasing">MLAA/SMAA</a></p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/lm3fsr_hu5b5cd213d00e9435b55eba944b77109a_3852406_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Luigi&#39;s Mansion 3 (FSR Vs. FSR &#43; FXAA, both on a 4K display)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/lm3fxaa_hu3751a06a230238c6665965c89b97fdf8_3845415_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Luigi&#39;s Mansion 3 (FSR Vs. FSR &#43; FXAA, both on a 4K display)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Luigi&#39;s Mansion 3 (FSR Vs. FSR &#43; FXAA, both on a 4K display)</p>
+
+
+<p>Both the filters and anti-aliasing options can be changed while in-game using the buttons on the bottom left of yuzu’s window.
+Changing the resolution multiplier in-game is not possible at the moment.</p>
+<p>As an additional note, <code>A.R.T.</code> also reimplements our <code>Anisotropic Filtering</code>!
+This option can be accessed from the Advanced tab in the graphics settings.
+In the past we recommended skipping this option as not all games are particularly fond of forcing values higher than they specified, but this new implementation is smarter,
+avoiding previous drawbacks.</p>
+<p>At a low performance cost, it will increase the quality of textures at oblique angles, particularly ground textures, most noticeable in first and third person view games.
+It should now be safe to set at 16x and forget about it.</p>
+
+
+<div class="columns is-bottom-marginless">
+    <div class="column is-bottom-paddingless juxtapose">
+    
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/pksw1x_hu2859533cfba6cbef6f8d7dc87a7baeed_385531_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Pokémon Sword (default Vs. 16X Anisotropic Filtering)">
+    
+    
+    
+    
+    
+    
+        
+        
+        <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/pksw16x_huaa283a2fe7c2191c207a0c0dc5b4ae08_444160_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Pokémon Sword (default Vs. 16X Anisotropic Filtering)">
+    </div>
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Pokémon Sword (default Vs. 16X Anisotropic Filtering)</p>
+
+
+<p>One last note, AMD users should ensure that <a href="https://www.youtube.com/watch?v=wTh_O9BZlGc">Radeon Image Sharpening</a> is disabled before using the scaler, as it can affect the
+quality of some filters, especially FSR which includes its own sharpening already.</p>
+<p>At the time of writing this article, <code>Resolution Scaling</code> remains in <a href="https://yuzu-mirror.github.io/help/early-access/">Early Access</a> for testing and regression finding, but be sure that it won’t take long to be merged into <a href="https://yuzu-mirror.github.io/downloads/">Mainline</a>.
+Check the progress in the pull request previously listed, code review is usually the main reason for delays on merging.</p>
+<h2 id="graphical-and-general-bugfixes">Graphical and general bugfixes</h2>
+<p><code>Metroid Dread</code> has been a very important release both for the series and for the console, giving us the first main entry for the series in years.</p>
+<p>This game is heavily optimized and well polished all around, part of that is thanks to using very clever tricks to render.
+Dread doesn’t shy away from using pre-rendered videos for backgrounds, displays, manuals, and the intro menu.
+Such videos were using an <a href="https://github.com/yuzu-emu/yuzu/pull/7138">unsupported frame format, <code>RGBX8</code></a>, which epicboy implemented.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="dreadbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/dreadbug_hu41932d7cf9e06156bc410a0f1e01b345_24431_800x0_resize_q90_bgffffff_box_3.jpg" alt="There&#39;s no need to introduce more dread into this game (Metroid Dread)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="dreadfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/dreadfix_huecf99986d5ce3a98467a2b7522ee0a0e_740275_800x0_resize_q90_bgffffff_box_3.jpg" alt="There&#39;s no need to introduce more dread into this game (Metroid Dread)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">There&#39;s no need to introduce more dread into this game (Metroid Dread)</p>
+
+
+<p>While this solves the rendering of a single video on screen, some areas of the game can play multiple streams simultaneously, causing glitches on screen.
+yuzu’s decoding needs to be improved to handle those cases, something we’re still working on.</p>
+<p>While Blinkhawk was working on <code>Project A.R.T</code>, he also <a href="https://github.com/yuzu-emu/yuzu/pull/7127">doubled the counter of cached pages in the rasterizer</a>.</p>
+<p>yuzu uses these counters to keep track of the number of GPU objects stored in a cache within a CPU page.
+Previously, this counter would account for pages whose addresses were up to a size of 38 bits.
+Some games, however, can use memory addresses of up to 39 bits.</p>
+<p>By doubling the counter, the rasterizer can effectively keep track of these addresses now, allowing certain games that did not work with the old counter to boot, such as
+<code>Final Fantasy X</code>.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./ffx.png" title="Listen to my story, the story of the worst laugh ever recorded (FINAL FANTASY X/X-2 HD Remaster)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/ffx_huc2dfe4202400edcc6b9719c08ac72dd1_3956005_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Listen to my story, the story of the worst laugh ever recorded (FINAL FANTASY X/X-2 HD Remaster)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Listen to my story, the story of the worst laugh ever recorded (FINAL FANTASY X/X-2 HD Remaster)</p>
+        
+    </div>
+    
+</div>
+
+<p>epicboy investigated the graphical issues present in <code>Mario Party Superstars</code>.
+Following the lead from this initial research, Blinkhawk found the problem and submitted a patch that
+<a href="https://github.com/yuzu-emu/yuzu/pull/7262">improves the performance of the backtracking algorithm</a> used by the shader cache to find the handlers of a bindless texture.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="mpsbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/mpsbug_hu41932d7cf9e06156bc410a0f1e01b345_71127_800x0_resize_q90_bgffffff_box_3.jpg" alt="Old school minigames are the best (Mario Party Superstars)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="mpsfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/mpsfix_hu979ec8f77601462edb52d27bc9c94b36_1527421_800x0_resize_q90_bgffffff_box_3.jpg" alt="Old school minigames are the best (Mario Party Superstars)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Old school minigames are the best (Mario Party Superstars)</p>
+
+
+<p>yuzu’s window can be freely resized, but users may want some presets to return things to accurate 16:9 proportions.
+In the past we offered 720p and 1080p options, but now epicboy <a href="https://github.com/yuzu-emu/yuzu/pull/7158">adds a 900p option</a>, useful for both people with 1080p displays
+wanting some free space on their screen, and for getting a 1:1 ratio on 3D games that render natively at 1600x900.</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./size.png" title="A simple way to make good use of nearest neighbour">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/size_hu7f5dfde15abcae25d09f5db6bb75ae4a_8297_451x0_resize_q90_bgffffff_box_3.jpg" alt="A simple way to make good use of nearest neighbour"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">A simple way to make good use of nearest neighbour</p>
+        
+    </div>
+    
+</div>
+
+<p>Blinkhawk has been investigating an issue affecting <code>Catherine: Full Body</code>, <code>Hyrule Warriors: Definitive Edition</code>, and an unknown number of other games.</p>
+<p>NVN, the graphics API most Nintendo Switch games use, will skip <a href="https://www.khronos.org/registry/vulkan/specs/1.2-extensions/man/html/VkFence.html">fences</a> (ways to
+synchronize rendering)  if a certain amount of time has passed. This is a sensical design choice on native hardware, where a long wait could mean a
+<a href="https://en.wikipedia.org/wiki/Timeout_Detection_and_Recovery">TDR</a> from a malfunctioning game or faulty hardware.
+In the emulator, on the other hand, long wait times can be caused by shaders being built, textures being downloaded or uploaded, background processes hogging the system, etc.</p>
+<p>If those delays are not taken into consideration, games can experience graphical glitches and bad frame pacing. The solution is
+<a href="https://github.com/yuzu-emu/yuzu/pull/7187">forcing the GPU to wait</a> until the system responds with all tasks finished.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="catbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/catbug_hu8c8e3e87e97014237239944bb96feed8_2552044_800x0_resize_q90_bgffffff_box_3.jpg" alt="Almost a Nice Boat protagonist (Catherine: Full Body)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="catfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/catfix_hu8bad7bf72712b31cb909f3c6080f5a8e_3363730_800x0_resize_q90_bgffffff_box_3.jpg" alt="Almost a Nice Boat protagonist (Catherine: Full Body)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Almost a Nice Boat protagonist (Catherine: Full Body)</p>
+
+
+<p><a href="https://github.com/vonchenplus">vonchenplus</a> is back with more fixes! This time a couple of stubs helping in-game stability or rendering.</p>
+<p><a href="https://github.com/yuzu-emu/yuzu/pull/7184">Stubbing <code>IHOSBinderDriver::TransactParcel</code> and <code>GetBufferHistory</code></a> help to boot <code>Luigi’s Mansion 3</code>, which is notorious for
+refusing to load at random.
+While this helps mitigate the issues, they are not fully solved. It seems the small delay introduced by shader building can affect the stability of this game too. We
+need to investigate this issue further.</p>
+<p>It’s time to add some love to <code>yuzu-cmd</code> again, our command line alternative to the default Qt-based yuzu.
+toastUnlimited added the option to <a href="https://github.com/yuzu-emu/yuzu/pull/7148">select the network interface to use</a>, providing LAN support to terminal-loving users.</p>
+<p>Some videos in <code>Touhou Genso Wanderer -Lotus Labyrinth R-</code> and <code>Tsukihime -A piece of blue glass moon-</code> would render completely black.
+<a href="https://github.com/v1993">v1993</a> figured out the cause of the problem, which happened because the height of the video frame that needed to be decoded was smaller than the
+surface where it was supposed to be drawn upon.
+In order to avoid writing outside of bounds, there is a check that ensures these two dimensions are equal, or it will not draw the frame.
+v1993 changed this check to <a href="https://github.com/yuzu-emu/yuzu/pull/7152">allow the surface to be higher than frame</a>, so that videos with this issue can render their frames.</p>
+<p>But this was a transient solution, as epicboy later addressed the problem by <a href="https://github.com/yuzu-emu/yuzu/pull/7157">implementing a general solution</a> that uses the
+minimum between these two sizes when writing the decoded image into the GPU, while keeping the aforementioned check in place to ensure no out-of-bounds memory is compromised.</p>
+<p>These changes affect all titles with size disparities, allowing them to render their videos even if the height of the frame and the surface differ by a couple of pixels.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="thbug.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <video preload="auto" autoplay="autoplay" muted="muted" loop="loop" webkit-playsinline="">
+                <source src="thfix.mp4" type="video/mp4">
+                Your browser doesn't support mp4 video. :(
+            </video>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">That piano really hits with nostalgia (Tsukihime -A piece of blue glass moon-)</p>
+
+
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="gwbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/gwbug_hu34264a64c7d74cce405a83173c53b749_93596_800x0_resize_q90_bgffffff_box_3.jpg" alt="Speaking of good music (Touhou Genso Wanderer -Lotus Labyrinth R-)"></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="gwfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/gwfix_hu2882a5f6989347a3746cee6ef8ba80e5_1359537_800x0_resize_q90_bgffffff_box_3.jpg" alt="Speaking of good music (Touhou Genso Wanderer -Lotus Labyrinth R-)"></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light">Speaking of good music (Touhou Genso Wanderer -Lotus Labyrinth R-)</p>
+
+
+<p>epicboy also made changes to the SPIR-V emitter, so that
+<a href="https://github.com/yuzu-emu/yuzu/pull/7201">implicit LOD sampling behaves the same way as the hardware on all GPU drivers</a> during non-fragment stages of the pipeline.</p>
+<p>It is possible to specify how detailed things can appear on the screen based on the <code>LOD</code> (Level of Detail).
+So, for example, objects further away from the camera will use lower-quality textures, saving computation power and also preventing other problems, such as
+<a href="https://en.wikipedia.org/wiki/Moir%C3%A9_pattern">Moiré patterns</a>.
+The programmer is able to specify in the shader whether they sample from the original texture (level 0), or from these lower-quality textures (level 1, 2, 3&hellip;, etc.).
+In case the <code>LOD</code> isn&rsquo;t specified in non-fragment stages of the pipeline (i.e. implicit LOD sampling), the LOD level is considered zero in the Nintendo Switch.
+Since other GPU drivers don&rsquo;t necessarily behave this way, epicboy simply ensured that this always happens.</p>
+<p>While this change doesn&rsquo;t necessarily translate as a performance or graphic improvement, it guarantees the code ran among different GPU vendors matches the behaviour of the
+console.</p>
+<p>Morph updated the <a href="https://github.com/yuzu-emu/yuzu/pull/7120">dynarmic external dependency</a> to use the CPU cache invalidation fixes submitted by Blinkhawk to
+<a href="https://github.com/yuzu-emu/yuzu/pull/7173">perform ranged invalidations when unmapping code memory</a>.</p>
+<p>Memory usually gets invalidated when unloading from memory <code>NROs</code> (Nintendo Relocatable Object), which are dynamic libraries utilized by a variety of titles.
+These changes should alleviate (but not completely solve) the crashes that occur when titles swap NROs in-and-out of memory, such as the case of <code>Super Smash Bros. Ultimate</code>.</p>
+<p>Some games would crash if the user had a profile picture set in yuzu.
+<a href="https://github.com/german77">german77</a> discovered that this happened when the image&rsquo;s dimensions were greater than <code>256x256</code>.
+To avoid the crash, he made it so that <a href="https://github.com/yuzu-emu/yuzu/pull/7246">yuzu now resizes big profile pictures</a> to fit the allowed dimensions instead.</p>
+<p>On Linux, opening the Configuration Window and pressing the <code>OK</code> button would lead consistently to a crash.
+<a href="https://github.com/MightyCreak">MightyCreak</a> found the cause of this problem and submitted a patch to <a href="https://github.com/yuzu-emu/yuzu/pull/7186">solve it</a>.</p>
+<p>Another linux-only crash would happen when inputting text on <code>The Legend of Zelda: Breath of the Wild</code>.
+Morph investigated the problem and found it was caused by an out-of-bounds access in the string buffer, so
+<a href="https://github.com/yuzu-emu/yuzu/pull/7172">he added the necessary checks</a> to prevent it.</p>
+<h2 id="ui-changes">UI changes</h2>
+<p>On the way to achieve better high DPI support, <a href="https://github.com/Morph1984">Morph</a> <a href="https://github.com/yuzu-emu/yuzu/pull/7122">updated the version of Qt</a> used by yuzu.
+This will allow in the near future to finally have legible UI elements on high DPI settings.</p>
+<p>MightyCreak has arrived with several internal changes, most helping with the build process of yuzu.
+One of them is <a href="https://github.com/yuzu-emu/yuzu/pull/7174">enabling mouse cursor auto-hide by default</a>, a very welcome quality of life change, especially now that more users
+will be playing their games in fullscreen.
+Thanks!</p>
+<p>Linux gamepad users will no longer have to periodically tap their mouse to avoid the screensaver from taking over their screens!
+toastUnlimited <a href="https://github.com/yuzu-emu/yuzu/pull/6702">properly disabled the screensaver while running yuzu</a>.</p>
+<p><a href="https://github.com/Moonlacer">Moonlacer</a> continues polishing the text strings in the UI, this time helping new users
+<a href="https://github.com/yuzu-emu/yuzu/pull/7165">understand what our <code>NVDEC</code> (video decoding) options do</a>.</p>
+<p>Some users tend to think that NVDEC means that video decoding will only work on NVIDIA GPUs, this is not the case.
+NVDEC is the name of the module in the Nintendo Switch, which uses the Tegra X1, an NVIDIA SoC (System on a Chip).
+This SoC uses the NVDEC module to decode videos, and the work yuzu has to do is emulate it to work on any compatible system, including systems without NVIDIA GPUs on them.
+We have a full explanation <a href="https://yuzu-mirror.github.io/entry/yuzu-nvdec-emulation/">here</a>.</p>
+<p>So, for the sake of clarity, the options were renamed to better convey the intended result:</p>
+<ul>
+<li><code>No Video Output</code> will result in a black screen every time a video wants to render, nothing is displayed, no fun.</li>
+<li><code>CPU Video Decoding</code> means processing videos using the CPU. This can be useful for AMD Windows users, since the AMD driver is notorious for having bad VP9 video decoding
+performance on Vega and newer GPU series, and using the CPU to render could be both faster and more accurate.</li>
+<li><code>GPU Video Decoding</code> means actually using the GPU&rsquo;s decoding capabilities to process videos. This is considerably faster than CPU decoding and is the default option. If a video
+format is not compatible with the user’s GPU, yuzu’s NVDEC emulation will automatically fallback to CPU decoding.</li>
+</ul>
+<p>For some time, we were wondering why the Switch had an open spot in its language selection.
+Turns out, with the release of <code>Mario Party Superstars</code>, Nintendo added support for Brazilian Portuguese!
+Morph <a href="https://github.com/yuzu-emu/yuzu/pull/7244">rushed to add support for it in yuzu</a>.
+Our game language selection menu can be found at <code>Emulation &gt; Configure… &gt; System &gt; System &gt; Language</code>.
+Jogo bonito on your gameplay sessions!</p>
+<p>The text on the TAS configuration window looked cramped, so <a href="https://github.com/behunin">Behunin</a> edited the
+<a href="https://github.com/yuzu-emu/yuzu/pull/7147">UI file and reformatted the text</a> to make it easier to read.
+Later, <a href="https://github.com/Moonlacer">Moonlacer</a> added to these changes by <a href="https://github.com/yuzu-emu/yuzu/pull/7197">fixing some grammar nits and adding a hyperlink</a> that
+links to the guide on our site.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="tasbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/tasbug_hub55b1a986939a53b04162f772c0e2059_15400_800x0_resize_q90_bgffffff_box_3.jpg" alt=" "></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="tasfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/tasfix_hua0c0d9fed859bce3b6911b635aaf4e92_16295_800x0_resize_q90_bgffffff_box_3.jpg" alt=" "></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light"> </p>
+
+
+<p>Moonlacer also <a href="https://github.com/yuzu-emu/yuzu/pull/7223">fixed a problem with the per-game configuration window</a>, where scaling the monitor over 100% would squash the
+window.</p>
+
+
+<div class="columns is-img-preview is-bottom-marginless">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="csbug.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/csbug_hu82b28f53f9ff904d543b036769fc42b1_252197_800x0_resize_q90_bgffffff_box_3.jpg" alt=" "></a>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <div class="column is-bottom-paddingless">
+        
+            <a href="csfix.png" title="">
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/csfix_hu200a7e1631d5bad3ad4cd8212f74b669_280918_800x0_resize_q90_bgffffff_box_3.jpg" alt=" "></a>
+        
+    </div>
+    
+</div>
+
+
+<p class="has-text-centered is-italic has-text-grey-light"> </p>
+
+
+<h2 id="input-changes">Input changes</h2>
+<p>When <a href="https://github.com/yuzu-emu/yuzu/pull/7142">german77</a> added
+<a href="https://yuzu-mirror.github.io/entry/yuzu-progress-report-jul-2021/#input-changes">auto-centering support all the way back in July</a>, the range of the new center wasn’t considered,
+making the analog sticks overpass 100% in a direction while failing to reach it in the opposite way.
+<a href="https://github.com/yuzu-emu/yuzu/pull/7142">Scaling the value of the range depending on the offset applied when centering</a> solves this issue.</p>
+<h2 id="future-projects">Future projects</h2>
+<p>With the resolution scaler finished, our GPU devs have space to breathe, and they can focus back on work that was reserved for later.
+<code>Project Y.F.C</code> is an example.
+In Blinkhawk’s words, “there&rsquo;ll be Chicken Nuggets for everyone soon, a.k.a. it will cover many different things.”</p>
+
+<div class="columns is-img-preview">
+    
+    
+    
+    
+    
+    
+    
+    <div class="column has-text-centered">
+        
+            <a href="./wol.png" title="Lifelight intensifies (Super Smash Bros. Ultimate)">
+                
+                
+                <img src="https://yuzu-mirror.github.io/entry/yuzu-progress-report-oct-2021/wol_hu6b6943eb6044d07a2009211dc32b200f_2945024_1024x0_resize_q90_bgffffff_box_3.jpg" alt="Lifelight intensifies (Super Smash Bros. Ultimate)"></a>
+        
+        
+            <p class="has-text-centered is-italic has-text-grey-light">Lifelight intensifies (Super Smash Bros. Ultimate)</p>
+        
+    </div>
+    
+</div>
+
+<p><code>Project Gaia</code> is advancing very well, and <code>Project Kraken</code> (our Input Rewrite) <a href="https://github.com/yuzu-emu/yuzu/pull/7255">is out</a> but didn’t make it in time for this progress report. Don&rsquo;t worry, we
+will discuss it next time!</p>
+<p>That’s all folks! Thank you so much for your attention and see you next month!</p>
+<p> 
+<h4 style="text-align:center;">
+<b>Please consider supporting us on <a href="https://www.patreon.com/yuzuteam">Patreon</a>!<br>
+If you would like to contribute to this project, check out our <a href="https://github.com/yuzu-emu/yuzu">GitHub</a>!</b>
+</h4>
+
+<script src="https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/js/juxtapose.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/css/juxtapose.css">
+</p>
+</section>
+
+
+<div class="has-text-centered">
+    <a class="pagination-next" href="https://community.citra-emu.org/t/487745">Continue the discussion on our forums.</a>
+</div>
+
+
+
+                </div>
+                <div class="column">
+                    
+                    
+<div class="px-md">
+    
+    <ins class="adsbygoogle"
+        style="display:block; margin-left:25px;"
+        data-ad-client="ca-pub-4126545610079023"
+        data-ad-slot="6276099127"
+        data-ad-format="auto"></ins>
+    <br>
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+</div>
+
+                </div>
+            </div>
+            <div class="column">
+                
+                
+<div class="px-md has-text-centered">
+    <p class="is-size-6 has-text-centered">Advertisement</p>
+    <br>
+    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:100px" data-ad-client="ca-pub-4126545610079023" data-ad-slot="1038554045"></ins>
+</div>
+
+            </div>
+        </div>
+    
+
+    <div class="container">
+        <footer class="footer">
+            <div class="content has-text-centered">
+    copyright &copy; 2025 yuzu emulator team
+</div>
+        </footer>
+    </div>
+
+    
+    <script src="https://yuzu-mirror.github.io/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", function() {
+        baguetteBox.run('.is-img-preview');
+    });
+</script>
+
+    <script type="text/javascript">
+        for (var i = 0; i < document.getElementsByClassName('adsbygoogle').length; i++) {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</body>
+
+</html>
